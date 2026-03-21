@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Aperture } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const typewriterWords = [
@@ -72,16 +72,21 @@ export function Hero() {
           Ezequiel Vecchio | Business Analyst & Consultor de Tecnología
         </motion.p>
 
-        {/* Main Title */}
-        <motion.h1
+        {/* Main Title with Icon */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter mb-6 drop-shadow-2xl"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6"
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">F</span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Vision</span>
-        </motion.h1>
+          <div className="relative flex items-center justify-center rounded-3xl bg-gradient-to-br from-primary to-blue-500 shadow-2xl shadow-primary/30 w-20 h-20 md:w-28 md:h-28">
+            <Aperture className="text-white w-10 h-10 md:w-14 md:h-14" strokeWidth={2.5} />
+          </div>
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter drop-shadow-2xl">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">F</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Vision</span>
+          </h1>
+        </motion.div>
 
         {/* Description & Typewriter */}
         <motion.div

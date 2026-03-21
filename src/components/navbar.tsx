@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Logo } from "@/components/ui/logo";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,10 +35,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-bold tracking-tight">
-              <span className="text-white">F</span>
-              <span className="text-primary">Vision</span>
-            </a>
+            <Logo iconSize={36} textSize="text-2xl" />
           </div>
 
           {/* Desktop Navigation */}

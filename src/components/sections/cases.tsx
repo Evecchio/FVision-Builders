@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 export function Cases() {
@@ -11,101 +11,108 @@ export function Cases() {
         "Análisis completo del funnel con datos reales de GA4",
         "Identificación de fricciones críticas",
         "Rediseño de arquitectura del tema visual (Twig/SCSS)",
-        "Documentación técnica: REPO-MAP, TECH-CONTRACTS, DESIGN-SYSTEM"
+        "Documentación técnica estructurada"
       ],
-      result: "Hoja de ruta con fases claras, base técnica lista para escalar y criterios medibles de éxito.",
-      gradient: "from-pink-500/20 to-purple-500/20"
+      result: "Hoja de ruta con fases claras y criterios medibles de éxito.",
+      gradient: "from-pink-500/10 to-purple-500/10"
     },
     {
       title: "Automatización de pedidos por WhatsApp con AWS",
       tag: "PyMEs con ventas por mensajería",
       context: "Comercios que reciben pedidos por WhatsApp de forma manual, sin registro ni seguimiento.",
       work: [
-        "Arquitectura serverless: WhatsApp Business API → API Gateway → Lambda → SQS → DynamoDB",
+        "Arquitectura serverless: WhatsApp Business API → AWS",
         "Esquema PostgreSQL para gestión de pedidos",
-        "Backend Node.js/Express"
+        "Backend Node.js/Express de alto rendimiento"
       ],
-      result: "Arquitectura lista para implementar que elimina el trabajo manual y habilita reportes automáticos.",
-      gradient: "from-green-500/20 to-emerald-500/20"
+      result: "Arquitectura que elimina el trabajo manual y habilita reportes automáticos.",
+      gradient: "from-green-500/10 to-emerald-500/10"
     },
     {
-      title: "Herramienta BA React",
+      title: "Herramienta BA React Suite",
       tag: "Equipos de producto y tecnología",
       context: "Necesidad de un entorno unificado para ejecutar análisis de negocio estructurados.",
       work: [
-        "App React con módulos: MoSCoW, mapa de stakeholders",
-        "Mapeo de procesos y matriz de riesgos",
-        "User stories y tablero Kanban",
-        "Generador de flowcharts integrados"
+        "App React con módulos MoSCoW y Stakeholders",
+        "Mapeo de procesos y matriz de riesgos integrada",
+        "Generador de user stories y flowcharts"
       ],
-      result: "Plataforma centralizada que acelera el discovery y estandariza la documentación de producto.",
-      gradient: "from-blue-500/20 to-cyan-500/20"
+      result: "Plataforma centralizada que acelera el discovery de producto.",
+      gradient: "from-blue-500/10 to-cyan-500/10"
     }
   ];
 
   return (
-    <section id="cases" className="py-24 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
+    <section id="cases" className="py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="mb-20">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
+            className="text-4xl md:text-5xl font-black tracking-tight mb-6"
           >
-            Casos de Trabajo
+            Casos de <span className="text-gradient">Trabajo</span>
           </motion.h2>
           <motion.div 
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="w-20 h-1 bg-primary rounded-full"
+            className="w-24 h-1.5 bg-gradient-to-r from-primary to-accent rounded-full"
           ></motion.div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {cases.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`flex flex-col h-full ${
-                index === 2 ? "lg:col-span-2 lg:w-1/2 lg:mx-auto" : ""
+                index === 2 ? "lg:col-span-2 lg:w-3/4 lg:mx-auto" : ""
               }`}
             >
-              <SpotlightCard className="h-full p-8 flex flex-col relative overflow-hidden group">
+              <SpotlightCard className="h-full p-10 flex flex-col relative group overflow-hidden">
                 {/* Decorative background gradient */}
-                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${item.gradient} rounded-full blur-3xl -mr-20 -mt-20 opacity-50 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${item.gradient} rounded-full blur-3xl -mr-20 -mt-20 group-hover:opacity-100 transition-opacity duration-700`}></div>
                 
-                <div className="mb-6 relative z-10">
-                  <span className="inline-block px-3 py-1 text-xs font-medium text-primary bg-primary/10 rounded-full mb-4 border border-primary/20">
+                <div className="mb-8 relative z-10">
+                  <span className="inline-block px-4 py-1 text-xs font-bold text-primary bg-primary/10 rounded-full mb-6 border border-primary/20 tracking-wider uppercase">
                     {item.tag}
                   </span>
-                  <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    <strong className="text-white font-medium">Contexto:</strong> {item.context}
+                  <h3 className="text-3xl font-black text-white mb-6 tracking-tight group-hover:text-primary transition-colors">{item.title}</h3>
+                  <p className="text-lg text-muted-foreground/90 leading-relaxed">
+                    <span className="text-white font-semibold">Contexto:</span> {item.context}
                   </p>
                 </div>
                 
-                <div className="mb-8 flex-grow relative z-10">
-                  <strong className="text-white font-medium block mb-3">Trabajo realizado:</strong>
-                  <ul className="space-y-3">
+                <div className="mb-10 flex-grow relative z-10">
+                  <span className="text-white font-bold block mb-4 uppercase text-xs tracking-[0.2em] opacity-50">Impacto Realizado</span>
+                  <ul className="space-y-4">
                     {item.work.map((workLine, i) => (
-                      <li key={i} className="flex items-start text-muted-foreground">
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0 shadow-[0_0_8px_rgba(45,212,191,0.8)]"></span>
-                        <span className="leading-relaxed">{workLine}</span>
-                      </li>
+                      <motion.li 
+                        key={i} 
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 * i + 0.3 }}
+                        className="flex items-start text-muted-foreground group-hover:text-muted-foreground/100 transition-colors"
+                      >
+                        <div className="h-2 w-2 rounded-full bg-primary mt-2.5 mr-4 flex-shrink-0 shadow-[0_0_10px_rgba(45,212,191,0.6)] group-hover:scale-125 transition-transform"></div>
+                        <span className="leading-relaxed font-medium">{workLine}</span>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="pt-6 border-t border-white/10 mt-auto relative z-10">
-                  <p className="text-primary font-medium leading-relaxed">
-                    <span className="text-white font-semibold mr-2">Resultado:</span>
-                    {item.result}
-                  </p>
+                <div className="pt-8 border-t border-white/5 mt-auto relative z-10">
+                  <div className="p-4 rounded-xl bg-primary/5 border border-primary/10 group-hover:bg-primary/10 transition-colors">
+                    <p className="text-primary font-bold leading-relaxed text-lg">
+                      <span className="text-white font-black mr-2">Resultado:</span>
+                      {item.result}
+                    </p>
+                  </div>
                 </div>
               </SpotlightCard>
             </motion.div>

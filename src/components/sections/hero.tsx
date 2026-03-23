@@ -1,5 +1,5 @@
-import { motion } from "motion/react";
-import { ArrowDown, Aperture } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowDown, Aperture, Sparkles, Zap, Target } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const typewriterWords = [
@@ -9,6 +9,26 @@ const typewriterWords = [
   "Transformación digital",
   "Optimización de procesos",
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 export function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -21,153 +41,176 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-      
-      {/* Floating Orbs - Animated */}
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-          x: [0, 50, 0],
-          y: [0, -50, 0]
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-[100px] pointer-events-none mix-blend-screen"
-      />
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.5, 1],
-          opacity: [0.2, 0.4, 0.2],
-          x: [0, -50, 0],
-          y: [0, 50, 0]
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen"
-      />
-
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-        {/* Availability Badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, type: "spring" }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-sm font-medium mb-8 shadow-lg shadow-black/20"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-          </span>
-          <span className="text-white/90">Disponible para nuevos proyectos</span>
-        </motion.div>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-primary font-semibold tracking-widest uppercase text-xs sm:text-sm mb-6"
-        >
-          Ezequiel Vecchio | Business Analyst & Consultor de Tecnología
-        </motion.p>
-
-        {/* Main Title with Icon */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6"
-        >
-          <div className="relative flex items-center justify-center rounded-3xl bg-gradient-to-br from-primary to-blue-500 shadow-2xl shadow-primary/30 w-20 h-20 md:w-28 md:h-28">
-            <Aperture className="text-white w-10 h-10 md:w-14 md:h-14" strokeWidth={2.5} />
-          </div>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter drop-shadow-2xl">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">F</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Vision</span>
-          </h1>
-        </motion.div>
-
-        {/* Description & Typewriter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-xl md:text-3xl text-muted-foreground max-w-3xl mx-auto mb-12 h-24 md:h-20"
-        >
-          <p className="font-light">Conecto tu negocio con soluciones reales.</p>
-          <div className="font-medium text-white mt-2 h-10 overflow-hidden relative flex justify-center">
-            <motion.div
-              key={currentWordIndex}
-              initial={{ y: 40, opacity: 0, filter: "blur(10px)" }}
-              animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-              exit={{ y: -40, opacity: 0, filter: "blur(10px)" }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="absolute w-full text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-300"
-            >
-              {typewriterWords[currentWordIndex]}
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 mb-20 w-full sm:w-auto"
-        >
-          <a
-            href="#cases"
-            className="group relative inline-flex items-center justify-center rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary text-primary-foreground shadow-[0_0_40px_-10px_rgba(45,212,191,0.5)] hover:shadow-[0_0_60px_-15px_rgba(45,212,191,0.7)] h-14 px-8 overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-            <span className="relative z-10">Ver casos de trabajo</span>
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 text-white shadow-sm h-14 px-8"
-          >
-            Hablemos
-          </a>
-        </motion.div>
-
-        {/* Stats Row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-white/10 w-full max-w-3xl"
-        >
-          <div className="flex flex-col items-center group">
-            <span className="text-4xl font-bold text-white mb-1 group-hover:text-primary transition-colors">5+</span>
-            <span className="text-sm text-muted-foreground uppercase tracking-wider">Años experiencia</span>
-          </div>
-          <div className="flex flex-col items-center group">
-            <span className="text-4xl font-bold text-white mb-1 group-hover:text-primary transition-colors">20+</span>
-            <span className="text-sm text-muted-foreground uppercase tracking-wider">Proyectos</span>
-          </div>
-          <div className="flex flex-col items-center group">
-            <span className="text-4xl font-bold text-white mb-1 group-hover:text-primary transition-colors">100%</span>
-            <span className="text-sm text-muted-foreground uppercase tracking-wider">Clientes satisfechos</span>
-          </div>
-        </motion.div>
+    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-12 overflow-hidden bg-background">
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 z-0">
+        {/* Animated Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+        
+        {/* Premium Glow Orbs */}
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            x: [0, 100, 0],
+            y: [0, -50, 0]
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen opacity-50"
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.3, 1],
+            x: [0, -80, 0],
+            y: [0, 100, 0]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-[-15%] right-[-5%] w-[600px] h-[600px] bg-accent/15 rounded-full blur-[140px] pointer-events-none mix-blend-screen opacity-40"
+        />
       </div>
 
-      {/* Scroll Indicator */}
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center"
+      >
+        {/* Availability Badge */}
+        <motion.div
+          variants={itemVariants}
+          className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl text-xs sm:text-sm font-medium mb-10 shadow-2xl shadow-primary/5 group"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          <span className="text-white/80 group-hover:text-primary transition-colors">Disponible para nuevos proyectos estratégicos</span>
+        </motion.div>
+
+        {/* Brand Icon & Heading */}
+        <motion.div variants={itemVariants} className="mb-10 relative group">
+          <motion.div 
+            whileHover={{ rotate: 180 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="relative flex items-center justify-center rounded-3xl bg-gradient-to-br from-primary via-primary/80 to-accent shadow-[0_0_50px_-12px_rgba(45,212,191,0.5)] w-24 h-24 md:w-32 md:h-32 mx-auto mb-8"
+          >
+            <Aperture className="text-white w-12 h-12 md:w-16 md:h-16" strokeWidth={1.5} />
+            <div className="absolute inset-0 rounded-3xl bg-white/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </motion.div>
+          
+          <h1 className="text-7xl md:text-9xl font-black tracking-tight leading-[0.9] select-none">
+            <span className="text-white drop-shadow-sm">F</span>
+            <span className="text-gradient">Vision</span>
+          </h1>
+          
+          <motion.p 
+            variants={itemVariants}
+            className="mt-6 text-sm md:text-base font-medium tracking-[0.3em] text-muted-foreground uppercase opacity-80"
+          >
+            Ezequiel Vecchio | Business Analyst
+          </motion.p>
+        </motion.div>
+
+        {/* Dynamic Typewriter Quote */}
+        <motion.div
+          variants={itemVariants}
+          className="relative max-w-4xl mx-auto mb-16"
+        >
+          <h2 className="text-2xl md:text-4xl font-light text-white/90 leading-tight">
+            Transfórmamos datos en <span className="italic font-normal">decisiones inteligentes</span>
+          </h2>
+          <div className="h-12 md:h-16 mt-4 flex justify-center items-center overflow-hidden">
+            <motion.p
+              key={currentWordIndex}
+              initial={{ y: 50, opacity: 0, scale: 0.8 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              exit={{ y: -50, opacity: 0, scale: 0.8 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 200, 
+                damping: 25 
+              }}
+              className="text-2xl md:text-5xl font-bold text-gradient px-4"
+            >
+              {typewriterWords[currentWordIndex]}
+            </motion.p>
+          </div>
+        </motion.div>
+
+        {/* Strategic CTAs */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row gap-5 mb-24 w-full sm:w-auto"
+        >
+          <motion.a
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            href="#cases"
+            className="relative inline-flex items-center justify-center rounded-2xl text-base font-bold transition-all bg-primary text-primary-foreground shadow-[0_20px_40px_-15px_rgba(45,212,191,0.4)] h-16 px-10 overflow-hidden group"
+          >
+            <div className="absolute inset-0 bg-white/10 translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+            <Sparkles className="mr-2 h-5 w-5" />
+            <span>Explorar Casos de Éxito</span>
+          </motion.a>
+          
+          <motion.a
+            whileHover={{ scale: 1.05, y: -2, backgroundColor: "rgba(255,255,255,0.1)" }}
+            whileTap={{ scale: 0.98 }}
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-2xl text-base font-bold transition-all border border-white/10 bg-white/5 backdrop-blur-md text-white h-16 px-10"
+          >
+            Hablemos hoy
+          </motion.a>
+        </motion.div>
+
+        {/* High-Impact Trust Metrics */}
+        <motion.div
+          variants={itemVariants}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-6 pt-12 border-t border-white/5 w-full max-w-4xl"
+        >
+          <div className="flex items-center gap-4 group justify-center sm:justify-start">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+              <Zap size={24} />
+            </div>
+            <div className="text-left">
+              <p className="text-3xl font-black text-white">5+</p>
+              <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-bold">Años de Expertise</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 group justify-center">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+              <Target size={24} />
+            </div>
+            <div className="text-left">
+              <p className="text-3xl font-black text-white">20+</p>
+              <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-bold">Proyectos Escalados</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 group justify-center sm:justify-end">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+              <Sparkles size={24} />
+            </div>
+            <div className="text-left">
+              <p className="text-3xl font-black text-white">100%</p>
+              <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-bold">Satisfacción Real</p>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Futuristic Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground"
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-muted-foreground"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] font-medium">Scroll</span>
+        <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          className="p-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm"
+          animate={{ y: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          className="p-1"
         >
-          <ArrowDown className="h-4 w-4 text-primary" />
+          <ArrowDown className="h-5 w-5 text-primary/50" />
         </motion.div>
       </motion.div>
     </section>

@@ -1,16 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: oklch(0.13 0.02 250);
-  --color-foreground: oklch(0.95 0 0);
-  --color-primary: oklch(0.75 0.15 185);
-  --color-primary-foreground: oklch(0.13 0.02 250);
-  --color-card: oklch(0.16 0.02 250);
-  --color-border: oklch(0.25 0.02 250);
-  --color-muted: oklch(0.25 0.02 250);
-  --color-muted-foreground: oklch(0.70 0.02 250);
+  --color-background: oklch(0.12 0.015 250); /* Deeper Night Blue */
+  --color-foreground: oklch(0.98 0.01 250); /* Crystal White */
+  --color-primary: oklch(0.78 0.18 190);    /* Vibrant Cyan Pearl */
+  --color-primary-foreground: oklch(0.12 0.015 250);
+  --color-accent: oklch(0.85 0.12 160);     /* Soft Emerald Accent */
+  --color-card: oklch(0.16 0.02 250 / 0.7);  /* Transparent Card */
+  --color-border: oklch(0.25 0.03 250 / 0.5); /* Subtle Glass Border */
+  --color-muted: oklch(0.20 0.02 250);
+  --color-muted-foreground: oklch(0.75 0.03 250);
   
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+.glass-navbar {
+  @apply backdrop-blur-xl bg-background/70 border-b border-border;
+}
+
+.glass-card {
+  @apply backdrop-blur-lg bg-card border border-border rounded-2xl shadow-2xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
 }
 
 body {

@@ -10,7 +10,7 @@ interface SpotlightCardProps {
 export function SpotlightCard({ 
   children, 
   className, 
-  spotlightColor = "rgba(45, 212, 191, 0.15)" // Teal color with low opacity
+  spotlightColor = "rgba(45, 212, 191, 0.1)" // Refined opacity
 }: SpotlightCardProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -29,16 +29,18 @@ export function SpotlightCard({
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
       className={cn(
-        "relative overflow-hidden rounded-2xl bg-card border border-border transition-colors hover:border-primary/30",
+        "glass-card relative overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-primary/5 group",
         className
       )}
     >
       <div
-        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 z-0"
+        className="pointer-events-none absolute -inset-px opacity-0 transition duration-500 z-0 bg-[radial-gradient(800px_circle_at_var(--x)_var(--y),var(--color),transparent_40%)]"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
-        }}
+          "--x": `${position.x}px`,
+          "--y": `${position.y}px`,
+          "--color": spotlightColor,
+        } as any}
       />
       <div className="relative z-10 h-full">
         {children}

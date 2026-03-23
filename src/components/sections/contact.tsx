@@ -1,103 +1,275 @@
-import { motion } from "framer-motion";
-import { Send, Phone } from "lucide-react";
+import React, { useState } from "react";
+import { motion } from "motion/react";
+import { Mail, Linkedin, Github, Send, Loader2, CheckCircle2, Terminal } from "lucide-react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db, auth } from "../../firebase";
 
-const LinkedInSVG = () => (
-  <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-  </svg>
-);
+enum OperationType {
+  CREATE = 'create',
+  UPDATE = 'update',
+  DELETE = 'delete',
+  LIST = 'list',
+  GET = 'get',
+  WRITE = 'write',
+}
 
-const GitHubSVG = () => (
-  <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-  </svg>
-);
+interface FirestoreErrorInfo {
+  error: string;
+  operationType: OperationType;
+  path: string | null;
+  authInfo: {
+    userId: string | undefined;
+    email: string | undefined;
+    emailVerified: boolean | undefined;
+    isAnonymous: boolean | undefined;
+    tenantId: string | null | undefined;
+    providerInfo: {
+      providerId: string;
+      displayName: string | null;
+      email: string | null;
+      photoUrl: string | null;
+    }[];
+  }
+}
+
+function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
+  const errInfo: FirestoreErrorInfo = {
+    error: error instanceof Error ? error.message : String(error),
+    authInfo: {
+      userId: auth.currentUser?.uid,
+      email: auth.currentUser?.email || undefined,
+      emailVerified: auth.currentUser?.emailVerified,
+      isAnonymous: auth.currentUser?.isAnonymous,
+      tenantId: auth.currentUser?.tenantId,
+      providerInfo: auth.currentUser?.providerData.map(provider => ({
+        providerId: provider.providerId,
+        displayName: provider.displayName,
+        email: provider.email,
+        photoUrl: provider.photoURL
+      })) || []
+    },
+    operationType,
+    path
+  }
+  console.error('Firestore Error: ', JSON.stringify(errInfo));
+  throw new Error(JSON.stringify(errInfo));
+}
 
 export function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: ""
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const path = "leads";
+      const payload: any = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        createdAt: serverTimestamp()
+      };
+      
+      if (formData.company.trim() !== "") {
+        payload.company = formData.company;
+      }
+
+      await addDoc(collection(db, path), payload).catch(error => {
+        handleFirestoreError(error, OperationType.CREATE, path);
+      });
+      
+      setStatus("success");
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+      setErrorMessage("Hubo un error al enviar tu mensaje. Por favor, intenta de nuevo.");
+    }
+  };
+
   return (
-    <section id="contact" className="py-32 relative overflow-hidden bg-background">
-      {/* Premium Gradient Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <div className="absolute bottom-0 left-0 w-full h-[600px] bg-gradient-to-t from-primary/10 to-transparent"></div>
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2"></div>
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="glass-card p-12 md:p-20 text-center relative overflow-hidden group shadow-[0_0_100px_-20px_rgba(45,212,191,0.2)]"
-        >
-          {/* Internal decorative elements */}
-          <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-
+    <section id="contact" className="py-32 bg-background border-b border-white/5 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-white/10 rounded-3xl overflow-hidden glass-panel bg-slate-900/50">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ duration: 0.4 }}
+            className="flex flex-col p-8 lg:p-16 border-b lg:border-b-0 lg:border-r border-white/10 bg-slate-900/80 relative"
           >
-            <h2 className="text-5xl md:text-7xl font-black tracking-tight mb-8 leading-tight">
-              ¿Listo para <span className="text-gradient">optimizar</span> tu negocio?
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-50"></div>
+            
+            <span className="text-sm font-sans font-semibold uppercase tracking-wider text-primary mb-6 block w-fit">
+              Contacto
+            </span>
+            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-white mb-8">
+              ¿Listo para <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">escalar tu negocio?</span>
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground/90 mb-14 max-w-3xl mx-auto leading-relaxed font-medium">
-              Hablemos de tus procesos, cuellos de botella y cómo la tecnología puede ayudarte a escalar de forma estructurada y altamente rentable.
+            <p className="text-lg text-slate-400 mb-16 font-sans leading-relaxed max-w-md">
+              Hablemos de tus procesos, cuellos de botella y cómo la tecnología puede ayudarte a crecer de forma estructurada.
             </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
-              <motion.a
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                href="mailto:ezigve@gmail.com"
-                className="inline-flex items-center justify-center rounded-2xl text-lg font-bold transition-all bg-primary text-primary-foreground shadow-2xl shadow-primary/20 h-16 px-10 w-full sm:w-auto overflow-hidden group/btn"
-              >
-                <div className="absolute inset-0 bg-white/10 -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500"></div>
-                <Send className="mr-3 h-5 w-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                <span className="relative z-10">Enviar un email</span>
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.05, y: -5, backgroundColor: "rgba(255,255,255,0.08)" }}
-                whileTap={{ scale: 0.95 }}
-                href="https://wa.me/541126676941"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-2xl text-lg font-bold transition-all border border-white/10 bg-white/5 backdrop-blur-md text-white shadow-xl h-16 px-10 w-full sm:w-auto"
-              >
-                <Phone className="mr-3 h-5 w-5 text-primary" />
-                Agendar llamada
-              </motion.a>
+            
+            <div className="space-y-12 mb-16 flex-grow">
+              <div className="flex flex-col gap-3">
+                <p className="text-sm font-sans font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-primary" />
+                  Email Directo
+                </p>
+                <a href="mailto:ezequiel@fvision.com" className="text-xl md:text-2xl font-display font-bold text-white hover:text-primary transition-colors inline-block w-fit relative group">
+                  ezequiel@fvision.com
+                  <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              </div>
             </div>
 
-            <div className="flex justify-center gap-8 border-t border-white/5 pt-12">
-              <motion.a
-                whileHover={{ y: -5, color: "oklch(var(--color-primary))" }}
-                href="https://www.linkedin.com/in/ezigve/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground/60 transition-all duration-300 flex flex-col items-center gap-2 group"
-              >
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/5 group-hover:border-primary/30 transition-all">
-                  <LinkedInSVG />
-                </div>
-                <span className="text-xs font-bold uppercase tracking-widest">LinkedIn</span>
-              </motion.a>
-              <motion.a
-                whileHover={{ y: -5, color: "oklch(var(--color-primary))" }}
-                href="https://github.com/Evecchio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground/60 transition-all duration-300 flex flex-col items-center gap-2 group"
-              >
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/5 group-hover:border-primary/30 transition-all">
-                  <GitHubSVG />
-                </div>
-                <span className="text-xs font-bold uppercase tracking-widest">GitHub</span>
-              </motion.a>
+            <div className="flex gap-4">
+              <a href="#" className="text-slate-400 hover:text-primary bg-slate-800/50 hover:bg-primary/10 p-4 rounded-xl transition-all duration-300 border border-white/5 hover:border-primary/50 group">
+                <span className="sr-only">LinkedIn</span>
+                <Linkedin className="h-6 w-6 group-hover:scale-110 transition-transform" />
+              </a>
+              <a href="#" className="text-slate-400 hover:text-secondary bg-slate-800/50 hover:bg-secondary/10 p-4 rounded-xl transition-all duration-300 border border-white/5 hover:border-secondary/50 group">
+                <span className="sr-only">GitHub</span>
+                <Github className="h-6 w-6 group-hover:scale-110 transition-transform" />
+              </a>
             </div>
           </motion.div>
-        </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="flex flex-col justify-center p-8 lg:p-16 bg-slate-800/30 relative"
+          >
+            {status === "success" ? (
+              <div className="h-full flex flex-col items-center justify-center text-center py-12 glass-panel rounded-2xl p-8 border border-primary/30">
+                <div className="relative mb-8">
+                  <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full"></div>
+                  <CheckCircle2 className="h-24 w-24 text-primary relative z-10" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 tracking-tight">Mensaje <br/><span className="text-primary">Enviado</span></h3>
+                <p className="text-slate-400 mb-12 font-sans leading-relaxed max-w-sm">
+                  Gracias por contactarnos. Analizaremos tu solicitud y nos pondremos en contacto a la brevedad.
+                </p>
+                <button 
+                  onClick={() => setStatus("idle")}
+                  className="px-8 py-4 bg-transparent text-primary font-sans font-semibold text-sm uppercase tracking-wider hover:bg-primary/10 transition-all duration-300 border border-primary/50 rounded-xl hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]"
+                >
+                  Enviar otro mensaje
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div className="space-y-3 relative group">
+                    <label htmlFor="name" className="text-sm font-sans font-semibold text-slate-400 flex items-center gap-2">
+                      Nombre *
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      maxLength={100}
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full bg-slate-900/50 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary/50 outline-none transition-all duration-300 text-white font-sans text-base p-4 rounded-xl placeholder:text-slate-600"
+                      placeholder="Tu nombre"
+                    />
+                  </div>
+                  <div className="space-y-3 relative group">
+                    <label htmlFor="email" className="text-sm font-sans font-semibold text-slate-400 flex items-center gap-2">
+                      Email *
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-slate-900/50 border border-white/10 focus:border-secondary focus:ring-1 focus:ring-secondary/50 outline-none transition-all duration-300 text-white font-sans text-base p-4 rounded-xl placeholder:text-slate-600"
+                      placeholder="tu@email.com"
+                    />
+                  </div>
+                </div>
+                
+                <div className="space-y-3 relative group">
+                  <label htmlFor="company" className="text-sm font-sans font-semibold text-slate-400 flex items-center gap-2">
+                    Empresa (Opcional)
+                  </label>
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    maxLength={100}
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full bg-slate-900/50 border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent/50 outline-none transition-all duration-300 text-white font-sans text-base p-4 rounded-xl placeholder:text-slate-600"
+                    placeholder="Nombre de tu empresa"
+                  />
+                </div>
+
+                <div className="space-y-3 relative group">
+                  <label htmlFor="message" className="text-sm font-sans font-semibold text-slate-400 flex items-center gap-2">
+                    Mensaje *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    maxLength={2000}
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full bg-slate-900/50 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary/50 outline-none transition-all duration-300 text-white font-sans text-base p-4 rounded-xl placeholder:text-slate-600 resize-none"
+                    placeholder="¿En qué podemos ayudarte?"
+                  />
+                </div>
+
+                {status === "error" && (
+                  <div className="p-4 bg-red-500/10 text-red-400 font-sans text-sm border border-red-500/50 rounded-xl flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                    {errorMessage}
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 text-sm font-sans font-semibold transition-all duration-300 bg-primary text-white rounded-xl hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] disabled:opacity-70 disabled:cursor-not-allowed mt-4"
+                >
+                  {status === "loading" ? (
+                    <>
+                      <Loader2 className="mr-3 h-5 w-5 animate-spin" />
+                      Enviando...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-3 h-5 w-5" />
+                      Enviar Mensaje
+                    </>
+                  )}
+                </button>
+              </form>
+            )}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

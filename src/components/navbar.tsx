@@ -2,83 +2,76 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Logo } from "@/components/ui/logo";
-import { motion, AnimatePresence } from "framer-motion";
+import { ChatModal } from "@/components/chat-modal";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+    const handleOpenChat = () => setIsChatOpen(true);
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("open-chat", handleOpenChat);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("open-chat", handleOpenChat);
+    };
   }, []);
 
   const navLinks = [
-    { name: "Sobre mí", href: "#about" },
     { name: "Servicios", href: "#services" },
-    { name: "Casos", href: "#cases" },
-    { name: "Contacto", href: "#contact" },
+    { name: "Sobre Mí", href: "#about" },
+    { name: "Casos de Éxito", href: "#cases" },
+    { name: "Testimonios", href: "#testimonials" },
   ];
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+    <header
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
+        "fixed top-0 w-full z-50 transition-all duration-300 border-b border-white/5",
         isScrolled
-          ? "glass-navbar py-3 shadow-lg shadow-black/20"
-          : "bg-transparent py-5"
+          ? "bg-background/80 backdrop-blur-xl shadow-lg"
+          : "bg-transparent"
       )}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-            className="flex-shrink-0"
-          >
-            <Logo iconSize={36} textSize="text-2xl" />
-          </motion.div>
+          <div className="flex-shrink-0">
+            <Logo showText={false} iconSize={48} className="md:hidden" />
+            <Logo showText={false} iconSize={64} className="hidden md:flex" />
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link, i) => (
-              <motion.a
+            {navLinks.map((link) => (
+              <a
                 key={link.name}
                 href={link.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * i + 0.5 }}
-                whileHover={{ y: -2 }}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                className="font-sans text-sm font-medium text-slate-300 hover:text-white transition-colors"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </motion.a>
+              </a>
             ))}
-            <motion.a
-              href="#contact"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center rounded-full text-sm font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary text-primary-foreground shadow-lg shadow-primary/20 h-10 px-6 py-2 hover:bg-primary/90"
+            <button
+              onClick={() => setIsChatOpen(true)}
+              className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-full font-sans font-medium text-sm transition-all active:scale-95 duration-150 ease-in-out ml-2 shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]"
             >
-              Hablemos
-            </motion.a>
+              Presupuesto Automático
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center h-full">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-muted-foreground hover:text-white focus:outline-none p-2"
+              className="text-slate-300 hover:text-white focus:outline-none"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -91,36 +84,35 @@ export function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-navbar overflow-hidden"
-          >
-            <div className="px-4 pt-2 pb-6 space-y-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-3 py-3 rounded-xl text-base font-medium text-muted-foreground hover:text-white hover:bg-primary/10 transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-white/5">
+          <div className="flex flex-col px-4 py-6 space-y-4">
+            {navLinks.map((link) => (
               <a
-                href="#contact"
+                key={link.name}
+                href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center mt-4 rounded-xl text-base font-bold bg-primary text-primary-foreground px-3 py-4 shadow-lg shadow-primary/20"
+                className="font-sans font-medium text-base text-slate-300 hover:text-white transition-colors px-2"
               >
-                Hablemos
+                {link.name}
               </a>
+            ))}
+            <div className="pt-4">
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsChatOpen(true);
+                }}
+                className="bg-primary text-white px-6 py-3 rounded-full font-sans font-medium text-sm text-center w-full shadow-[0_0_15px_rgba(59,130,246,0.3)]"
+              >
+                Presupuesto Automático
+              </button>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+          </div>
+        </div>
+      )}
+
+      <ChatModal isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
+    </header>
   );
 }

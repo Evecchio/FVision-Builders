@@ -2,22 +2,32 @@ import { Logo } from "@/components/ui/logo";
 
 export function Footer() {
   return (
-    <footer className="bg-background border-t border-border py-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer className="bg-background border-t border-white/5 py-16 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center">
-            <Logo iconSize={28} textSize="text-xl" />
+            <Logo iconSize={48} textSize="text-3xl" />
           </div>
           
-          <p className="text-sm text-muted-foreground text-center md:text-left">
-            © {new Date().getFullYear()} Ezequiel Vecchio. Todos los derechos reservados.
+          <div className="flex flex-wrap justify-center gap-8 text-sm font-sans font-semibold text-slate-400">
+            <a href="#services" className="hover:text-primary transition-colors">
+              Servicios
+            </a>
+            <a href="#about" className="hover:text-primary transition-colors">
+              Sobre Mí
+            </a>
+            <a href="#cases" className="hover:text-primary transition-colors">
+              Casos de Éxito
+            </a>
+            <a href="#testimonials" className="hover:text-primary transition-colors">
+              Testimonios
+            </a>
+          </div>
+
+          <p className="text-sm text-slate-500 font-sans text-center md:text-right">
+            © {new Date().getFullYear()} FVision. Todos los derechos reservados.
           </p>
-          
-          <div className="flex gap-6 text-sm font-medium text-muted-foreground">
-            <a href="#about" className="hover:text-white transition-colors">Sobre mí</a>
-            <a href="#services" className="hover:text-white transition-colors">Servicios</a>
-            <a href="#cases" className="hover:text-white transition-colors">Casos</a>
-          </div>
         </div>
       </div>
     </footer>

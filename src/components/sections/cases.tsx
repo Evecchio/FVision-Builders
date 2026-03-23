@@ -1,120 +1,127 @@
-import { motion } from "framer-motion";
-import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { motion } from "motion/react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export function Cases() {
   const cases = [
     {
-      title: "Ivana Design: Diagnóstico de funnel",
-      tag: "E-commerce de moda / indumentaria",
-      context: "Tienda de indumentaria deportiva en Tiendanube. Tráfico existente pero baja conversión.",
+      title: "Optimización de Funnel E-commerce",
+      tag: "E-commerce / Conversión",
+      context: "Tienda de indumentaria deportiva con tráfico existente pero baja tasa de conversión en el checkout.",
       work: [
         "Análisis completo del funnel con datos reales de GA4",
-        "Identificación de fricciones críticas",
+        "Identificación de fricciones críticas en el proceso de pago",
         "Rediseño de arquitectura del tema visual (Twig/SCSS)",
-        "Documentación técnica estructurada"
+        "Documentación técnica: REPO-MAP, TECH-CONTRACTS"
       ],
-      result: "Hoja de ruta con fases claras y criterios medibles de éxito.",
-      gradient: "from-pink-500/10 to-purple-500/10"
+      result: "Hoja de ruta con fases claras, base técnica lista para escalar y criterios medibles de éxito."
     },
     {
-      title: "Automatización de pedidos por WhatsApp con AWS",
-      tag: "PyMEs con ventas por mensajería",
+      title: "Automatización de Pedidos por WhatsApp",
+      tag: "Pymes / Mensajería",
       context: "Comercios que reciben pedidos por WhatsApp de forma manual, sin registro ni seguimiento.",
       work: [
-        "Arquitectura serverless: WhatsApp Business API → AWS",
+        "Arquitectura serverless: WhatsApp API → API Gateway → Lambda → SQS → DynamoDB",
         "Esquema PostgreSQL para gestión de pedidos",
-        "Backend Node.js/Express de alto rendimiento"
+        "Backend Node.js/Express"
       ],
-      result: "Arquitectura que elimina el trabajo manual y habilita reportes automáticos.",
-      gradient: "from-green-500/10 to-emerald-500/10"
+      result: "Arquitectura lista para implementar que elimina el trabajo manual y habilita reportes automáticos."
     },
     {
-      title: "Herramienta BA React Suite",
-      tag: "Equipos de producto y tecnología",
+      title: "Herramienta BA React",
+      tag: "Equipos de Producto",
       context: "Necesidad de un entorno unificado para ejecutar análisis de negocio estructurados.",
       work: [
-        "App React con módulos MoSCoW y Stakeholders",
-        "Mapeo de procesos y matriz de riesgos integrada",
-        "Generador de user stories y flowcharts"
+        "App React con módulos: MoSCoW, mapa de stakeholders",
+        "Mapeo de procesos y matriz de riesgos",
+        "User stories y tablero Kanban",
+        "Generador de flowcharts integrados"
       ],
-      result: "Plataforma centralizada que acelera el discovery de producto.",
-      gradient: "from-blue-500/10 to-cyan-500/10"
+      result: "Plataforma centralizada que acelera el discovery y estandariza la documentación de producto."
     }
   ];
 
   return (
-    <section id="cases" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="mb-20">
-          <motion.h2 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+    <section id="cases" className="py-32 relative overflow-hidden bg-background border-b border-white/5">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black tracking-tight mb-6"
           >
-            Casos de <span className="text-gradient">Trabajo</span>
-          </motion.h2>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="w-24 h-1.5 bg-gradient-to-r from-primary to-accent rounded-full"
-          ></motion.div>
+            <span className="text-sm font-sans font-semibold uppercase tracking-wider text-primary mb-4 block">
+              Casos de Éxito
+            </span>
+            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">
+              Resultados reales en <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">empresas reales</span>
+            </h2>
+            <p className="text-lg font-sans text-slate-400 leading-relaxed">
+              Implementaciones donde la arquitectura de sistemas y el análisis de datos convergen para generar impacto medible.
+            </p>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="flex flex-col gap-8">
           {cases.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`flex flex-col h-full ${
-                index === 2 ? "lg:col-span-2 lg:w-3/4 lg:mx-auto" : ""
-              }`}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch glass-panel rounded-2xl border border-white/10 overflow-hidden hover:border-primary/50 transition-all duration-300 bg-slate-900/50"
             >
-              <SpotlightCard className="h-full p-10 flex flex-col relative group overflow-hidden">
-                {/* Decorative background gradient */}
-                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${item.gradient} rounded-full blur-3xl -mr-20 -mt-20 group-hover:opacity-100 transition-opacity duration-700`}></div>
-                
-                <div className="mb-8 relative z-10">
-                  <span className="inline-block px-4 py-1 text-xs font-bold text-primary bg-primary/10 rounded-full mb-6 border border-primary/20 tracking-wider uppercase">
+              {/* Oversized Number */}
+              <div className="lg:col-span-2 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-white/10 p-8 bg-slate-800/30 text-slate-600 group-hover:bg-primary/5 group-hover:text-primary transition-colors relative overflow-hidden">
+                <span className="font-display font-black text-7xl md:text-8xl leading-none relative z-10 opacity-50">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+              </div>
+
+              {/* Content */}
+              <div className="lg:col-span-10 flex flex-col p-8 lg:p-10 relative">
+                <div className="mb-8">
+                  <span className="inline-block text-xs font-sans font-semibold text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full uppercase tracking-wider mb-4">
                     {item.tag}
                   </span>
-                  <h3 className="text-3xl font-black text-white mb-6 tracking-tight group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-lg text-muted-foreground/90 leading-relaxed">
-                    <span className="text-white font-semibold">Contexto:</span> {item.context}
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-base font-sans text-slate-400 leading-relaxed max-w-3xl">
+                    <span className="text-white font-semibold mr-2">Contexto:</span> {item.context}
                   </p>
                 </div>
                 
-                <div className="mb-10 flex-grow relative z-10">
-                  <span className="text-white font-bold block mb-4 uppercase text-xs tracking-[0.2em] opacity-50">Impacto Realizado</span>
-                  <ul className="space-y-4">
-                    {item.work.map((workLine, i) => (
-                      <motion.li 
-                        key={i} 
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.1 * i + 0.3 }}
-                        className="flex items-start text-muted-foreground group-hover:text-muted-foreground/100 transition-colors"
-                      >
-                        <div className="h-2 w-2 rounded-full bg-primary mt-2.5 mr-4 flex-shrink-0 shadow-[0_0_10px_rgba(45,212,191,0.6)] group-hover:scale-125 transition-transform"></div>
-                        <span className="leading-relaxed font-medium">{workLine}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-white/10">
+                  <div>
+                    <strong className="text-sm font-sans font-semibold text-white uppercase tracking-wider block mb-4 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                      Ejecución
+                    </strong>
+                    <ul className="space-y-3">
+                      {item.work.map((workLine, i) => (
+                        <li key={i} className="flex items-start text-sm font-sans text-slate-400 leading-relaxed">
+                          <span className="text-primary mr-3 mt-1">•</span>
+                          <span>{workLine}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                <div className="pt-8 border-t border-white/5 mt-auto relative z-10">
-                  <div className="p-4 rounded-xl bg-primary/5 border border-primary/10 group-hover:bg-primary/10 transition-colors">
-                    <p className="text-primary font-bold leading-relaxed text-lg">
-                      <span className="text-white font-black mr-2">Resultado:</span>
-                      {item.result}
-                    </p>
+                  <div>
+                    <strong className="text-sm font-sans font-semibold text-white uppercase tracking-wider block mb-4 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-secondary" />
+                      Resultado
+                    </strong>
+                    <div className="flex items-start gap-4 bg-slate-800/50 p-6 rounded-xl border border-white/5 group-hover:border-secondary/30 transition-colors">
+                      <p className="text-sm font-sans text-slate-300 leading-relaxed">
+                        {item.result}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </SpotlightCard>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -1,90 +1,73 @@
-import { Search, FileText, Target, Zap, Brain } from "lucide-react";
-import { motion } from "framer-motion";
-import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { Bot, Zap, Brain, Database, Network, Cpu, MessageSquare, Workflow } from "lucide-react";
+import { motion } from "motion/react";
 
 export function Services() {
   const services = [
     {
-      icon: <Search className="h-8 w-8 text-primary group-hover:text-white transition-colors" />,
-      title: "Diagnóstico de negocio",
-      desc: "Relevamiento de procesos, cuellos de botella, análisis de datos estratégicos.",
-      className: "md:col-span-2 md:row-span-1"
+      icon: <Bot className="h-8 w-8 text-primary" />,
+      title: "Agentes de IA",
+      desc: "Desarrollamos asistentes virtuales inteligentes capaces de resolver consultas complejas, agendar citas y atender a tus clientes 24/7 con lenguaje natural.",
+      color: "hover:border-primary/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
     },
     {
-      icon: <FileText className="h-8 w-8 text-primary group-hover:text-white transition-colors" />,
-      title: "Definición de requerimientos",
-      desc: "User stories, backlog y criterios de aceptación claros.",
-      className: "md:col-span-1 md:row-span-1"
+      icon: <Workflow className="h-8 w-8 text-secondary" />,
+      title: "Automatización con n8n",
+      desc: "Conectamos tus herramientas (CRM, ERP, Email, Slack) para eliminar tareas manuales. Flujos de trabajo eficientes que ahorran cientos de horas al mes.",
+      color: "hover:border-secondary/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]",
     },
     {
-      icon: <Target className="h-8 w-8 text-primary group-hover:text-white transition-colors" />,
-      title: "Priorización estratégica",
-      desc: "Roadmaps ejecutables enfocados en el ROI.",
-      className: "md:col-span-1 md:row-span-1"
+      icon: <Database className="h-8 w-8 text-accent" />,
+      title: "Sistemas RAG",
+      desc: "Chatbots entrenados con la base de conocimiento de tu empresa. Respuestas precisas basadas exclusivamente en tus documentos y manuales internos.",
+      color: "hover:border-accent/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]",
     },
     {
-      icon: <Zap className="h-8 w-8 text-primary group-hover:text-white transition-colors" />,
-      title: "Automatización e integración",
-      desc: "Flujos automatizados sobre arquitecturas escalables.",
-      className: "md:col-span-2 md:row-span-1"
-    },
-    {
-      icon: <Brain className="h-8 w-8 text-primary group-hover:text-white transition-colors" />,
-      title: "Proyectos con Inteligencia Artificial",
-      desc: "Agentes inteligentes y pipelines de datos de última generación.",
-      className: "md:col-span-3 md:row-span-1"
+      icon: <Brain className="h-8 w-8 text-primary" />,
+      title: "Consultoría Estratégica",
+      desc: "Analizamos los procesos de tu negocio para identificar cuellos de botella y oportunidades donde la Inteligencia Artificial puede generar el mayor ROI.",
+      color: "hover:border-primary/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
     },
   ];
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
-      {/* Background Decorative Element */}
-      <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -z-10 -translate-x-1/2"></div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="mb-20 text-center">
-          <motion.h2 
+    <section id="services" className="py-32 relative overflow-hidden bg-background border-b border-white/5">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black tracking-tight mb-6"
           >
-            Nuestros <span className="text-gradient">Servicios</span>
-          </motion.h2>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="w-24 h-1.5 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-8"
-          ></motion.div>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed"
-          >
-            Soluciones estructuradas diseñadas para escalar tu negocio mediante el uso inteligente de tecnología y datos.
-          </motion.p>
+            <span className="text-sm font-sans font-semibold uppercase tracking-wider text-primary mb-4 block">
+              Nuestras Soluciones
+            </span>
+            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">
+              Impulsa tu negocio con <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">tecnología de vanguardia</span>
+            </h2>
+            <p className="text-lg font-sans text-slate-400 leading-relaxed">
+              Diseñamos e implementamos sistemas inteligentes que trabajan por ti, permitiéndote enfocarte en lo que realmente importa: hacer crecer tu empresa.
+            </p>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={service.className}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className={`group relative glass-panel p-8 md:p-10 rounded-2xl border border-white/10 transition-all duration-300 flex flex-col h-full bg-slate-900/50 ${service.color}`}
             >
-              <SpotlightCard className="h-full p-10">
-                <div className="mb-8 p-5 bg-primary/10 rounded-2xl inline-block border border-primary/20 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-2xl shadow-primary/5">
-                  {service.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-primary transition-colors duration-300">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed group-hover:text-muted-foreground/90 transition-colors duration-300">{service.desc}</p>
-              </SpotlightCard>
+              <div className="mb-6 p-4 bg-slate-800/50 rounded-xl inline-flex w-fit border border-white/5 group-hover:scale-110 transition-transform duration-300">
+                {service.icon}
+              </div>
+              <div className="flex-1 flex flex-col">
+                <h3 className="text-2xl font-display font-bold text-white mb-4">{service.title}</h3>
+                <p className="text-base font-sans text-slate-400 leading-relaxed">{service.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>

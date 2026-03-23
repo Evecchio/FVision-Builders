@@ -1,0 +1,83 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "A contact form submission from a potential client.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the person contacting."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The email address of the person contacting."
+        },
+        "company": {
+          "type": "string",
+          "description": "The company name of the person contacting."
+        },
+        "message": {
+          "type": "string",
+          "description": "The message or inquiry."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp when the lead was created."
+        }
+      },
+      "required": ["name", "email", "message", "createdAt"]
+    },
+    "User": {
+      "title": "User",
+      "description": "A user who has subscribed/logged in via Google.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "The unique user ID from Firebase Auth."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The user's email address."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The user's full name."
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "The user's profile picture URL."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp when the user first logged in."
+        },
+        "lastLoginAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of the user's most recent login."
+        }
+      },
+      "required": ["uid", "email", "createdAt", "lastLoginAt"]
+    }
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": {
+        "$ref": "#/entities/Lead"
+      },
+      "description": "Collection of contact form submissions."
+    },
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/User"
+      },
+      "description": "Collection of subscribed users."
+    }
+  }
+}

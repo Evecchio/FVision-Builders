@@ -1,0 +1,86 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: leads
+    // Document ID: auto-generated
+    // Fields:
+    //   - name: string (required, 1-100 chars)
+    //   - email: string (required, valid email format)
+    //   - company: string (optional, 0-100 chars)
+    //   - message: string (required, 1-2000 chars)
+    //   - createdAt: timestamp (required)
+    //
+    // ===============================================================
+
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() &&
+        (request.auth.token.email == "ezigve@gmail.com" && request.auth.token.email_verified == true);
+    }
+
+    function isValidEmail(email) {
+      return email is string &&
+        email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function isValidLead(data) {
+      return data.keys().hasAll(['name', 'email', 'message', 'createdAt']) &&
+             data.keys().hasOnly(['name', 'email', 'company', 'message', 'createdAt']) &&
+             data.name is string && data.name.size() > 0 && data.name.size() <= 100 &&
+             isValidEmail(data.email) &&
+             data.message is string && data.message.size() > 0 && data.message.size() <= 2000 &&
+             (!('company' in data) || (data.company is string && data.company.size() <= 100)) &&
+             data.createdAt is timestamp;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isValidUser(data) {
+      return data.keys().hasAll(['uid', 'email', 'createdAt', 'lastLoginAt']) &&
+             data.keys().hasOnly(['uid', 'email', 'displayName', 'photoURL', 'createdAt', 'lastLoginAt']) &&
+             data.uid is string && data.uid.size() > 0 && data.uid.size() <= 128 &&
+             isValidEmail(data.email) &&
+             (!('displayName' in data) || (data.displayName is string && data.displayName.size() <= 100)) &&
+             (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 2000)) &&
+             data.createdAt is timestamp &&
+             data.lastLoginAt is timestamp;
+    }
+
+    match /leads/{leadId} {
+      // Anyone can submit a lead (unauthenticated or authenticated)
+      allow create: if isValidLead(request.resource.data);
+      
+      // Only admin can read, update, or delete leads
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /users/{userId} {
+      // Users can read their own data, admins can read all
+      allow read: if isOwner(userId) || isAdmin();
+      
+      // Users can create their own profile
+      allow create: if isOwner(userId) && 
+                    isValidUser(request.resource.data) && 
+                    request.resource.data.uid == userId;
+                    
+      // Users can update their own profile (e.g. lastLoginAt)
+      allow update: if isOwner(userId) && 
+                    isValidUser(request.resource.data) && 
+                    request.resource.data.uid == resource.data.uid &&
+                    request.resource.data.createdAt == resource.data.createdAt;
+                    
+      // Only admins can delete users
+      allow delete: if isAdmin();
+    }
+  }
+}

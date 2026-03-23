@@ -1,29 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-background: oklch(0.12 0.015 250); /* Deeper Night Blue */
-  --color-foreground: oklch(0.98 0.01 250); /* Crystal White */
-  --color-primary: oklch(0.78 0.18 190);    /* Vibrant Cyan Pearl */
-  --color-primary-foreground: oklch(0.12 0.015 250);
-  --color-accent: oklch(0.85 0.12 160);     /* Soft Emerald Accent */
-  --color-card: oklch(0.16 0.02 250 / 0.7);  /* Transparent Card */
-  --color-border: oklch(0.25 0.03 250 / 0.5); /* Subtle Glass Border */
-  --color-muted: oklch(0.20 0.02 250);
-  --color-muted-foreground: oklch(0.75 0.03 250);
+  --color-background: #020617; /* slate-950 */
+  --color-foreground: #f8fafc; /* slate-50 */
+  --color-primary: #3b82f6; /* blue-500 */
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #6366f1; /* indigo-500 */
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #8b5cf6; /* violet-500 */
+  --color-card: #0f172a; /* slate-900 */
+  --color-border: #1e293b; /* slate-800 */
+  --color-muted: #1e293b;
+  --color-muted-foreground: #94a3b8; /* slate-400 */
   
-  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
-}
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
-.glass-navbar {
-  @apply backdrop-blur-xl bg-background/70 border-b border-border;
-}
-
-.glass-card {
-  @apply backdrop-blur-lg bg-card border border-border rounded-2xl shadow-2xl;
-}
-
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  --animate-marquee: marquee 20s linear infinite;
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 }
 
 body {
@@ -31,13 +30,63 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Premium Noise Texture Overlay */
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted-foreground);
+}
+
+.glass-panel {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glow-effect {
+  position: relative;
+}
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.glow-effect:hover::before {
+  opacity: 1;
+}
+
+.bg-grid-pattern {
+  background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
 .bg-noise {
   position: fixed;
   top: 0;
@@ -46,21 +95,6 @@ html {
   height: 100vh;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.03;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-background);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary);
 }

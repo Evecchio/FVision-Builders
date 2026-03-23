@@ -1,154 +1,89 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Target, Lightbulb, MessageSquare, Zap } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+import { Target, Network, Shield, Zap } from "lucide-react";
 
 export function Why() {
-  const [activeTab, setActiveTab] = useState(0);
-
   const reasons = [
     {
       icon: Target,
-      title: "Enfoque en resultados",
-      desc: "No implemento tecnología por moda, sino para resolver problemas concretos que impacten en la rentabilidad. Cada iniciativa se mide por su ROI."
+      title: "Enfoque en Resultados",
+      desc: "No implementamos tecnología por moda, sino para resolver problemas concretos que impacten en la rentabilidad. Cada iniciativa se mide por su ROI.",
+      color: "hover:border-primary/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
+      textColor: "text-primary",
     },
     {
-      icon: Lightbulb,
-      title: "Visión integral",
-      desc: "Combino el entendimiento del negocio con el conocimiento técnico para crear soluciones viables y escalables, sin perder de vista el objetivo comercial."
+      icon: Network,
+      title: "Visión Integral",
+      desc: "Combinamos el entendimiento del negocio con el conocimiento técnico para crear soluciones viables y escalables, sin perder de vista el objetivo comercial.",
+      color: "hover:border-secondary/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]",
+      textColor: "text-secondary",
     },
     {
-      icon: MessageSquare,
-      title: "Comunicación clara",
-      desc: "Traduzco requerimientos técnicos complejos a un lenguaje de negocio que todos los stakeholders pueden entender, evitando malentendidos."
+      icon: Shield,
+      title: "Comunicación Clara",
+      desc: "Traducimos requerimientos técnicos complejos a un lenguaje de negocio que todos los stakeholders pueden entender, evitando malentendidos.",
+      color: "hover:border-accent/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]",
+      textColor: "text-accent",
     },
     {
       icon: Zap,
-      title: "Metodología ágil",
-      desc: "Entregas incrementales que aportan valor desde el primer día, adaptándonos a los cambios del mercado con rapidez y flexibilidad."
+      title: "Metodología Ágil",
+      desc: "Entregas incrementales que aportan valor desde el primer día, adaptándonos a los cambios del mercado con rapidez y flexibilidad.",
+      color: "hover:border-primary/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
+      textColor: "text-primary",
     }
   ];
 
   return (
-    <section id="why" className="py-24 relative overflow-hidden bg-background/50">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-30 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 blur-[120px] rounded-full"></div>
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <motion.h2 
+    <section id="why" className="py-32 relative overflow-hidden bg-background border-b border-white/5">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black tracking-tight mb-6"
           >
-            ¿Por qué <span className="text-gradient">trabajar</span> conmigo?
-          </motion.h2>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="w-24 h-1.5 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-8"
-          ></motion.div>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed"
-          >
-            Mi objetivo es ser el puente entre tus necesidades de negocio y las soluciones tecnológicas más avanzadas.
-          </motion.p>
+            <span className="text-sm font-sans font-semibold uppercase tracking-wider text-primary mb-4 block">
+              Por Qué Elegirnos
+            </span>
+            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">
+              El puente entre tu negocio y <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">la tecnología de alto rendimiento</span>
+            </h2>
+            <p className="text-lg font-sans text-slate-400 leading-relaxed">
+              Nuestro enfoque se centra en generar valor real y medible para tu empresa.
+            </p>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center max-w-6xl mx-auto">
-          {/* Tabs List */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-5 flex flex-col gap-4"
-          >
-            {reasons.map((reason, index) => {
-              const Icon = reason.icon;
-              const isActive = activeTab === index;
-              return (
-                <button
-                  key={index}
-                  onClick={() => setActiveTab(index)}
-                  className={cn(
-                    "flex items-center gap-5 p-5 rounded-2xl text-left transition-all duration-500 border group",
-                    isActive 
-                      ? "glass-card border-primary/30 shadow-2xl shadow-primary/10 scale-105" 
-                      : "bg-transparent border-transparent hover:bg-white/5 hover:border-white/10"
-                  )}
-                >
-                  <div className={cn(
-                    "p-3 rounded-xl transition-all duration-500",
-                    isActive 
-                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30" 
-                      : "bg-white/5 text-muted-foreground group-hover:text-primary"
-                  )}>
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <span className={cn(
-                    "font-bold text-xl transition-colors duration-500",
-                    isActive ? "text-white" : "text-muted-foreground group-hover:text-white/80"
-                  )}>
-                    {reason.title}
-                  </span>
-                </button>
-              );
-            })}
-          </motion.div>
-          
-          {/* Tab Content */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-7 relative min-h-[400px] flex items-center"
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, x: 20, filter: "blur(10px)" }}
-                animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, x: -20, filter: "blur(10px)" }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="w-full"
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {reasons.map((reason, index) => {
+            const Icon = reason.icon;
+            return (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className={`flex flex-col relative group glass-panel rounded-2xl border border-white/10 p-8 md:p-10 transition-all duration-300 bg-slate-900/50 ${reason.color}`}
               >
-                <div className="glass-card p-10 md:p-14 relative overflow-hidden group min-h-[350px] flex flex-col justify-center">
-                  <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl transition-opacity duration-700 group-hover:opacity-100"></div>
-                  
-                  <div className="relative z-10">
-                    <motion.div 
-                      key={`icon-${activeTab}`}
-                      initial={{ scale: 0.5, rotate: -10 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      className="mb-8 inline-flex p-5 rounded-2xl bg-primary/20 text-primary border border-primary/30 shadow-2xl shadow-primary/10"
-                    >
-                      {(() => {
-                        const ActiveIcon = reasons[activeTab].icon;
-                        return <ActiveIcon className="h-10 w-10" />;
-                      })()}
-                    </motion.div>
-                    <h3 className="text-3xl md:text-4xl font-black text-white mb-6 tracking-tight leading-tight">
-                      {reasons[activeTab].title}
-                    </h3>
-                    <p className="text-xl text-muted-foreground/90 leading-relaxed font-medium">
-                      {reasons[activeTab].desc}
-                    </p>
+                <div className="mb-8 flex items-center justify-between border-b border-white/5 pb-6">
+                  <div className="p-4 bg-slate-800/50 rounded-xl border border-white/5 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className={`h-8 w-8 ${reason.textColor}`} />
                   </div>
+                  <span className={`font-display font-black text-6xl opacity-20 ${reason.textColor}`}>
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
                 </div>
+                <h3 className="text-2xl font-display font-bold text-white mb-4">
+                  {reason.title}
+                </h3>
+                <p className="text-base font-sans text-slate-400 leading-relaxed">
+                  {reason.desc}
+                </p>
               </motion.div>
-            </AnimatePresence>
-          </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

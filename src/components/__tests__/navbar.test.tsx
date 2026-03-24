@@ -24,9 +24,9 @@ describe("Navbar", () => {
     expect(screen.getByText("Testimonios")).toBeInTheDocument();
   });
 
-  it("renders the CTA button", () => {
+  it("renders the WhatsApp CTA button", () => {
     render(<Navbar />);
-    const buttons = screen.getAllByText("Presupuesto Automático");
+    const buttons = screen.getAllByText("Contactar");
     expect(buttons.length).toBeGreaterThanOrEqual(1);
   });
 

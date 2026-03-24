@@ -11,13 +11,13 @@ describe("Logo", () => {
 
   it("renders text by default", () => {
     render(<Logo />);
-    expect(screen.getByText("FVISION")).toBeInTheDocument();
+    expect(screen.getByText("Fvision")).toBeInTheDocument();
     expect(screen.getByText("Consulting")).toBeInTheDocument();
   });
 
   it("hides text when showText is false", () => {
     render(<Logo showText={false} />);
-    expect(screen.queryByText("FVISION")).not.toBeInTheDocument();
+    expect(screen.queryByText("Fvision")).not.toBeInTheDocument();
   });
 
   it("renders as a link to home", () => {

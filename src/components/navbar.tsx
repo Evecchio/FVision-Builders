@@ -43,29 +43,34 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 md:w-1/4">
             <Logo showText={false} iconSize={48} className="md:hidden" />
             <Logo showText={false} iconSize={64} className="hidden md:flex" />
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center justify-center gap-8 flex-grow">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="font-sans text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                className="font-sans text-sm font-medium text-slate-300 hover:text-white transition-colors relative group"
               >
                 {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
+          </nav>
+
+          {/* Desktop Action Button - Right */}
+          <div className="hidden md:flex items-center justify-end md:w-1/4">
             <button
               onClick={() => setIsChatOpen(true)}
-              className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-full font-sans font-medium text-sm transition-all active:scale-95 duration-150 ease-in-out ml-2 shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]"
+              className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-full font-sans font-medium text-sm transition-all active:scale-95 duration-150 ease-in-out shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]"
             >
               Presupuesto Automático
             </button>
-          </nav>
+          </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center h-full">

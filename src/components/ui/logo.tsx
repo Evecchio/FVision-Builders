@@ -14,7 +14,7 @@ export function Logo({
   showText = true
 }: LogoProps) {
   return (
-    <a href="/" className={cn("flex items-center gap-3 group", className)}>
+    <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} className={cn("flex items-center gap-3 group cursor-pointer", className)}>
       <div
         className="relative flex items-center justify-center transition-transform duration-500 group-hover:rotate-[10deg]"
         style={{ width: iconSize, height: iconSize }}

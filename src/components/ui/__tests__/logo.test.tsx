@@ -23,6 +23,6 @@ describe("Logo", () => {
   it("renders as a link to home", () => {
     render(<Logo />);
     const link = screen.getByRole("link");
-    expect(link).toHaveAttribute("href", "/");
+    expect(link).toHaveAttribute("href", "#");
   });
 });

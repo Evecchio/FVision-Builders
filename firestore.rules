@@ -56,6 +56,11 @@ service cloud.firestore {
              data.lastLoginAt is timestamp;
     }
 
+    match /test/{docId} {
+      // Allow anyone to read the test document for connection testing
+      allow read: if true;
+    }
+
     match /leads/{leadId} {
       // Anyone can submit a lead (unauthenticated or authenticated)
       allow create: if isValidLead(request.resource.data);

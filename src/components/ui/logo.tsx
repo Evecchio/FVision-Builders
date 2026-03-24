@@ -80,7 +80,7 @@ export function Logo({
             "font-display font-black tracking-tighter text-white transition-colors duration-300 group-hover:text-primary",
             textSize
           )}>
-            FVISION
+            Fvision
           </span>
           <span className="text-[10px] font-sans font-bold tracking-[0.2em] text-slate-500 uppercase mt-0.5">
             Consulting

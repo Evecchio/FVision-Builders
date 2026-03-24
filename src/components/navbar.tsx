@@ -58,8 +58,8 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0 md:w-1/4">
-            <Logo showText={false} iconSize={48} className="md:hidden" />
-            <Logo showText={false} iconSize={64} className="hidden md:flex" />
+            <Logo showText={false} iconSize={36} className="md:hidden" />
+            <Logo iconSize={40} className="hidden md:flex" />
           </div>
 
           {/* Desktop Navigation */}

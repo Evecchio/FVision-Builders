@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Logo } from "@/components/ui/logo";
 import { ChatModal } from "@/components/chat-modal";
 
@@ -9,20 +9,34 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
 
+  const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
+
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     const handleOpenChat = () => setIsChatOpen(true);
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMobileMenu();
+    };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("open-chat", handleOpenChat);
+    document.addEventListener("keydown", handleEscape);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("open-chat", handleOpenChat);
+      document.removeEventListener("keydown", handleEscape);
     };
-  }, []);
+  }, [closeMobileMenu]);
 
   const navLinks = [
     { name: "Servicios", href: "#services" },
@@ -49,7 +63,7 @@ export function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Navegación principal">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -71,7 +85,9 @@ export function Navbar() {
           <div className="md:hidden flex items-center h-full">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-300 hover:text-white focus:outline-none"
+              aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isMobileMenuOpen}
+              className="text-slate-300 hover:text-white"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -85,31 +101,38 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-white/5">
-          <div className="flex flex-col px-4 py-6 space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="font-sans font-medium text-base text-slate-300 hover:text-white transition-colors px-2"
-              >
-                {link.name}
-              </a>
-            ))}
-            <div className="pt-4">
-              <button
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  setIsChatOpen(true);
-                }}
-                className="bg-primary text-white px-6 py-3 rounded-full font-sans font-medium text-sm text-center w-full shadow-[0_0_15px_rgba(59,130,246,0.3)]"
-              >
-                Presupuesto Automático
-              </button>
+        <>
+          <div
+            className="fixed inset-0 z-[-1] md:hidden"
+            onClick={closeMobileMenu}
+            aria-hidden="true"
+          />
+          <nav className="md:hidden bg-background/95 backdrop-blur-xl border-b border-white/5" aria-label="Navegación móvil">
+            <div className="flex flex-col px-4 py-6 space-y-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={closeMobileMenu}
+                  className="font-sans font-medium text-base text-slate-300 hover:text-white transition-colors px-2"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <div className="pt-4">
+                <button
+                  onClick={() => {
+                    closeMobileMenu();
+                    setIsChatOpen(true);
+                  }}
+                  className="bg-primary text-white px-6 py-3 rounded-full font-sans font-medium text-sm text-center w-full shadow-[0_0_15px_rgba(59,130,246,0.3)]"
+                >
+                  Presupuesto Automático
+                </button>
+              </div>
             </div>
-          </div>
-        </div>
+          </nav>
+        </>
       )}
 
       <ChatModal isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />

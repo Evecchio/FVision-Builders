@@ -1,42 +1,44 @@
-import { useEffect } from "react";
-import { getDocFromServer, doc } from "firebase/firestore";
-import { db } from "./firebase";
+import { lazy, Suspense } from "react";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/sections/hero";
-import { About } from "@/components/sections/about";
-import { Services } from "@/components/sections/services";
-import { Cases } from "@/components/sections/cases";
-import { Testimonials } from "@/components/sections/testimonials";
-import { Why } from "@/components/sections/why";
-import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/footer";
 
-export default function App() {
-  useEffect(() => {
-    async function testConnection() {
-      try {
-        await getDocFromServer(doc(db, 'test', 'connection'));
-      } catch (error) {
-        if (error instanceof Error && error.message.includes('the client is offline')) {
-          console.error("Please check your Firebase configuration.");
-        }
-      }
-    }
-    testConnection();
-  }, []);
+const Cases = lazy(() => import("@/components/sections/cases").then((m) => ({ default: m.Cases })));
+const Testimonials = lazy(() => import("@/components/sections/testimonials").then((m) => ({ default: m.Testimonials })));
+const Services = lazy(() => import("@/components/sections/services").then((m) => ({ default: m.Services })));
+const About = lazy(() => import("@/components/sections/about").then((m) => ({ default: m.About })));
+const Why = lazy(() => import("@/components/sections/why").then((m) => ({ default: m.Why })));
+const Contact = lazy(() => import("@/components/sections/contact").then((m) => ({ default: m.Contact })));
 
+function SectionFallback() {
+  return <div className="min-h-[50vh]" />;
+}
+
+export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 relative overflow-x-hidden">
       <div className="bg-noise"></div>
       <Navbar />
       <main className="relative z-10">
         <Hero />
-        <Cases />
-        <Testimonials />
-        <Services />
-        <About />
-        <Why />
-        <Contact />
+        <Suspense fallback={<SectionFallback />}>
+          <Cases />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <Testimonials />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <Services />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <About />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <Why />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <Contact />
+        </Suspense>
       </main>
       <Footer />
     </div>

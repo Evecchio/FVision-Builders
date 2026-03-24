@@ -10,7 +10,7 @@ export function Footer() {
             <Logo iconSize={48} textSize="text-3xl" />
           </div>
           
-          <div className="flex flex-wrap justify-center gap-8 text-sm font-sans font-semibold text-slate-400">
+          <nav aria-label="Navegación del pie de página" className="flex flex-wrap justify-center gap-8 text-sm font-sans font-semibold text-slate-400">
             <a href="#services" className="hover:text-primary transition-colors">
               Servicios
             </a>
@@ -23,7 +23,7 @@ export function Footer() {
             <a href="#testimonials" className="hover:text-primary transition-colors">
               Testimonios
             </a>
-          </div>
+          </nav>
 
           <p className="text-sm text-slate-500 font-sans text-center md:text-right">
             © {new Date().getFullYear()} FVision. Todos los derechos reservados.

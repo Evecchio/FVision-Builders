@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { X, Send, Loader2, User, MessageSquare } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, type Chat } from "@google/genai";
+import { Avatar } from "@/components/ui/avatar";
 
 interface Message {
   id: string;
@@ -18,7 +19,7 @@ export function ChatModal({ isOpen, onClose }: ChatModalProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const chatRef = useRef<any>(null);
+  const chatRef = useRef<Chat | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -55,9 +56,9 @@ export function ChatModal({ isOpen, onClose }: ChatModalProps) {
   const handleInitialGreeting = async () => {
     setIsLoading(true);
     try {
-      const response = await chatRef.current.sendMessage({ message: "Hola Ezequiel, me gustaría obtener un presupuesto automático para mi proyecto." });
+      const response = await chatRef.current!.sendMessage({ message: "Hola Ezequiel, me gustaría obtener un presupuesto automático para mi proyecto." });
       setMessages([
-        { id: Date.now().toString(), role: "model", text: response.text }
+        { id: Date.now().toString(), role: "model", text: response.text ?? "" }
       ]);
     } catch (error) {
       console.error("Error initializing chat:", error);
@@ -83,8 +84,8 @@ export function ChatModal({ isOpen, onClose }: ChatModalProps) {
     setIsLoading(true);
 
     try {
-      const response = await chatRef.current.sendMessage({ message: userMessage });
-      setMessages(prev => [...prev, { id: (Date.now() + 1).toString(), role: "model", text: response.text }]);
+      const response = await chatRef.current!.sendMessage({ message: userMessage });
+      setMessages(prev => [...prev, { id: (Date.now() + 1).toString(), role: "model", text: response.text ?? "" }]);
     } catch (error) {
       console.error("Error sending message:", error);
       setMessages(prev => [...prev, { id: (Date.now() + 1).toString(), role: "model", text: "Error de conexión. Por favor, intenta de nuevo." }]);
@@ -99,6 +100,8 @@ export function ChatModal({ isOpen, onClose }: ChatModalProps) {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              role="dialog"
+              aria-label="Chat de presupuesto automático"
               initial={{ opacity: 0, y: 20, scale: 0.95, transformOrigin: "bottom right" }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -109,14 +112,7 @@ export function ChatModal({ isOpen, onClose }: ChatModalProps) {
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-50"></div>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full overflow-hidden border border-primary/20 bg-slate-800">
-                    <img 
-                      src="/Profile.png" 
-                      alt="Ezequiel" 
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=100&auto=format&fit=crop";
-                      }}
-                    />
+                    <Avatar size="lg" />
                   </div>
                   <div>
                     <h3 className="font-display text-base text-white font-bold tracking-tight flex items-center gap-2">
@@ -127,6 +123,7 @@ export function ChatModal({ isOpen, onClose }: ChatModalProps) {
                 </div>
                 <button
                   onClick={onClose}
+                  aria-label="Cerrar chat"
                   className="p-2 text-slate-400 hover:text-white hover:bg-white/5 rounded-full transition-colors"
                 >
                   <X size={20} />
@@ -149,14 +146,7 @@ export function ChatModal({ isOpen, onClose }: ChatModalProps) {
                       {msg.role === "user" ? (
                         <User size={16} />
                       ) : (
-                        <img 
-                          src="/Profile.png" 
-                          alt="Ezequiel" 
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=100&auto=format&fit=crop";
-                          }}
-                        />
+                        <Avatar size="lg" />
                       )}
                     </div>
                     <div
@@ -173,14 +163,7 @@ export function ChatModal({ isOpen, onClose }: ChatModalProps) {
                 {isLoading && messages.length > 0 && (
                   <div className="flex gap-3">
                     <div className="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center shrink-0 rounded-full border border-primary/20 overflow-hidden">
-                      <img 
-                        src="/Profile.png" 
-                        alt="Ezequiel" 
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=100&auto=format&fit=crop";
-                        }}
-                      />
+                      <Avatar size="lg" />
                     </div>
                     <div className="px-4 py-3 bg-slate-800/80 text-white border border-white/5 rounded-2xl rounded-tl-sm flex items-center gap-1.5 shadow-sm">
                       <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
@@ -224,6 +207,7 @@ export function ChatModal({ isOpen, onClose }: ChatModalProps) {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0, opacity: 0 }}
               onClick={() => window.dispatchEvent(new CustomEvent('open-chat'))}
+              aria-label="Abrir chat de presupuesto"
               className="w-14 h-14 bg-primary text-white rounded-full shadow-[0_0_20px_rgba(59,130,246,0.4)] flex items-center justify-center hover:scale-110 transition-transform hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]"
             >
               <MessageSquare size={24} />

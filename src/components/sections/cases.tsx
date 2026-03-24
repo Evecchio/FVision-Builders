@@ -6,36 +6,35 @@ export function Cases() {
     {
       title: "Recuperación de ventas en Tienda Online",
       tag: "Comercio Electrónico",
-      context: "Tienda online con muchas visitas diarias, pero que perdía la mayoría de sus ventas justo al momento de pagar.",
+      context: "Tu tienda recibe muchas visitas diarias, pero la mayoría de los usuarios abandonan el carrito justo al momento de pagar.",
       work: [
-        "Análisis del paso a paso del cliente para entender por qué no compran",
-        "Identificación de trabas y errores ocultos al momento de pagar",
-        "Rediseño visual enfocado en facilitar la compra y dar confianza",
-        "Documentación clara de los problemas y cómo se solucionaron"
+        "Análisis del paso a paso del cliente para entender los motivos de abandono",
+        "Identificación y eliminación de trabas ocultas en el proceso de pago",
+        "Rediseño visual enfocado en facilitar la compra y transmitir confianza"
       ],
-      result: "Hoja de ruta con fases claras y criterios medibles de éxito."
+      result: "Un checkout optimizado que convierte visitas en clientes reales y aumenta tu facturación directamente."
     },
     {
       title: "Recepción automática de pedidos por WhatsApp",
-      tag: "Ventas por mensajería",
-      context: "Comercios que colapsaban al recibir pedidos manuales, perdiendo ventas y tiempo valioso.",
+      tag: "Ventas y Atención",
+      context: "Tu equipo colapsa recibiendo consultas y pedidos manualmente, generando demoras, errores y ventas perdidas.",
       work: [
-        "Sistema automático para recibir y responder mensajes 24/7",
-        "Base de datos centralizada para guardar historial de clientes y pedidos",
-        "Eliminación de errores por carga manual de datos y pedidos perdidos"
+        "Sistema automático que recibe y responde mensajes 24/7 sin intervención humana",
+        "Base de datos que guarda automáticamente el historial de clientes y pedidos",
+        "Panel de control centralizado para organizar las entregas en tiempo real"
       ],
-      result: "Sistema que elimina el trabajo manual, no pierde ventas y habilita reportes en tiempo real."
+      result: "Un canal de ventas que funciona en piloto automático, elimina el trabajo manual y nunca pierde un cliente."
     },
     {
       title: "Plataforma de control para equipos de trabajo",
-      tag: "Gestión de proyectos",
-      context: "Empresa que perdía tiempo y dinero por falta de claridad al iniciar nuevos proyectos y asignar tareas.",
+      tag: "Gestión Operativa",
+      context: "Falta de claridad y desorganización al iniciar nuevos proyectos o tareas, lo que genera pérdida de tiempo y recursos.",
       work: [
-        "Sistema centralizado para organizar prioridades y objetivos claros",
-        "Mapa visual de procesos y riesgos para anticipar problemas",
-        "Generación automática de tareas y flujos de trabajo"
+        "Sistema centralizado para priorizar tareas y definir objetivos medibles",
+        "Mapas visuales para anticipar riesgos y organizar los procesos de la empresa",
+        "Generación automática de flujos de trabajo listos para asignar a tu equipo"
       ],
-      result: "Plataforma centralizada que acelera el inicio de proyectos y alinea al equipo."
+      result: "Una operación ordenada que acelera la ejecución de los proyectos y alinea a toda la empresa."
     }
   ];
 
@@ -49,14 +48,14 @@ export function Cases() {
             viewport={{ once: true }}
           >
             <span className="text-sm font-sans font-semibold uppercase tracking-wider text-primary mb-4 block">
-              Casos de Éxito
+              Soluciones Implementables
             </span>
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">
-              Resultados reales en <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">empresas reales</span>
+              Sistemas listos para <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">escalar tu negocio</span>
             </h2>
             <p className="text-lg font-sans text-slate-400 leading-relaxed">
-              Implementaciones donde la arquitectura de sistemas y el análisis de datos convergen para generar impacto medible.
+              Arquitecturas probadas que resuelven los problemas más comunes de las empresas, listas para adaptarse a tu operación.
             </p>
           </motion.div>
         </div>
@@ -88,7 +87,7 @@ export function Cases() {
                     {item.title}
                   </h3>
                   <p className="text-base font-sans text-slate-400 leading-relaxed max-w-3xl">
-                    <span className="text-white font-semibold mr-2">Contexto:</span> {item.context}
+                    <span className="text-white font-semibold mr-2">El problema:</span> {item.context}
                   </p>
                 </div>
                 
@@ -96,7 +95,7 @@ export function Cases() {
                   <div>
                     <strong className="text-sm font-sans font-semibold text-white uppercase tracking-wider block mb-4 flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-primary" />
-                      Ejecución
+                      Nuestra Solución
                     </strong>
                     <ul className="space-y-3">
                       {item.work.map((workLine, i) => (
@@ -111,7 +110,7 @@ export function Cases() {
                   <div>
                     <strong className="text-sm font-sans font-semibold text-white uppercase tracking-wider block mb-4 flex items-center gap-2">
                       <ArrowRight className="w-4 h-4 text-secondary" />
-                      Resultado
+                      El Impacto
                     </strong>
                     <div className="flex items-start gap-4 bg-slate-800/50 p-6 rounded-xl border border-white/5 group-hover:border-secondary/30 transition-colors">
                       <p className="text-sm font-sans text-slate-300 leading-relaxed">

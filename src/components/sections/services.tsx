@@ -5,26 +5,26 @@ export function Services() {
   const services = [
     {
       icon: <Bot className="h-8 w-8 text-primary" />,
-      title: "Agentes de IA",
-      desc: "Desarrollamos asistentes virtuales inteligentes capaces de resolver consultas complejas, agendar citas y atender a tus clientes 24/7 con lenguaje natural.",
+      title: "Atención al cliente 24/7",
+      desc: "Asistentes de IA que resuelven consultas, agendan citas y venden a tus clientes a cualquier hora, sin intervención humana.",
       color: "hover:border-primary/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
     },
     {
       icon: <Workflow className="h-8 w-8 text-secondary" />,
-      title: "Automatización con n8n",
-      desc: "Conectamos tus herramientas (CRM, ERP, Email, Slack) para eliminar tareas manuales. Flujos de trabajo eficientes que ahorran cientos de horas al mes.",
+      title: "Sistematización de procesos",
+      desc: "Conectamos tus herramientas para que las tareas repetitivas se hagan solas, liberando cientos de horas al mes para tu equipo.",
       color: "hover:border-secondary/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]",
     },
     {
       icon: <Database className="h-8 w-8 text-accent" />,
-      title: "Sistemas RAG",
-      desc: "Chatbots entrenados con la base de conocimiento de tu empresa. Respuestas precisas basadas exclusivamente en tus documentos y manuales internos.",
+      title: "Gestión de conocimiento",
+      desc: "Sistemas que aprenden de tus manuales y documentos internos para dar respuestas precisas y rápidas a tus empleados o clientes.",
       color: "hover:border-accent/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]",
     },
     {
       icon: <Brain className="h-8 w-8 text-primary" />,
-      title: "Consultoría Estratégica",
-      desc: "Analizamos los procesos de tu negocio para identificar cuellos de botella y oportunidades donde la Inteligencia Artificial puede generar el mayor ROI.",
+      title: "Auditoría de rentabilidad",
+      desc: "Analizamos cómo funciona tu negocio para identificar dónde estás perdiendo tiempo o dinero y trazamos un plan para solucionarlo.",
       color: "hover:border-primary/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
     },
   ];

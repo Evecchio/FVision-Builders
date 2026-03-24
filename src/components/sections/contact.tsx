@@ -76,11 +76,11 @@ export function Contact() {
               Contacto
             </span>
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-white mb-8">
-              ¿Listo para <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">escalar tu negocio?</span>
+              ¿Listo para que tu negocio <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">funcione mejor?</span>
             </h2>
             <p className="text-lg text-slate-400 mb-16 font-sans leading-relaxed max-w-md">
-              Hablemos de tus procesos, cuellos de botella y cómo la tecnología puede ayudarte a crecer de forma estructurada.
+              Hablemos de dónde estás perdiendo tiempo o dinero, y diseñemos un plan a medida para solucionar los problemas reales de tu empresa.
             </p>
             
             <div className="space-y-12 mb-16 flex-grow">

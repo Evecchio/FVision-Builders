@@ -6,20 +6,20 @@ export function About() {
   const highlights = [
     {
       icon: <Database className="h-8 w-8 text-primary" />,
-      title: "Análisis de Datos Reales",
-      desc: "Experiencia práctica optimizando funnels de venta y analizando datos de GA4 y CRM.",
+      title: "Enfoque en rentabilidad",
+      desc: "Decisiones basadas en números para hacer crecer tu negocio y evitar perder ventas.",
       color: "hover:border-primary/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
     },
     {
       icon: <Cpu className="h-8 w-8 text-secondary" />,
-      title: "Automatización de Procesos",
-      desc: "Implementación de soluciones Cloud e IA para escalar operaciones de manera eficiente.",
+      title: "Eficiencia operativa",
+      desc: "Menos tareas manuales para que tu equipo se enfoque en lo realmente importante.",
       color: "hover:border-secondary/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]",
     },
     {
       icon: <Terminal className="h-8 w-8 text-accent" />,
-      title: "Herramientas Propias",
-      desc: "Desarrollo de sistemas probados en producción, no solo teoría.",
+      title: "Sistemas probados",
+      desc: "No te hablo desde la teoría, construyo soluciones que funcionan en el mundo real.",
       color: "hover:border-accent/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]",
     },
     {
@@ -84,8 +84,8 @@ export function About() {
               </p>
               <div className="text-base md:text-lg font-sans text-slate-400 leading-relaxed space-y-6">
                 <p>
-                  Como dueño de un e-commerce de indumentaria deportiva — analizando datos de GA4 y optimizando funnels de venta — entendí 
-                  de verdad qué significa tomar decisiones basadas en información real y no en intuiciones.
+                  Como dueño de un e-commerce de indumentaria deportiva — analizando por qué perdía ventas y dónde se estancaban mis clientes — entendí 
+                  de verdad qué significa tomar decisiones basadas en información real y no en intuiciones para hacer crecer un negocio.
                 </p>
                 <p>
                   Esa experiencia "en las trincheras" me llevó a construir mis propias herramientas y automatizar procesos que hoy pongo a disposición de otras empresas. No te hablo desde la teoría, sino desde lo que <span className="text-white font-semibold">funciona en producción</span>.

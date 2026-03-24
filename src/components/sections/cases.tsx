@@ -4,39 +4,38 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 export function Cases() {
   const cases = [
     {
-      title: "Optimización de Funnel E-commerce",
-      tag: "E-commerce / Conversión",
-      context: "Tienda de indumentaria deportiva con tráfico existente pero baja tasa de conversión en el checkout.",
+      title: "Recuperación de ventas en Tienda Online",
+      tag: "Comercio Electrónico",
+      context: "Tienda online con muchas visitas diarias, pero que perdía la mayoría de sus ventas justo al momento de pagar.",
       work: [
-        "Análisis completo del funnel con datos reales de GA4",
-        "Identificación de fricciones críticas en el proceso de pago",
-        "Rediseño de arquitectura del tema visual (Twig/SCSS)",
-        "Documentación técnica: REPO-MAP, TECH-CONTRACTS"
+        "Análisis del paso a paso del cliente para entender por qué no compran",
+        "Identificación de trabas y errores ocultos al momento de pagar",
+        "Rediseño visual enfocado en facilitar la compra y dar confianza",
+        "Documentación clara de los problemas y cómo se solucionaron"
       ],
-      result: "Hoja de ruta con fases claras, base técnica lista para escalar y criterios medibles de éxito."
+      result: "Hoja de ruta con fases claras y criterios medibles de éxito."
     },
     {
-      title: "Automatización de Pedidos por WhatsApp",
-      tag: "Pymes / Mensajería",
-      context: "Comercios que reciben pedidos por WhatsApp de forma manual, sin registro ni seguimiento.",
+      title: "Recepción automática de pedidos por WhatsApp",
+      tag: "Ventas por mensajería",
+      context: "Comercios que colapsaban al recibir pedidos manuales, perdiendo ventas y tiempo valioso.",
       work: [
-        "Arquitectura serverless: WhatsApp API → API Gateway → Lambda → SQS → DynamoDB",
-        "Esquema PostgreSQL para gestión de pedidos",
-        "Backend Node.js/Express"
+        "Sistema automático para recibir y responder mensajes 24/7",
+        "Base de datos centralizada para guardar historial de clientes y pedidos",
+        "Eliminación de errores por carga manual de datos y pedidos perdidos"
       ],
-      result: "Arquitectura lista para implementar que elimina el trabajo manual y habilita reportes automáticos."
+      result: "Sistema que elimina el trabajo manual, no pierde ventas y habilita reportes en tiempo real."
     },
     {
-      title: "Herramienta BA React",
-      tag: "Equipos de Producto",
-      context: "Necesidad de un entorno unificado para ejecutar análisis de negocio estructurados.",
+      title: "Plataforma de control para equipos de trabajo",
+      tag: "Gestión de proyectos",
+      context: "Empresa que perdía tiempo y dinero por falta de claridad al iniciar nuevos proyectos y asignar tareas.",
       work: [
-        "App React con módulos: MoSCoW, mapa de stakeholders",
-        "Mapeo de procesos y matriz de riesgos",
-        "User stories y tablero Kanban",
-        "Generador de flowcharts integrados"
+        "Sistema centralizado para organizar prioridades y objetivos claros",
+        "Mapa visual de procesos y riesgos para anticipar problemas",
+        "Generación automática de tareas y flujos de trabajo"
       ],
-      result: "Plataforma centralizada que acelera el discovery y estandariza la documentación de producto."
+      result: "Plataforma centralizada que acelera el inicio de proyectos y alinea al equipo."
     }
   ];
 

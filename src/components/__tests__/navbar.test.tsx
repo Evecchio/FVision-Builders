@@ -24,10 +24,10 @@ describe("Navbar", () => {
     expect(screen.getByText("Testimonios")).toBeInTheDocument();
   });
 
-  it("renders the WhatsApp CTA button", () => {
+  it("renders the contact buttons", () => {
     render(<Navbar />);
-    const buttons = screen.getAllByText("Contactar");
-    expect(buttons.length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("Email").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("WhatsApp").length).toBeGreaterThanOrEqual(1);
   });
 
   it("has accessible mobile menu button", () => {

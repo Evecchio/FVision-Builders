@@ -20,9 +20,6 @@ export function Footer() {
             <a href="#cases" className="hover:text-primary transition-colors">
               Casos de Éxito
             </a>
-            <a href="#testimonials" className="hover:text-primary transition-colors">
-              Testimonios
-            </a>
           </nav>
 
           <p className="text-sm text-slate-500 font-sans text-center md:text-right">

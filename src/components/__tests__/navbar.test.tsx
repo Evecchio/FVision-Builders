@@ -21,7 +21,6 @@ describe("Navbar", () => {
     expect(screen.getByText("Servicios")).toBeInTheDocument();
     expect(screen.getByText("Sobre Mí")).toBeInTheDocument();
     expect(screen.getByText("Casos de Éxito")).toBeInTheDocument();
-    expect(screen.getByText("Testimonios")).toBeInTheDocument();
   });
 
   it("renders the contact buttons", () => {

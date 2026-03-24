@@ -43,7 +43,6 @@ export function Navbar() {
     { name: "Servicios", href: "#services" },
     { name: "Sobre Mí", href: "#about" },
     { name: "Casos de Éxito", href: "#cases" },
-    { name: "Testimonios", href: "#testimonials" },
   ];
 
   return (

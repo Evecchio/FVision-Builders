@@ -27,10 +27,10 @@ export default function App() {
           <Services />
         </Suspense>
         <Suspense fallback={<SectionFallback />}>
-          <About />
+          <Why />
         </Suspense>
         <Suspense fallback={<SectionFallback />}>
-          <Why />
+          <About />
         </Suspense>
         <Suspense fallback={<SectionFallback />}>
           <Contact />

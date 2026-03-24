@@ -18,7 +18,7 @@ const sizeClasses = {
 export function Avatar({ size = "md", className, alt = "Ezequiel" }: AvatarProps) {
   return (
     <img
-      src="/Profile.png"
+      src={`${import.meta.env.BASE_URL}Profile.png`}
       alt={alt}
       className={cn(sizeClasses[size], "object-cover", className)}
       onError={(e) => {

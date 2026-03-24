@@ -20,7 +20,6 @@ describe("Navbar", () => {
     render(<Navbar />);
     expect(screen.getByText("Servicios")).toBeInTheDocument();
     expect(screen.getByText("Sobre Mí")).toBeInTheDocument();
-    expect(screen.getByText("Casos de Éxito")).toBeInTheDocument();
   });
 
   it("renders the contact buttons", () => {

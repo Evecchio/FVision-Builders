@@ -4,7 +4,7 @@
 
 # FVision Builders
 
-**Live:** https://evecchio.github.io/FVision-Builders/
+**Live:** https://evecchio.github.io/FVision-Builders
 
 ## Run Locally
 

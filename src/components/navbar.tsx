@@ -47,6 +47,7 @@ export function Navbar() {
   ];
 
   return (
+    <>
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 border-b border-white/5",
@@ -170,7 +171,8 @@ export function Navbar() {
         </>
       )}
 
-      <ChatModal isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </header>
+    <ChatModal isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
+    </>
   );
 }

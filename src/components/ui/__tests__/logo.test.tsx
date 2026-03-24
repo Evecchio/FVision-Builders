@@ -3,14 +3,16 @@ import { describe, it, expect } from "vitest";
 import { Logo } from "../logo";
 
 describe("Logo", () => {
-  it("renders the logo image with correct alt text", () => {
+  it("renders the logo SVG", () => {
     render(<Logo />);
-    expect(screen.getByAltText("FVision Logo")).toBeInTheDocument();
+    const link = screen.getByRole("link");
+    expect(link.querySelector("svg")).toBeInTheDocument();
   });
 
   it("renders text by default", () => {
     render(<Logo />);
     expect(screen.getByText("FVISION")).toBeInTheDocument();
+    expect(screen.getByText("Consulting")).toBeInTheDocument();
   });
 
   it("hides text when showText is false", () => {
@@ -18,15 +20,9 @@ describe("Logo", () => {
     expect(screen.queryByText("FVISION")).not.toBeInTheDocument();
   });
 
-  it("applies custom iconSize", () => {
-    render(<Logo iconSize={64} />);
-    const img = screen.getByAltText("FVision Logo");
-    expect(img).toHaveStyle({ height: "64px" });
-  });
-
-  it("renders as a link", () => {
+  it("renders as a link to home", () => {
     render(<Logo />);
     const link = screen.getByRole("link");
-    expect(link).toHaveAttribute("href", "#");
+    expect(link).toHaveAttribute("href", "/");
   });
 });

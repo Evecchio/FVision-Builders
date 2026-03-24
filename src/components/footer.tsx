@@ -14,9 +14,6 @@ export function Footer() {
             <a href="#services" className="hover:text-primary transition-colors">
               Servicios
             </a>
-            <a href="#cases" className="hover:text-primary transition-colors">
-              Casos de Éxito
-            </a>
             <a href="#about" className="hover:text-primary transition-colors">
               Sobre Mí
             </a>

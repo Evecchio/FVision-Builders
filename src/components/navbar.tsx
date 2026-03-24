@@ -41,7 +41,6 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Servicios", href: "#services" },
-    { name: "Casos de Éxito", href: "#cases" },
     { name: "Sobre Mí", href: "#about" },
   ];
 

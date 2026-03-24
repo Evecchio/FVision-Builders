@@ -3,7 +3,6 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/sections/hero";
 import { Footer } from "@/components/footer";
 
-const Cases = lazy(() => import("@/components/sections/cases").then((m) => ({ default: m.Cases })));
 const Services = lazy(() => import("@/components/sections/services").then((m) => ({ default: m.Services })));
 const About = lazy(() => import("@/components/sections/about").then((m) => ({ default: m.About })));
 const Why = lazy(() => import("@/components/sections/why").then((m) => ({ default: m.Why })));
@@ -20,9 +19,6 @@ export default function App() {
       <Navbar />
       <main className="relative z-10">
         <Hero />
-        <Suspense fallback={<SectionFallback />}>
-          <Cases />
-        </Suspense>
         <Suspense fallback={<SectionFallback />}>
           <Services />
         </Suspense>

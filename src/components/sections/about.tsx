@@ -80,15 +80,14 @@ export function About() {
           >
             <div className="p-8 lg:p-10 glass-panel rounded-2xl border border-white/10 bg-slate-900/50">
               <p className="text-2xl md:text-3xl font-display font-bold text-white leading-tight mb-6">
-                Antes de asesorar a otros, tuve que resolver mis propios problemas de negocio.
+                Mi objetivo es transformar la manera en que las empresas operan y escalan.
               </p>
               <div className="text-base md:text-lg font-sans text-slate-400 leading-relaxed space-y-6">
                 <p>
-                  Como dueño de un e-commerce de indumentaria deportiva — analizando por qué perdía ventas y dónde se estancaban mis clientes — entendí 
-                  de verdad qué significa tomar decisiones basadas en información real y no en intuiciones para hacer crecer un negocio.
+                  A lo largo de mi trayectoria, he liderado proyectos tecnológicos enfocados en optimizar ventas, automatizar procesos y analizar dónde se estancan los clientes. Esta experiencia me enseñó qué significa realmente tomar decisiones basadas en información real y no en intuiciones para hacer crecer un negocio.
                 </p>
                 <p>
-                  Esa experiencia "en las trincheras" me llevó a construir mis propias herramientas y automatizar procesos que hoy pongo a disposición de otras empresas. No te hablo desde la teoría, sino desde lo que <span className="text-white font-semibold">funciona en producción</span>.
+                  Esa experiencia "en las trincheras" me llevó a dominar la creación de herramientas y sistemas que hoy pongo a disposición de otras empresas. No te hablo desde la teoría, sino desde lo que <span className="text-white font-semibold">funciona en producción</span>.
                 </p>
               </div>
             </div>

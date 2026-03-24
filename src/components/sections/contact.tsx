@@ -1,58 +1,17 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Mail, Linkedin, Github, Send, Loader2, CheckCircle2, Terminal } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db, auth } from "../../firebase";
+import { db } from "../../firebase";
+import { handleFirestoreError, OperationType } from "@/lib/firebase-errors";
+import { siteConfig } from "@/config/site";
 
-enum OperationType {
-  CREATE = 'create',
-  UPDATE = 'update',
-  DELETE = 'delete',
-  LIST = 'list',
-  GET = 'get',
-  WRITE = 'write',
-}
-
-interface FirestoreErrorInfo {
-  error: string;
-  operationType: OperationType;
-  path: string | null;
-  authInfo: {
-    userId: string | undefined;
-    email: string | undefined;
-    emailVerified: boolean | undefined;
-    isAnonymous: boolean | undefined;
-    tenantId: string | null | undefined;
-    providerInfo: {
-      providerId: string;
-      displayName: string | null;
-      email: string | null;
-      photoUrl: string | null;
-    }[];
-  }
-}
-
-function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
-  const errInfo: FirestoreErrorInfo = {
-    error: error instanceof Error ? error.message : String(error),
-    authInfo: {
-      userId: auth.currentUser?.uid,
-      email: auth.currentUser?.email || undefined,
-      emailVerified: auth.currentUser?.emailVerified,
-      isAnonymous: auth.currentUser?.isAnonymous,
-      tenantId: auth.currentUser?.tenantId,
-      providerInfo: auth.currentUser?.providerData.map(provider => ({
-        providerId: provider.providerId,
-        displayName: provider.displayName,
-        email: provider.email,
-        photoUrl: provider.photoURL
-      })) || []
-    },
-    operationType,
-    path
-  }
-  console.error('Firestore Error: ', JSON.stringify(errInfo));
-  throw new Error(JSON.stringify(errInfo));
+interface LeadPayload {
+  name: string;
+  email: string;
+  message: string;
+  company?: string;
+  createdAt: ReturnType<typeof serverTimestamp>;
 }
 
 export function Contact() {
@@ -76,13 +35,13 @@ export function Contact() {
 
     try {
       const path = "leads";
-      const payload: any = {
+      const payload: LeadPayload = {
         name: formData.name,
         email: formData.email,
         message: formData.message,
-        createdAt: serverTimestamp()
+        createdAt: serverTimestamp(),
       };
-      
+
       if (formData.company.trim() !== "") {
         payload.company = formData.company;
       }
@@ -130,20 +89,20 @@ export function Contact() {
                   <Mail className="w-4 h-4 text-primary" />
                   Email Directo
                 </p>
-                <a href="mailto:ezequiel@fvision.com" className="text-xl md:text-2xl font-display font-bold text-white hover:text-primary transition-colors inline-block w-fit relative group">
-                  ezequiel@fvision.com
+                <a href={`mailto:${siteConfig.email}`} className="text-xl md:text-2xl font-display font-bold text-white hover:text-primary transition-colors inline-block w-fit relative group">
+                  {siteConfig.email}
                   <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </div>
             </div>
 
             <div className="flex gap-4">
-              <a href="#" className="text-slate-400 hover:text-primary bg-slate-800/50 hover:bg-primary/10 p-4 rounded-xl transition-all duration-300 border border-white/5 hover:border-primary/50 group">
-                <span className="sr-only">LinkedIn</span>
+              <a href={siteConfig.linkedIn} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary bg-slate-800/50 hover:bg-primary/10 p-4 rounded-xl transition-all duration-300 border border-white/5 hover:border-primary/50 group">
+                <span className="sr-only">LinkedIn (abre en nueva ventana)</span>
                 <Linkedin className="h-6 w-6 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-secondary bg-slate-800/50 hover:bg-secondary/10 p-4 rounded-xl transition-all duration-300 border border-white/5 hover:border-secondary/50 group">
-                <span className="sr-only">GitHub</span>
+              <a href={siteConfig.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-secondary bg-slate-800/50 hover:bg-secondary/10 p-4 rounded-xl transition-all duration-300 border border-white/5 hover:border-secondary/50 group">
+                <span className="sr-only">GitHub (abre en nueva ventana)</span>
                 <Github className="h-6 w-6 group-hover:scale-110 transition-transform" />
               </a>
             </div>

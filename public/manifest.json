@@ -1,0 +1,15 @@
+{
+  "name": "FVision Builders",
+  "short_name": "FVision",
+  "start_url": "/FVision-Builders/",
+  "display": "standalone",
+  "theme_color": "#020617",
+  "background_color": "#020617",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { Database, Cpu, Terminal, Network } from "lucide-react";
 import { motion } from "motion/react";
+import { Avatar } from "@/components/ui/avatar";
 
 export function About() {
   const highlights = [
@@ -59,14 +60,7 @@ export function About() {
           >
             <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 glass-panel group">
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10 opacity-60"></div>
-              <img 
-                src="/Profile.png" 
-                alt="Ezequiel - FVision" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop";
-                }}
-              />
+              <Avatar size="lg" alt="Ezequiel - FVision" className="transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute bottom-0 left-0 p-8 w-full z-20">
                 <h3 className="text-3xl font-display font-bold text-white mb-2">Ezequiel</h3>
                 <p className="text-primary font-sans text-sm font-semibold uppercase tracking-wider">

@@ -1,15 +1,15 @@
 const projects = [
   {
-    title: "Tiendanube UX & Front-End Optimizer",
+    title: "Tiendanube UX & Conversión",
     summary:
-      "Solución de optimización de interfaz y experiencia de usuario (UX) especializada para tiendas montadas sobre la plataforma Tiendanube.",
+      "Solución de optimización de interfaz y experiencia de usuario (UX) especializada para incrementar ventas en tiendas montadas sobre Tiendanube.",
     work:
       "Diseño y desarrollo de la jerarquía visual del carrito de compras, optimización de diseño adaptable (responsive), visualización clara de precios y cantidades, simplificación de la acción de eliminación, y optimización de archivos CSS.",
     status: "Implementado con éxito en producción para el cliente Ivana Design. Datos comerciales reservados.",
     tags: ["E-commerce", "CSS", "Responsive UI", "UX/UI", "Tiendanube"],
   },
   {
-    title: "Motor eCommerce Modular & Headless",
+    title: "Motor eCommerce Headless",
     summary:
       "Desarrollo de una solución de tienda virtual independiente y flexible, diseñada para personalizarse de acuerdo a las necesidades de la marca sin depender de plataformas cerradas.",
     work:
@@ -18,7 +18,16 @@ const projects = [
     tags: ["Next.js 15", "React 19", "TypeScript", "B2C Storefront", "Modular Shopping Cart"],
   },
   {
-    title: "Parser de Gastos Android Local-First",
+    title: "FlowCommerce Core",
+    summary:
+      "Híbrido de catálogo web y motor de comercio conversacional automatizado por IA vía WhatsApp.",
+    work:
+      "Diseño de arquitectura de catálogo web interactivo con derivación estructurada a WhatsApp y orquestador conversacional por IA para procesar pedidos, entregas y links de pago dinámicos.",
+    status: "Repositorio principal y especificación técnica inicial de arquitectura documentados.",
+    tags: ["WhatsApp API", "AI Agent", "RAG", "Conversational Commerce", "Integration"],
+  },
+  {
+    title: "Lector de Gastos Local-First",
     summary:
       "Aplicación móvil nativa para automatizar el registro de finanzas personales mediante la lectura e interpretación de notificaciones del sistema.",
     work:
@@ -27,7 +36,7 @@ const projects = [
     tags: ["Kotlin", "Jetpack Compose", "Room", "Android", "GitHub Actions"],
   },
   {
-    title: "Sistema de Finanzas Personales Offline (Discovery)",
+    title: "Finanzas Offline: Descubrimiento",
     summary:
       "Consultoría de descubrimiento de producto y arquitectura para un asistente financiero personal enfocado en la privacidad de datos mediante arquitectura local.",
     work:
@@ -36,7 +45,7 @@ const projects = [
     tags: ["Product Discovery", "Local-first", "Arquitectura", "IA local", "Fintech"],
   },
   {
-    title: "Framework de Agentes de IA por Contratos (DRDV)",
+    title: "DRDV: Agentes de IA por Contrato",
     summary:
       "Framework de desarrollo para construir sistemas multi-agente guiados por contratos de comportamiento explícitos y validación basada en evidencias.",
     work:
@@ -45,7 +54,7 @@ const projects = [
     tags: ["Python", "Agent Architecture", "Validation", "Observability", "YAML Contracts"],
   },
   {
-    title: "Agente de Chat Local y Privado (IAO)",
+    title: "IAO: Chat Local con RAG",
     summary:
       "Microservicio de chat autónomo y privado con procesamiento de lenguaje local y recuperación de información basada en bases vectoriales (RAG).",
     work:
@@ -133,7 +142,7 @@ export default function App() {
 
           <aside className="summary-card" aria-label="Resumen profesional">
             <p className="summary-label">Resumen</p>
-            <h2>Seis proyectos privados</h2>
+            <h2>Siete proyectos privados</h2>
             <p>
               Se describen objetivos, responsabilidades, tecnologías y estado sin publicar código,
               credenciales ni información comercial sensible.

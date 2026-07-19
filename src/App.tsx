@@ -9,7 +9,7 @@ const projects = [
     tags: ["E-commerce", "CSS", "Responsive UI", "Cart UX", "Tiendanube"],
   },
   {
-    title: "Ivana Ecommerce",
+    title: "Personal Virtual Store",
     summary:
       "Construcción de una tienda independiente basada en contenido comercial real, con catálogo, navegación por categorías y flujo de compra.",
     work:

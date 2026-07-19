@@ -9,7 +9,7 @@ const projects = [
     tags: ["E-commerce", "CSS", "Responsive UI", "UX/UI", "Tiendanube"],
   },
   {
-    title: "Modular Headless eCommerce Engine",
+    title: "Motor eCommerce Modular & Headless",
     summary:
       "Desarrollo de una solución de tienda virtual independiente y flexible, diseñada para personalizarse de acuerdo a las necesidades de la marca sin depender de plataformas cerradas.",
     work:
@@ -18,7 +18,7 @@ const projects = [
     tags: ["Next.js 15", "React 19", "TypeScript", "B2C Storefront", "Modular Shopping Cart"],
   },
   {
-    title: "Local-First Android Expense Parser",
+    title: "Parser de Gastos Android Local-First",
     summary:
       "Aplicación móvil nativa para automatizar el registro de finanzas personales mediante la lectura e interpretación de notificaciones del sistema.",
     work:
@@ -27,7 +27,7 @@ const projects = [
     tags: ["Kotlin", "Jetpack Compose", "Room", "Android", "GitHub Actions"],
   },
   {
-    title: "Offline Personal Finance System (Discovery)",
+    title: "Sistema de Finanzas Personales Offline (Discovery)",
     summary:
       "Consultoría de descubrimiento de producto y arquitectura para un asistente financiero personal enfocado en la privacidad de datos mediante arquitectura local.",
     work:
@@ -36,7 +36,7 @@ const projects = [
     tags: ["Product Discovery", "Local-first", "Arquitectura", "IA local", "Fintech"],
   },
   {
-    title: "DRDV: Contract-Based AI Agent Framework",
+    title: "Framework de Agentes de IA por Contratos (DRDV)",
     summary:
       "Framework de desarrollo para construir sistemas multi-agente guiados por contratos de comportamiento explícitos y validación basada en evidencias.",
     work:
@@ -45,7 +45,7 @@ const projects = [
     tags: ["Python", "Agent Architecture", "Validation", "Observability", "YAML Contracts"],
   },
   {
-    title: "IAO: Air-Gapped Local Chat Agent",
+    title: "Agente de Chat Local y Privado (IAO)",
     summary:
       "Microservicio de chat autónomo y privado con procesamiento de lenguaje local y recuperación de información basada en bases vectoriales (RAG).",
     work:

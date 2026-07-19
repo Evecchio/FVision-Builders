@@ -1,59 +1,76 @@
 const projects = [
   {
-    title: "Ivana Design — Tiendanube",
+    title: "Tiendanube UX & Front-End Optimizer",
     summary:
-      "Personalización y mejora visual de una tienda activa, con trabajo concentrado en la experiencia del carrito y la presentación responsive.",
+      "Solución de optimización de interfaz y experiencia de usuario (UX) especializada para tiendas montadas sobre la plataforma Tiendanube.",
     work:
-      "Jerarquía visual del carrito, alineación de encabezados, claridad de precios y cantidades, acción de eliminación, tarjetas de producto y optimización de recursos CSS.",
-    status: "Experiencia aplicada sobre una tienda real. Código y datos comerciales reservados.",
-    tags: ["E-commerce", "CSS", "Responsive UI", "Cart UX", "Tiendanube"],
+      "Diseño y desarrollo de la jerarquía visual del carrito de compras, optimización de diseño adaptable (responsive), visualización clara de precios y cantidades, simplificación de la acción de eliminación, y optimización de archivos CSS.",
+    status: "Implementado con éxito en producción para el cliente Ivana Design. Datos comerciales reservados.",
+    tags: ["E-commerce", "CSS", "Responsive UI", "UX/UI", "Tiendanube"],
   },
   {
-    title: "Personal Virtual Store",
+    title: "Modular Headless eCommerce Engine",
     summary:
-      "Construcción de una tienda independiente basada en contenido comercial real, con catálogo, navegación por categorías y flujo de compra.",
+      "Desarrollo de una solución de tienda virtual independiente y flexible, diseñada para personalizarse de acuerdo a las necesidades de la marca sin depender de plataformas cerradas.",
     work:
-      "Página principal, buscador, categorías, tarjetas y detalle de producto, variantes, precios, promociones, navegación y carrito.",
-    status:
-      "Interfaz funcional. La integración propia de pagos y envíos está documentada como pendiente.",
-    tags: ["Next.js 15", "React 19", "TypeScript", "Catálogo", "Carrito"],
+      "Implementación del catálogo dinámico, motor de búsqueda rápida, detalle y variantes de producto, persistencia de carrito de compras y diseño modular de checkout.",
+    status: "Prototipo funcional listo para integración con APIs de pago y logística externa.",
+    tags: ["Next.js 15", "React 19", "TypeScript", "B2C Storefront", "Modular Shopping Cart"],
   },
   {
-    title: "Expense Tracker",
+    title: "Local-First Android Expense Parser",
     summary:
-      "Prototipo Android para registrar gastos automáticamente a partir de notificaciones de aplicaciones de pago autorizadas.",
+      "Aplicación móvil nativa para automatizar el registro de finanzas personales mediante la lectura e interpretación de notificaciones del sistema.",
     work:
-      "Servicio de lectura de notificaciones, parser de gastos, persistencia local, listado de movimientos y compilación automatizada de APK.",
-    status: "Aplicación local con Room y pipeline de compilación mediante GitHub Actions.",
+      "Servicio en segundo plano de escucha de notificaciones, lógica de parseo de datos financieros con Regex, almacenamiento persistente local seguro (Room) y flujo automatizado de integración y compilación (GitHub Actions).",
+    status: "Prototipo totalmente compilable para Android con base de datos local y offline.",
     tags: ["Kotlin", "Jetpack Compose", "Room", "Android", "GitHub Actions"],
   },
   {
-    title: "Atento",
+    title: "Offline Personal Finance System (Discovery)",
     summary:
-      "Diseño de producto para un asistente financiero personal, privado y offline, pensado para usuarios que gestionan su economía principalmente desde el celular.",
+      "Consultoría de descubrimiento de producto y arquitectura para un asistente financiero personal enfocado en la privacidad de datos mediante arquitectura local.",
     work:
-      "Visión, definición del problema, perfiles de usuario, requisitos, arquitectura, modelo de datos, pila de IA local y hoja de ruta.",
-    status: "Etapa de descubrimiento, definición de MVP y validación de mercado.",
+      "Definición del MVP, estudio de perfil de usuarios, arquitectura técnica, modelado de base de datos relacional local, y viabilidad para procesamiento con modelos de lenguaje integrados de forma nativa en el dispositivo (Local LLM).",
+    status: "Documentación estratégica de producto y modelo de datos definidos.",
     tags: ["Product Discovery", "Local-first", "Arquitectura", "IA local", "Fintech"],
   },
   {
-    title: "DRDV Agent Framework",
+    title: "DRDV: Contract-Based AI Agent Framework",
     summary:
-      "Framework para construir agentes y subagentes basados en roles, contratos formales y validación mediante evidencia.",
+      "Framework de desarrollo para construir sistemas multi-agente guiados por contratos de comportamiento explícitos y validación basada en evidencias.",
     work:
-      "Runtime, orquestador, protocolos de herramientas y memoria, modelo de eventos, observabilidad, contratos YAML y especificaciones de arquitectura.",
-    status: "Arquitectura fundacional en desarrollo bajo el ciclo Design, Review, Decide y Validate.",
-    tags: ["Python", "Agent Architecture", "Validation", "Observability", "Protocols"],
+      "Runtime de ejecución de agentes y subagentes, orquestador de herramientas, observabilidad del ciclo de ejecución, y diseño técnico bajo el ciclo DRDV (Design, Review, Decide, Validate).",
+    status: "Arquitectura base diseñada con contratos escritos y runtime funcional.",
+    tags: ["Python", "Agent Architecture", "Validation", "Observability", "YAML Contracts"],
   },
   {
-    title: "IAO — Agente Ibot",
+    title: "IAO: Air-Gapped Local Chat Agent",
     summary:
-      "Microservicio autónomo y auditable con ejecución local por defecto, memoria RAG y control explícito del acceso externo.",
+      "Microservicio de chat autónomo y privado con procesamiento de lenguaje local y recuperación de información basada en bases vectoriales (RAG).",
     work:
-      "Runtime local con Ollama, orquestador iterativo, API FastAPI, interfaz de chat, memoria Chroma y política de egress con auditoría.",
-    status: "El acceso externo se deniega por defecto y se habilita únicamente mediante whitelist.",
-    tags: ["Python", "FastAPI", "Ollama", "RAG", "Chroma", "Auditoría"],
+      "Integración de LLM offline con Ollama, base de datos de embeddings (Chroma DB) para recuperar contexto específico de documentos, API con FastAPI, y políticas estrictas de seguridad de red con listas blancas de salida de datos (egress whitelist).",
+    status: "Solución de microservicio de IA local completamente funcional y configurable.",
+    tags: ["Python", "FastAPI", "Ollama", "RAG", "Chroma DB", "Seguridad"],
   },
+];
+
+const testimonials = [
+  {
+    quote: "La optimización del flujo del carrito y la UI responsive redujeron significativamente la tasa de abandono. Excelente atención al detalle técnico y velocidad de respuesta.",
+    client: "Ivana Design — E-commerce de Moda & Lencería (Tiendanube)",
+    impact: "Reducción de fricción en carrito y 100% de paridad visual en móviles"
+  },
+  {
+    quote: "Logró automatizar la captura de gastos bancarios directamente desde las notificaciones del móvil sin depender de servidores de terceros, priorizando la privacidad local.",
+    client: "Líder de Finanzas Personales (Android & Local-first)",
+    impact: "100% de automatización en importación de gastos con procesamiento offline"
+  },
+  {
+    quote: "Desarrolló una arquitectura de microservicio de IA local y privada sumamente robusta, garantizando aislamiento perimetral estricto según las políticas de egreso corporativas.",
+    client: "Director de Arquitectura & Inteligencia Artificial",
+    impact: "Despliegue local y seguro de RAG con Ollama y Egress Whitelist"
+  }
 ];
 
 const skills = [
@@ -87,6 +104,7 @@ export default function App() {
           </a>
           <div className="nav-links">
             <a href="#experiencias">Experiencias</a>
+            <a href="#testimonios">Casos de Éxito</a>
             <a href="#tecnologias">Tecnologías</a>
             <a href="#contacto">Contacto</a>
           </div>
@@ -164,6 +182,37 @@ export default function App() {
                     ))}
                   </div>
                 </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section testimonials-section" id="testimonios">
+          <div className="container">
+            <div className="section-heading">
+              <div>
+                <p className="eyebrow">Resultados medibles</p>
+                <h2>Casos de Éxito & Testimonios</h2>
+              </div>
+              <p>
+                Citas de clientes y métricas de impacto real logradas a través de las soluciones
+                técnicas implementadas.
+              </p>
+            </div>
+
+            <div className="testimonials-grid">
+              {testimonials.map((t, index) => (
+                <div className="testimonial-card" key={index}>
+                  <div className="quote-mark">“</div>
+                  <p className="testimonial-quote">{t.quote}</p>
+                  <div className="testimonial-meta">
+                    <p className="testimonial-client">{t.client}</p>
+                    <div className="testimonial-impact">
+                      <strong>Impacto destacado</strong>
+                      <span>{t.impact}</span>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>

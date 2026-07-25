@@ -108,22 +108,18 @@ h1, h2, h3, .brand {
   font-family: "Plus Jakarta Sans", sans-serif;
   cursor: pointer;
 }
-
-.brand-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.brand-logo-img {
   width: 32px;
   height: 32px;
-  background: var(--ink);
-  color: var(--paper);
   border-radius: 8px;
-  border: 1px solid var(--ink);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  border: var(--border-thick);
   box-shadow: 2px 2px 0px 0px var(--ink);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  object-fit: cover;
+  background: #000000;
 }
 
-.brand-container:hover .brand-logo {
+.brand-container:hover .brand-logo-img {
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px 0px var(--ink);
 }

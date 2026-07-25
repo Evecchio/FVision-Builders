@@ -214,17 +214,7 @@ export default function App() {
       <header className="site-header">
         <nav className="container nav-bar" aria-label="Navegación principal">
           <a className="brand-container" href="#top">
-            <div className="brand-logo">
-              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="6.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M28 22H72C76.4 22 80 25.6 80 30V56C80 60.4 76.4 64 72 64H45L34 75V64H28C23.6 64 20 60.4 20 56V30C20 25.6 23.6 22 28 22Z" fill="none" />
-                <path d="M20 33H36L42 27H58" />
-                <circle cx="63" cy="27" r="4.5" fill="currentColor" stroke="none" />
-                <path d="M20 43H58" />
-                <circle cx="63" cy="43" r="4.5" fill="currentColor" stroke="none" />
-                <path d="M20 59H36L42 53H58" />
-                <circle cx="63" cy="53" r="4.5" fill="currentColor" stroke="none" />
-              </svg>
-            </div>
+            <img src="/logo.png" alt="FVision Logo" className="brand-logo-img" />
             <span className="brand-text">FVision</span>
           </a>
           <div className="nav-links">

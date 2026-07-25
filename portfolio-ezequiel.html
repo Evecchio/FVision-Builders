@@ -92,21 +92,18 @@
       cursor: pointer;
     }
 
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .brand-logo-img {
       width: 32px;
       height: 32px;
-      background: var(--ink);
-      color: var(--paper);
       border-radius: 8px;
-      border: 1px solid var(--ink);
-      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      border: var(--border-thick);
       box-shadow: 2px 2px 0px 0px var(--ink);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      object-fit: cover;
+      background: #000000;
     }
 
-    .brand-container:hover .brand-logo {
+    .brand-container:hover .brand-logo-img {
       transform: translate(-1px, -1px);
       box-shadow: 3px 3px 0px 0px var(--ink);
     }
@@ -690,17 +687,7 @@
 <header>
   <nav class="container">
     <a class="brand-container" href="#top">
-      <div class="brand-logo">
-        <svg width="20" height="20" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M28 22H72C76.4 22 80 25.6 80 30V56C80 60.4 76.4 64 72 64H45L34 75V64H28C23.6 64 20 60.4 20 56V30C20 25.6 23.6 22 28 22Z" fill="none" />
-          <path d="M20 33H36L42 27H58" />
-          <circle cx="63" cy="27" r="4.5" fill="currentColor" stroke="none" />
-          <path d="M20 43H58" />
-          <circle cx="63" cy="43" r="4.5" fill="currentColor" stroke="none" />
-          <path d="M20 59H36L42 53H58" />
-          <circle cx="63" cy="53" r="4.5" fill="currentColor" stroke="none" />
-        </svg>
-      </div>
+      <img src="./logo.png" alt="FVision Logo" class="brand-logo-img" />
       <span class="brand-text">FVision</span>
     </a>
     <div class="nav">

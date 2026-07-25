@@ -174,7 +174,6 @@
       letter-spacing: -0.04em;
       text-transform: uppercase;
       font-weight: 800;
-      white-space: nowrap;
     }
 
     .lead {
@@ -610,6 +609,9 @@
     }
 
     @media (max-width: 640px) {
+      .container {
+        width: min(calc(100% - 3.5rem), var(--max));
+      }
       .card-head {
         flex-direction: column;
         align-items: flex-start;

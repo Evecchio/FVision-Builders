@@ -194,7 +194,6 @@ h1 {
   line-height: 1.1;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 
 .lead {
@@ -641,6 +640,9 @@ h1 {
 }
 
 @media (max-width: 640px) {
+  .container {
+    width: min(calc(100% - 3.5rem), var(--max-width));
+  }
   .nav-links {
     display: none;
   }

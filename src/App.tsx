@@ -213,8 +213,19 @@ export default function App() {
     <div className="site-shell" id="top">
       <header className="site-header">
         <nav className="container nav-bar" aria-label="Navegación principal">
-          <a className="brand" href="#top">
-            <span>F</span>Vision
+          <a className="brand-container" href="#top">
+            <div className="brand-logo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                <path d="M8 10h3" />
+                <path d="M11 10c1-1 2-2 4-2" />
+                <path d="M11 10c1 1 2 2 4 2" />
+                <circle cx="16" cy="8" r="1" fill="currentColor" />
+                <circle cx="16" cy="12" r="1" fill="currentColor" />
+                <circle cx="16" cy="10" r="1" fill="currentColor" />
+              </svg>
+            </div>
+            <span className="brand-text">FVision</span>
           </a>
           <div className="nav-links">
             <a href="#blueprints">Blueprints</a>
@@ -247,7 +258,7 @@ export default function App() {
           </div>
 
           <aside className="summary-card" aria-label="Resumen profesional">
-            <h2>8 Blueprints de Ingeniería</h2>
+            <h2>Blueprints de Ingeniería</h2>
             <p>
               El código y datos de negocio son privados. Se exponen las especificaciones y flujos técnicos bajo licencias de despliegue controlado.
             </p>

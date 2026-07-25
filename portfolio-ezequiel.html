@@ -84,16 +84,38 @@
       gap: 1rem;
     }
 
-    .brand {
-      font-size: 1.25rem;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
       font-family: "Plus Jakarta Sans", sans-serif;
+      cursor: pointer;
     }
 
-    .brand span {
-      color: var(--accent);
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 8px;
+      border: 1px solid var(--ink);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      box-shadow: 2px 2px 0px 0px var(--ink);
+    }
+
+    .brand-container:hover .brand-logo {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px 0px var(--ink);
+    }
+
+    .brand-text {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--ink);
     }
 
     .nav {
@@ -636,7 +658,20 @@
 <body>
 <header>
   <nav class="container">
-    <a class="brand" href="#top"><span>F</span>Vision</a>
+    <a class="brand-container" href="#top">
+      <div class="brand-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          <path d="M8 10h3" />
+          <path d="M11 10c1-1 2-2 4-2" />
+          <path d="M11 10c1 1 2 2 4 2" />
+          <circle cx="16" cy="8" r="1" fill="currentColor" />
+          <circle cx="16" cy="12" r="1" fill="currentColor" />
+          <circle cx="16" cy="10" r="1" fill="currentColor" />
+        </svg>
+      </div>
+      <span class="brand-text">FVision</span>
+    </a>
     <div class="nav">
       <a href="#projects">Blueprints</a>
       <a href="#skills">Tecnologías</a>
@@ -656,7 +691,7 @@
       </div>
     </div>
     <aside class="summary">
-      <h2>8 Blueprints de Ingeniería</h2>
+      <h2>Blueprints de Ingeniería</h2>
       <p>El código y datos comerciales son estrictamente privados. Se exponen especificaciones de flujo bajo licencias de despliegue controlado.</p>
       <div class="facts">
         <div class="fact"><strong>E-commerce</strong><span>Motores & Conversión</span></div>

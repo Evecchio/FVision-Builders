@@ -101,16 +101,38 @@ h1, h2, h3, .brand {
   justify-content: space-between;
   gap: 1rem;
 }
-
-.brand {
-  font-size: 1.25rem;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
 }
 
-.brand span {
-  color: var(--accent);
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 8px;
+  border: 1px solid var(--ink);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 2px 2px 0px 0px var(--ink);
+}
+
+.brand-container:hover .brand-logo {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px 0px var(--ink);
+}
+
+.brand-text {
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--ink);
 }
 
 .nav-links {

@@ -231,11 +231,11 @@ export default function App() {
           <div className="hero-copy">
             <span className="eyebrow">
               <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
-              Catálogo de Arquitectura & Software
+              Diseñado por {siteConfig.owner}
             </span>
-            <h1>{siteConfig.owner}</h1>
+            <h1>Blueprints de Ingeniería</h1>
             <p className="lead">
-              Desarrollo soluciones digitales estructuradas como blueprints de software en comercio electrónico, aplicaciones móviles local-first e inteligencia artificial privada.
+              Desarrollo de soluciones digitales y arquitectura de software estructuradas en comercio electrónico, aplicaciones móviles local-first e inteligencia artificial privada.
             </p>
             <div className="actions">
               <a className="button button-primary" href="#blueprints">

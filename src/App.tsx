@@ -164,6 +164,35 @@ const skills = [
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus("submitting");
+    try {
+      // Nota: Reemplazar el ID 'YOUR_FORMSPREE_ID' por tu ID real de Formspree cuando lo configures
+      const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formState)
+      });
+      if (response.ok) {
+        setFormStatus("success");
+        setFormState({ name: "", email: "", message: "" });
+      } else {
+        setFormStatus("error");
+      }
+    } catch {
+      setFormStatus("error");
+    }
+  };
 
   const filteredProjects = selectedCategory === "all" 
     ? projects 
@@ -203,15 +232,15 @@ export default function App() {
               <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
               Catálogo de Arquitectura & Software
             </span>
-            <h1>Blueprints de Ingeniería.</h1>
+            <h1>{siteConfig.owner}</h1>
             <p className="lead">
-              Soy {siteConfig.owner}. Esta plataforma reúne soluciones de software reales estructuradas como blueprints replicables en comercio electrónico, aplicaciones local-first y sistemas multi-agente con inteligencia artificial.
+              Desarrollo soluciones digitales estructuradas como blueprints de software en comercio electrónico, aplicaciones móviles local-first e inteligencia artificial privada.
             </p>
             <div className="actions">
               <a className="button button-primary" href="#blueprints">
                 Ver Blueprints <ArrowUpRight size={18} />
               </a>
-              <a className="button" href="mailto:ezequiel.vecchio.fv@gmail.com">
+              <a className="button" href="#contacto">
                 Contacto
               </a>
             </div>
@@ -345,16 +374,66 @@ export default function App() {
               <span className="eyebrow contact-eyebrow">Contacto Técnico</span>
               <h2>¿Querés implementar uno de estos Blueprints?</h2>
               <p>
-                Puedo realizar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier Blueprint en una llamada controlada.
+                Dejame tu consulta para coordinar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier Blueprint.
               </p>
-              <div className="actions contact-actions">
-                <a className="button button-light" href="mailto:ezequiel.vecchio.fv@gmail.com">
-                  <Mail size={18} /> ezequiel.vecchio.fv@gmail.com
-                </a>
-                <a className="button button-outline-light" href="https://github.com/Evecchio" target="_blank" rel="noreferrer">
-                  <Github size={18} /> GitHub
-                </a>
-              </div>
+
+              <form className="contact-form" onSubmit={handleFormSubmit}>
+                <div className="form-group">
+                  <label htmlFor="name">Nombre</label>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    className="form-input"
+                    placeholder="Tu nombre"
+                    value={formState.name}
+                    onChange={(e) => setFormState(prev => ({ ...prev, name: e.target.value }))}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    className="form-input"
+                    placeholder="tu@email.com"
+                    value={formState.email}
+                    onChange={(e) => setFormState(prev => ({ ...prev, email: e.target.value }))}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message">Mensaje / Consulta</label>
+                  <textarea
+                    id="message"
+                    required
+                    className="form-input form-textarea"
+                    placeholder="¿En qué Blueprint o solución estás interesado?"
+                    value={formState.message}
+                    onChange={(e) => setFormState(prev => ({ ...prev, message: e.target.value }))}
+                  />
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="button button-primary" 
+                  style={{ width: '100%', marginTop: '0.5rem' }}
+                  disabled={formStatus === "submitting"}
+                >
+                  {formStatus === "submitting" ? "Enviando..." : "Enviar Consulta"}
+                </button>
+
+                {formStatus === "success" && (
+                  <div className="form-status success" style={{ marginTop: '1rem' }}>
+                    ¡Consulta enviada con éxito! Te responderé a la brevedad.
+                  </div>
+                )}
+                {formStatus === "error" && (
+                  <div className="form-status error" style={{ marginTop: '1rem' }}>
+                    Ocurrió un error al enviar. Intentá de nuevo o escribime a GitHub/LinkedIn.
+                  </div>
+                )}
+              </form>
             </div>
           </div>
         </section>

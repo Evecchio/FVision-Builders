@@ -135,11 +135,12 @@
 
     h1 {
       font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: clamp(3.2rem, 7.5vw, 6.2rem);
-      line-height: 0.92;
-      letter-spacing: -0.06em;
+      font-size: clamp(1.8rem, 5.5vw, 3.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
       text-transform: uppercase;
       font-weight: 800;
+      white-space: nowrap;
     }
 
     .lead {
@@ -581,6 +582,55 @@
         gap: 0.75rem;
       }
     }
+    /* Formulario de Contacto Neo-Brutalista */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-width: 550px;
+      margin: 2.2rem auto 0;
+      text-align: left;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: #FFF0EB;
+    }
+
+    .form-input {
+      min-height: 50px;
+      padding: 0.75rem 1rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.98rem;
+      font-weight: 600;
+      box-shadow: 2px 2px 0px 0px var(--ink);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      width: 100%;
+    }
+
+    .form-input:focus {
+      outline: none;
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0px 0px var(--ink);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
   </style>
 </head>
 <body>
@@ -602,7 +652,7 @@
       <p class="lead">Desarrollo soluciones digitales estructuradas como blueprints de software en comercio electrónico, aplicaciones móviles local-first e inteligencia artificial privada.</p>
       <div class="actions">
         <a class="btn primary" href="#projects">Ver Blueprints</a>
-        <a class="btn" href="mailto:ezequiel.vecchio.fv@gmail.com">Contacto</a>
+        <a class="btn" href="#contact">Contacto</a>
       </div>
     </div>
     <aside class="summary">
@@ -829,11 +879,23 @@
     <div class="container">
       <div class="contact">
         <h2>¿Querés implementar uno de estos Blueprints?</h2>
-        <p>Puedo realizar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier Blueprint en una llamada controlada.</p>
-        <div class="actions" style="justify-content:center">
-          <a class="btn primary" href="mailto:ezequiel.vecchio.fv@gmail.com">ezequiel.vecchio.fv@gmail.com</a>
-          <a class="btn" href="https://github.com/Evecchio" target="_blank" rel="noreferrer">Perfil de GitHub</a>
-        </div>
+        <p>Dejame tu consulta para coordinar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier Blueprint.</p>
+        
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required class="form-input" placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="_replyto" required class="form-input" placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje / Consulta</label>
+            <textarea id="message" name="message" required class="form-input form-textarea" placeholder="¿En qué Blueprint o solución estás interesado?"></textarea>
+          </div>
+          <button type="submit" class="btn primary" style="width:100%; margin-top:0.5rem;">Enviar Consulta</button>
+        </form>
       </div>
     </div>
   </section>

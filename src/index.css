@@ -158,10 +158,11 @@ h1, h2, h3, .brand {
 h1 {
   max-width: 820px;
   margin-bottom: 0;
-  font-size: clamp(3.2rem, 7.5vw, 6.2rem);
-  line-height: 0.92;
-  letter-spacing: -0.06em;
+  font-size: clamp(1.8rem, 5.5vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .lead {
@@ -641,3 +642,74 @@ h1 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Formulario de Contacto Neo-Brutalista */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 550px;
+  margin: 2.2rem auto 0;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #FFF0EB;
+}
+
+.form-input {
+  min-height: 50px;
+  padding: 0.75rem 1rem;
+  border: var(--border-thick);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 600;
+  box-shadow: 2px 2px 0px 0px var(--ink);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px 0px var(--ink);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-status {
+  padding: 1rem;
+  border: var(--border-thick);
+  border-radius: var(--radius-sm);
+  font-family: "Fira Code", monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 2px 2px 0px 0px var(--ink);
+}
+
+.form-status.success {
+  background: var(--local-color);
+  color: var(--paper);
+}
+
+.form-status.error {
+  background: var(--ai-color);
+  color: var(--paper);
+}
+

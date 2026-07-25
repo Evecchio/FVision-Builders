@@ -1,76 +1,139 @@
-const projects = [
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  FolderGit2, 
+  Smartphone, 
+  Cpu, 
+  Database, 
+  Sparkles, 
+  ArrowUpRight, 
+  Mail, 
+  Github, 
+  Linkedin,
+  FileCode,
+  AlertTriangle,
+  CheckCircle,
+  HelpCircle
+} from "lucide-react";
+import { siteConfig } from "./config/site";
+
+const categories = [
+  { id: "all", label: "Todos los Blueprints" },
+  { id: "ecommerce", label: "E-Commerce & Conversión" },
+  { id: "ai", label: "IA & Agentes" },
+  { id: "local-first", label: "Local-First & Mobile" }
+] as const;
+
+interface Blueprint {
+  title: string;
+  summary: string;
+  category: "ecommerce" | "ai" | "local-first";
+  tags: string[];
+  specs: {
+    problem: string;
+    solution: string;
+    statusLabel: string;
+    status: "production" | "prototype" | "architecture";
+  };
+}
+
+const projects: Blueprint[] = [
   {
-    title: "Tiendanube UX & Conversión",
-    summary:
-      "Solución de optimización de interfaz y experiencia de usuario (UX) especializada para incrementar ventas en tiendas montadas sobre Tiendanube.",
-    work:
-      "Diseño y desarrollo de la jerarquía visual del carrito de compras, optimización de diseño adaptable (responsive), visualización clara de precios y cantidades, simplificación de la acción de eliminación, y optimización de archivos CSS.",
-    status: "Implementado con éxito en producción para el cliente Ivana Design. Datos comerciales reservados.",
-    tags: ["E-commerce", "CSS", "Responsive UI", "UX/UI", "Tiendanube"],
+    title: "NubeBoost",
+    summary: "Optimizador de interfaz y flujo de conversión para tiendas en Tiendanube.",
+    category: "ecommerce",
+    tags: ["E-commerce", "CSS", "UX/UI", "Tiendanube"],
+    specs: {
+      problem: "Fricción visual y tasa de abandono en carritos de compra en plantillas cerradas.",
+      solution: "Jerarquía visual optimizada del carrito de compras, adaptabilidad responsiva extrema y simplificación del checkout.",
+      statusLabel: "Producción Privada",
+      status: "production"
+    }
   },
   {
-    title: "Motor eCommerce Headless",
-    summary:
-      "Desarrollo de una solución de tienda virtual independiente y flexible, diseñada para personalizarse de acuerdo a las necesidades de la marca sin depender de plataformas cerradas.",
-    work:
-      "Implementación del catálogo dinámico, motor de búsqueda rápida, detalle y variantes de producto, persistencia de carrito de compras y diseño modular de checkout.",
-    status: "Prototipo funcional listo para integración con APIs de pago y logística externa.",
-    tags: ["Next.js 15", "React 19", "TypeScript", "B2C Storefront", "Modular Shopping Cart"],
+    title: "CoreStore Headless",
+    summary: "Motor frontend desacoplado de alto rendimiento para e-commerce modular.",
+    category: "ecommerce",
+    tags: ["Next.js 15", "React 19", "TypeScript", "Headless"],
+    specs: {
+      problem: "Lentitud en carga y falta de personalización de plataformas de comercio tradicionales.",
+      solution: "Desarrollo de catálogo dinámico, persistencia local del carrito, búsqueda instantánea y checkout modular.",
+      statusLabel: "Prototipo Funcional",
+      status: "prototype"
+    }
   },
   {
-    title: "FlowCommerce Core",
-    summary:
-      "Híbrido de catálogo web y motor de comercio conversacional automatizado por IA vía WhatsApp.",
-    work:
-      "Diseño de arquitectura de catálogo web interactivo con derivación estructurada a WhatsApp y orquestador conversacional por IA para procesar pedidos, entregas y links de pago dinámicos.",
-    status: "Repositorio principal y especificación técnica inicial de arquitectura documentados.",
-    tags: ["WhatsApp API", "AI Agent", "RAG", "Conversational Commerce", "Integration"],
+    title: "FlowCommerce",
+    summary: "Híbrido de catálogo digital y automatización conversacional en WhatsApp.",
+    category: "ecommerce",
+    tags: ["WhatsApp API", "AI Agent", "RAG", "Conversational"],
+    specs: {
+      problem: "Falta de automatización y estructuración de pedidos en ventas informales por chat.",
+      solution: "Arquitectura de catálogo interactivo con derivación estructurada a WhatsApp y orquestador conversacional por IA.",
+      statusLabel: "Especificación Técnica",
+      status: "architecture"
+    }
   },
   {
-    title: "Lector de Gastos Local-First",
-    summary:
-      "Aplicación móvil nativa para automatizar el registro de finanzas personales mediante la lectura e interpretación de notificaciones del sistema.",
-    work:
-      "Servicio en segundo plano de escucha de notificaciones, lógica de parseo de datos financieros con Regex, almacenamiento persistente local seguro (Room) y flujo automatizado de integración y compilación (GitHub Actions).",
-    status: "Prototipo totalmente compilable para Android con base de datos local y offline.",
-    tags: ["Kotlin", "Jetpack Compose", "Room", "Android", "GitHub Actions"],
+    title: "SpendGuard Mobile",
+    summary: "Servicio móvil nativo offline de escucha y registro automático de gastos.",
+    category: "local-first",
+    tags: ["Kotlin", "Jetpack Compose", "Room Database", "Android"],
+    specs: {
+      problem: "Registro manual de finanzas tedioso y brechas de privacidad al sincronizar con servidores externos.",
+      solution: "Servicio en segundo plano de captura de notificaciones, parseo de transacciones por Regex y persistencia Room local.",
+      statusLabel: "Prototipo Android",
+      status: "prototype"
+    }
   },
   {
-    title: "Finanzas Offline: Descubrimiento",
-    summary:
-      "Consultoría de descubrimiento de producto y arquitectura para un asistente financiero personal enfocado en la privacidad de datos mediante arquitectura local.",
-    work:
-      "Definición del MVP, estudio de perfil de usuarios, arquitectura técnica, modelado de base de datos relacional local, y viabilidad para procesamiento con modelos de lenguaje integrados de forma nativa en el dispositivo (Local LLM).",
-    status: "Documentación estratégica de producto y modelo de datos definidos.",
-    tags: ["Product Discovery", "Local-first", "Arquitectura", "IA local", "Fintech"],
+    title: "ZenSpend Engine",
+    summary: "Consultoría de descubrimiento y modelado de datos para finanzas local-first.",
+    category: "local-first",
+    tags: ["Product Discovery", "Local-first", "Architecture", "Fintech"],
+    specs: {
+      problem: "Falta de validación técnica de modelos relacionales offline y viabilidad de IA local.",
+      solution: "Definición estratégica de MVP, estudio de perfil de usuario y viabilidad técnica para procesamiento con LLM local.",
+      statusLabel: "I+D / Descubrimiento",
+      status: "architecture"
+    }
   },
   {
-    title: "DRDV: Agentes de IA por Contrato",
-    summary:
-      "Framework de desarrollo para construir sistemas multi-agente guiados por contratos de comportamiento explícitos y validación basada en evidencias.",
-    work:
-      "Runtime de ejecución de agentes y subagentes, orquestador de herramientas, observabilidad del ciclo de ejecución, y diseño técnico bajo el ciclo DRDV (Design, Review, Decide, Validate).",
-    status: "Arquitectura base diseñada con contratos escritos y runtime funcional.",
-    tags: ["Python", "Agent Architecture", "Validation", "Observability", "YAML Contracts"],
+    title: "DRDV Framework",
+    summary: "Runtime de orquestación y control multi-agente guiado por contratos de comportamiento.",
+    category: "ai",
+    tags: ["Python", "Agent Architecture", "Validation", "YAML"],
+    specs: {
+      problem: "Falta de predictibilidad, control y observabilidad en sistemas multi-agente complejos.",
+      solution: "Runtime de ejecución de agentes con validación basada en evidencias bajo el ciclo Design, Review, Decide, Validate.",
+      statusLabel: "Arquitectura Base",
+      status: "architecture"
+    }
   },
   {
-    title: "IAO: Chat Local con RAG",
-    summary:
-      "Microservicio de chat autónomo y privado con procesamiento de lenguaje local y recuperación de información basada en bases vectoriales (RAG).",
-    work:
-      "Integración de LLM offline con Ollama, base de datos de embeddings (Chroma DB) para recuperar contexto específico de documentos, API con FastAPI, y políticas estrictas de seguridad de red con listas blancas de salida de datos (egress whitelist).",
-    status: "Solución de microservicio de IA local completamente funcional y configurable.",
-    tags: ["Python", "FastAPI", "Ollama", "RAG", "Chroma DB", "Seguridad"],
+    title: "SafeRAG Local",
+    summary: "Microservicio autónomo de chat privado y procesamiento de documentos locales.",
+    category: "ai",
+    tags: ["FastAPI", "Ollama", "RAG", "Chroma DB", "Security"],
+    specs: {
+      problem: "Riesgo de filtración de datos corporativos sensibles al consumir APIs de LLMs en la nube.",
+      solution: "Aislamiento perimetral estricto con egress whitelist, procesamiento offline con Ollama y base de datos vectorial Chroma.",
+      statusLabel: "Prototipo Funcional",
+      status: "prototype"
+    }
   },
   {
-    title: "DropLand: Descarga & Organización",
-    summary:
-      "Aplicación híbrida (escritorio y control móvil local-first) diseñada para automatizar la descarga de audio y su categorización por géneros en almacenamiento local.",
-    work:
-      "Desarrollo de interfaz gráfica de escritorio con Tkinter, implementación de un servidor HTTP local para control remoto vía web/PWA móvil, integración del motor yt-dlp y procesamiento/conversión de audio con FFmpeg/FFprobe.",
-    status: "Prototipo totalmente funcional empaquetado para Windows (.msix e instalador Inno Setup) y de uso personal.",
-    tags: ["Python", "Tkinter", "yt-dlp", "FFmpeg", "MSIX", "Inno Setup", "PWA"],
-  },
+    title: "DropLand",
+    summary: "Aplicación híbrida de control remoto y descarga automatizada por red local.",
+    category: "local-first",
+    tags: ["Python", "Tkinter", "yt-dlp", "FFmpeg", "MSIX", "PWA"],
+    specs: {
+      problem: "Incomodidad para transferir enlaces y descargar audios/música desde el móvil al almacenamiento local.",
+      solution: "Interfaz de escritorio Tkinter integrada con un servidor HTTP local para control remoto vía PWA móvil, yt-dlp y FFmpeg.",
+      statusLabel: "Distribución Windows",
+      status: "prototype"
+    }
+  }
 ];
 
 const skills = [
@@ -100,15 +163,32 @@ const skills = [
 ];
 
 export default function App() {
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+
+  const filteredProjects = selectedCategory === "all" 
+    ? projects 
+    : projects.filter(p => p.category === selectedCategory);
+
+  const getStatusIcon = (status: "production" | "prototype" | "architecture") => {
+    switch (status) {
+      case "production":
+        return <span className="status-led production" aria-hidden="true" />;
+      case "prototype":
+        return <span className="status-led prototype" aria-hidden="true" />;
+      case "architecture":
+        return <span className="status-led architecture" aria-hidden="true" />;
+    }
+  };
+
   return (
     <div className="site-shell" id="top">
       <header className="site-header">
         <nav className="container nav-bar" aria-label="Navegación principal">
           <a className="brand" href="#top">
-            Ezequiel Vecchio
+            <span>F</span>Vision
           </a>
           <div className="nav-links">
-            <a href="#experiencias">Experiencias</a>
+            <a href="#blueprints">Blueprints</a>
             <a href="#tecnologias">Tecnologías</a>
             <a href="#contacto">Contacto</a>
           </div>
@@ -116,118 +196,172 @@ export default function App() {
       </header>
 
       <main>
+        {/* Hero Section */}
         <section className="container hero">
           <div className="hero-copy">
-            <p className="eyebrow">Experiencias y proyectos privados</p>
-            <h1>Trabajo técnico documentado.</h1>
+            <span className="eyebrow">
+              <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
+              Catálogo de Arquitectura & Software
+            </span>
+            <h1>Blueprints de Ingeniería.</h1>
             <p className="lead">
-              Soy Ezequiel Vecchio. Esta web reúne experiencias reales en comercio electrónico,
-              aplicaciones móviles, producto digital, agentes de inteligencia artificial y sistemas
-              local-first.
+              Soy {siteConfig.owner}. Esta plataforma reúne soluciones de software reales estructuradas como blueprints replicables en comercio electrónico, aplicaciones local-first y sistemas multi-agente con inteligencia artificial.
             </p>
             <div className="actions">
-              <a className="button button-primary" href="#experiencias">
-                Ver experiencias
+              <a className="button button-primary" href="#blueprints">
+                Ver Blueprints <ArrowUpRight size={18} />
               </a>
-              <a className="button" href="mailto:eivecchio@hotmail.com">
+              <a className="button" href="mailto:ezequiel.vecchio.fv@gmail.com">
                 Contacto
               </a>
             </div>
           </div>
 
           <aside className="summary-card" aria-label="Resumen profesional">
-            <p className="summary-label">Resumen</p>
-            <h2>Ocho proyectos privados</h2>
+            <h2>8 Blueprints de Ingeniería</h2>
             <p>
-              Se describen objetivos, responsabilidades, tecnologías y estado sin publicar código,
-              credenciales ni información comercial sensible.
+              El código y datos de negocio son privados. Se exponen las especificaciones y flujos técnicos bajo licencias de despliegue controlado.
             </p>
             <div className="summary-grid">
-              <div><strong>Web</strong><span>E-commerce e interfaces</span></div>
-              <div><strong>Mobile</strong><span>Android y datos locales</span></div>
-              <div><strong>IA</strong><span>Agentes, RAG y Ollama</span></div>
-              <div><strong>Producto</strong><span>Descubrimiento y arquitectura</span></div>
+              <div>
+                <strong>E-commerce</strong>
+                <span>Motores & Conversión</span>
+              </div>
+              <div>
+                <strong>Local-First</strong>
+                <span>Privacidad & Móvil</span>
+              </div>
+              <div>
+                <strong>IA Local</strong>
+                <span>RAG & Agentes</span>
+              </div>
+              <div>
+                <strong>Arquitectura</strong>
+                <span>MVP & Diseño</span>
+              </div>
             </div>
           </aside>
         </section>
 
-        <section className="section" id="experiencias">
+        {/* Section Blueprints */}
+        <section className="section" id="blueprints">
           <div className="container">
             <div className="section-heading">
               <div>
-                <p className="eyebrow">Experiencia verificable</p>
-                <h2>Proyectos privados</h2>
+                <span className="eyebrow" style={{ background: '#FFFDF9', color: '#1B1C1D' }}>Soluciones Listas</span>
+                <h2>Catálogo de Blueprints</h2>
               </div>
               <p>
-                Los repositorios no se enlazan porque su acceso está restringido. Las descripciones
-                se basan en su documentación y su historial de implementación.
+                Estructuras modulares diseñadas para resolver desafíos de negocio e infraestructura sin exponer propiedad intelectual.
               </p>
             </div>
 
-            <div className="project-grid">
-              {projects.map((project) => (
-                <article className="project-card" key={project.title}>
-                  <div className="card-title-row">
-                    <h3>{project.title}</h3>
-                    <span className="private-label">Privado</span>
-                  </div>
-                  <p className="project-summary">{project.summary}</p>
-                  <div className="project-detail">
-                    <strong>Trabajo realizado</strong>
-                    <p>{project.work}</p>
-                  </div>
-                  <div className="project-detail">
-                    <strong>Estado</strong>
-                    <p>{project.status}</p>
-                  </div>
-                  <div className="tag-list">
-                    {project.tags.map((tag) => (
-                      <span className="tag" key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                </article>
+            {/* Tabs de Filtro */}
+            <div className="filter-tabs" role="tablist" aria-label="Filtrar por especialización">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  role="tab"
+                  aria-selected={selectedCategory === cat.id}
+                  className={`tab-button ${selectedCategory === cat.id ? "active" : ""}`}
+                  onClick={() => setSelectedCategory(cat.id)}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Grilla Animada */}
+            <motion.div 
+              layout 
+              className="project-grid"
+            >
+              <AnimatePresence mode="popLayout">
+                {filteredProjects.map((project) => (
+                  <motion.article 
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="project-card" 
+                    key={project.title}
+                  >
+                    <div className="card-title-row">
+                      <h3>{project.title}</h3>
+                      <span className="status-badge">
+                        {getStatusIcon(project.specs.status)}
+                        {project.specs.statusLabel}
+                      </span>
+                    </div>
+                    
+                    <p className="project-summary">{project.summary}</p>
+                    
+                    <div className="project-specs">
+                      <div className="spec-item">
+                        <span className="spec-label">PROB</span>
+                        <span className="spec-value">{project.specs.problem}</span>
+                      </div>
+                      <div className="spec-item">
+                        <span className="spec-label">SOL</span>
+                        <span className="spec-value">{project.specs.solution}</span>
+                      </div>
+                    </div>
+
+                    <div className="tag-list">
+                      {project.tags.map((tag) => (
+                        <span className="tag" key={tag}>{tag}</span>
+                      ))}
+                    </div>
+                  </motion.article>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Section Tecnologías */}
+        <section className="section skills-section" id="tecnologias">
+          <div className="container">
+            <div className="section-heading">
+              <div>
+                <span className="eyebrow" style={{ background: '#FFDE4D' }}>Capacidades</span>
+                <h2>Herramientas & Tecnologías</h2>
+              </div>
+              <p>Habilidades validadas a través del desarrollo de las soluciones descritas en este catálogo.</p>
+            </div>
+            <div className="skills-list">
+              {skills.map((skill) => (
+                <span className="skill" key={skill}>{skill}</span>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section skills-section" id="tecnologias">
-          <div className="container">
-            <div className="section-heading">
-              <div>
-                <p className="eyebrow">Herramientas utilizadas</p>
-                <h2>Tecnologías</h2>
-              </div>
-              <p>Capacidades observadas directamente en los proyectos incluidos en esta web.</p>
-            </div>
-            <div className="skills-list">
-              {skills.map((skill) => <span className="skill" key={skill}>{skill}</span>)}
-            </div>
-          </div>
-        </section>
-
+        {/* Section Contacto */}
         <section className="section" id="contacto">
-          <div className="container contact-panel">
-            <p className="eyebrow contact-eyebrow">Contacto</p>
-            <h2>Más información sobre mi experiencia</h2>
-            <p>
-              Puedo ampliar el contexto de cada proyecto o realizar una demostración controlada sin
-              exponer información privada.
-            </p>
-            <div className="actions contact-actions">
-              <a className="button button-light" href="mailto:eivecchio@hotmail.com">
-                eivecchio@hotmail.com
-              </a>
-              <a className="button button-outline-light" href="https://github.com/Evecchio" target="_blank" rel="noreferrer">
-                Perfil de GitHub
-              </a>
+          <div className="container">
+            <div className="contact-panel">
+              <span className="eyebrow contact-eyebrow">Contacto Técnico</span>
+              <h2>¿Querés implementar uno de estos Blueprints?</h2>
+              <p>
+                Puedo realizar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier Blueprint en una llamada controlada.
+              </p>
+              <div className="actions contact-actions">
+                <a className="button button-light" href="mailto:ezequiel.vecchio.fv@gmail.com">
+                  <Mail size={18} /> ezequiel.vecchio.fv@gmail.com
+                </a>
+                <a className="button button-outline-light" href="https://github.com/Evecchio" target="_blank" rel="noreferrer">
+                  <Github size={18} /> GitHub
+                </a>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
       <footer className="container footer">
-        © {new Date().getFullYear()} Ezequiel Vecchio. Experiencias basadas en proyectos privados reales.
+        © {new Date().getFullYear()} {siteConfig.owner} · FVision. Diseñado como Blueprints de Ingeniería.
       </footer>
     </div>
   );

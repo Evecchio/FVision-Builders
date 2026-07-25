@@ -3,97 +3,853 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portafolio de experiencias y proyectos privados de Ezequiel Vecchio." />
-  <title>Ezequiel Vecchio | Experiencias y proyectos</title>
+  <meta name="description" content="Portafolio de especificaciones técnicas y Blueprints de software de Ezequiel Vecchio." />
+  <title>Ezequiel Vecchio | Blueprints</title>
+  
   <style>
-    :root{--bg:#f4f1ea;--paper:#fffdf8;--ink:#191918;--muted:#69655f;--line:#d8d1c5;--accent:#c45130;--dark:#202727;--gold:#98630f;--radius:18px;--max:1160px}
-    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}a{color:inherit;text-decoration:none}.container{width:min(calc(100% - 2rem),var(--max));margin:auto}header{position:sticky;top:0;z-index:20;background:rgba(244,241,234,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{font-weight:900;letter-spacing:-.04em}.nav{display:flex;gap:1.2rem;color:var(--muted);font-size:.93rem}.nav a:hover{color:var(--ink)}section{padding:5.5rem 0}.hero{min-height:78vh;display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:center;padding-top:7rem}.eyebrow{color:var(--accent);font-weight:850;text-transform:uppercase;letter-spacing:.12em;font-size:.77rem;margin-bottom:1.2rem}h1{font-size:clamp(3rem,8vw,6.9rem);line-height:.93;letter-spacing:-.068em;max-width:900px}.lead{max-width:760px;margin-top:1.5rem;color:var(--muted);font-size:1.14rem}.actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}.button{display:inline-flex;align-items:center;justify-content:center;min-height:47px;padding:.75rem 1.05rem;border-radius:999px;border:1px solid var(--line);font-weight:800;background:var(--paper);transition:transform .2s}.button:hover{transform:translateY(-2px)}.button.primary{background:var(--ink);color:white;border-color:var(--ink)}.summary{background:var(--dark);color:white;border-radius:26px;padding:1.7rem}.summary h2{font-size:1.35rem;letter-spacing:-.03em}.summary p{color:#c8cece;margin-top:.75rem}.facts{display:grid;gap:.75rem;margin-top:1.25rem}.fact{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:1rem}.fact strong{display:block;font-size:1.45rem;line-height:1.1}.fact span{color:#c8cece;font-size:.85rem}.heading{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2rem}.heading h2{font-size:clamp(2.3rem,5vw,4.1rem);line-height:.98;letter-spacing:-.052em}.heading p{max-width:590px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.15rem}.card{display:flex;flex-direction:column;min-height:100%;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.45rem}.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.9rem}.card h3{font-size:1.35rem;line-height:1.15;letter-spacing:-.025em}.label{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:.27rem .52rem;font-size:.69rem;font-weight:850;text-transform:uppercase;letter-spacing:.06em;color:var(--gold)}.card p{color:var(--muted)}.details{display:grid;gap:.65rem;margin-top:1.1rem}.detail{border-top:1px solid var(--line);padding-top:.65rem}.detail strong{display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}.detail span{color:var(--muted);font-size:.93rem}.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.1rem}.tag{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:.3rem .53rem;font-size:.76rem}.notice{margin-top:auto;padding-top:1.15rem;color:var(--muted);font-size:.86rem;font-weight:700}.skills{display:flex;flex-wrap:wrap;gap:.6rem}.skill{background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:.58rem .72rem;font-weight:750}.contact{background:var(--accent);color:white;border-radius:28px;padding:4rem 2rem;text-align:center}.contact h2{font-size:clamp(2.3rem,5vw,4rem);line-height:1;letter-spacing:-.05em}.contact p{max-width:650px;margin:1rem auto 0;color:#ffe7df}.contact .button{border-color:rgba(255,255,255,.5);background:transparent;color:white}.contact .button.primary{background:white;color:var(--ink);border-color:white}footer{padding:2.5rem 0 3.5rem;text-align:center;color:var(--muted);font-size:.88rem}@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}.grid{grid-template-columns:1fr}.heading{align-items:flex-start;flex-direction:column}.nav{display:none}}
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@500;600&display=swap');
+
+    :root {
+      --bg: #F5F2EB;
+      --paper: #FFFFFF;
+      --ink: #1B1C1D;
+      --muted: #625E57;
+      --accent: #E85A37;
+      --dark: #1E2525;
+      
+      --commerce-color: #FFDE4D;
+      --ai-color: #F2613F;
+      --local-color: #55B43C;
+      --cyan-accent: #00F2FE;
+
+      --border-thick: 2px solid var(--ink);
+      --border-thicker: 3px solid var(--ink);
+      --shadow-flat: 4px 4px 0px 0px var(--ink);
+      --shadow-flat-hover: 6px 6px 0px 0px var(--ink);
+      --shadow-flat-large: 8px 8px 0px 0px var(--ink);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 2.5rem), var(--max));
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--bg);
+      border-bottom: var(--border-thick);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 5.5rem 0;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: center;
+      gap: 4rem;
+      padding-top: 7rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.35rem 0.7rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--commerce-color);
+      font-family: "Fira Code", monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: 2px 2px 0px 0px var(--ink);
+    }
+
+    h1 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(3.2rem, 7.5vw, 6.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin-top: 1.75rem;
+      color: var(--muted);
+      font-size: 1.18rem;
+      font-weight: 500;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0.75rem 1.4rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 800;
+      box-shadow: var(--shadow-flat);
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-flat-hover);
+    }
+
+    .btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px 0px var(--ink);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn.primary:hover {
+      background: #D44422;
+    }
+
+    .summary {
+      padding: 2rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-md);
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: var(--shadow-flat-large);
+    }
+
+    .summary h2 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 1.65rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+
+    .summary p {
+      color: var(--muted);
+      font-weight: 550;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .fact {
+      padding: 1rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      box-shadow: 2px 2px 0px 0px var(--ink);
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 800;
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .fact span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+
+    /* Sección Proyectos (Blueprints) */
+    .heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .heading h2 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .heading p {
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      font-weight: 550;
+    }
+
+    /* Tabs de Filtro */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .tab-button {
+      padding: 0.6rem 1.2rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 3px 3px 0px 0px var(--ink);
+      transition: all 0.1s ease;
+    }
+
+    .tab-button:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px 0px var(--ink);
+    }
+
+    .tab-button:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px 0px var(--ink);
+    }
+
+    .tab-button.active {
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 0px 0px 0px 0px var(--ink);
+      transform: translate(3px, 3px);
+    }
+
+    /* Grid y Tarjetas */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      transition: all 0.3s ease;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+      border: var(--border-thick);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-flat);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease, scale 0.3s ease;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .card.hidden {
+      display: none !important;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-flat-hover);
+    }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 1.55rem;
+      line-height: 1.15;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    /* Badges & LEDs */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.65rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      font-family: "Fira Code", monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      box-shadow: 2px 2px 0px 0px var(--ink);
+      white-space: nowrap;
+    }
+
+    .status-led {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--ink);
+      display: inline-block;
+    }
+
+    .status-led.production {
+      background: var(--local-color);
+      box-shadow: 0 0 6px var(--local-color);
+      animation: pulse-led 1.8s infinite;
+    }
+
+    .status-led.prototype {
+      background: var(--cyan-accent);
+      box-shadow: 0 0 6px var(--cyan-accent);
+      animation: pulse-led 1.8s infinite;
+    }
+
+    .status-led.architecture {
+      background: var(--ai-color);
+      box-shadow: 0 0 6px var(--ai-color);
+    }
+
+    @keyframes pulse-led {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    .card p.summary-text {
+      color: var(--muted);
+      font-weight: 550;
+      font-size: 1.02rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .details {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: auto;
+      padding-top: 1.25rem;
+      border-top: var(--border-thick);
+    }
+
+    .detail {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .detail strong {
+      display: inline-block;
+      padding: 0.15rem 0.35rem;
+      border: 1px solid var(--ink);
+      border-radius: 4px;
+      background: var(--bg);
+      font-family: "Fira Code", monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 1px 1px 0px 0px var(--ink);
+    }
+
+    .detail span {
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1.2rem;
+    }
+
+    .tag {
+      padding: 0.28rem 0.6rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      font-family: "Fira Code", monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      box-shadow: 1px 1px 0px 0px var(--ink);
+    }
+
+    /* Tecnologías (Skills) */
+    .skills-section {
+      border-top: var(--border-thick);
+      border-bottom: var(--border-thick);
+      background: #FFFDF9;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill {
+      padding: 0.65rem 1rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      box-shadow: 3px 3px 0px 0px var(--ink);
+    }
+
+    /* Contacto */
+    .contact {
+      padding: 5rem 2rem;
+      border: var(--border-thicker);
+      border-radius: var(--radius-md);
+      background: var(--accent);
+      color: var(--paper);
+      text-align: center;
+      box-shadow: var(--shadow-flat-large);
+    }
+
+    .contact h2 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .contact p {
+      max-width: 700px;
+      margin: 0.5rem auto 1.5rem;
+      color: #FFF0EB;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    .contact .actions {
+      justify-content: center;
+    }
+
+    .contact .btn {
+      border-color: var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .contact .btn.primary {
+      border-color: var(--paper);
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 4px 4px 0px 0px var(--paper);
+    }
+
+    .contact .btn.primary:hover {
+      background: #2D2E2F;
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px 0px var(--paper);
+    }
+
+    .contact .btn.primary:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px 0px var(--paper);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 0 4rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 6rem;
+        gap: 3rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav {
+        display: none;
+      }
+      .facts {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .card-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+    }
   </style>
 </head>
 <body>
-<header><nav class="container"><a class="brand" href="#top">EZEQUIEL VECCHIO</a><div class="nav"><a href="#projects">Proyectos</a><a href="#skills">Tecnologías</a><a href="#contact">Contacto</a></div></nav></header>
+<header>
+  <nav class="container">
+    <a class="brand" href="#top">EZEQUIEL VECCHIO</a>
+    <div class="nav">
+      <a href="#projects">Blueprints</a>
+      <a href="#skills">Tecnologías</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </nav>
+</header>
 <main id="top">
-<section class="hero container">
-  <div>
-    <p class="eyebrow">Experiencias y proyectos privados</p>
-    <h1>Ezequiel Vecchio</h1>
-    <p class="lead">Experiencia documentada en comercio electrónico, aplicaciones móviles, producto digital, agentes de inteligencia artificial y sistemas local-first.</p>
-    <div class="actions"><a class="button primary" href="#projects">Ver proyectos</a><a class="button" href="mailto:eivecchio@hotmail.com">Contacto</a></div>
-  </div>
-  <aside class="summary">
-    <h2>Resumen</h2>
-    <p>El contenido se basa en repositorios privados reales. Se describen objetivos, responsabilidades y tecnologías sin publicar código ni información sensible.</p>
-    <div class="facts"><div class="fact"><strong>8</strong><span>proyectos privados</span></div><div class="fact"><strong>4</strong><span>áreas técnicas principales</span></div><div class="fact"><strong>Web + Mobile</strong><span>interfaces y aplicaciones</span></div><div class="fact"><strong>IA local</strong><span>agentes, RAG y automatización</span></div></div>
-  </aside>
-</section>
-<section id="projects"><div class="container">
-  <div class="heading"><h2>Proyectos privados</h2><p>Descripción factual del trabajo realizado. Los repositorios no están enlazados porque su acceso está restringido.</p></div>
-  <div class="grid">
-    <article class="card">
-      <div class="card-head"><h3>Tiendanube UX & Conversión</h3><span class="label">Privado</span></div>
-      <p>Solución de optimización de interfaz y experiencia de usuario (UX) especializada para incrementar ventas en tiendas montadas sobre Tiendanube.</p>
-      <div class="details"><div class="detail"><strong>Trabajo realizado</strong><span>Jerarquía visual del carrito, alineación de encabezados, claridad de precios y cantidades, acción de eliminación, tarjetas de producto y recursos CSS optimizados.</span></div><div class="detail"><strong>Enfoque</strong><span>Interfaz de comercio electrónico y adaptación para distintos tamaños de pantalla.</span></div></div>
-      <div class="tags"><span class="tag">E-commerce</span><span class="tag">CSS</span><span class="tag">Responsive UI</span><span class="tag">Cart UX</span><span class="tag">Tiendanube</span></div>
-      <p class="notice">Código y datos comerciales no publicados.</p>
-    </article>
-    <article class="card">
-      <div class="card-head"><h3>Motor eCommerce Headless</h3><span class="label">Privado</span></div>
-      <p>Desarrollo de una solución de tienda virtual independiente y flexible, diseñada para personalizarse de acuerdo a las necesidades de la marca sin depender de plataformas cerradas.</p>
-      <div class="details"><div class="detail"><strong>Trabajo realizado</strong><span>Página principal, buscador, categorías, tarjetas de producto, detalle de producto, variantes, precios, promociones, navegación y carrito.</span></div><div class="detail"><strong>Estado</strong><span>Interfaz funcional; integración propia de pagos y envíos documentada como pendiente.</span></div></div>
-      <div class="tags"><span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Product Catalog</span><span class="tag">Cart</span></div>
-      <p class="notice">Repositorio privado por contenido comercial.</p>
-    </article>
-    <article class="card">
-      <div class="card-head"><h3>FlowCommerce Core</h3><span class="label">Privado</span></div>
-      <p>Híbrido de catálogo web y motor de comercio conversacional automatizado por IA vía WhatsApp.</p>
-      <div class="details"><div class="detail"><strong>Trabajo realizado</strong><span>Diseño de arquitectura de catálogo web interactivo con derivación estructurada a WhatsApp y orquestador conversacional por IA para procesar pedidos, entregas y links de pago dinámicos.</span></div><div class="detail"><strong>Estado</strong><span>Repositorio principal y especificación técnica inicial de arquitectura documentados.</span></div></div>
-      <div class="tags"><span class="tag">WhatsApp API</span><span class="tag">AI Agent</span><span class="tag">RAG</span><span class="tag">Conversational Commerce</span><span class="tag">Integration</span></div>
-      <p class="notice">Repositorio privado por contenido comercial.</p>
-    </article>
-    <article class="card">
-      <div class="card-head"><h3>Lector de Gastos Local-First</h3><span class="label">Privado</span></div>
-      <p>Prototipo Android para registrar gastos automáticamente a partir de notificaciones de aplicaciones de pago autorizadas.</p>
-      <div class="details"><div class="detail"><strong>Trabajo realizado</strong><span>Servicio de lectura de notificaciones, parser de gastos, persistencia local, listado de movimientos y configuración de compilación APK.</span></div><div class="detail"><strong>Arquitectura</strong><span>Aplicación local con almacenamiento Room y compilación automatizada mediante GitHub Actions.</span></div></div>
-      <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Room</span><span class="tag">Android</span><span class="tag">GitHub Actions</span></div>
-      <p class="notice">Repositorio privado; no se exponen datos financieros.</p>
-    </article>
-    <article class="card">
-      <div class="card-head"><h3>Finanzas Offline: Descubrimiento</h3><span class="label">Privado</span></div>
-      <p>Diseño de producto para un asistente financiero personal, privado y offline, pensado para personas que usan el celular como herramienta económica principal.</p>
-      <div class="details"><div class="detail"><strong>Trabajo realizado</strong><span>Visión, definición del problema, perfiles de usuario, requisitos, arquitectura, modelo de datos, pila de IA local y hoja de ruta.</span></div><div class="detail"><strong>Estado</strong><span>Etapa de descubrimiento, definición de MVP y validación de mercado.</span></div></div>
-      <div class="tags"><span class="tag">Product Discovery</span><span class="tag">Local-first</span><span class="tag">Arquitectura</span><span class="tag">IA local</span><span class="tag">Fintech</span></div>
-      <p class="notice">Documentación estratégica mantenida en privado.</p>
-    </article>
-    <article class="card">
-      <div class="card-head"><h3>DRDV: Agentes de IA por Contrato</h3><span class="label">Privado</span></div>
-      <p>Framework para construir agentes y subagentes basados en roles, contratos formales y validación mediante evidencia.</p>
-      <div class="details"><div class="detail"><strong>Trabajo realizado</strong><span>Runtime, orquestador, protocolos de herramientas y memoria, modelo de eventos, observabilidad, contratos YAML y especificaciones de arquitectura.</span></div><div class="detail"><strong>Principio</strong><span>Ciclo obligatorio: Design, Review, Decide y Validate.</span></div></div>
-      <div class="tags"><span class="tag">Python</span><span class="tag">Agent Architecture</span><span class="tag">Validation</span><span class="tag">Observability</span><span class="tag">Protocols</span></div>
-      <p class="notice">Arquitectura fundacional en desarrollo.</p>
-    </article>
-    <article class="card">
-      <div class="card-head"><h3>IAO: Chat Local con RAG</h3><span class="label">Privado</span></div>
-      <p>Microservicio autónomo y auditable con ejecución local por defecto, memoria RAG y control explícito del acceso externo.</p>
-      <div class="details"><div class="detail"><strong>Trabajo realizado</strong><span>Runtime local con Ollama, orquestador iterativo, API FastAPI, interfaz de chat, memoria Chroma y política de egress con auditoría.</span></div><div class="detail"><strong>Seguridad</strong><span>Acceso externo denegado por defecto y habilitado únicamente mediante whitelist.</span></div></div>
-      <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Ollama</span><span class="tag">RAG</span><span class="tag">Chroma</span><span class="tag">Auditing</span></div>
-      <p class="notice">Configuración y registros permanecen privados.</p>
-    </article>
-    <article class="card">
-      <div class="card-head"><h3>DropLand: Descarga & Organización</h3><span class="label">Privado</span></div>
-      <p>Aplicación híbrida (escritorio y control móvil local-first) diseñada para automatizar la descarga de audio y su categorización por géneros en almacenamiento local.</p>
-      <div class="details"><div class="detail"><strong>Trabajo realizado</strong><span>Desarrollo de interfaz gráfica de escritorio con Tkinter, implementación de un servidor HTTP local para control remoto vía web/PWA móvil, integración del motor yt-dlp y procesamiento/conversión de audio con FFmpeg/FFprobe.</span></div><div class="detail"><strong>Estado</strong><span>Prototipo totalmente funcional empaquetado para Windows (.msix e instalador Inno Setup) de uso personal.</span></div></div>
-      <div class="tags"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">yt-dlp</span><span class="tag">FFmpeg</span><span class="tag">MSIX</span><span class="tag">Inno Setup</span><span class="tag">PWA</span></div>
-      <p class="notice">Uso personal y empaquetado local.</p>
-    </article>
-  </div>
-</div></section>
-<section id="skills"><div class="container">
-  <div class="heading"><h2>Tecnologías utilizadas</h2><p>Herramientas observadas directamente en el trabajo documentado de estos proyectos.</p></div>
-  <div class="skills"><span class="skill">React</span><span class="skill">Next.js</span><span class="skill">TypeScript</span><span class="skill">JavaScript</span><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">Responsive Design</span><span class="skill">Kotlin</span><span class="skill">Jetpack Compose</span><span class="skill">Room</span><span class="skill">Python</span><span class="skill">FastAPI</span><span class="skill">Ollama</span><span class="skill">RAG</span><span class="skill">Chroma</span><span class="skill">Git</span><span class="skill">GitHub Actions</span><span class="skill">Product Discovery</span><span class="skill">Tkinter</span><span class="skill">yt-dlp</span><span class="skill">FFmpeg</span><span class="skill">MSIX</span><span class="skill">Inno Setup</span></div>
-</div></section>
-<section id="contact"><div class="container"><div class="contact"><h2>Contacto</h2><p>Para solicitar más información sobre una experiencia o una demostración controlada de un proyecto privado.</p><div class="actions" style="justify-content:center"><a class="button primary" href="mailto:eivecchio@hotmail.com">eivecchio@hotmail.com</a><a class="button" href="https://github.com/Evecchio" target="_blank" rel="noreferrer">Perfil de GitHub</a></div></div></div></section>
+  <section class="hero container">
+    <div>
+      <span class="eyebrow">Catálogo de Arquitectura & Software</span>
+      <h1>Ezequiel Vecchio</h1>
+      <p class="lead">Desarrollo soluciones digitales estructuradas como blueprints de software en comercio electrónico, aplicaciones móviles local-first e inteligencia artificial privada.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Ver Blueprints</a>
+        <a class="btn" href="mailto:ezequiel.vecchio.fv@gmail.com">Contacto</a>
+      </div>
+    </div>
+    <aside class="summary">
+      <h2>8 Blueprints de Ingeniería</h2>
+      <p>El código y datos comerciales son estrictamente privados. Se exponen especificaciones de flujo bajo licencias de despliegue controlado.</p>
+      <div class="facts">
+        <div class="fact"><strong>E-commerce</strong><span>Motores & Conversión</span></div>
+        <div class="fact"><strong>Local-First</strong><span>Privacidad & Móvil</span></div>
+        <div class="fact"><strong>IA Local</strong><span>RAG & Agentes</span></div>
+        <div class="fact"><strong>Arquitectura</strong><span>MVP & Diseño</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="heading">
+        <h2>Catálogo de Blueprints</h2>
+        <p>Estructuras modulares diseñadas para resolver desafíos de negocio sin exponer propiedad intelectual.</p>
+      </div>
+
+      <!-- Barra de Filtros interactiva (Tabs) -->
+      <div class="filter-tabs" role="tablist">
+        <button class="tab-button active" onclick="filterCategory('all', this)">Todos los Blueprints</button>
+        <button class="tab-button" onclick="filterCategory('ecommerce', this)">E-Commerce & Conversión</button>
+        <button class="tab-button" onclick="filterCategory('ai', this)">IA & Agentes</button>
+        <button class="tab-button" onclick="filterCategory('local-first', this)">Local-First & Mobile</button>
+      </div>
+
+      <div class="grid" id="blueprints-grid">
+        <!-- Blueprint 1 -->
+        <article class="card" data-category="ecommerce">
+          <div class="card-head">
+            <h3>NubeBoost</h3>
+            <span class="status-badge"><span class="status-led production"></span>Producción Privada</span>
+          </div>
+          <p class="summary-text">Optimizador de interfaz y flujo de conversión para tiendas en Tiendanube.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Fricción visual y tasa de abandono en carritos de compra en plantillas cerradas.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Jerarquía visual optimizada del carrito de compras, adaptabilidad responsiva extrema y simplificación del checkout.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">E-commerce</span>
+            <span class="tag">CSS</span>
+            <span class="tag">UX/UI</span>
+            <span class="tag">Tiendanube</span>
+          </div>
+        </article>
+
+        <!-- Blueprint 2 -->
+        <article class="card" data-category="ecommerce">
+          <div class="card-head">
+            <h3>CoreStore Headless</h3>
+            <span class="status-badge"><span class="status-led prototype"></span>Prototipo Funcional</span>
+          </div>
+          <p class="summary-text">Motor frontend desacoplado de alto rendimiento para e-commerce modular.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Lentitud en carga y falta de personalización de plataformas de comercio tradicionales.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Desarrollo de catálogo dinámico, persistencia local del carrito, búsqueda instantánea y checkout modular.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">Next.js 15</span>
+            <span class="tag">React 19</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Headless</span>
+          </div>
+        </article>
+
+        <!-- Blueprint 3 -->
+        <article class="card" data-category="ecommerce">
+          <div class="card-head">
+            <h3>FlowCommerce</h3>
+            <span class="status-badge"><span class="status-led architecture"></span>Especificación Técnica</span>
+          </div>
+          <p class="summary-text">Híbrido de catálogo digital y automatización conversacional en WhatsApp.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Falta de automatización y estructuración de pedidos en ventas informales por chat.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Arquitectura de catálogo interactivo con derivación estructurada a WhatsApp y orquestador conversacional por IA.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">WhatsApp API</span>
+            <span class="tag">AI Agent</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Conversational</span>
+          </div>
+        </article>
+
+        <!-- Blueprint 4 -->
+        <article class="card" data-category="local-first">
+          <div class="card-head">
+            <h3>SpendGuard Mobile</h3>
+            <span class="status-badge"><span class="status-led prototype"></span>Prototipo Android</span>
+          </div>
+          <p class="summary-text">Servicio móvil nativo offline de escucha y registro automático de gastos.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Registro manual de finanzas tedioso y brechas de privacidad al sincronizar con servidores externos.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Servicio en segundo plano de captura de notificaciones, parseo de transacciones por Regex y persistencia Room local.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">Kotlin</span>
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">Room Database</span>
+            <span class="tag">Android</span>
+          </div>
+        </article>
+
+        <!-- Blueprint 5 -->
+        <article class="card" data-category="local-first">
+          <div class="card-head">
+            <h3>ZenSpend Engine</h3>
+            <span class="status-badge"><span class="status-led architecture"></span>I+D / Descubrimiento</span>
+          </div>
+          <p class="summary-text">Consultoría de descubrimiento y modelado de datos para finanzas local-first.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Falta de validación técnica de modelos relacionales offline y viabilidad de IA local.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Definición estratégica de MVP, estudio de perfil de usuario y viabilidad técnica para procesamiento con LLM local.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">Product Discovery</span>
+            <span class="tag">Local-first</span>
+            <span class="tag">Architecture</span>
+            <span class="tag">Fintech</span>
+          </div>
+        </article>
+
+        <!-- Blueprint 6 -->
+        <article class="card" data-category="ai">
+          <div class="card-head">
+            <h3>DRDV Framework</h3>
+            <span class="status-badge"><span class="status-led architecture"></span>Arquitectura Base</span>
+          </div>
+          <p class="summary-text">Runtime de orquestación y control multi-agente guiado por contratos de comportamiento.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Falta de predictibilidad, control y observabilidad en sistemas multi-agente complejos.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Runtime de ejecución de agentes con validación basada en evidencias bajo el ciclo Design, Review, Decide, Validate.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Agent Architecture</span>
+            <span class="tag">Validation</span>
+            <span class="tag">YAML</span>
+          </div>
+        </article>
+
+        <!-- Blueprint 7 -->
+        <article class="card" data-category="ai">
+          <div class="card-head">
+            <h3>SafeRAG Local</h3>
+            <span class="status-badge"><span class="status-led prototype"></span>Prototipo Funcional</span>
+          </div>
+          <p class="summary-text">Microservicio autónomo de chat privado y procesamiento de documentos locales.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Riesgo de filtración de datos corporativos sensibles al consumir APIs de LLMs en la nube.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Aislamiento perimetral estricto con egress whitelist, procesamiento offline con Ollama y base de datos vectorial Chroma.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Ollama</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Chroma DB</span>
+            <span class="tag">Security</span>
+          </div>
+        </article>
+
+        <!-- Blueprint 8 -->
+        <article class="card" data-category="local-first">
+          <div class="card-head">
+            <h3>DropLand</h3>
+            <span class="status-badge"><span class="status-led prototype"></span>Distribución Windows</span>
+          </div>
+          <p class="summary-text">Aplicación híbrida de control remoto y descarga automatizada por red local.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Incomodidad para transferir enlaces y descargar audios/música desde el móvil al almacenamiento local.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Interfaz de escritorio Tkinter integrada con un servidor HTTP local para control remoto vía PWA móvil, yt-dlp y FFmpeg.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Tkinter</span>
+            <span class="tag">yt-dlp</span>
+            <span class="tag">FFmpeg</span>
+            <span class="tag">MSIX</span>
+            <span class="tag">PWA</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="heading">
+        <h2>Herramientas & Tecnologías</h2>
+        <p>Habilidades validadas a través del desarrollo de las soluciones descritas en este catálogo.</p>
+      </div>
+      <div class="skills">
+        <span class="skill">React</span>
+        <span class="skill">Next.js</span>
+        <span class="skill">TypeScript</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">Responsive Design</span>
+        <span class="skill">Kotlin</span>
+        <span class="skill">Jetpack Compose</span>
+        <span class="skill">Room Database</span>
+        <span class="skill">Python</span>
+        <span class="skill">FastAPI</span>
+        <span class="skill">Ollama</span>
+        <span class="skill">RAG</span>
+        <span class="skill">Chroma</span>
+        <span class="skill">Git</span>
+        <span class="skill">GitHub Actions</span>
+        <span class="skill">Product Discovery</span>
+        <span class="skill">Tkinter</span>
+        <span class="skill">yt-dlp</span>
+        <span class="skill">FFmpeg</span>
+        <span class="skill">MSIX</span>
+        <span class="skill">Inno Setup</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <h2>¿Querés implementar uno de estos Blueprints?</h2>
+        <p>Puedo realizar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier Blueprint en una llamada controlada.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="btn primary" href="mailto:ezequiel.vecchio.fv@gmail.com">ezequiel.vecchio.fv@gmail.com</a>
+          <a class="btn" href="https://github.com/Evecchio" target="_blank" rel="noreferrer">Perfil de GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="container">© <span id="year"></span> Ezequiel Vecchio. Experiencias basadas en proyectos privados reales.</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+<footer>© <span id="year"></span> Ezequiel Vecchio. Experiencias basadas en proyectos privados reales.</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function filterCategory(category, button) {
+    // Cambiar estado activo del botón
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    // Filtrar tarjetas
+    const cards = document.querySelectorAll('#blueprints-grid .card');
+    cards.forEach(card => {
+      const cardCat = card.getAttribute('data-category');
+      if (category === 'all' || cardCat === category) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+</script>
 </body>
 </html>

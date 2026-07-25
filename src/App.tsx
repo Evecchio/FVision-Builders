@@ -62,24 +62,15 @@ const projects = [
     status: "Solución de microservicio de IA local completamente funcional y configurable.",
     tags: ["Python", "FastAPI", "Ollama", "RAG", "Chroma DB", "Seguridad"],
   },
-];
-
-const testimonials = [
   {
-    quote: "La optimización del flujo del carrito y la UI responsive redujeron significativamente la tasa de abandono. Excelente atención al detalle técnico y velocidad de respuesta.",
-    client: "Ivana Design — E-commerce de Moda & Lencería (Tiendanube)",
-    impact: "Reducción de fricción en carrito y 100% de paridad visual en móviles"
+    title: "DropLand: Descarga & Organización",
+    summary:
+      "Aplicación híbrida (escritorio y control móvil local-first) diseñada para automatizar la descarga de audio y su categorización por géneros en almacenamiento local.",
+    work:
+      "Desarrollo de interfaz gráfica de escritorio con Tkinter, implementación de un servidor HTTP local para control remoto vía web/PWA móvil, integración del motor yt-dlp y procesamiento/conversión de audio con FFmpeg/FFprobe.",
+    status: "Prototipo totalmente funcional empaquetado para Windows (.msix e instalador Inno Setup) y de uso personal.",
+    tags: ["Python", "Tkinter", "yt-dlp", "FFmpeg", "MSIX", "Inno Setup", "PWA"],
   },
-  {
-    quote: "Logró automatizar la captura de gastos bancarios directamente desde las notificaciones del móvil sin depender de servidores de terceros, priorizando la privacidad local.",
-    client: "Líder de Finanzas Personales (Android & Local-first)",
-    impact: "100% de automatización en importación de gastos con procesamiento offline"
-  },
-  {
-    quote: "Desarrolló una arquitectura de microservicio de IA local y privada sumamente robusta, garantizando aislamiento perimetral estricto según las políticas de egreso corporativas.",
-    client: "Director de Arquitectura & Inteligencia Artificial",
-    impact: "Despliegue local y seguro de RAG con Ollama y Egress Whitelist"
-  }
 ];
 
 const skills = [
@@ -101,6 +92,11 @@ const skills = [
   "Git",
   "GitHub Actions",
   "Product Discovery",
+  "Tkinter",
+  "yt-dlp",
+  "FFmpeg",
+  "MSIX",
+  "Inno Setup",
 ];
 
 export default function App() {
@@ -113,7 +109,6 @@ export default function App() {
           </a>
           <div className="nav-links">
             <a href="#experiencias">Experiencias</a>
-            <a href="#testimonios">Casos de Éxito</a>
             <a href="#tecnologias">Tecnologías</a>
             <a href="#contacto">Contacto</a>
           </div>
@@ -142,7 +137,7 @@ export default function App() {
 
           <aside className="summary-card" aria-label="Resumen profesional">
             <p className="summary-label">Resumen</p>
-            <h2>Siete proyectos privados</h2>
+            <h2>Ocho proyectos privados</h2>
             <p>
               Se describen objetivos, responsabilidades, tecnologías y estado sin publicar código,
               credenciales ni información comercial sensible.
@@ -191,37 +186,6 @@ export default function App() {
                     ))}
                   </div>
                 </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section testimonials-section" id="testimonios">
-          <div className="container">
-            <div className="section-heading">
-              <div>
-                <p className="eyebrow">Resultados medibles</p>
-                <h2>Casos de Éxito & Testimonios</h2>
-              </div>
-              <p>
-                Citas de clientes y métricas de impacto real logradas a través de las soluciones
-                técnicas implementadas.
-              </p>
-            </div>
-
-            <div className="testimonials-grid">
-              {testimonials.map((t, index) => (
-                <div className="testimonial-card" key={index}>
-                  <div className="quote-mark">“</div>
-                  <p className="testimonial-quote">{t.quote}</p>
-                  <div className="testimonial-meta">
-                    <p className="testimonial-client">{t.client}</p>
-                    <div className="testimonial-impact">
-                      <strong>Impacto destacado</strong>
-                      <span>{t.impact}</span>
-                    </div>
-                  </div>
-                </div>
               ))}
             </div>
           </div>

@@ -134,12 +134,27 @@
     }
 
     .hero {
-      min-height: 80vh;
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
+      min-height: 55vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 4rem;
-      padding-top: 7rem;
+      text-align: center;
+      gap: 1rem;
+      padding-top: 8rem;
+      padding-bottom: 5rem;
+    }
+
+    .hero h1 {
+      margin: 0 auto;
+    }
+
+    .hero .lead {
+      margin: 1.75rem auto 0;
+    }
+
+    .hero .actions {
+      justify-content: center;
     }
 
     .eyebrow {
@@ -653,6 +668,22 @@
       min-height: 120px;
       resize: vertical;
     }
+    /* Nota de Privacidad en Catálogo */
+    .privacy-note {
+      max-width: 650px;
+      margin: 1.2rem auto 2.2rem;
+      padding: 0.85rem 1.2rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      color: var(--muted);
+      font-family: "Fira Code", monospace;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 2px 2px 0px 0px var(--ink);
+    }
   </style>
 </head>
 <body>
@@ -690,16 +721,6 @@
         <a class="btn" href="#contact">Contacto</a>
       </div>
     </div>
-    <aside class="summary">
-      <h2>Blueprints de Ingeniería</h2>
-      <p>El código y datos comerciales son estrictamente privados. Se exponen especificaciones de flujo bajo licencias de despliegue controlado.</p>
-      <div class="facts">
-        <div class="fact"><strong>E-commerce</strong><span>Motores & Conversión</span></div>
-        <div class="fact"><strong>Local-First</strong><span>Privacidad & Móvil</span></div>
-        <div class="fact"><strong>IA Local</strong><span>RAG & Agentes</span></div>
-        <div class="fact"><strong>Arquitectura</strong><span>MVP & Diseño</span></div>
-      </div>
-    </aside>
   </section>
 
   <section id="projects">
@@ -707,6 +728,10 @@
       <div class="heading">
         <h2>Catálogo de Blueprints</h2>
         <p>Estructuras modulares diseñadas para resolver desafíos de negocio sin exponer propiedad intelectual.</p>
+      </div>
+
+      <div class="privacy-note">
+        * El código y los datos de negocio son estrictamente privados. Se exponen especificaciones de flujo bajo licencias de despliegue controlado.
       </div>
 
       <!-- Barra de Filtros interactiva (Tabs) -->

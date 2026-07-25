@@ -154,13 +154,27 @@ h1, h2, h3, .brand {
 
 /* Hero Section */
 .hero {
-  min-height: 80vh;
-  padding-top: 7rem;
-  padding-bottom: 6rem;
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  min-height: 55vh;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 4rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+.hero h1 {
+  margin: 0 auto;
+}
+
+.hero .lead {
+  margin: 1.75rem auto 0;
+}
+
+.hero .actions {
+  justify-content: center;
 }
 
 .eyebrow {
@@ -733,5 +747,22 @@ h1 {
 .form-status.error {
   background: var(--ai-color);
   color: var(--paper);
+}
+
+/* Nota de Privacidad en Catálogo */
+.privacy-note {
+  max-width: 650px;
+  margin: 1.2rem auto 2.2rem;
+  padding: 0.85rem 1.2rem;
+  border: var(--border-thick);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--muted);
+  font-family: "Fira Code", monospace;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 2px 2px 0px 0px var(--ink);
 }
 

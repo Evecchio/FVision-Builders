@@ -257,30 +257,6 @@ export default function App() {
             </div>
           </div>
 
-          <aside className="summary-card" aria-label="Resumen profesional">
-            <h2>Blueprints de Ingeniería</h2>
-            <p>
-              El código y datos de negocio son privados. Se exponen las especificaciones y flujos técnicos bajo licencias de despliegue controlado.
-            </p>
-            <div className="summary-grid">
-              <div>
-                <strong>E-commerce</strong>
-                <span>Motores & Conversión</span>
-              </div>
-              <div>
-                <strong>Local-First</strong>
-                <span>Privacidad & Móvil</span>
-              </div>
-              <div>
-                <strong>IA Local</strong>
-                <span>RAG & Agentes</span>
-              </div>
-              <div>
-                <strong>Arquitectura</strong>
-                <span>MVP & Diseño</span>
-              </div>
-            </div>
-          </aside>
         </section>
 
         {/* Section Blueprints */}
@@ -294,6 +270,10 @@ export default function App() {
               <p>
                 Estructuras modulares diseñadas para resolver desafíos de negocio e infraestructura sin exponer propiedad intelectual.
               </p>
+            </div>
+
+            <div className="privacy-note">
+              * El código y los datos de negocio son estrictamente privados. Se exponen especificaciones de flujo bajo licencias de despliegue controlado.
             </div>
 
             {/* Tabs de Filtro */}

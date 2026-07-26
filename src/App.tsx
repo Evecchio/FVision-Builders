@@ -40,96 +40,96 @@ interface Blueprint {
 const projects: Blueprint[] = [
   {
     title: "NubeBoost",
-    summary: "Optimizador de interfaz y flujo de conversión para tiendas en Tiendanube.",
+    summary: "Acelerador de ventas para Tiendanube. Optimiza el checkout y la velocidad de carga para reducir el abandono de carrito hasta un 35%.",
     category: "ecommerce",
-    tags: ["E-commerce", "CSS", "UX/UI", "Tiendanube"],
+    tags: ["🚀 Despliegue Inmediato", "E-commerce", "Tiendanube", "Conversión", "CSS", "UX/UI"],
     specs: {
       problem: "Fricción visual y tasa de abandono en carritos de compra en plantillas cerradas.",
-      solution: "Jerarquía visual optimizada del carrito de compras, adaptabilidad responsiva extrema y simplificación del checkout.",
+      solution: "Jerarquía visual optimizada, checkout fluido en un clic y adaptabilidad móvil que incrementa la conversión directa.",
       statusLabel: "Producción Privada",
       status: "production"
     }
   },
   {
     title: "CoreStore Headless",
-    summary: "Motor frontend desacoplado de alto rendimiento para e-commerce modular.",
+    summary: "Acelerador e-commerce ultrarrápido. Frontend desacoplado de alta velocidad para maximizar conversiones y posicionamiento SEO.",
     category: "ecommerce",
-    tags: ["Next.js 15", "React 19", "TypeScript", "Headless"],
+    tags: ["🛠️ Desarrollo a Medida", "Next.js 15", "React 19", "TypeScript", "Headless", "SEO & Rendimiento"],
     specs: {
       problem: "Lentitud en carga y falta de personalización de plataformas de comercio tradicionales.",
-      solution: "Desarrollo de catálogo dinámico, persistencia local del carrito, búsqueda instantánea y checkout modular.",
+      solution: "Catálogo instantáneo, carrito persistente offline, pasarela modular y velocidad de carga menor a 1 segundo.",
       statusLabel: "Prototipo Funcional",
       status: "prototype"
     }
   },
   {
     title: "FlowCommerce",
-    summary: "Híbrido de catálogo digital y automatización conversacional en WhatsApp.",
+    summary: "Automatización de ventas por WhatsApp. Convierte chats informales en pedidos estructurados y automatizados con Inteligencia Artificial.",
     category: "ecommerce",
-    tags: ["WhatsApp API", "AI Agent", "RAG", "Conversational"],
+    tags: ["🛠️ Desarrollo a Medida", "WhatsApp API", "AI Agent", "RAG", "Conversational", "Automatización"],
     specs: {
       problem: "Falta de automatización y estructuración de pedidos en ventas informales por chat.",
-      solution: "Arquitectura de catálogo interactivo con derivación estructurada a WhatsApp y orquestador conversacional por IA.",
+      solution: "Catálogo interactivo integrado a chat, procesamiento inteligente de pedidos y derivación directa a pasarela o CRM.",
       statusLabel: "Especificación Técnica",
       status: "architecture"
     }
   },
   {
     title: "SpendGuard Mobile",
-    summary: "Servicio móvil nativo offline de escucha y registro automático de gastos.",
+    summary: "Gestor financiero móvil 100% privado. Captura, procesa y registra gastos automáticamente en tiempo real y offline.",
     category: "local-first",
-    tags: ["Kotlin", "Jetpack Compose", "Room Database", "Android"],
+    tags: ["🛠️ Desarrollo a Medida", "Kotlin", "Jetpack Compose", "Room Database", "Android", "Privacidad"],
     specs: {
       problem: "Registro manual de finanzas tedioso y brechas de privacidad al sincronizar con servidores externos.",
-      solution: "Servicio en segundo plano de captura de notificaciones, parseo de transacciones por Regex y persistencia Room local.",
+      solution: "Escucha en segundo plano de notificaciones bancarias, extracción automatizada por Regex y base de datos local cifrada.",
       statusLabel: "Prototipo Android",
       status: "prototype"
     }
   },
   {
     title: "ZenSpend Engine",
-    summary: "Consultoría de descubrimiento y modelado de datos para finanzas local-first.",
+    summary: "Consultoría de producto y datos. Diseño de arquitectura local-first e integración de IA en finanzas corporativas.",
     category: "local-first",
-    tags: ["Product Discovery", "Local-first", "Architecture", "Fintech"],
+    tags: ["💼 Consultoría Técnica", "Product Discovery", "Local-first", "Architecture", "Fintech", "Estrategia"],
     specs: {
       problem: "Falta de validación técnica de modelos relacionales offline y viabilidad de IA local.",
-      solution: "Definición estratégica de MVP, estudio de perfil de usuario y viabilidad técnica para procesamiento con LLM local.",
+      solution: "Definición de MVP viable, modelado relacional offline-first y viabilidad técnica para despliegue de modelos locales.",
       statusLabel: "I+D / Descubrimiento",
       status: "architecture"
     }
   },
   {
     title: "DRDV Framework",
-    summary: "Runtime de orquestación y control multi-agente guiado por contratos de comportamiento.",
+    summary: "Gobernanza y control de IA. Framework para asegurar que tus agentes de IA actúen con predictibilidad y seguridad de grado comercial.",
     category: "ai",
-    tags: ["Python", "Agent Architecture", "Validation", "YAML"],
+    tags: ["🛠️ Desarrollo a Medida", "Python", "Agent Architecture", "Validation", "YAML", "Seguridad IA"],
     specs: {
       problem: "Falta de predictibilidad, control y observabilidad en sistemas multi-agente complejos.",
-      solution: "Runtime de ejecución de agentes con validación basada en evidencias bajo el ciclo Design, Review, Decide, Validate.",
+      solution: "Runtime con contratos de comportamiento y validación estricta en el flujo Design-Review-Decide-Validate.",
       statusLabel: "Arquitectura Base",
       status: "architecture"
     }
   },
   {
     title: "SafeRAG Local",
-    summary: "Microservicio autónomo de chat privado y procesamiento de documentos locales.",
+    summary: "Asistente de IA corporativo privado. Analiza documentos y responde consultas de forma segura y 100% local (sin riesgo de fuga de datos).",
     category: "ai",
-    tags: ["FastAPI", "Ollama", "RAG", "Chroma DB", "Security"],
+    tags: ["🚀 Despliegue Inmediato", "FastAPI", "Ollama", "RAG", "Chroma DB", "Security", "Privacidad de Datos"],
     specs: {
       problem: "Riesgo de filtración de datos corporativos sensibles al consumir APIs de LLMs en la nube.",
-      solution: "Aislamiento perimetral estricto con egress whitelist, procesamiento offline con Ollama y base de datos vectorial Chroma.",
+      solution: "Aislamiento de red estricto (cero fugas de datos), procesamiento local con Ollama y base vectorial integrada.",
       statusLabel: "Prototipo Funcional",
       status: "prototype"
     }
   },
   {
     title: "DropLand",
-    summary: "Aplicación híbrida de control remoto y descarga automatizada por red local.",
+    summary: "Gestor de descargas en red local. Automatiza y controla descargas multimedia remotamente desde cualquier dispositivo.",
     category: "local-first",
-    tags: ["Python", "Tkinter", "yt-dlp", "FFmpeg", "MSIX", "PWA"],
+    tags: ["🚀 Despliegue Inmediato", "Python", "Tkinter", "yt-dlp", "FFmpeg", "MSIX", "PWA", "Productividad"],
     specs: {
       problem: "Incomodidad para transferir enlaces y descargar audios/música desde el móvil al almacenamiento local.",
-      solution: "Interfaz de escritorio Tkinter integrada con un servidor HTTP local para control remoto vía PWA móvil, yt-dlp y FFmpeg.",
+      solution: "Consola integrada a servidor web ligero con control a través de PWA móvil, automatizando conversiones multimedia.",
       statusLabel: "Distribución Windows",
       status: "prototype"
     }

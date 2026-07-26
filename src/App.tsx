@@ -231,18 +231,18 @@ export default function App() {
           <div className="hero-copy">
             <span className="eyebrow">
               <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
-              Diseñado por {siteConfig.owner}
+              Desarrollo de Software & Inteligencia Artificial
             </span>
-            <h1>Blueprints de Ingeniería</h1>
+            <h1>Desarrollo de Software y Sistemas de IA para Escalado de Negocios</h1>
             <p className="lead">
-              Desarrollo de soluciones digitales y arquitectura de software estructuradas en comercio electrónico, aplicaciones móviles local-first e inteligencia artificial privada.
+              Desarrollamos soluciones de software a medida, e-commerce de alto rendimiento y sistemas de inteligencia artificial para optimizar tus procesos operativos y acelerar el crecimiento de tu negocio.
             </p>
             <div className="actions">
-              <a className="button button-primary" href="#blueprints">
-                Ver Blueprints <ArrowUpRight size={18} />
+              <a className="button button-primary" href="#contacto">
+                Agendar Consulta <ArrowUpRight size={18} />
               </a>
-              <a className="button" href="#contacto">
-                Contacto
+              <a className="button" href="#blueprints">
+                Ver Proyectos
               </a>
             </div>
           </div>
@@ -421,7 +421,7 @@ export default function App() {
       </main>
 
       <footer className="container footer">
-        © {new Date().getFullYear()} {siteConfig.owner} · FVision. Diseñado como Blueprints de Ingeniería.
+        © {new Date().getFullYear()} {siteConfig.owner} · FVision. Diseñado y Desarrollado por Ezequiel Vecchio.
       </footer>
     </div>
   );

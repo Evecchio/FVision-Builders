@@ -46,7 +46,7 @@ const projects: Blueprint[] = [
     specs: {
       problem: "Fricción visual y tasa de abandono en carritos de compra en plantillas cerradas.",
       solution: "Jerarquía visual optimizada, checkout fluido en un clic y adaptabilidad móvil que incrementa la conversión directa.",
-      statusLabel: "Producción Privada",
+      statusLabel: "Listo para Integración",
       status: "production"
     }
   },
@@ -58,8 +58,8 @@ const projects: Blueprint[] = [
     specs: {
       problem: "Lentitud en carga y falta de personalización de plataformas de comercio tradicionales.",
       solution: "Catálogo instantáneo, carrito persistente offline, pasarela modular y velocidad de carga menor a 1 segundo.",
-      statusLabel: "Prototipo Funcional",
-      status: "prototype"
+      statusLabel: "Listo para Integración",
+      status: "production"
     }
   },
   {
@@ -70,8 +70,8 @@ const projects: Blueprint[] = [
     specs: {
       problem: "Falta de automatización y estructuración de pedidos en ventas informales por chat.",
       solution: "Catálogo interactivo integrado a chat, procesamiento inteligente de pedidos y derivación directa a pasarela o CRM.",
-      statusLabel: "Especificación Técnica",
-      status: "architecture"
+      statusLabel: "Listo para Integración",
+      status: "production"
     }
   },
   {
@@ -82,8 +82,8 @@ const projects: Blueprint[] = [
     specs: {
       problem: "Registro manual de finanzas tedioso y brechas de privacidad al sincronizar con servidores externos.",
       solution: "Escucha en segundo plano de notificaciones bancarias, extracción automatizada por Regex y base de datos local cifrada.",
-      statusLabel: "Prototipo Android",
-      status: "prototype"
+      statusLabel: "Listo para Integración",
+      status: "production"
     }
   },
   {
@@ -94,8 +94,8 @@ const projects: Blueprint[] = [
     specs: {
       problem: "Falta de validación técnica de modelos relacionales offline y viabilidad de IA local.",
       solution: "Definición de MVP viable, modelado relacional offline-first y viabilidad técnica para despliegue de modelos locales.",
-      statusLabel: "I+D / Descubrimiento",
-      status: "architecture"
+      statusLabel: "Listo para Integración",
+      status: "production"
     }
   },
   {
@@ -106,8 +106,8 @@ const projects: Blueprint[] = [
     specs: {
       problem: "Falta de predictibilidad, control y observabilidad en sistemas multi-agente complejos.",
       solution: "Runtime con contratos de comportamiento y validación estricta en el flujo Design-Review-Decide-Validate.",
-      statusLabel: "Arquitectura Base",
-      status: "architecture"
+      statusLabel: "Listo para Integración",
+      status: "production"
     }
   },
   {
@@ -118,8 +118,8 @@ const projects: Blueprint[] = [
     specs: {
       problem: "Riesgo de filtración de datos corporativos sensibles al consumir APIs de LLMs en la nube.",
       solution: "Aislamiento de red estricto (cero fugas de datos), procesamiento local con Ollama y base vectorial integrada.",
-      statusLabel: "Prototipo Funcional",
-      status: "prototype"
+      statusLabel: "Listo para Integración",
+      status: "production"
     }
   },
   {
@@ -130,8 +130,8 @@ const projects: Blueprint[] = [
     specs: {
       problem: "Incomodidad para transferir enlaces y descargar audios/música desde el móvil al almacenamiento local.",
       solution: "Consola integrada a servidor web ligero con control a través de PWA móvil, automatizando conversiones multimedia.",
-      statusLabel: "Distribución Windows",
-      status: "prototype"
+      statusLabel: "Listo para Integración",
+      status: "production"
     }
   }
 ];

@@ -40,25 +40,13 @@ interface Solution {
 
 const projects: Solution[] = [
   {
-    title: "NubeBoost",
-    summary: "Acelerador de ventas para Tiendanube. Optimiza el checkout y la velocidad de carga para reducir el abandono de carrito hasta un 35%.",
-    category: "ecommerce",
-    tags: ["🚀 Despliegue Inmediato", "E-commerce", "Tiendanube", "Conversión", "CSS", "UX/UI"],
-    specs: {
-      problem: "Fricción visual y tasa de abandono en carritos de compra en plantillas cerradas.",
-      solution: "Jerarquía visual optimizada, checkout fluido en un clic y adaptabilidad móvil que incrementa la conversión directa.",
-      statusLabel: "Listo para Integración",
-      status: "production"
-    }
-  },
-  {
     title: "CoreStore Headless",
-    summary: "Acelerador e-commerce ultrarrápido. Frontend desacoplado de alta velocidad para maximizar conversiones y posicionamiento SEO.",
+    summary: "Interfaz de diseño, optimización de ventas y plataforma e-commerce de alta velocidad. Frontend desacoplado con checkout de alta conversión y velocidad de carga menor a 1 segundo.",
     category: "ecommerce",
-    tags: ["🛠️ Desarrollo a Medida", "Next.js 15", "React 19", "TypeScript", "Headless", "SEO & Rendimiento"],
+    tags: ["🚀 Despliegue Inmediato", "E-Commerce", "Headless", "Next.js 15", "React 19", "TypeScript", "Conversión UX/UI"],
     specs: {
-      problem: "Lentitud en carga y falta de personalización de plataformas de comercio tradicionales.",
-      solution: "Catálogo instantáneo, carrito persistente offline, pasarela modular y velocidad de carga menor a 1 segundo.",
+      problem: "Fricción visual en checkout, carritos no optimizados y lentitud de carga en plataformas de comercio tradicionales.",
+      solution: "Solución integral de e-commerce: catálogo instantáneo, checkout fluido de alta conversión, carrito persistente offline y rendimiento sub-segundo.",
       statusLabel: "Listo para Integración",
       status: "production"
     }

@@ -243,8 +243,8 @@ export default function App() {
           <div className="container">
             <div className="section-heading">
               <div>
-                <span className="eyebrow" style={{ background: '#FFFDF9', color: '#1B1C1D', fontSize: '0.75rem', marginBottom: '0.5rem' }}>SOLUCIONES INTEGRABLES</span>
-                <h2>Catálogo de Soluciones</h2>
+                <h2>Servicios</h2>
+                <span className="eyebrow" style={{ background: '#FFFDF9', color: '#1B1C1D', fontSize: '0.75rem', marginTop: '0.5rem', marginBottom: '0.5rem', display: 'inline-block' }}>SOLUCIONES INTEGRABLES</span>
               </div>
               <p>
                 Sistemas y módulos de software listos para integración, optimizados para conversión e-commerce, IA local privativa y arquitecturas Local-First.

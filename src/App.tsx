@@ -13,7 +13,8 @@ import {
   FileCode,
   AlertTriangle,
   CheckCircle,
-  HelpCircle
+  HelpCircle,
+  Shield
 } from "lucide-react";
 import { siteConfig } from "./config/site";
 
@@ -254,16 +255,17 @@ export default function App() {
           <div className="container">
             <div className="section-heading">
               <div>
-                <span className="eyebrow" style={{ background: '#FFFDF9', color: '#1B1C1D' }}>Soluciones Listas</span>
+                <span className="eyebrow" style={{ background: '#FFFDF9', color: '#1B1C1D', fontSize: '0.75rem', marginBottom: '0.5rem' }}>SOLUCIONES INTEGRABLES</span>
                 <h2>Catálogo de Soluciones</h2>
               </div>
               <p>
-                Estructuras modulares diseñadas para resolver desafíos de negocio e infraestructura sin exponer propiedad intelectual.
+                Sistemas y módulos de software listos para integración, optimizados para conversión e-commerce, IA local privativa y arquitecturas Local-First.
               </p>
             </div>
 
             <div className="privacy-note">
-              * El código y los datos de negocio son estrictamente privados. Se exponen especificaciones de flujo bajo licencias de despliegue controlado.
+              <Shield size={18} style={{ flexShrink: 0, color: 'var(--accent)' }} />
+              <span><strong>Nota de Privacidad:</strong> El código fuente y los datos de negocio se gestionan bajo licencias de despliegue privado. Se exponen especificaciones de flujo bajo demanda.</span>
             </div>
 
             {/* Tabs de Filtro */}

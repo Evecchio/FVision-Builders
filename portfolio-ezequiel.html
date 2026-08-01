@@ -286,18 +286,11 @@
     .heading {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    @media (min-width: 860px) {
-      .heading {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 3rem;
-      }
+      align-items: center;
+      text-align: center;
+      gap: 0.75rem;
+      margin: 0 auto 2rem;
+      max-width: 800px;
     }
 
     .heading h2 {
@@ -307,15 +300,16 @@
       letter-spacing: -0.04em;
       text-transform: uppercase;
       font-weight: 800;
-      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
     }
 
     .heading p {
-      max-width: 580px;
+      max-width: 680px;
       color: var(--muted);
       font-size: 1.08rem;
       font-weight: 550;
-      line-height: 1.5;
+      line-height: 1.55;
+      margin: 0 auto;
     }
 
     /* Tabs de Filtro */
@@ -733,11 +727,8 @@
   <section id="projects">
     <div class="container">
       <div class="heading">
-        <div>
-          <h2>Servicios</h2>
-          <span class="eyebrow" style="background:#FFFDF9; color:#1B1C1D; font-size:0.75rem; margin-top:0.5rem; margin-bottom:0.5rem; display:inline-block;">SOLUCIONES INTEGRABLES</span>
-        </div>
-        <p>Sistemas y módulos de software listos para integración, optimizados para conversión e-commerce, IA local privativa y arquitecturas Local-First.</p>
+        <h2>Servicios & Soluciones Integrables</h2>
+        <p>Módulos y sistemas de software diseñados para acelerar la conversión e-commerce, desplegar IA local privativa y asegurar arquitecturas Local-First.</p>
       </div>
 
       <div class="privacy-note">

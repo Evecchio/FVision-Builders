@@ -18,13 +18,13 @@ import {
 import { siteConfig } from "./config/site";
 
 const categories = [
-  { id: "all", label: "Todos los Blueprints" },
+  { id: "all", label: "Todas las Soluciones" },
   { id: "ecommerce", label: "E-Commerce & Conversión" },
   { id: "ai", label: "IA & Agentes" },
   { id: "local-first", label: "Local-First & Mobile" }
 ] as const;
 
-interface Blueprint {
+interface Solution {
   title: string;
   summary: string;
   category: "ecommerce" | "ai" | "local-first";
@@ -37,7 +37,7 @@ interface Blueprint {
   };
 }
 
-const projects: Blueprint[] = [
+const projects: Solution[] = [
   {
     title: "NubeBoost",
     summary: "Acelerador de ventas para Tiendanube. Optimiza el checkout y la velocidad de carga para reducir el abandono de carrito hasta un 35%.",
@@ -218,7 +218,7 @@ export default function App() {
             <span className="brand-text">FVision</span>
           </a>
           <div className="nav-links">
-            <a href="#blueprints">Blueprints</a>
+            <a href="#soluciones">Soluciones</a>
             <a href="#tecnologias">Tecnologías</a>
             <a href="#contacto">Contacto</a>
           </div>
@@ -241,7 +241,7 @@ export default function App() {
               <a className="button button-primary" href="#contacto">
                 Agendar Consulta <ArrowUpRight size={18} />
               </a>
-              <a className="button" href="#blueprints">
+              <a className="button" href="#soluciones">
                 Ver Proyectos
               </a>
             </div>
@@ -249,13 +249,13 @@ export default function App() {
 
         </section>
 
-        {/* Section Blueprints */}
-        <section className="section" id="blueprints">
+        {/* Section Soluciones */}
+        <section className="section" id="soluciones">
           <div className="container">
             <div className="section-heading">
               <div>
                 <span className="eyebrow" style={{ background: '#FFFDF9', color: '#1B1C1D' }}>Soluciones Listas</span>
-                <h2>Catálogo de Blueprints</h2>
+                <h2>Catálogo de Soluciones</h2>
               </div>
               <p>
                 Estructuras modulares diseñadas para resolver desafíos de negocio e infraestructura sin exponer propiedad intelectual.
@@ -353,9 +353,9 @@ export default function App() {
           <div className="container">
             <div className="contact-panel">
               <span className="eyebrow contact-eyebrow">Contacto Técnico</span>
-              <h2>¿Querés implementar uno de estos Blueprints?</h2>
+              <h2>¿Querés implementar una de estas soluciones?</h2>
               <p>
-                Dejame tu consulta para coordinar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier Blueprint.
+                Dejame tu consulta para coordinar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier solución.
               </p>
 
               <form className="contact-form" onSubmit={handleFormSubmit}>
@@ -389,7 +389,7 @@ export default function App() {
                     id="message"
                     required
                     className="form-input form-textarea"
-                    placeholder="¿En qué Blueprint o solución estás interesado?"
+                    placeholder="¿En qué solución estás interesado?"
                     value={formState.message}
                     onChange={(e) => setFormState(prev => ({ ...prev, message: e.target.value }))}
                   />

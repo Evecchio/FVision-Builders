@@ -178,7 +178,7 @@ export default function App() {
               <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
               Soluciones de Software & IA Corporativa
             </span>
-            <h1>Agentes de IA & Inteligencia de Datos</h1>
+            <h1>E-Commerce, Agentes de IA & Inteligencia de Datos</h1>
             <p className="lead">
               Diseñamos e integramos soluciones de software de alto impacto empresarial: plataformas e-commerce propias sub-segundo, automatizaciones operativas con IA en servidor propio y sistemas de datos cifrados.
             </p>

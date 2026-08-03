@@ -20,15 +20,15 @@ import { siteConfig } from "./config/site";
 
 const categories = [
   { id: "all", label: "Todas las Soluciones" },
-  { id: "ecommerce", label: "E-Commerce & Conversión" },
-  { id: "ai", label: "IA & Agentes" },
-  { id: "local-first", label: "Local-First & Mobile" }
+  { id: "sales", label: "🛍️ Ventas & E-Commerce" },
+  { id: "ops", label: "⚙️ Coordinación & Operaciones" },
+  { id: "data", label: "📊 Análisis & Gestión Privada de Datos" }
 ] as const;
 
 interface Solution {
   title: string;
   summary: string;
-  category: "ecommerce" | "ai" | "local-first";
+  category: "sales" | "ops" | "data";
   tags: string[];
   specs: {
     problem: string;
@@ -41,85 +41,85 @@ interface Solution {
 const projects: Solution[] = [
   {
     title: "CoreStore Headless",
-    summary: "Interfaz de diseño, optimización de ventas y plataforma e-commerce de alta velocidad. Frontend desacoplado con checkout de alta conversión y velocidad de carga menor a 1 segundo.",
-    category: "ecommerce",
-    tags: ["🚀 Despliegue Inmediato", "E-Commerce", "Headless", "Next.js 15", "React 19", "TypeScript", "Conversión UX/UI"],
+    summary: "Plataforma e-commerce propia de ultra-alta velocidad. Frontend desacoplado con procesos simplificados, checkout fluido de pagos ágiles y velocidad de carga menor a 1 segundo.",
+    category: "sales",
+    tags: ["🚀 Despliegue Inmediato", "E-Commerce Propio", "Pagos Ágiles", "Next.js 15", "React 19", "TypeScript", "Alta Conversión"],
     specs: {
-      problem: "Fricción visual en checkout, carritos no optimizados y lentitud de carga en plataformas de comercio tradicionales.",
-      solution: "Solución integral de e-commerce: catálogo instantáneo, checkout fluido de alta conversión, carrito persistente offline y rendimiento sub-segundo.",
+      problem: "Lentitud de carga, abandono de carritos y altos costos operativos en plataformas comerciales tradicionales.",
+      solution: "Arquitectura propia de alta conversión: catálogo instantáneo, checkout fluido en 1-clic y rendimiento sub-segundo optimizado para ventas.",
+      statusLabel: "Solución Propietaria",
+      status: "production"
+    }
+  },
+  {
+    title: "AI Sales Engine",
+    summary: "Automatización de ventas conversacionales por WhatsApp. Convierte consultas informales por chat en pedidos estructurados e integrados automáticamente al CRM/ERP.",
+    category: "sales",
+    tags: ["🛠️ Desarrollo a Medida", "WhatsApp API", "AI Agent", "Automatización Comercial", "Ventas IA"],
+    specs: {
+      problem: "Pérdida de ventas por respuesta tardía y falta de estructuración en pedidos informales por chat.",
+      solution: "Agente de ventas con catálogo interactivo, automatización económica de pedidos por WhatsApp y derivación a pasarela de pagos.",
       statusLabel: "Listo para Integración",
       status: "production"
     }
   },
   {
-    title: "FlowCommerce",
-    summary: "Automatización de ventas por WhatsApp. Convierte chats informales en pedidos estructurados y automatizados con Inteligencia Artificial.",
-    category: "ecommerce",
-    tags: ["🛠️ Desarrollo a Medida", "WhatsApp API", "AI Agent", "RAG", "Conversational", "Automatización"],
+    title: "Enterprise AI Agents",
+    summary: "Agentes de IA autónomos para coordinación y automatización de operaciones empresariales complejas entre equipos y sistemas centrales (ERP/CRM).",
+    category: "ops",
+    tags: ["🛠️ Desarrollo a Medida", "AI Multi-Agent", "Workflow Automation", "ERP/CRM Integration", "Operaciones"],
     specs: {
-      problem: "Falta de automatización y estructuración de pedidos en ventas informales por chat.",
-      solution: "Catálogo interactivo integrado a chat, procesamiento inteligente de pedidos y derivación directa a pasarela o CRM.",
+      problem: "Fricción manual, cuellos de botella operativos y desincronización de tareas entre departamentos de la empresa.",
+      solution: "Agentes ejecutores de tareas operativas conectadas a APIs empresariales con trazabilidad y monitoreo continuo.",
       statusLabel: "Listo para Integración",
       status: "production"
     }
   },
   {
-    title: "SpendGuard Mobile",
-    summary: "Gestor financiero móvil 100% privado. Captura, procesa y registra gastos automáticamente en tiempo real y offline.",
-    category: "local-first",
-    tags: ["🛠️ Desarrollo a Medida", "Kotlin", "Jetpack Compose", "Room Database", "Android", "Privacidad"],
+    title: "Agentic Governance (DRDV)",
+    summary: "Motor de control determinista y gobernanza de IA. Garantiza que los agentes de IA operen bajo contratos estricto de comportamiento y supervisión de control (Human-in-the-Loop).",
+    category: "ops",
+    tags: ["🛠️ Gobernanza IA", "Human-in-the-Loop", "Zero-Trust", "Python", "YAML", "Seguridad Operativa"],
     specs: {
-      problem: "Registro manual de finanzas tedioso y brechas de privacidad al sincronizar con servidores externos.",
-      solution: "Escucha en segundo plano de notificaciones bancarias, extracción automatizada por Regex y base de datos local cifrada.",
+      problem: "Riesgo de alucinaciones, falta de predictibilidad y ejecuciones no autorizadas de IA en operaciones críticas.",
+      solution: "Runtime de validación estricta en 4 etapas (Design-Review-Decide-Validate) con observabilidad total y control humano en pasos clave.",
+      statusLabel: "Framework Propietario",
+      status: "production"
+    }
+  },
+  {
+    title: "Zero-Latency Local-First Sync",
+    summary: "Arquitectura de aplicaciones móviles y corporativas cifradas en el dispositivo (Edge Computing), con respuesta inmediata a 0ms y sincronización transparente.",
+    category: "ops",
+    tags: ["🛠️ Desarrollo a Medida", "Local-First", "Kotlin", "Jetpack Compose", "AES-256", "Zero-Latency"],
+    specs: {
+      problem: "Interrupciones operativas en campo por falta de conectividad a internet y lentitud en sincronización.",
+      solution: "Almacenamiento cifrado en reposo (AES-256), operatividad 100% offline y motor de sincronización eventual sin bloqueo de interfaz.",
       statusLabel: "Listo para Integración",
       status: "production"
     }
   },
   {
-    title: "ZenSpend Engine",
-    summary: "Consultoría de producto y datos. Diseño de arquitectura local-first e integración de IA en finanzas corporativas.",
-    category: "local-first",
-    tags: ["💼 Consultoría Técnica", "Product Discovery", "Local-first", "Architecture", "Fintech", "Estrategia"],
+    title: "Enterprise Private AI & GraphRAG",
+    summary: "Asistente de IA corporativo y análisis de documentos 100% privativo. Desplegado en Servidores Privados (VPC) o Local On-Premise sin riesgo de fuga de datos.",
+    category: "data",
+    tags: ["🚀 Despliegue Privado", "GraphRAG Privado", "Servidor Privado / On-Premise", "FastAPI", "SOC 2 / GDPR", "Cero Fuga de Datos"],
     specs: {
-      problem: "Falta de validación técnica de modelos relacionales offline y viabilidad de IA local.",
-      solution: "Definición de MVP viable, modelado relacional offline-first y viabilidad técnica para despliegue de modelos locales.",
+      problem: "Riesgo de filtración de IP corporativa sensible y limitaciones de búsqueda en RAGs vectoriales tradicionales.",
+      solution: "Aislamiento total en Servidor Privado/On-Premise con GraphRAG Híbrido, modelos SLM (Ollama/FastAPI), costo $0 por token API y cumplimiento SOC2/GDPR.",
       statusLabel: "Listo para Integración",
       status: "production"
     }
   },
   {
-    title: "DRDV Framework",
-    summary: "Gobernanza y control de IA. Framework para asegurar que tus agentes de IA actúen con predictibilidad y seguridad de grado comercial.",
-    category: "ai",
-    tags: ["🛠️ Desarrollo a Medida", "Python", "Agent Architecture", "Validation", "YAML", "Seguridad IA"],
+    title: "Corporate Data Architecture Discovery",
+    summary: "Auditoría de arquitectura de datos y seguridad. Evaluación de viabilidad para modelos privativos, gobernanza de IA y estrategia de modernización digital.",
+    category: "data",
+    tags: ["💼 Consultoría Técnica", "Auditoría de Arquitectura", "Seguridad de Datos", "Estrategia IA"],
     specs: {
-      problem: "Falta de predictibilidad, control y observabilidad en sistemas multi-agente complejos.",
-      solution: "Runtime con contratos de comportamiento y validación estricta en el flujo Design-Review-Decide-Validate.",
-      statusLabel: "Listo para Integración",
-      status: "production"
-    }
-  },
-  {
-    title: "SafeRAG Local",
-    summary: "Asistente de IA corporativo privado. Analiza documentos y responde consultas de forma segura y 100% local (sin riesgo de fuga de datos).",
-    category: "ai",
-    tags: ["🚀 Despliegue Inmediato", "FastAPI", "Ollama", "RAG", "Chroma DB", "Security", "Privacidad de Datos"],
-    specs: {
-      problem: "Riesgo de filtración de datos corporativos sensibles al consumir APIs de LLMs en la nube.",
-      solution: "Aislamiento de red estricto (cero fugas de datos), procesamiento local con Ollama y base vectorial integrada.",
-      statusLabel: "Listo para Integración",
-      status: "production"
-    }
-  },
-  {
-    title: "DropLand",
-    summary: "Gestor de descargas en red local. Automatiza y controla descargas multimedia remotamente desde cualquier dispositivo.",
-    category: "local-first",
-    tags: ["🚀 Despliegue Inmediato", "Python", "Tkinter", "yt-dlp", "FFmpeg", "MSIX", "PWA", "Productividad"],
-    specs: {
-      problem: "Incomodidad para transferir enlaces y descargar audios/música desde el móvil al almacenamiento local.",
-      solution: "Consola integrada a servidor web ligero con control a través de PWA móvil, automatizando conversiones multimedia.",
-      statusLabel: "Listo para Integración",
+      problem: "Falta de claridad y riesgos técnicos antes de invertir en IA corporativa o renovar sistemas legados.",
+      solution: "Diagnóstico de seguridad (OWASP/SOC2), modelado de datos privativo y definición de MVP técnico ejecutable.",
+      statusLabel: "Consultoría Técnica",
       status: "production"
     }
   }
@@ -220,18 +220,18 @@ export default function App() {
           <div className="hero-copy">
             <span className="eyebrow">
               <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
-              Desarrollo de Software & Inteligencia Artificial
+              Soluciones de Software & IA Corporativa
             </span>
-            <h1>Desarrollo de Software y Sistemas de IA para Escalado de Negocios</h1>
+            <h1>Arquitectura de Software, IA Privada & E-Commerce Propietario</h1>
             <p className="lead">
-              Desarrollamos soluciones de software a medida, e-commerce de alto rendimiento y sistemas de inteligencia artificial para optimizar tus procesos operativos y acelerar el crecimiento de tu negocio.
+              Diseñamos e integramos soluciones de software de alto impacto empresarial: plataformas e-commerce propias sub-segundo, automatizaciones operativas con IA privada en servidor propio y arquitecturas de datos cifradas.
             </p>
             <div className="actions">
               <a className="button button-primary" href="#contacto">
                 Agendar Consulta <ArrowUpRight size={18} />
               </a>
               <a className="button" href="#soluciones">
-                Ver Proyectos
+                Explorar Soluciones
               </a>
             </div>
           </div>
@@ -244,13 +244,13 @@ export default function App() {
             <div className="section-heading">
               <h2>Servicios & Soluciones Integrables</h2>
               <p>
-                Módulos y sistemas de software diseñados para acelerar la conversión e-commerce, desplegar IA local privativa y asegurar arquitecturas Local-First.
+                Soluciones de arquitectura avanzada estructuradas para las 3 áreas clave de la empresa: Ventas, Operaciones y Datos.
               </p>
             </div>
 
             <div className="privacy-note">
               <Shield size={18} style={{ flexShrink: 0, color: 'var(--accent)' }} />
-              <span><strong>Nota de Privacidad:</strong> El código fuente y los datos de negocio se gestionan bajo licencias de despliegue privado. Se exponen especificaciones de flujo bajo demanda.</span>
+              <span><strong>Nota de Privacidad y Cumplimiento:</strong> Todas las soluciones de IA y datos se despliegan en <strong>Servidores Privados (VPC) o Local On-Premise</strong> bajo normas SOC 2, ISO 27001, GDPR, HIPAA y cifrado AES-256 (cero compartición con terceros).</span>
             </div>
 
             {/* Tabs de Filtro */}
@@ -314,6 +314,33 @@ export default function App() {
                 ))}
               </AnimatePresence>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Section Modelos de Trabajo */}
+        <section className="section" id="modelos" style={{ background: 'var(--paper)', borderTop: 'var(--border-thick)', borderBottom: 'var(--border-thick)' }}>
+          <div className="container">
+            <div className="section-heading">
+              <h2>Modelos de Trabajo & Integración</h2>
+              <p>Formatos flexibles de colaboración adaptados a las necesidades y ritmo de tu empresa.</p>
+            </div>
+            <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
+              <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
+                <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--commerce-color)', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>1-2 SEMANAS</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Audit & Technical Advisory</h3>
+                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Auditoría integral de arquitectura técnica, velocidad e-commerce, diagnóstico de seguridad (OWASP/SOC2) y mapa de ruta para integración de IA privativa en tus servidores.</p>
+              </div>
+              <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
+                <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--ai-color)', color: '#fff', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>2-4 SEMANAS</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Rapid Solution Integration</h3>
+                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Despliegue e integración acelerada de nuestra plataforma e-commerce propia, agentes de IA u operacional privativa en tu servidor privado o infraestructura local.</p>
+              </div>
+              <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
+                <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--local-color)', color: '#fff', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>CONTINUO</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Fractional Lead Architecture</h3>
+                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Liderazgo técnico estratégico y acompañamiento de arquitectura continuo para dirigir las decisiones tecnológicas y optimizaciones clave de tu equipo de desarrollo.</p>
+              </div>
+            </div>
           </div>
         </section>
 

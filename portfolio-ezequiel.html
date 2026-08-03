@@ -714,12 +714,12 @@
 <main id="top">
   <section class="hero container">
     <div>
-      <span class="eyebrow">Desarrollo de Software & Inteligencia Artificial</span>
-      <h1>Desarrollo de Software y Sistemas de IA para Escalado de Negocios</h1>
-      <p class="lead">Desarrollamos soluciones de software a medida, e-commerce de alto rendimiento y sistemas de inteligencia artificial para optimizar tus procesos operativos y acelerar el crecimiento de tu negocio.</p>
+      <span class="eyebrow">Soluciones de Software & IA Corporativa</span>
+      <h1>Arquitectura de Software, IA Privada & E-Commerce Propietario</h1>
+      <p class="lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: plataformas e-commerce propias sub-segundo, automatizaciones operativas con IA privada en servidor propio y arquitecturas de datos cifradas.</p>
       <div class="actions">
         <a class="btn primary" href="#contact">Agendar Consulta</a>
-        <a class="btn" href="#projects">Ver Proyectos</a>
+        <a class="btn" href="#projects">Explorar Soluciones</a>
       </div>
     </div>
   </section>
@@ -728,173 +728,189 @@
     <div class="container">
       <div class="heading">
         <h2>Servicios & Soluciones Integrables</h2>
-        <p>Módulos y sistemas de software diseñados para acelerar la conversión e-commerce, desplegar IA local privativa y asegurar arquitecturas Local-First.</p>
+        <p>Soluciones de arquitectura avanzada estructuradas para las 3 áreas clave de la empresa: Ventas, Operaciones y Datos.</p>
       </div>
 
       <div class="privacy-note">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; color:var(--accent);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span><strong>Nota de Privacidad:</strong> El código fuente y los datos de negocio se gestionan bajo licencias de despliegue privado. Se exponen especificaciones de flujo bajo demanda.</span>
+        <span><strong>Nota de Privacidad y Cumplimiento:</strong> Todas las soluciones de IA y datos se despliegan en <strong>Servidores Privados (VPC) o Local On-Premise</strong> bajo normas SOC 2, ISO 27001, GDPR, HIPAA y cifrado AES-256 (cero compartición con terceros).</span>
       </div>
 
-      <!-- Barra de Filtros interactiva (Tabs) -->
+      <!-- Barra de Filtros por Áreas de Negocio -->
       <div class="filter-tabs" role="tablist">
         <button class="tab-button active" onclick="filterCategory('all', this)">Todas las Soluciones</button>
-        <button class="tab-button" onclick="filterCategory('ecommerce', this)">E-Commerce & Conversión</button>
-        <button class="tab-button" onclick="filterCategory('ai', this)">IA & Agentes</button>
-        <button class="tab-button" onclick="filterCategory('local-first', this)">Local-First & Mobile</button>
+        <button class="tab-button" onclick="filterCategory('sales', this)">🛍️ Ventas & E-Commerce</button>
+        <button class="tab-button" onclick="filterCategory('ops', this)">⚙️ Coordinación & Operaciones</button>
+        <button class="tab-button" onclick="filterCategory('data', this)">📊 Análisis & Gestión Privada de Datos</button>
       </div>
 
       <div class="grid" id="solutions-grid">
-        <!-- Solución 1 -->
-        <article class="card" data-category="ecommerce">
+        <!-- ÁREA 1: VENTAS & E-COMMERCE -->
+        <article class="card" data-category="sales">
           <div class="card-head">
             <h3>CoreStore Headless</h3>
-            <span class="status-badge"><span class="status-led production"></span>Listo para Integración</span>
+            <span class="status-badge"><span class="status-led production"></span>Solución Propietaria</span>
           </div>
-          <p class="summary-text">Interfaz de diseño, optimización de ventas y plataforma e-commerce de alta velocidad. Frontend desacoplado con checkout de alta conversión y velocidad de carga menor a 1 segundo.</p>
+          <p class="summary-text">Plataforma e-commerce propia de ultra-alta velocidad. Frontend desacoplado con procesos simplificados, checkout fluido de pagos ágiles y velocidad de carga menor a 1 segundo.</p>
           <div class="details">
-            <div class="detail"><strong>PROB</strong><span>Fricción visual en checkout, carritos no optimizados y lentitud de carga en plataformas de comercio tradicionales.</span></div>
-            <div class="detail"><strong>SOL</strong><span>Solución integral de e-commerce: catálogo instantáneo, checkout fluido de alta conversión, carrito persistente offline y rendimiento sub-segundo.</span></div>
+            <div class="detail"><strong>PROB</strong><span>Lentitud de carga, abandono de carritos y altos costos operativos en plataformas comerciales tradicionales.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Arquitectura propia de alta conversión: catálogo instantáneo, checkout fluido en 1-clic y rendimiento sub-segundo optimizado para ventas.</span></div>
           </div>
           <div class="tags">
             <span class="tag">🚀 Despliegue Inmediato</span>
-            <span class="tag">E-Commerce</span>
-            <span class="tag">Headless</span>
+            <span class="tag">E-Commerce Propio</span>
+            <span class="tag">Pagos Ágiles</span>
             <span class="tag">Next.js 15</span>
             <span class="tag">React 19</span>
             <span class="tag">TypeScript</span>
-            <span class="tag">Conversión UX/UI</span>
+            <span class="tag">Alta Conversión</span>
           </div>
         </article>
 
-        <!-- Solución 3 -->
-        <article class="card" data-category="ecommerce">
+        <article class="card" data-category="sales">
           <div class="card-head">
-            <h3>FlowCommerce</h3>
+            <h3>AI Sales Engine</h3>
             <span class="status-badge"><span class="status-led production"></span>Listo para Integración</span>
           </div>
-          <p class="summary-text">Automatización de ventas por WhatsApp. Convierte chats informales en pedidos estructurados y automatizados con Inteligencia Artificial.</p>
+          <p class="summary-text">Automatización de ventas conversacionales por WhatsApp. Convierte consultas informales por chat en pedidos estructurados e integrados automáticamente al CRM/ERP.</p>
           <div class="details">
-            <div class="detail"><strong>PROB</strong><span>Falta de automatización y estructuración de pedidos en ventas informales por chat.</span></div>
-            <div class="detail"><strong>SOL</strong><span>Catálogo interactivo integrado a chat, procesamiento inteligente de pedidos y derivación directa a pasarela o CRM.</span></div>
+            <div class="detail"><strong>PROB</strong><span>Pérdida de ventas por respuesta tardía y falta de estructuración en pedidos informales por chat.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Agente de ventas con catálogo interactivo, automatización económica de pedidos por WhatsApp y derivación a pasarela de pagos.</span></div>
           </div>
           <div class="tags">
             <span class="tag">🛠️ Desarrollo a Medida</span>
             <span class="tag">WhatsApp API</span>
             <span class="tag">AI Agent</span>
-            <span class="tag">RAG</span>
-            <span class="tag">Conversational</span>
-            <span class="tag">Automatización</span>
+            <span class="tag">Automatización Comercial</span>
+            <span class="tag">Ventas IA</span>
           </div>
         </article>
 
-        <!-- Solución 4 -->
-        <article class="card" data-category="local-first">
+        <!-- ÁREA 2: COORDINACIÓN & OPERACIONES -->
+        <article class="card" data-category="ops">
           <div class="card-head">
-            <h3>SpendGuard Mobile</h3>
+            <h3>Enterprise AI Agents</h3>
             <span class="status-badge"><span class="status-led production"></span>Listo para Integración</span>
           </div>
-          <p class="summary-text">Gestor financiero móvil 100% privado. Captura, procesa y registra gastos automáticamente en tiempo real y offline.</p>
+          <p class="summary-text">Agentes de IA autónomos para coordinación y automatización de operaciones empresariales complejas entre equipos y sistemas centrales (ERP/CRM).</p>
           <div class="details">
-            <div class="detail"><strong>PROB</strong><span>Registro manual de finanzas tedioso y brechas de privacidad al sincronizar con servidores externos.</span></div>
-            <div class="detail"><strong>SOL</strong><span>Escucha en segundo plano de notificaciones bancarias, extracción automatizada por Regex y base de datos local cifrada.</span></div>
+            <div class="detail"><strong>PROB</strong><span>Fricción manual, cuellos de botella operativos y desincronización de tareas entre departamentos de la empresa.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Agentes ejecutores de tareas operativas conectadas a APIs empresariales con trazabilidad y monitoreo continuo.</span></div>
           </div>
           <div class="tags">
             <span class="tag">🛠️ Desarrollo a Medida</span>
-            <span class="tag">Kotlin</span>
-            <span class="tag">Jetpack Compose</span>
-            <span class="tag">Room Database</span>
-            <span class="tag">Android</span>
-            <span class="tag">Privacidad</span>
+            <span class="tag">AI Multi-Agent</span>
+            <span class="tag">Workflow Automation</span>
+            <span class="tag">ERP/CRM Integration</span>
+            <span class="tag">Operaciones</span>
           </div>
         </article>
 
-        <!-- Solución 5 -->
-        <article class="card" data-category="local-first">
+        <article class="card" data-category="ops">
           <div class="card-head">
-            <h3>ZenSpend Engine</h3>
+            <h3>Agentic Governance (DRDV)</h3>
+            <span class="status-badge"><span class="status-led production"></span>Framework Propietario</span>
+          </div>
+          <p class="summary-text">Motor de control determinista y gobernanza de IA. Garantiza que los agentes de IA operen bajo contratos estricto de comportamiento y supervisión de control (Human-in-the-Loop).</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Riesgo de alucinaciones, falta de predictibilidad y ejecuciones no autorizadas de IA en operaciones críticas.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Runtime de validación estricta en 4 etapas (Design-Review-Decide-Validate) con observabilidad total y control humano en pasos clave.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">🛠️ Gobernanza IA</span>
+            <span class="tag">Human-in-the-Loop</span>
+            <span class="tag">Zero-Trust</span>
+            <span class="tag">Python</span>
+            <span class="tag">YAML</span>
+            <span class="tag">Seguridad Operativa</span>
+          </div>
+        </article>
+
+        <article class="card" data-category="ops">
+          <div class="card-head">
+            <h3>Zero-Latency Local-First Sync</h3>
             <span class="status-badge"><span class="status-led production"></span>Listo para Integración</span>
           </div>
-          <p class="summary-text">Consultoría de producto y datos. Diseño de arquitectura local-first e integración de IA en finanzas corporativas.</p>
+          <p class="summary-text">Arquitectura de aplicaciones móviles y corporativas cifradas en el dispositivo (Edge Computing), con respuesta inmediata a 0ms y sincronización transparente.</p>
           <div class="details">
-            <div class="detail"><strong>PROB</strong><span>Falta de validación técnica de modelos relacionales offline y viabilidad de IA local.</span></div>
-            <div class="detail"><strong>SOL</strong><span>Definición de MVP viable, modelado relacional offline-first y viabilidad técnica para despliegue de modelos locales.</span></div>
+            <div class="detail"><strong>PROB</strong><span>Interrupciones operativas en campo por falta de conectividad a internet y lentitud en sincronización.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Almacenamiento cifrado en reposo (AES-256), operatividad 100% offline y motor de sincronización eventual sin bloqueo de interfaz.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">🛠️ Desarrollo a Medida</span>
+            <span class="tag">Local-First</span>
+            <span class="tag">Kotlin</span>
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">AES-256</span>
+            <span class="tag">Zero-Latency</span>
+          </div>
+        </article>
+
+        <!-- ÁREA 3: ANÁLISIS & GESTIÓN PRIVADA DE DATOS -->
+        <article class="card" data-category="data">
+          <div class="card-head">
+            <h3>Enterprise Private AI & GraphRAG</h3>
+            <span class="status-badge"><span class="status-led production"></span>Listo para Integración</span>
+          </div>
+          <p class="summary-text">Asistente de IA corporativo y análisis de documentos 100% privativo. Desplegado en Servidores Privados (VPC) o Local On-Premise sin riesgo de fuga de datos.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Riesgo de filtración de IP corporativa sensible y limitaciones de búsqueda en RAGs vectoriales tradicionales.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Aislamiento total en Servidor Privado/On-Premise con GraphRAG Híbrido, modelos SLM (Ollama/FastAPI), costo $0 por token API y cumplimiento SOC2/GDPR.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">🚀 Despliegue Privado</span>
+            <span class="tag">GraphRAG Privado</span>
+            <span class="tag">Servidor Privado / On-Premise</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">SOC 2 / GDPR</span>
+            <span class="tag">Cero Fuga de Datos</span>
+          </div>
+        </article>
+
+        <article class="card" data-category="data">
+          <div class="card-head">
+            <h3>Corporate Data Architecture Discovery</h3>
+            <span class="status-badge"><span class="status-led production"></span>Consultoría Técnica</span>
+          </div>
+          <p class="summary-text">Auditoría de arquitectura de datos y seguridad. Evaluación de viabilidad para modelos privativos, gobernanza de IA y estrategia de modernización digital.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Falta de claridad y riesgos técnicos antes de invertir en IA corporativa o renovar sistemas legados.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Diagnóstico de seguridad (OWASP/SOC2), modelado de datos privativo y definición de MVP técnico ejecutable.</span></div>
           </div>
           <div class="tags">
             <span class="tag">💼 Consultoría Técnica</span>
-            <span class="tag">Product Discovery</span>
-            <span class="tag">Local-first</span>
-            <span class="tag">Architecture</span>
-            <span class="tag">Fintech</span>
-            <span class="tag">Estrategia</span>
+            <span class="tag">Auditoría de Arquitectura</span>
+            <span class="tag">Seguridad de Datos</span>
+            <span class="tag">Estrategia IA</span>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
 
-        <!-- Solución 6 -->
-        <article class="card" data-category="ai">
-          <div class="card-head">
-            <h3>DRDV Framework</h3>
-            <span class="status-badge"><span class="status-led production"></span>Listo para Integración</span>
-          </div>
-          <p class="summary-text">Gobernanza y control de IA. Framework para asegurar que tus agentes de IA actúen con predictibilidad y seguridad de grado comercial.</p>
-          <div class="details">
-            <div class="detail"><strong>PROB</strong><span>Falta de predictibilidad, control y observabilidad en sistemas multi-agente complejos.</span></div>
-            <div class="detail"><strong>SOL</strong><span>Runtime con contratos de comportamiento y validación estricta en el flujo Design-Review-Decide-Validate.</span></div>
-          </div>
-          <div class="tags">
-            <span class="tag">🛠️ Desarrollo a Medida</span>
-            <span class="tag">Python</span>
-            <span class="tag">Agent Architecture</span>
-            <span class="tag">Validation</span>
-            <span class="tag">YAML</span>
-            <span class="tag">Seguridad IA</span>
-          </div>
-        </article>
-
-        <!-- Solución 7 -->
-        <article class="card" data-category="ai">
-          <div class="card-head">
-            <h3>SafeRAG Local</h3>
-            <span class="status-badge"><span class="status-led production"></span>Listo para Integración</span>
-          </div>
-          <p class="summary-text">Asistente de IA corporativo privado. Analiza documentos y responde consultas de forma segura y 100% local (sin riesgo de fuga de datos).</p>
-          <div class="details">
-            <div class="detail"><strong>PROB</strong><span>Riesgo de filtración de datos corporativos sensibles al consumir APIs de LLMs en la nube.</span></div>
-            <div class="detail"><strong>SOL</strong><span>Aislamiento de red estricto (cero fugas de datos), procesamiento local con Ollama y base vectorial integrada.</span></div>
-          </div>
-          <div class="tags">
-            <span class="tag">🚀 Despliegue Inmediato</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Ollama</span>
-            <span class="tag">RAG</span>
-            <span class="tag">Chroma DB</span>
-            <span class="tag">Security</span>
-            <span class="tag">Privacidad de Datos</span>
-          </div>
-        </article>
-
-        <!-- Solución 8 -->
-        <article class="card" data-category="local-first">
-          <div class="card-head">
-            <h3>DropLand</h3>
-            <span class="status-badge"><span class="status-led production"></span>Listo para Integración</span>
-          </div>
-          <p class="summary-text">Gestor de descargas en red local. Automatiza y controla descargas multimedia remotamente desde cualquier dispositivo.</p>
-          <div class="details">
-            <div class="detail"><strong>PROB</strong><span>Incomodidad para transferir enlaces y descargar audios/música desde el móvil al almacenamiento local.</span></div>
-            <div class="detail"><strong>SOL</strong><span>Consola integrada a servidor web ligero con control a través de PWA móvil, automatizando conversiones multimedia.</span></div>
-          </div>
-          <div class="tags">
-            <span class="tag">🚀 Despliegue Inmediato</span>
-            <span class="tag">Python</span>
-            <span class="tag">Tkinter</span>
-            <span class="tag">yt-dlp</span>
-            <span class="tag">FFmpeg</span>
-            <span class="tag">MSIX</span>
-            <span class="tag">PWA</span>
-            <span class="tag">Productividad</span>
-          </div>
-        </article>
+  <!-- Sección Modelos de Contratación -->
+  <section id="engagement" class="engagement-section" style="background:var(--paper); border-top:var(--border-thick); border-bottom:var(--border-thick); padding:4.5rem 0;">
+    <div class="container">
+      <div class="heading">
+        <h2>Modelos de Trabajo & Integración</h2>
+        <p>Formatos flexibles de colaboración adaptados a las necesidades y ritmo de tu empresa.</p>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
+          <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--commerce-color); font-weight:700; font-size:0.75rem; margin-bottom:1rem;">1-2 SEMANAS</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Audit & Technical Advisory</h3>
+          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Auditoría integral de arquitectura técnica, velocidad e-commerce, diagnóstico de seguridad (OWASP/SOC2) y mapa de ruta para integración de IA privativa en tus servidores.</p>
+        </div>
+        <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
+          <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--ai-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">2-4 SEMANAS</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Rapid Solution Integration</h3>
+          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Despliegue e integración acelerada de nuestra plataforma e-commerce propia, agentes de IA u operacional privativa en tu servidor privado o infraestructura local.</p>
+        </div>
+        <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
+          <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--local-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">CONTINUO</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Fractional Lead Architecture</h3>
+          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Liderazgo técnico estratégico y acompañamiento de arquitectura continuo para dirigir las decisiones tecnológicas y optimizaciones clave de tu equipo de desarrollo.</p>
+        </div>
       </div>
     </div>
   </section>

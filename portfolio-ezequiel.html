@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DG978R9LFN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DG978R9LFN');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio profesional de Ezequiel Vecchio.">
+  <title>Ezequiel Vecchio | FVision</title>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@500;600&display=swap');
+
+    :root {
+      --bg: #F5F2EB;
+      --paper: #FFFFFF;
+      --ink: #1B1C1D;
+      --muted: #625E57;
+      --accent: #E85A37;
+      --dark: #1E2525;
+      
+      --vision-color: #FFDE4D;
+      --ai-color: #F2613F;
+      --local-color: #55B43C;
+      --cyan-accent: #00F2FE;
+
+      --border-thick: 2px solid var(--ink);
+      --border-thicker: 3px solid var(--ink);
+      --shadow-flat: 4px 4px 0px 0px var(--ink);
+      --shadow-flat-hover: 6px 6px 0px 0px var(--ink);
+      --shadow-flat-large: 8px 8px 0px 0px var(--ink);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 2.5rem), var(--max));
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--bg);
+      border-bottom: var(--border-thick);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      cursor: pointer;
+    }
+
+    .brand-logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      border: var(--border-thick);
+      box-shadow: 2px 2px 0px 0px var(--ink);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      object-fit: cover;
+      background: #000000;
+    }
+
+    .brand-container:hover .brand-logo-img {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px 0px var(--ink);
+    }
+
+    .brand-text {
+      font-size: 1.875rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 5.5rem 0;
+    }
+
+    .hero {
+      min-height: 55vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      padding-top: 8rem;
+      padding-bottom: 5rem;
+    }
+
+    .hero h1 {
+      margin: 0 auto;
+    }
+
+    .hero .lead {
+      margin: 1.75rem auto 0;
+    }
+
+    .hero .actions {
+      justify-content: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.35rem 0.7rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--commerce-color);
+      font-family: "Fira Code", monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: 2px 2px 0px 0px var(--ink);
+    }
+
+    h1 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(1.8rem, 5.5vw, 3.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin-top: 1.75rem;
+      color: var(--muted);
+      font-size: 1.18rem;
+      font-weight: 500;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0.75rem 1.4rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 800;
+      box-shadow: var(--shadow-flat);
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-flat-hover);
+    }
+
+    .btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px 0px var(--ink);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn.primary:hover {
+      background: #D44422;
+    }
+
+    .summary {
+      padding: 2rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-md);
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: var(--shadow-flat-large);
+    }
+
+    .summary h2 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 1.65rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+
+    .summary p {
+      color: var(--muted);
+      font-weight: 550;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .fact {
+      padding: 1rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      box-shadow: 2px 2px 0px 0px var(--ink);
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 800;
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .fact span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+
+    /* Sección Proyectos */
+    section {
+      scroll-margin-top: 90px;
+    }
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.75rem;
+      margin: 0 auto 2rem;
+      max-width: 800px;
+    }
+
+    .heading h2 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .heading p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      font-weight: 550;
+      line-height: 1.55;
+      margin: 0 auto;
+    }
+
+    /* Tabs de Filtro */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .tab-button {
+      padding: 0.6rem 1.2rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 3px 3px 0px 0px var(--ink);
+      transition: all 0.1s ease;
+    }
+
+    .tab-button:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px 0px var(--ink);
+    }
+
+    .tab-button:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px 0px var(--ink);
+    }
+
+    .tab-button.active {
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 0px 0px 0px 0px var(--ink);
+      transform: translate(3px, 3px);
+    }
+
+    /* Grid y Tarjetas */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      transition: all 0.3s ease;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+      border: var(--border-thick);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-flat);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease, scale 0.3s ease;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .card.hidden {
+      display: none !important;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-flat-hover);
+    }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 1.55rem;
+      line-height: 1.15;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    /* Badges & LEDs */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.65rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      font-family: "Fira Code", monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      box-shadow: 2px 2px 0px 0px var(--ink);
+      white-space: nowrap;
+    }
+
+    .status-led {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--ink);
+      display: inline-block;
+    }
+
+    .status-led.production {
+      background: var(--local-color);
+      box-shadow: 0 0 6px var(--local-color);
+      animation: pulse-led 1.8s infinite;
+    }
+
+    .status-led.prototype {
+      background: var(--cyan-accent);
+      box-shadow: 0 0 6px var(--cyan-accent);
+      animation: pulse-led 1.8s infinite;
+    }
+
+    .status-led.architecture {
+      background: var(--ai-color);
+      box-shadow: 0 0 6px var(--ai-color);
+    }
+
+    @keyframes pulse-led {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    .card p.summary-text {
+      color: var(--muted);
+      font-weight: 550;
+      font-size: 1.02rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .details {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: auto;
+      padding-top: 1.25rem;
+      border-top: var(--border-thick);
+    }
+
+    .detail {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .detail strong {
+      display: inline-block;
+      padding: 0.15rem 0.35rem;
+      border: 1px solid var(--ink);
+      border-radius: 4px;
+      background: var(--bg);
+      font-family: "Fira Code", monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 1px 1px 0px 0px var(--ink);
+    }
+
+    .detail span {
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1.2rem;
+    }
+
+    .tag {
+      padding: 0.28rem 0.6rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      font-family: "Fira Code", monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      box-shadow: 1px 1px 0px 0px var(--ink);
+    }
+
+    /* Tecnologías (Skills) */
+    .skills-section {
+      border-top: var(--border-thick);
+      border-bottom: var(--border-thick);
+      background: #FFFDF9;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill {
+      padding: 0.65rem 1rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      box-shadow: 3px 3px 0px 0px var(--ink);
+    }
+
+    /* Contacto */
+    .contact {
+      padding: 5rem 2rem;
+      border: var(--border-thicker);
+      border-radius: var(--radius-md);
+      background: var(--accent);
+      color: var(--paper);
+      text-align: center;
+      box-shadow: var(--shadow-flat-large);
+    }
+
+    .contact h2 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .contact p {
+      max-width: 700px;
+      margin: 0.5rem auto 1.5rem;
+      color: #FFF0EB;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    .contact .actions {
+      justify-content: center;
+    }
+
+    .contact .btn {
+      border-color: var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .contact .btn.primary {
+      border-color: var(--paper);
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 4px 4px 0px 0px var(--paper);
+    }
+
+    .contact .btn.primary:hover {
+      background: #2D2E2F;
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px 0px var(--paper);
+    }
+
+    .contact .btn.primary:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px 0px var(--paper);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 0 4rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 6rem;
+        gap: 3rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav {
+        display: none;
+      }
+      .facts {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(calc(100% - 3.5rem), var(--max));
+      }
+      .card-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+    }
+    /* Formulario de Contacto Neo-Brutalista */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-width: 550px;
+      margin: 2.2rem auto 0;
+      text-align: left;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: #FFF0EB;
+    }
+
+    .form-input {
+      min-height: 50px;
+      padding: 0.75rem 1rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.98rem;
+      font-weight: 600;
+      box-shadow: 2px 2px 0px 0px var(--ink);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      width: 100%;
+    }
+
+    .form-input:focus {
+      outline: none;
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0px 0px var(--ink);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    /* Nota de Privacidad en Catálogo */
+    .privacy-note {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      max-width: 100%;
+      margin: 0 0 2rem 0;
+      padding: 0.85rem 1.25rem;
+      border: 1.5px solid var(--ink);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      font-weight: 550;
+      box-shadow: 3px 3px 0px 0px var(--ink);
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <a class="brand-container" href="#top">
+      <img src="data:image/jpeg;base64,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" alt="FVision Logo" class="brand-logo-img" />
+      <span class="brand-text">FVision</span>
+    </a>
+    <div class="nav">
+      <a href="#projects">Soluciones</a>
+      <a href="#skills">Tecnologías</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </nav>
+</header>
+<main id="top">
+  <section class="hero container">
+    <div>
+      <span class="eyebrow">Soluciones de Software & IA Corporativa</span>
+      <h1>Agentes de IA, Inteligencia de Datos & Computing Vision</h1>
+      <p class="lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: automatizaciones operativas con IA en servidor propio, sistemas de analítica de datos cifrados y soluciones de Computing Vision en tiempo real.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Agendar Consulta</a>
+        <a class="btn" href="#projects">Explorar Soluciones</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="heading">
+        <h2>Servicios & Soluciones Integrables</h2>
+        <p>Soluciones unificadas de software y tecnología estructuradas para las 3 áreas clave de la empresa: Agentes para Operaciones, Analítica de Datos y Computing Vision.</p>
+      </div>
+
+      <div class="privacy-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; color:var(--accent);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span><strong>Nota de Privacidad y Cumplimiento:</strong> Todas las soluciones de IA, visión y datos se despliegan en <strong>Servidores Privados (VPC) o Local On-Premise</strong> bajo normas SOC 2, ISO 27001, GDPR, HIPAA y cifrado AES-256 (cero compartición con terceros).</span>
+      </div>
+
+      <!-- Barra de Filtros por Áreas de Negocio -->
+      <div class="filter-tabs" role="tablist">
+        <button class="tab-button active" onclick="filterCategory('all', this)">Todas las Soluciones</button>
+        <button class="tab-button" onclick="filterCategory('ops', this)">⚙️ Agentes para Operaciones</button>
+        <button class="tab-button" onclick="filterCategory('data', this)">📊 Analítica de Datos</button>
+        <button class="tab-button" onclick="filterCategory('vision', this)">👁️ Computing Vision</button>
+      </div>
+
+      <div class="grid" id="solutions-grid">
+        <!-- SOLUCIÓN 1: AGENTES PARA OPERACIONES -->
+        <article class="card" data-category="ops">
+          <div class="card-head">
+            <h3>Enterprise Operations & AI Agents</h3>
+            <span class="status-badge"><span class="status-led production"></span>Listo para Integración</span>
+          </div>
+          <p class="summary-text">Agentes de IA autónomos que coordinan y automatizan operaciones complejas entre equipos y sistemas centrales (ERP/CRM). Operan bajo contratos estrictos de comportamiento y supervisión de control (Human-in-the-Loop).</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Cuellos de botella operativos, tareas manuales repetitivas y riesgo de alucinaciones en sistemas de IA.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Agentes ejecutores de tareas operativas con validación estricta en 4 etapas (DRDV Framework), observabilidad total y control humano en pasos críticos.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">🛠️ Desarrollo a Medida</span>
+            <span class="tag">AI Multi-Agent</span>
+            <span class="tag">Gobernanza IA</span>
+            <span class="tag">Human-in-the-Loop</span>
+            <span class="tag">Zero-Trust</span>
+            <span class="tag">Integración ERP/CRM</span>
+          </div>
+        </article>
+
+        <!-- SOLUCIÓN 2: ANALÍTICA DE DATOS -->
+        <article class="card" data-category="data">
+          <div class="card-head">
+            <h3>Private AI Data System</h3>
+            <span class="status-badge"><span class="status-led production"></span>Despliegue Privado</span>
+          </div>
+          <p class="summary-text">Sistema de análisis de documentos y datos corporativos (GraphRAG / RAG Híbrido) ejecutado exclusivamente en Servidores Privados (VPC) o Servidor Local On-Premise sin riesgo de fuga de información.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Riesgo de filtración de IP sensible y limitaciones de búsqueda en sistemas tradicionales de datos.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Infraestructura privativa aislada con modelos SLM (Ollama/FastAPI), costo $0 por token API, cifrado AES-256 y cumplimiento SOC 2/GDPR.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">🚀 Despliegue Privado</span>
+            <span class="tag">GraphRAG Privado</span>
+            <span class="tag">Servidor Privado / On-Premise</span>
+            <span class="tag">AES-256</span>
+            <span class="tag">SOC 2 / GDPR</span>
+            <span class="tag">Cero Fuga de Datos</span>
+          </div>
+        </article>
+
+        <!-- SOLUCIÓN 3: COMPUTING VISION -->
+        <article class="card" data-category="vision">
+          <div class="card-head">
+            <h3>Computing Vision & Real-Time Inspection</h3>
+            <span class="status-badge"><span class="status-led production"></span>Solución Propietaria</span>
+          </div>
+          <p class="summary-text">Sistemas de visión artificial e inspección inteligente en tiempo real para detección de objetos, control de calidad automatizado, análisis de video y procesamiento visual mediante Edge AI y cámaras conectadas.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Inspección manual lenta, errores humanos en control de calidad e incapacidad de monitorear flujos visuales 24/7.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Modelos de Visión Artificial optimizados para inferencia local en tiempo real con alertas automáticas e integración a tableros de control.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">👁️ Real-Time Detection</span>
+            <span class="tag">Edge AI & YOLO</span>
+            <span class="tag">Control de Calidad</span>
+            <span class="tag">Reconocimiento de Patrones</span>
+            <span class="tag">OpenCV / PyTorch</span>
+            <span class="tag">Procesamiento Privado</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Modelos de Contratación -->
+  <section id="engagement" class="engagement-section" style="background:var(--paper); border-top:var(--border-thick); border-bottom:var(--border-thick); padding:4.5rem 0;">
+    <div class="container">
+      <div class="heading">
+        <h2>Modelos de Trabajo & Integración</h2>
+        <p>Formatos flexibles de colaboración adaptados a las necesidades y ritmo de tu empresa.</p>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
+          <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--vision-color); font-weight:700; font-size:0.75rem; margin-bottom:1rem;">1-2 SEMANAS</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Audit & Technical Advisory</h3>
+          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Auditoría integral de sistemas técnicos, arquitectura de visión/datos, diagnóstico de seguridad (OWASP/SOC2) y mapa de ruta para integración de IA privativa en tus servidores.</p>
+        </div>
+        <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
+          <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--ai-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">2-4 SEMANAS</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Rapid Solution Integration</h3>
+          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Despliegue e integración acelerada de nuestros sistemas de Computing Vision, agentes de IA u operacional privativa en tu servidor privado o infraestructura local.</p>
+        </div>
+        <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
+          <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--local-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">CONTINUO</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Fractional Lead Engineering</h3>
+          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Liderazgo técnico estratégico y acompañamiento continuo para dirigir las decisiones tecnológicas y optimizaciones clave de tu equipo de desarrollo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="heading">
+        <h2>Herramientas & Tecnologías</h2>
+        <p>Habilidades validadas a través del desarrollo de las soluciones descritas en este catálogo.</p>
+      </div>
+      <div class="skills">
+        <span class="skill">React</span>
+        <span class="skill">Next.js</span>
+        <span class="skill">TypeScript</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">Responsive Design</span>
+        <span class="skill">Kotlin</span>
+        <span class="skill">Jetpack Compose</span>
+        <span class="skill">Room Database</span>
+        <span class="skill">Python</span>
+        <span class="skill">FastAPI</span>
+        <span class="skill">Ollama</span>
+        <span class="skill">RAG</span>
+        <span class="skill">Chroma</span>
+        <span class="skill">Git</span>
+        <span class="skill">GitHub Actions</span>
+        <span class="skill">Product Discovery</span>
+        <span class="skill">Tkinter</span>
+        <span class="skill">yt-dlp</span>
+        <span class="skill">FFmpeg</span>
+        <span class="skill">MSIX</span>
+        <span class="skill">Inno Setup</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <h2>¿Querés implementar una de estas soluciones?</h2>
+        <p>Dejame tu consulta para coordinar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier solución.</p>
+        
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required class="form-input" placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="_replyto" required class="form-input" placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje / Consulta</label>
+            <textarea id="message" name="message" required class="form-input form-textarea" placeholder="¿En qué solución estás interesado?"></textarea>
+          </div>
+          <button type="submit" class="btn primary" style="width:100%; margin-top:0.5rem;">Enviar Consulta</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>© <span id="year"></span> Ezequiel Vecchio · FVision. Diseñado y Desarrollado por Ezequiel Vecchio.</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function filterCategory(category, button) {
+    // Cambiar estado activo del botón
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    // Filtrar tarjetas
+    const cards = document.querySelectorAll('#solutions-grid .card');
+    cards.forEach(card => {
+      const cardCat = card.getAttribute('data-category');
+      if (category === 'all' || cardCat === category) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+</script>
+</body>
+</html>
+<!-- updated -->

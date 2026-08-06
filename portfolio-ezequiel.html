@@ -25,7 +25,7 @@
       --accent: #E85A37;
       --dark: #1E2525;
       
-      --commerce-color: #FFDE4D;
+      --vision-color: #FFDE4D;
       --ai-color: #F2613F;
       --local-color: #55B43C;
       --cyan-accent: #00F2FE;
@@ -715,8 +715,8 @@
   <section class="hero container">
     <div>
       <span class="eyebrow">Soluciones de Software & IA Corporativa</span>
-      <h1>E-Commerce, Agentes de IA & Inteligencia de Datos</h1>
-      <p class="lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: plataformas e-commerce propias sub-segundo, automatizaciones operativas con IA en servidor propio y sistemas de datos cifrados.</p>
+      <h1>Agentes de IA, Inteligencia de Datos & Computing Vision</h1>
+      <p class="lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: automatizaciones operativas con IA en servidor propio, sistemas de analítica de datos cifrados y soluciones de Computing Vision en tiempo real.</p>
       <div class="actions">
         <a class="btn primary" href="#contact">Agendar Consulta</a>
         <a class="btn" href="#projects">Explorar Soluciones</a>
@@ -728,52 +728,30 @@
     <div class="container">
       <div class="heading">
         <h2>Servicios & Soluciones Integrables</h2>
-        <p>Soluciones unificadas de software y tecnología estructuradas para las 3 áreas clave de la empresa: Ventas, Operaciones y Datos.</p>
+        <p>Soluciones unificadas de software y tecnología estructuradas para las 3 áreas clave de la empresa: Agentes para Operaciones, Analítica de Datos y Computing Vision.</p>
       </div>
 
       <div class="privacy-note">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; color:var(--accent);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span><strong>Nota de Privacidad y Cumplimiento:</strong> Todas las soluciones de IA y datos se despliegan en <strong>Servidores Privados (VPC) o Local On-Premise</strong> bajo normas SOC 2, ISO 27001, GDPR, HIPAA y cifrado AES-256 (cero compartición con terceros).</span>
+        <span><strong>Nota de Privacidad y Cumplimiento:</strong> Todas las soluciones de IA, visión y datos se despliegan en <strong>Servidores Privados (VPC) o Local On-Premise</strong> bajo normas SOC 2, ISO 27001, GDPR, HIPAA y cifrado AES-256 (cero compartición con terceros).</span>
       </div>
 
       <!-- Barra de Filtros por Áreas de Negocio -->
       <div class="filter-tabs" role="tablist">
         <button class="tab-button active" onclick="filterCategory('all', this)">Todas las Soluciones</button>
-        <button class="tab-button" onclick="filterCategory('sales', this)">🛍️ Ventas & E-Commerce</button>
-        <button class="tab-button" onclick="filterCategory('ops', this)">⚙️ Coordinación & Operaciones</button>
-        <button class="tab-button" onclick="filterCategory('data', this)">📊 Análisis & Gestión Privada de Datos</button>
+        <button class="tab-button" onclick="filterCategory('ops', this)">⚙️ Agentes para Operaciones</button>
+        <button class="tab-button" onclick="filterCategory('data', this)">📊 Analítica de Datos</button>
+        <button class="tab-button" onclick="filterCategory('vision', this)">👁️ Computing Vision</button>
       </div>
 
       <div class="grid" id="solutions-grid">
-        <!-- SOLUCIÓN 1: VENTAS & E-COMMERCE -->
-        <article class="card" data-category="sales">
-          <div class="card-head">
-            <h3>CoreStore & AI Sales Engine</h3>
-            <span class="status-badge"><span class="status-led production"></span>Solución Propietaria</span>
-          </div>
-          <p class="summary-text">Plataforma e-commerce propia de ultra-alta velocidad (<1s de carga) con checkout fluido de pagos ágiles, combinada con automatización de ventas conversacionales por WhatsApp/chat impulsada por IA.</p>
-          <div class="details">
-            <div class="detail"><strong>PROB</strong><span>Lentitud de carga, carritos abandonados y falta de estructuración en ventas informales por chat.</span></div>
-            <div class="detail"><strong>SOL</strong><span>Plataforma propia de alta conversión con catálogo instantáneo, pagos en 1-clic y agente de IA para estructuración automática de pedidos integrados al CRM/ERP.</span></div>
-          </div>
-          <div class="tags">
-            <span class="tag">🚀 Despliegue Inmediato</span>
-            <span class="tag">E-Commerce Propio</span>
-            <span class="tag">Pagos Ágiles</span>
-            <span class="tag">Ventas por WhatsApp</span>
-            <span class="tag">Next.js 15</span>
-            <span class="tag">React 19</span>
-            <span class="tag">Alta Conversión</span>
-          </div>
-        </article>
-
-        <!-- SOLUCIÓN 2: COORDINACIÓN & OPERACIONES -->
+        <!-- SOLUCIÓN 1: AGENTES PARA OPERACIONES -->
         <article class="card" data-category="ops">
           <div class="card-head">
             <h3>Enterprise Operations & AI Agents</h3>
             <span class="status-badge"><span class="status-led production"></span>Listo para Integración</span>
           </div>
-          <p class="summary-text">Agentes de IA autónomos que coordinan y automatizan operaciones complejas entre equipos y sistemas centrales (ERP/CRM). Operan bajo contratos estricto de comportamiento y supervisión de control (Human-in-the-Loop).</p>
+          <p class="summary-text">Agentes de IA autónomos que coordinan y automatizan operaciones complejas entre equipos y sistemas centrales (ERP/CRM). Operan bajo contratos estrictos de comportamiento y supervisión de control (Human-in-the-Loop).</p>
           <div class="details">
             <div class="detail"><strong>PROB</strong><span>Cuellos de botella operativos, tareas manuales repetitivas y riesgo de alucinaciones en sistemas de IA.</span></div>
             <div class="detail"><strong>SOL</strong><span>Agentes ejecutores de tareas operativas con validación estricta en 4 etapas (DRDV Framework), observabilidad total y control humano en pasos críticos.</span></div>
@@ -788,7 +766,7 @@
           </div>
         </article>
 
-        <!-- SOLUCIÓN 3: ANÁLISIS & GESTIÓN PRIVADA DE DATOS -->
+        <!-- SOLUCIÓN 2: ANALÍTICA DE DATOS -->
         <article class="card" data-category="data">
           <div class="card-head">
             <h3>Private AI Data System</h3>
@@ -808,6 +786,27 @@
             <span class="tag">Cero Fuga de Datos</span>
           </div>
         </article>
+
+        <!-- SOLUCIÓN 3: COMPUTING VISION -->
+        <article class="card" data-category="vision">
+          <div class="card-head">
+            <h3>Computing Vision & Real-Time Inspection</h3>
+            <span class="status-badge"><span class="status-led production"></span>Solución Propietaria</span>
+          </div>
+          <p class="summary-text">Sistemas de visión artificial e inspección inteligente en tiempo real para detección de objetos, control de calidad automatizado, análisis de video y procesamiento visual mediante Edge AI y cámaras conectadas.</p>
+          <div class="details">
+            <div class="detail"><strong>PROB</strong><span>Inspección manual lenta, errores humanos en control de calidad e incapacidad de monitorear flujos visuales 24/7.</span></div>
+            <div class="detail"><strong>SOL</strong><span>Modelos de Visión Artificial optimizados para inferencia local en tiempo real con alertas automáticas e integración a tableros de control.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">👁️ Real-Time Detection</span>
+            <span class="tag">Edge AI & YOLO</span>
+            <span class="tag">Control de Calidad</span>
+            <span class="tag">Reconocimiento de Patrones</span>
+            <span class="tag">OpenCV / PyTorch</span>
+            <span class="tag">Procesamiento Privado</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -821,14 +820,14 @@
       </div>
       <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
         <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
-          <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--commerce-color); font-weight:700; font-size:0.75rem; margin-bottom:1rem;">1-2 SEMANAS</span>
+          <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--vision-color); font-weight:700; font-size:0.75rem; margin-bottom:1rem;">1-2 SEMANAS</span>
           <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Audit & Technical Advisory</h3>
-          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Auditoría integral de sistemas técnicos, velocidad e-commerce, diagnóstico de seguridad (OWASP/SOC2) y mapa de ruta para integración de IA privativa en tus servidores.</p>
+          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Auditoría integral de sistemas técnicos, arquitectura de visión/datos, diagnóstico de seguridad (OWASP/SOC2) y mapa de ruta para integración de IA privativa en tus servidores.</p>
         </div>
         <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
           <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--ai-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">2-4 SEMANAS</span>
           <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Rapid Solution Integration</h3>
-          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Despliegue e integración acelerada de nuestra plataforma e-commerce propia, agentes de IA u operacional privativa en tu servidor privado o infraestructura local.</p>
+          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Despliegue e integración acelerada de nuestros sistemas de Computing Vision, agentes de IA u operacional privativa en tu servidor privado o infraestructura local.</p>
         </div>
         <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
           <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--local-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">CONTINUO</span>

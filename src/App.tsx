@@ -20,15 +20,15 @@ import { siteConfig } from "./config/site";
 
 const categories = [
   { id: "all", label: "Todas las Soluciones" },
-  { id: "sales", label: "🛍️ Ventas & E-Commerce" },
-  { id: "ops", label: "⚙️ Coordinación & Operaciones" },
-  { id: "data", label: "📊 Análisis & Gestión Privada de Datos" }
+  { id: "ops", label: "⚙️ Agentes para Operaciones" },
+  { id: "data", label: "📊 Analítica de Datos" },
+  { id: "vision", label: "👁️ Computing Vision" }
 ] as const;
 
 interface Solution {
   title: string;
   summary: string;
-  category: "sales" | "ops" | "data";
+  category: "ops" | "data" | "vision";
   tags: string[];
   specs: {
     problem: string;
@@ -40,20 +40,8 @@ interface Solution {
 
 const projects: Solution[] = [
   {
-    title: "CoreStore & AI Sales Engine",
-    summary: "Plataforma e-commerce propia de ultra-alta velocidad (<1s de carga) con checkout fluido de pagos ágiles, combinada con automatización de ventas conversacionales por WhatsApp/chat impulsada por IA.",
-    category: "sales",
-    tags: ["🚀 Despliegue Inmediato", "E-Commerce Propio", "Pagos Ágiles", "Ventas por WhatsApp", "Next.js 15", "React 19", "Alta Conversión"],
-    specs: {
-      problem: "Lentitud de carga, carritos abandonados y falta de estructuración en ventas informales por chat.",
-      solution: "Plataforma propia de alta conversión con catálogo instantáneo, pagos en 1-clic y agente de IA para estructuración automática de pedidos integrados al CRM/ERP.",
-      statusLabel: "Solución Propietaria",
-      status: "production"
-    }
-  },
-  {
     title: "Enterprise Operations & AI Agents",
-    summary: "Agentes de IA autónomos que coordinan y automatizan operaciones complejas entre equipos y sistemas centrales (ERP/CRM). Operan bajo contratos estricto de comportamiento y supervisión de control (Human-in-the-Loop).",
+    summary: "Agentes de IA autónomos que coordinan y automatizan operaciones complejas entre equipos y sistemas centrales (ERP/CRM). Operan bajo contratos estrictos de comportamiento y supervisión de control (Human-in-the-Loop).",
     category: "ops",
     tags: ["🛠️ Desarrollo a Medida", "AI Multi-Agent", "Gobernanza IA", "Human-in-the-Loop", "Zero-Trust", "Integración ERP/CRM"],
     specs: {
@@ -74,6 +62,18 @@ const projects: Solution[] = [
       statusLabel: "Despliegue Privado",
       status: "production"
     }
+  },
+  {
+    title: "Computing Vision & Real-Time Inspection",
+    summary: "Sistemas de visión artificial e inspección inteligente en tiempo real para detección de objetos, control de calidad automatizado, análisis de video y procesamiento visual mediante Edge AI y cámaras conectadas.",
+    category: "vision",
+    tags: ["👁️ Real-Time Detection", "Edge AI & YOLO", "Control de Calidad", "Reconocimiento de Patrones", "OpenCV / PyTorch", "Procesamiento Privado"],
+    specs: {
+      problem: "Inspección manual lenta, errores humanos en control de calidad e incapacidad de monitorear flujos visuales 24/7.",
+      solution: "Modelos de Visión Artificial optimizados para inferencia local en tiempo real con alertas automáticas e integración a tableros de control.",
+      statusLabel: "Solución Propietaria",
+      status: "production"
+    }
   }
 ];
 
@@ -90,6 +90,11 @@ const skills = [
   "Room",
   "Python",
   "FastAPI",
+  "OpenCV",
+  "PyTorch",
+  "YOLO",
+  "Computer Vision",
+  "Edge AI",
   "Ollama",
   "RAG",
   "Chroma",
@@ -178,9 +183,9 @@ export default function App() {
               <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
               Soluciones de Software & IA Corporativa
             </span>
-            <h1>E-Commerce, Agentes de IA & Inteligencia de Datos</h1>
+            <h1>Agentes de IA, Inteligencia de Datos & Computing Vision</h1>
             <p className="lead">
-              Diseñamos e integramos soluciones de software de alto impacto empresarial: plataformas e-commerce propias sub-segundo, automatizaciones operativas con IA en servidor propio y sistemas de datos cifrados.
+              Diseñamos e integramos soluciones de software de alto impacto empresarial: automatizaciones operativas con IA en servidor propio, sistemas de analítica de datos cifrados y soluciones de Computing Vision en tiempo real.
             </p>
             <div className="actions">
               <a className="button button-primary" href="#contacto">
@@ -199,13 +204,13 @@ export default function App() {
             <div className="section-heading">
               <h2>Servicios & Soluciones Integrables</h2>
               <p>
-                Soluciones unificadas de software y tecnología estructuradas para las 3 áreas clave de la empresa: Ventas, Operaciones y Datos.
+                Soluciones unificadas de software y tecnología estructuradas para las 3 áreas clave de la empresa: Agentes para Operaciones, Analítica de Datos y Computing Vision.
               </p>
             </div>
 
             <div className="privacy-note">
               <Shield size={18} style={{ flexShrink: 0, color: 'var(--accent)' }} />
-              <span><strong>Nota de Privacidad y Cumplimiento:</strong> Todas las soluciones de IA y datos se despliegan en <strong>Servidores Privados (VPC) o Local On-Premise</strong> bajo normas SOC 2, ISO 27001, GDPR, HIPAA y cifrado AES-256 (cero compartición con terceros).</span>
+              <span><strong>Nota de Privacidad y Cumplimiento:</strong> Todas las soluciones de IA, visión y datos se despliegan en <strong>Servidores Privados (VPC) o Local On-Premise</strong> bajo normas SOC 2, ISO 27001, GDPR, HIPAA y cifrado AES-256 (cero compartición con terceros).</span>
             </div>
 
             {/* Tabs de Filtro */}
@@ -281,14 +286,14 @@ export default function App() {
             </div>
             <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
-                <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--commerce-color)', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>1-2 SEMANAS</span>
+                <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--vision-color)', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>1-2 SEMANAS</span>
                 <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Audit & Technical Advisory</h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Auditoría integral de sistemas técnicos, velocidad e-commerce, diagnóstico de seguridad (OWASP/SOC2) y mapa de ruta para integración de IA privativa en tus servidores.</p>
+                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Auditoría integral de sistemas técnicos, arquitectura de visión/datos, diagnóstico de seguridad (OWASP/SOC2) y mapa de ruta para integración de IA privativa en tus servidores.</p>
               </div>
               <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
                 <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--ai-color)', color: '#fff', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>2-4 SEMANAS</span>
                 <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Rapid Solution Integration</h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Despliegue e integración acelerada de nuestra plataforma e-commerce propia, agentes de IA u operacional privativa en tu servidor privado o infraestructura local.</p>
+                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Despliegue e integración acelerada de nuestros sistemas de Computing Vision, agentes de IA u operacional privativa en tu servidor privado o infraestructura local.</p>
               </div>
               <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
                 <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--local-color)', color: '#fff', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>CONTINUO</span>

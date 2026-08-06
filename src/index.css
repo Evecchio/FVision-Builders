@@ -10,7 +10,8 @@
   --dark: #1E2525;        /* Fondo oscuro para contraste */
   
   /* Colores de categorías y estados */
-  --commerce-color: #FFDE4D; /* Amarillo */
+  --vision-color: #FFDE4D;   /* Amarillo visión */
+  --commerce-color: #FFDE4D; /* Retrocompatibilidad */
   --ai-color: #F2613F;       /* Naranja quemado */
   --local-color: #55B43C;    /* Verde técnico */
   --cyan-accent: #00F2FE;    /* Azul neón */

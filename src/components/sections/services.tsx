@@ -4,37 +4,37 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 export function Services() {
   const cases = [
     {
-      title: "Recuperación de ventas en Tienda Online",
-      tag: "Comercio Electrónico",
-      context: "Tu tienda recibe muchas visitas diarias, pero la mayoría de los usuarios abandonan el carrito justo al momento de pagar.",
+      title: "Agentes Autónomos para Operaciones Complejas",
+      tag: "Agentes para Operaciones",
+      context: "Tu equipo colapsa ejecutando procesos manuales y coordinaciones repetitivas entre múltiples sistemas.",
       work: [
-        "Análisis del paso a paso del cliente para entender los motivos de abandono",
-        "Identificación y eliminación de trabas ocultas en el proceso de pago",
-        "Rediseño visual enfocado en facilitar la compra y transmitir confianza"
+        "Agentes de IA con contratos de comportamiento estricto y validación por etapas",
+        "Integración directa a bases de datos y ERPs/CRMs existentes",
+        "Supervisión humana en puntos críticos (Human-in-the-Loop)"
       ],
-      result: "Un checkout optimizado que convierte visitas en clientes reales y aumenta tu facturación directamente."
+      result: "Una operación fluida que trabaja en segundo plano eliminando cuellos de botella y tareas redundantes."
     },
     {
-      title: "Recepción automática de pedidos por WhatsApp",
-      tag: "Ventas y Atención",
-      context: "Tu equipo colapsa recibiendo consultas y pedidos manualmente, generando demoras, errores y ventas perdidas.",
+      title: "Analítica Privada de Datos Corporativos",
+      tag: "Analítica de Datos",
+      context: "Información crítica dispersa en documentos e incapacidad de realizar consultas avanzadas sin exponer datos sensibles.",
       work: [
-        "Sistema automático que recibe y responde mensajes 24/7 sin intervención humana",
-        "Base de datos que guarda automáticamente el historial de clientes y pedidos",
-        "Panel de control centralizado para organizar las entregas en tiempo real"
+        "Sistema RAG híbrido / GraphRAG en servidor privado (VPC) o local",
+        "Procesamiento e indexación segura de documentos con cifrado AES-256",
+        "Consultas conversacionales de alto valor con modelos aislados"
       ],
-      result: "Un canal de ventas que funciona en piloto automático, elimina el trabajo manual y nunca pierde un cliente."
+      result: "Inteligencia de negocios instantánea sobre tu información sin compartir un solo byte con terceros."
     },
     {
-      title: "Plataforma de control para equipos de trabajo",
-      tag: "Gestión Operativa",
-      context: "Falta de claridad y desorganización al iniciar nuevos proyectos o tareas, lo que genera pérdida de tiempo y recursos.",
+      title: "Inspección Inteligente con Computing Vision",
+      tag: "Computing Vision",
+      context: "Inspección manual de productos o flujos visuales propenso a errores humanos, lentitud y falta de monitoreo continuo.",
       work: [
-        "Sistema centralizado para priorizar tareas y definir objetivos medibles",
-        "Mapas visuales para anticipar riesgos y organizar los procesos de la empresa",
-        "Generación automática de flujos de trabajo listos para asignar a tu equipo"
+        "Despliegue de modelos de visión artificial (YOLO/OpenCV) en tiempo real",
+        "Detección automática de objetos, anomalías y patrones en bordes (Edge AI)",
+        "Panel de control centralizado con alertas automáticas y métricas visuales"
       ],
-      result: "Una operación ordenada que acelera la ejecución de los proyectos y alinea a toda la empresa."
+      result: "Un sistema de inspección 24/7 sin fallas humanas que automatiza el control de calidad en tiempo real."
     }
   ];
 

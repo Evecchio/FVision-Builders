@@ -84,7 +84,7 @@ export function About() {
               </p>
               <div className="text-base md:text-lg font-sans text-slate-400 leading-relaxed space-y-6">
                 <p>
-                  A lo largo de mi trayectoria, he liderado proyectos tecnológicos enfocados en optimizar ventas, automatizar procesos y analizar dónde se estancan los clientes. Esta experiencia me enseñó qué significa realmente tomar decisiones basadas en información real y no en intuiciones para hacer crecer un negocio.
+                  A lo largo de mi trayectoria, he liderado proyectos tecnológicos enfocados en automatizar operaciones, implementar soluciones de Computing Vision y analizar datos corporativos en tiempo real. Esta experiencia me enseñó qué significa realmente tomar decisiones basadas en información certera para hacer crecer un negocio.
                 </p>
                 <p>
                   Esa experiencia "en las trincheras" me llevó a dominar la creación de herramientas y sistemas que hoy pongo a disposición de otras empresas. No te hablo desde la teoría, sino desde lo que <span className="text-white font-semibold">funciona en producción</span>.

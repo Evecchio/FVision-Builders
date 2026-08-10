@@ -77,36 +77,7 @@ const projects: Solution[] = [
   }
 ];
 
-const skills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "JavaScript",
-  "HTML",
-  "CSS",
-  "Responsive Design",
-  "Kotlin",
-  "Jetpack Compose",
-  "Room",
-  "Python",
-  "FastAPI",
-  "OpenCV",
-  "PyTorch",
-  "YOLO",
-  "Computer Vision",
-  "Edge AI",
-  "Ollama",
-  "RAG",
-  "Chroma",
-  "Git",
-  "GitHub Actions",
-  "Product Discovery",
-  "Tkinter",
-  "yt-dlp",
-  "FFmpeg",
-  "MSIX",
-  "Inno Setup",
-];
+
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -304,23 +275,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* Section Tecnologías */}
-        <section className="section skills-section" id="tecnologias">
-          <div className="container">
-            <div className="section-heading">
-              <div>
-                <span className="eyebrow" style={{ background: '#FFDE4D' }}>Capacidades</span>
-                <h2>Herramientas & Tecnologías</h2>
-              </div>
-              <p>Habilidades validadas a través del desarrollo de las soluciones descritas en este catálogo.</p>
-            </div>
-            <div className="skills-list">
-              {skills.map((skill) => (
-                <span className="skill" key={skill}>{skill}</span>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* Section Contacto */}
         <section className="section" id="contacto">

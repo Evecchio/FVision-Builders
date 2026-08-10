@@ -55,10 +55,10 @@ const projects: Solution[] = [
     title: "Private AI Data System",
     summary: "Sistema de análisis de documentos y datos corporativos (GraphRAG / RAG Híbrido) ejecutado exclusivamente en Servidores Privados (VPC) o Servidor Local On-Premise sin riesgo de fuga de información.",
     category: "data",
-    tags: ["🚀 Despliegue Privado", "GraphRAG Privado", "Servidor Privado / On-Premise", "AES-256", "SOC 2 / GDPR", "Cero Fuga de Datos"],
+    tags: ["🚀 Despliegue Privado (VPC / On-Premise)", "GraphRAG Privado", "AES-256", "SOC 2 / ISO 27001 / GDPR / HIPAA", "Cero Fuga de Datos"],
     specs: {
       problem: "Riesgo de filtración de IP sensible y limitaciones de búsqueda en sistemas tradicionales de datos.",
-      solution: "Infraestructura privativa aislada con modelos SLM (Ollama/FastAPI), costo $0 por token API, cifrado AES-256 y cumplimiento SOC 2/GDPR.",
+      solution: "Infraestructura privativa aislada en VPC u On-Premise con modelos SLM (Ollama/FastAPI), costo $0 por token API, cifrado AES-256 y cumplimiento de normas SOC 2, ISO 27001, GDPR y HIPAA.",
       statusLabel: "Despliegue Privado",
       status: "production"
     }
@@ -177,11 +177,6 @@ export default function App() {
               <p>
                 Soluciones unificadas de software y tecnología estructuradas para las 3 áreas clave de la empresa: Agentes para Operaciones, Analítica de Datos y Computing Vision.
               </p>
-            </div>
-
-            <div className="privacy-note">
-              <Shield size={18} style={{ flexShrink: 0, color: 'var(--accent)' }} />
-              <span><strong>Nota de Privacidad y Cumplimiento:</strong> Todas las soluciones de IA, visión y datos se despliegan en <strong>Servidores Privados (VPC) o Local On-Premise</strong> bajo normas SOC 2, ISO 27001, GDPR, HIPAA y cifrado AES-256 (cero compartición con terceros).</span>
             </div>
 
             {/* Tabs de Filtro */}

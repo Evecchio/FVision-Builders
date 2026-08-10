@@ -222,11 +222,11 @@ export default function App() {
                     
                     <div className="project-specs">
                       <div className="spec-item">
-                        <span className="spec-label">PROB</span>
+                        <span className="spec-label">PROBLEMA</span>
                         <span className="spec-value">{project.specs.problem}</span>
                       </div>
                       <div className="spec-item">
-                        <span className="spec-label">SOL</span>
+                        <span className="spec-label">SOLUCIÓN</span>
                         <span className="spec-value">{project.specs.solution}</span>
                       </div>
                     </div>

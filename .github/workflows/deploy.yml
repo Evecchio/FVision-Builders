@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "portfolio-ezequiel.html"
+      - "logo.png"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
@@ -31,6 +32,7 @@ jobs:
         run: |
           mkdir -p _site
           cp portfolio-ezequiel.html _site/index.html
+          cp logo.png _site/logo.png
           touch _site/.nojekyll
 
       - name: Configure GitHub Pages

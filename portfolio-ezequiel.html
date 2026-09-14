@@ -697,6 +697,211 @@
       font-weight: 550;
       box-shadow: 3px 3px 0px 0px var(--ink);
     }
+    /* Sección Repositorios Protegidos */
+    .repo-section {
+      padding: 5rem 0;
+      border-top: var(--border-thick);
+      background: var(--bg);
+    }
+
+    .repo-banner {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: #FFFBEB;
+      border: var(--border-thick);
+      border-left: 6px solid #D97706;
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      margin-bottom: 2.2rem;
+      box-shadow: var(--shadow-flat);
+    }
+
+    .repo-banner-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .repo-banner-text h4 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 0.98rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #92400E;
+      margin-bottom: 0.25rem;
+    }
+
+    .repo-banner-text p {
+      font-size: 0.88rem;
+      color: #78350F;
+      line-height: 1.45;
+      font-weight: 550;
+    }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+
+    .repo-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+      border: var(--border-thick);
+      border-radius: var(--radius-md);
+      padding: 1.6rem;
+      box-shadow: var(--shadow-flat);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .repo-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-flat-hover);
+    }
+
+    .repo-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .repo-identifier {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: "Fira Code", monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+      background: var(--bg);
+      padding: 0.2rem 0.55rem;
+      border: 1px solid var(--ink);
+      border-radius: var(--radius-sm);
+    }
+
+    .repo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.6rem;
+      border: 1.5px solid var(--ink);
+      border-radius: var(--radius-sm);
+      font-family: "Fira Code", monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      box-shadow: 1px 1px 0px 0px var(--ink);
+    }
+
+    .repo-pill.private {
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+
+    .repo-pill.public {
+      background: #DCFCE7;
+      color: #166534;
+    }
+
+    .repo-title {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+      color: var(--ink);
+    }
+
+    .repo-desc {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.5;
+      font-weight: 550;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .repo-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .repo-tag {
+      padding: 0.2rem 0.5rem;
+      border: 1px solid var(--ink);
+      border-radius: 4px;
+      background: var(--bg);
+      font-family: "Fira Code", monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      box-shadow: 1px 1px 0px 0px var(--ink);
+    }
+
+    .repo-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: var(--border-thick);
+      margin-top: auto;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .repo-lang-badge {
+      font-family: "Fira Code", monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .repo-lang-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: 1px solid var(--ink);
+      display: inline-block;
+      background: var(--accent);
+    }
+
+    .btn-demo-request {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.9rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 2px 2px 0px 0px var(--ink);
+      transition: all 0.1s ease;
+      text-decoration: none;
+    }
+
+    .btn-demo-request:hover {
+      background: var(--ink);
+      color: var(--paper);
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px 0px var(--ink);
+    }
+
+    @media (max-width: 960px) {
+      .repo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -708,6 +913,7 @@
     </a>
     <div class="nav">
       <a href="#projects">Soluciones</a>
+      <a href="#repositories">Repositorios</a>
       <a href="#contact">Contacto</a>
     </div>
   </nav>
@@ -721,6 +927,7 @@
       <div class="actions">
         <a class="btn primary" href="#contact">Agendar Consulta</a>
         <a class="btn" href="#projects">Explorar Soluciones</a>
+        <a class="btn" href="#repositories">Ver Repositorios</a>
       </div>
     </div>
   </section>
@@ -828,6 +1035,28 @@
     </div>
   </section>
 
+  <!-- Sección Catálogo de Repositorios Protegidos -->
+  <section id="repositories" class="repo-section">
+    <div class="container">
+      <div class="heading">
+        <h2>Catálogo de Repositorios & Software</h2>
+        <p>Proyectos de software corporativo y arquitecturas desarrolladas por FVision. El código fuente está protegido bajo acuerdos de propiedad intelectual.</p>
+      </div>
+
+      <!-- Banner de Protección de Código -->
+      <div class="repo-banner">
+        <div class="repo-banner-icon">🔒</div>
+        <div class="repo-banner-text">
+          <h4>Repositorios Privados & Propiedad Intelectual Resguardada</h4>
+          <p>Para proteger los activos comerciales y la ventaja competitiva de nuestras soluciones, los repositorios de producción se mantienen en modo privado sin acceso a clonado o descarga directa. Para auditorías de arquitectura o revisión técnica, puedes solicitar una demostración guiada en vivo (screensharing).</p>
+        </div>
+      </div>
+
+      <!-- Grilla de Repositorios -->
+      <div class="repo-grid" id="repos-container"></div>
+    </div>
+  </section>
+
   <!-- Sección Modelos de Contratación -->
   <section id="engagement" class="engagement-section" style="background:var(--paper); border-top:var(--border-thick); border-bottom:var(--border-thick); padding:4.5rem 0;">
     <div class="container">
@@ -886,6 +1115,148 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Catálogo de Repositorios Protegidos
+  const repositoriesData = [
+    {
+      name: "GastoFlow-Accessibility",
+      displayName: "GastoFlow Engine & Accessibility",
+      description: "Sistema de automatización y control de gastos local, asistido y 100% automático para Android. Utiliza servicios de accesibilidad, procesamiento en dispositivo (Local-First) y cifrado de datos sin intermediarios ni fuga a la nube.",
+      category: "mobile",
+      language: "Kotlin",
+      tags: ["Android SDK", "Accessibility Service", "Local-First", "AES-256", "Zero-Leak", "Kotlin"],
+      isPrivate: true,
+      status: "Producción / Privado"
+    },
+    {
+      name: "Fvision-Company",
+      displayName: "FVision Enterprise Core",
+      description: "Núcleo corporativo y operativo de FVision: arquitectura de microservicios, integración de agentes de IA para flujos de trabajo internos, gobernanza de datos y automatización de procesos empresariales.",
+      category: "ops",
+      language: "Kotlin",
+      tags: ["Enterprise Core", "AI Multi-Agent", "Microservicios", "Arquitectura Limpia", "Docker"],
+      isPrivate: true,
+      status: "Producción / Privado"
+    },
+    {
+      name: "Cabify-Control",
+      displayName: "Cabify Control & Fleets",
+      description: "Aplicación de telemetría, monitoreo y auditoría automatizada de viajes y finanzas para conductores y flotas. Integración de captura de datos en pantalla y reportes en tiempo real.",
+      category: "mobile",
+      language: "Kotlin",
+      tags: ["Android", "Telemetría", "Automatización", "Finanzas & Flotas", "SQLite / Room"],
+      isPrivate: true,
+      status: "Producción / Privado"
+    },
+    {
+      name: "FlowCommerce",
+      displayName: "FlowCommerce Platform",
+      description: "Ecosistema de comercio digital escalable y de alta conversión con checkout optimizado, integración de pagos directos y panel de administración empresarial.",
+      category: "web",
+      language: "TypeScript",
+      tags: ["E-Commerce", "Checkout Flow", "Pasarelas de Pago", "Alta Conversión", "Next.js"],
+      isPrivate: true,
+      status: "Activo / Privado"
+    },
+    {
+      name: "NubeFlow",
+      displayName: "NubeFlow Theme & Engine",
+      description: "Desarrollo frontend especializado para e-commerce corporativo en Tiendanube con diseño a medida, integración de scripts analíticos y optimización de velocidad de carga.",
+      category: "web",
+      language: "Go Template",
+      tags: ["Tiendanube", "E-Commerce", "Frontend Custom", "UI/UX", "SEO Performance"],
+      isPrivate: true,
+      status: "Producción / Privado"
+    },
+    {
+      name: "Virtual-Org-Framework",
+      displayName: "Virtual Org AI Framework",
+      description: "Framework para la orquestación y coordinación de organizaciones autónomas mediante agentes de IA. Modela roles organizacionales, contratos de ejecución y control humano supervisor.",
+      category: "ops",
+      language: "JavaScript",
+      tags: ["AI Orchestration", "Agentic Workflows", "Human-in-the-Loop", "Multi-Agent System"],
+      isPrivate: true,
+      status: "Investigación & Desarrollo"
+    },
+    {
+      name: "DropLand",
+      displayName: "DropLand Logistics & Processing",
+      description: "Sistema de automatización de scripts y procesamiento de datos para gestión logística y distribución, integrando APIs de mensajería y sincronización.",
+      category: "data",
+      language: "Python",
+      tags: ["Python", "Automatización", "Data Pipeline", "APIs & Integraciones"],
+      isPrivate: true,
+      status: "Activo / Privado"
+    },
+    {
+      name: "GastoMock",
+      displayName: "GastoMock Suite",
+      description: "Entorno de pruebas y emulación de transacciones financieras para validación de lógica de negocio y testing automatizado en aplicaciones móviles.",
+      category: "ops",
+      language: "Kotlin",
+      tags: ["Testing & Mocks", "Kotlin", "Android Test", "CI/CD"],
+      isPrivate: true,
+      status: "Herramienta Interna / Privado"
+    },
+    {
+      name: "FVision-Builders",
+      displayName: "FVision Builders Showcase",
+      description: "Plataforma pública oficial y portafolio de FVision, arquitectura de software corporativa, blueprints de soluciones y catálogo de capacidades técnicas.",
+      category: "web",
+      language: "TypeScript",
+      tags: ["React", "TypeScript", "Vite", "Neo-Brutalism", "GitHub Pages"],
+      isPrivate: false,
+      status: "Público / Showcase"
+    }
+  ];
+
+  function renderRepositories() {
+    const container = document.getElementById('repos-container');
+    if (!container) return;
+
+    container.innerHTML = repositoriesData.map(repo => {
+      const pillClass = repo.isPrivate ? 'private' : 'public';
+      const pillLabel = repo.isPrivate ? '🔒 Código Privado' : '🌐 Showcase Público';
+      const tagsHtml = repo.tags.map(t => `<span class="repo-tag">${t}</span>`).join('');
+      const safeTitle = repo.displayName.replace(/'/g, "\\'");
+
+      return `
+        <article class="repo-card">
+          <div class="repo-top">
+            <span class="repo-identifier">Evecchio / ${repo.name}</span>
+            <span class="repo-pill ${pillClass}">${pillLabel}</span>
+          </div>
+          <h3 class="repo-title">${repo.displayName}</h3>
+          <p class="repo-desc">${repo.description}</p>
+          <div class="repo-tags">${tagsHtml}</div>
+          <div class="repo-footer">
+            <span class="repo-lang-badge">
+              <span class="repo-lang-dot"></span>
+              ${repo.language}
+            </span>
+            <button type="button" class="btn-demo-request" onclick="requestDemo('${safeTitle}')">
+              Solicitar Demo &rarr;
+            </button>
+          </div>
+        </article>
+      `;
+    }).join('');
+  }
+
+  function requestDemo(projectName) {
+    const messageInput = document.getElementById('message');
+    if (messageInput) {
+      messageInput.value = `Hola Ezequiel, me interesa conocer más sobre la arquitectura y solicitar una demostración técnica guiada de "${projectName}".`;
+    }
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    const nameInput = document.getElementById('name');
+    if (nameInput) {
+      setTimeout(() => nameInput.focus(), 400);
+    }
+  }
+
   function filterCategory(category, button) {
     // Cambiar estado activo del botón
     document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
@@ -902,6 +1273,9 @@
       }
     });
   }
+
+  // Inicializar renderizado de repositorios
+  renderRepositories();
 </script>
 </body>
 </html>

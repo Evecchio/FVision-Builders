@@ -14,9 +14,11 @@ import {
   AlertTriangle,
   CheckCircle,
   HelpCircle,
-  Shield
+  Shield,
+  Lock
 } from "lucide-react";
 import { siteConfig } from "./config/site";
+import repositoriesData from "./data/repositories.json";
 
 const categories = [
   { id: "all", label: "Todas las Soluciones" },
@@ -87,6 +89,17 @@ export default function App() {
     message: ""
   });
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const handleRequestDemo = (projectName: string) => {
+    setFormState(prev => ({
+      ...prev,
+      message: `Hola Ezequiel, me interesa conocer más sobre la arquitectura y solicitar una demostración técnica guiada de "${projectName}".`
+    }));
+    const contactSection = document.getElementById('contacto');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -240,6 +253,170 @@ export default function App() {
                 ))}
               </AnimatePresence>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Section Repositorios Protegidos */}
+        <section className="section" id="repositorios" style={{ borderTop: 'var(--border-thick)' }}>
+          <div className="container">
+            <div className="section-heading">
+              <h2>Catálogo de Repositorios & Software</h2>
+              <p>
+                Proyectos de software corporativo y arquitecturas desarrolladas por FVision. El código fuente está protegido bajo acuerdos de propiedad intelectual.
+              </p>
+            </div>
+
+            {/* Banner de Protección de Código */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              gap: '1rem',
+              background: '#FFFBEB',
+              border: 'var(--border-thick)',
+              borderLeft: '6px solid #D97706',
+              borderRadius: 'var(--radius-sm)',
+              padding: '1rem 1.25rem',
+              marginBottom: '2rem',
+              boxShadow: 'var(--shadow-flat)'
+            }}>
+              <span style={{ fontSize: '1.5rem', lineHeight: 1 }}>🔒</span>
+              <div>
+                <h4 style={{
+                  fontFamily: '"Plus Jakarta Sans", sans-serif',
+                  fontSize: '0.98rem',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  color: '#92400E',
+                  marginBottom: '0.25rem'
+                }}>
+                  Repositorios Privados & Propiedad Intelectual Resguardada
+                </h4>
+                <p style={{ fontSize: '0.88rem', color: '#78350F', lineHeight: 1.45, fontWeight: 550 }}>
+                  Para proteger los activos comerciales y la ventaja competitiva de nuestras soluciones, los repositorios de producción se mantienen en modo privado sin acceso a clonado o descarga directa. Para auditorías de arquitectura o revisión técnica, puedes solicitar una demostración guiada en vivo (screensharing).
+                </p>
+              </div>
+            </div>
+
+            {/* Grid de Repositorios */}
+            <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.75rem' }}>
+              {repositoriesData.map((repo) => (
+                <article
+                  key={repo.name}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    background: 'var(--paper)',
+                    border: 'var(--border-thick)',
+                    borderRadius: 'var(--radius-md)',
+                    padding: '1.6rem',
+                    boxShadow: 'var(--shadow-flat)'
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    <span style={{
+                      fontFamily: '"Fira Code", monospace',
+                      fontSize: '0.85rem',
+                      fontWeight: 700,
+                      color: 'var(--muted)',
+                      background: 'var(--bg)',
+                      padding: '0.2rem 0.55rem',
+                      border: '1px solid var(--ink)',
+                      borderRadius: 'var(--radius-sm)'
+                    }}>
+                      Evecchio / {repo.name}
+                    </span>
+                    <span style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.35rem',
+                      padding: '0.25rem 0.6rem',
+                      border: '1.5px solid var(--ink)',
+                      borderRadius: 'var(--radius-sm)',
+                      fontFamily: '"Fira Code", monospace',
+                      fontSize: '0.72rem',
+                      fontWeight: 800,
+                      boxShadow: '1px 1px 0px 0px var(--ink)',
+                      background: repo.isPrivate ? '#FEE2E2' : '#DCFCE7',
+                      color: repo.isPrivate ? '#991B1B' : '#166534'
+                    }}>
+                      {repo.isPrivate ? '🔒 Código Privado' : '🌐 Showcase Público'}
+                    </span>
+                  </div>
+
+                  <h3 style={{
+                    fontFamily: '"Plus Jakarta Sans", sans-serif',
+                    fontSize: '1.35rem',
+                    fontWeight: 800,
+                    textTransform: 'uppercase',
+                    lineHeight: 1.2,
+                    marginBottom: '0.6rem'
+                  }}>
+                    {repo.displayName}
+                  </h3>
+
+                  <p style={{
+                    color: 'var(--muted)',
+                    fontSize: '0.94rem',
+                    lineHeight: 1.5,
+                    fontWeight: 550,
+                    marginBottom: '1.25rem',
+                    flexGrow: 1
+                  }}>
+                    {repo.description}
+                  </p>
+
+                  <div className="tag-list" style={{ marginBottom: '1.25rem' }}>
+                    {repo.tags.map((tag) => (
+                      <span className="tag" key={tag}>{tag}</span>
+                    ))}
+                  </div>
+
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    paddingTop: '1rem',
+                    borderTop: 'var(--border-thick)',
+                    marginTop: 'auto',
+                    gap: '0.5rem',
+                    flexWrap: 'wrap'
+                  }}>
+                    <span style={{
+                      fontFamily: '"Fira Code", monospace',
+                      fontSize: '0.78rem',
+                      fontWeight: 700,
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.35rem'
+                    }}>
+                      <span style={{
+                        width: '9px',
+                        height: '9px',
+                        borderRadius: '50%',
+                        border: '1px solid var(--ink)',
+                        display: 'inline-block',
+                        background: 'var(--accent)'
+                      }} />
+                      {repo.language}
+                    </span>
+
+                    <button
+                      type="button"
+                      onClick={() => handleRequestDemo(repo.displayName)}
+                      className="button"
+                      style={{
+                        padding: '0.45rem 0.9rem',
+                        fontSize: '0.8rem',
+                        fontWeight: 800,
+                        cursor: 'pointer'
+                      }}
+                    >
+                      Solicitar Demo &rarr;
+                    </button>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 

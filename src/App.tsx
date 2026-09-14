@@ -40,10 +40,10 @@ interface Solution {
 
 const projects: Solution[] = [
   {
-    title: "Enterprise Operations & AI Agents",
+    title: "Operaciones Empresariales & Agentes de IA",
     summary: "Agentes de IA autónomos que coordinan y automatizan operaciones complejas entre equipos y sistemas centrales (ERP/CRM). Operan bajo contratos estrictos de comportamiento y supervisión de control (Human-in-the-Loop).",
     category: "ops",
-    tags: ["🛠️ Desarrollo a Medida", "AI Multi-Agent", "Gobernanza IA", "Human-in-the-Loop", "Zero-Trust", "Integración ERP/CRM"],
+    tags: ["🛠️ Desarrollo a Medida", "IA Multi-Agente", "Gobernanza de IA", "Supervisión Humana", "Cero-Confianza (Zero-Trust)", "Integración ERP/CRM"],
     specs: {
       problem: "Cuellos de botella operativos, tareas manuales repetitivas y riesgo de alucinaciones en sistemas de IA.",
       solution: "Agentes ejecutores de tareas operativas con validación estricta en 4 etapas (DRDV Framework), observabilidad total y control humano en pasos críticos.",
@@ -52,10 +52,10 @@ const projects: Solution[] = [
     }
   },
   {
-    title: "Private AI Data System",
+    title: "Sistema Privado de Datos & IA",
     summary: "Sistema de análisis de documentos y datos corporativos (GraphRAG / RAG Híbrido) ejecutado exclusivamente en Servidores Privados (VPC) o Servidor Local On-Premise sin riesgo de fuga de información.",
     category: "data",
-    tags: ["🚀 Despliegue Privado (VPC / On-Premise)", "GraphRAG Privado", "AES-256", "SOC 2 / ISO 27001 / GDPR / HIPAA", "Cero Fuga de Datos"],
+    tags: ["🚀 Despliegue Privado (VPC / Local)", "GraphRAG Privado", "AES-256", "SOC 2 / ISO 27001 / GDPR / HIPAA", "Cero Fuga de Datos"],
     specs: {
       problem: "Riesgo de filtración de IP sensible y limitaciones de búsqueda en sistemas tradicionales de datos.",
       solution: "Infraestructura privativa aislada en VPC u On-Premise con modelos SLM (Ollama/FastAPI), costo $0 por token API, cifrado AES-256 y cumplimiento de normas SOC 2, ISO 27001, GDPR y HIPAA.",
@@ -64,10 +64,10 @@ const projects: Solution[] = [
     }
   },
   {
-    title: "Computing Vision & Real-Time Inspection",
+    title: "Visión Computacional & Inspección en Tiempo Real",
     summary: "Sistemas de visión artificial e inspección inteligente en tiempo real para detección de objetos, control de calidad automatizado, análisis de video y procesamiento visual mediante Edge AI y cámaras conectadas.",
     category: "vision",
-    tags: ["👁️ Real-Time Detection", "Edge AI & YOLO", "Control de Calidad", "Reconocimiento de Patrones", "OpenCV / PyTorch", "Procesamiento Privado"],
+    tags: ["👁️ Detección en Tiempo Real", "Edge AI & YOLO", "Control de Calidad", "Reconocimiento de Patrones", "OpenCV / PyTorch", "Procesamiento Local"],
     specs: {
       problem: "Inspección manual lenta, errores humanos en control de calidad e incapacidad de monitorear flujos visuales 24/7.",
       solution: "Modelos de Visión Artificial optimizados para inferencia local en tiempo real con alertas automáticas e integración a tableros de control.",

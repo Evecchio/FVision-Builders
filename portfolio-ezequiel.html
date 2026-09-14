@@ -128,6 +128,57 @@
       color: var(--accent);
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      padding: 0.15rem 0.3rem;
+      box-shadow: 2px 2px 0px 0px var(--ink);
+      font-family: "Fira Code", monospace;
+      font-size: 0.82rem;
+      font-weight: 800;
+      user-select: none;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      padding: 0.25rem 0.5rem;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: 800;
+      color: var(--muted);
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+      line-height: 1.1;
+    }
+
+    .lang-btn:hover {
+      color: var(--ink);
+    }
+
+    .lang-btn.active {
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 1px 1px 0px 0px var(--ink);
+    }
+
+    .lang-separator {
+      color: var(--muted);
+      font-size: 0.75rem;
+      padding: 0 0.1rem;
+      opacity: 0.6;
+    }
+
     section {
       padding: 5.5rem 0;
     }
@@ -700,27 +751,35 @@
   </style>
 </head>
 <body>
-<header>
+<<header>
   <nav class="container">
     <a class="brand-container" href="#top">
       <img src="data:image/jpeg;base64,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" alt="FVision Logo" class="brand-logo-img" />
       <span class="brand-text">FVision</span>
     </a>
-    <div class="nav">
-      <a href="#projects">Soluciones</a>
-      <a href="#contact">Contacto</a>
+    <div class="nav-right">
+      <div class="nav">
+        <a href="#projects" data-i18n="nav.solutions">Soluciones</a>
+        <a href="#engagement" data-i18n="nav.models">Modelos</a>
+        <a href="#contact" data-i18n="nav.contact">Contacto</a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Selector de idioma / Language selector">
+        <button type="button" class="lang-btn active" id="btn-lang-es" onclick="switchLanguage('es')">ES</button>
+        <span class="lang-separator">|</span>
+        <button type="button" class="lang-btn" id="btn-lang-en" onclick="switchLanguage('en')">EN</button>
+      </div>
     </div>
   </nav>
 </header>
 <main id="top">
   <section class="hero container">
     <div>
-      <span class="eyebrow">Soluciones de Software & IA Corporativa</span>
-      <h1>Agentes de IA, Inteligencia de Datos & Computer Vision</h1>
-      <p class="lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: automatizaciones operativas con IA en servidor propio, sistemas de analítica de datos cifrados y soluciones de Computer Vision en tiempo real.</p>
+      <span class="eyebrow" data-i18n="hero.eyebrow">Soluciones de Software & IA Corporativa</span>
+      <h1 data-i18n="hero.title">Agentes de IA, Inteligencia de Datos & Visión Computacional</h1>
+      <p class="lead" data-i18n="hero.lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: automatizaciones operativas con IA en servidor propio, sistemas de analítica de datos cifrados y soluciones de Visión Computacional en tiempo real.</p>
       <div class="actions">
-        <a class="btn primary" href="#contact">Agendar Consulta</a>
-        <a class="btn" href="#projects">Explorar Soluciones</a>
+        <a class="btn primary" href="#contact" data-i18n="hero.btnContact">Agendar Consulta</a>
+        <a class="btn" href="#projects" data-i18n="hero.btnSolutions">Explorar Soluciones</a>
       </div>
     </div>
   </section>
@@ -728,54 +787,54 @@
   <section id="projects">
     <div class="container">
       <div class="heading">
-        <h2>Servicios & Soluciones Integrables</h2>
-        <p>Soluciones unificadas de software y tecnología estructuradas para las 4 áreas clave de la empresa: Agentes para Operaciones, Analítica de Datos, Computer Vision y Plataformas Web & Growth.</p>
+        <h2 data-i18n="solutions.heading">Servicios & Soluciones Integrables</h2>
+        <p data-i18n="solutions.subheading">Soluciones unificadas de software y tecnología estructuradas para las 4 áreas clave de la empresa: Agentes para Operaciones, Analítica de Datos, Visión Computacional y Plataformas Web & Crecimiento Digital.</p>
       </div>
 
       <!-- Barra de Filtros por Áreas de Negocio -->
       <div class="filter-tabs" role="tablist">
-        <button class="tab-button active" onclick="filterCategory('all', this)">Todas las Soluciones</button>
-        <button class="tab-button" onclick="filterCategory('ops', this)">⚙️ Agentes para Operaciones</button>
-        <button class="tab-button" onclick="filterCategory('data', this)">📊 Analítica de Datos</button>
-        <button class="tab-button" onclick="filterCategory('vision', this)">👁️ Computer Vision</button>
-        <button class="tab-button" onclick="filterCategory('web', this)">🌐 Web, E-Commerce & Branding</button>
+        <button class="tab-button active" onclick="filterCategory('all', this)" data-i18n="filters.all">Todas las Soluciones</button>
+        <button class="tab-button" onclick="filterCategory('ops', this)" data-i18n="filters.ops">⚙️ Agentes para Operaciones</button>
+        <button class="tab-button" onclick="filterCategory('data', this)" data-i18n="filters.data">📊 Analítica de Datos</button>
+        <button class="tab-button" onclick="filterCategory('vision', this)" data-i18n="filters.vision">👁️ Visión Computacional</button>
+        <button class="tab-button" onclick="filterCategory('web', this)" data-i18n="filters.web">🌐 Web, E-Commerce & Branding</button>
       </div>
 
       <div class="grid" id="solutions-grid">
         <!-- SOLUCIÓN 1: AGENTES PARA OPERACIONES -->
-        <article class="card" data-category="ops">
+        <article class="card" data-category="ops" id="card-ops">
           <div class="card-head">
-            <h3>Enterprise Operations & AI Agents</h3>
-            <span class="status-badge"><span class="status-led production"></span>Listo para Integración</span>
+            <h3 class="card-title">Operaciones Empresariales & Agentes de IA</h3>
+            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Listo para Integración</span></span>
           </div>
           <p class="summary-text">Agentes de IA autónomos que coordinan y automatizan operaciones complejas entre equipos y sistemas centrales (ERP/CRM). Operan bajo contratos estrictos de comportamiento y supervisión de control (Human-in-the-Loop).</p>
           <div class="details">
-            <div class="detail"><strong>PROBLEMA</strong><span>Cuellos de botella operativos, tareas manuales repetitivas y riesgo de alucinaciones en sistemas de IA.</span></div>
-            <div class="detail"><strong>SOLUCIÓN</strong><span>Agentes ejecutores de tareas operativas con validación estricta en 4 etapas (DRDV Framework), observabilidad total y control humano en pasos críticos.</span></div>
+            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Cuellos de botella operativos, tareas manuales repetitivas y riesgo de alucinaciones en sistemas de IA.</span></div>
+            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Agentes ejecutores de tareas operativas con validación estricta en 4 etapas (DRDV Framework), observabilidad total y control humano en pasos críticos.</span></div>
           </div>
           <div class="tags">
             <span class="tag">🛠️ Desarrollo a Medida</span>
-            <span class="tag">AI Multi-Agent</span>
-            <span class="tag">Gobernanza IA</span>
-            <span class="tag">Human-in-the-Loop</span>
-            <span class="tag">Zero-Trust</span>
+            <span class="tag">IA Multi-Agente</span>
+            <span class="tag">Gobernanza de IA</span>
+            <span class="tag">Supervisión Humana</span>
+            <span class="tag">Cero-Confianza (Zero-Trust)</span>
             <span class="tag">Integración ERP/CRM</span>
           </div>
         </article>
 
         <!-- SOLUCIÓN 2: ANALÍTICA DE DATOS -->
-        <article class="card" data-category="data">
+        <article class="card" data-category="data" id="card-data">
           <div class="card-head">
-            <h3>Private AI Data System</h3>
-            <span class="status-badge"><span class="status-led production"></span>Despliegue Privado</span>
+            <h3 class="card-title">Sistema Privado de Datos & IA</h3>
+            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Despliegue Privado</span></span>
           </div>
           <p class="summary-text">Sistema de análisis de documentos y datos corporativos (GraphRAG / RAG Híbrido) ejecutado exclusivamente en Servidores Privados (VPC) o Servidor Local On-Premise sin riesgo de fuga de información.</p>
           <div class="details">
-            <div class="detail"><strong>PROBLEMA</strong><span>Riesgo de filtración de IP sensible y limitaciones de búsqueda en sistemas tradicionales de datos.</span></div>
-            <div class="detail"><strong>SOLUCIÓN</strong><span>Infraestructura privativa aislada en VPC u On-Premise con modelos SLM (Ollama/FastAPI), costo $0 por token API, cifrado AES-256 y cumplimiento de normas SOC 2, ISO 27001, GDPR y HIPAA.</span></div>
+            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Riesgo de filtración de IP sensible y limitaciones de búsqueda en sistemas tradicionales de datos.</span></div>
+            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Infraestructura privativa aislada en VPC u On-Premise con modelos SLM (Ollama/FastAPI), costo $0 por token API, cifrado AES-256 y cumplimiento de normas SOC 2, ISO 27001, GDPR y HIPAA.</span></div>
           </div>
           <div class="tags">
-            <span class="tag">🚀 Despliegue Privado (VPC / On-Premise)</span>
+            <span class="tag">🚀 Despliegue Privado (VPC / Local)</span>
             <span class="tag">GraphRAG Privado</span>
             <span class="tag">AES-256</span>
             <span class="tag">SOC 2 / ISO 27001 / GDPR / HIPAA</span>
@@ -783,44 +842,44 @@
           </div>
         </article>
 
-        <!-- SOLUCIÓN 3: COMPUTER VISION -->
-        <article class="card" data-category="vision">
+        <!-- SOLUCIÓN 3: VISIÓN COMPUTACIONAL -->
+        <article class="card" data-category="vision" id="card-vision">
           <div class="card-head">
-            <h3>Computer Vision & Real-Time Inspection</h3>
-            <span class="status-badge"><span class="status-led production"></span>Solución Propietaria</span>
+            <h3 class="card-title">Visión Computacional & Inspección en Tiempo Real</h3>
+            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Solución Propietaria</span></span>
           </div>
           <p class="summary-text">Sistemas de visión artificial e inspección inteligente en tiempo real para detección de objetos, control de calidad automatizado, análisis de video y procesamiento visual mediante Edge AI y cámaras conectadas.</p>
           <div class="details">
-            <div class="detail"><strong>PROBLEMA</strong><span>Inspección manual lenta, errores humanos en control de calidad e incapacidad de monitorear flujos visuales 24/7.</span></div>
-            <div class="detail"><strong>SOLUCIÓN</strong><span>Modelos de Visión Artificial optimizados para inferencia local en tiempo real con alertas automáticas e integración a tableros de control.</span></div>
+            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Inspección manual lenta, errores humanos en control de calidad e incapacidad de monitorear flujos visuales 24/7.</span></div>
+            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Modelos de Visión Artificial optimizados para inferencia local en tiempo real con alertas automáticas e integración a tableros de control.</span></div>
           </div>
           <div class="tags">
-            <span class="tag">👁️ Real-Time Detection</span>
+            <span class="tag">👁️ Detección en Tiempo Real</span>
             <span class="tag">Edge AI & YOLO</span>
             <span class="tag">Control de Calidad</span>
             <span class="tag">Reconocimiento de Patrones</span>
             <span class="tag">OpenCV / PyTorch</span>
-            <span class="tag">Procesamiento Privado</span>
+            <span class="tag">Procesamiento Local</span>
           </div>
         </article>
 
         <!-- SOLUCIÓN 4: WEB, E-COMMERCE & BRANDING -->
-        <article class="card" data-category="web">
+        <article class="card" data-category="web" id="card-web">
           <div class="card-head">
-            <h3>Web Platforms, E-Commerce & Digital Growth</h3>
-            <span class="status-badge"><span class="status-led production"></span>Desarrollo & Estrategia</span>
+            <h3 class="card-title">Plataformas Web, Comercio Electrónico & Crecimiento Digital</h3>
+            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Desarrollo & Estrategia</span></span>
           </div>
           <p class="summary-text">Diseño e implementación de sitios web profesionales, tiendas e-commerce a medida, optimización SEO para los primeros lugares en Google y desarrollo de identidad de marca (Branding) de alto impacto.</p>
           <div class="details">
-            <div class="detail"><strong>PROBLEMA</strong><span>Presencia digital deficiente, tiendas e-commerce genéricas, bajo tráfico orgánico en buscadores e identidad de marca inconsistente.</span></div>
-            <div class="detail"><strong>SOLUCIÓN</strong><span>Sitios web elegantes con herramientas líderes, plataformas e-commerce personalizadas, SEO garantizado para Top 10 en Google (3-4 meses) y branding estratégico para máxima recordación de marca.</span></div>
+            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Presencia digital deficiente, tiendas e-commerce genéricas, bajo tráfico orgánico en buscadores e identidad de marca inconsistente.</span></div>
+            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Sitios web elegantes con herramientas líderes, plataformas e-commerce personalizadas, SEO garantizado para Top 10 en Google (3-4 meses) y branding estratégico para máxima recordación de marca.</span></div>
           </div>
           <div class="tags">
-            <span class="tag">💻 Professional Websites</span>
-            <span class="tag">🛒 Custom E-Commerce</span>
-            <span class="tag">🔍 SEO Optimization (Top 10)</span>
-            <span class="tag">🎨 Strategic Branding</span>
-            <span class="tag">Modern Tech Stack</span>
+            <span class="tag">💻 Sitios Web Profesionales</span>
+            <span class="tag">🛒 Comercio Electrónico a Medida</span>
+            <span class="tag">🔍 Optimización SEO (Top 10)</span>
+            <span class="tag">🎨 Branding Estratégico</span>
+            <span class="tag">Stack Moderno</span>
             <span class="tag">UI/UX Premium</span>
           </div>
         </article>
@@ -832,59 +891,325 @@
   <section id="engagement" class="engagement-section" style="background:var(--paper); border-top:var(--border-thick); border-bottom:var(--border-thick); padding:4.5rem 0;">
     <div class="container">
       <div class="heading">
-        <h2>Modelos de Trabajo & Integración</h2>
-        <p>Formatos flexibles de colaboración adaptados a las necesidades y ritmo de tu empresa.</p>
+        <h2 data-i18n="engagement.heading">Modelos de Trabajo & Integración</h2>
+        <p data-i18n="engagement.subheading">Formatos flexibles de colaboración adaptados a las necesidades y ritmo de tu empresa.</p>
       </div>
       <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
         <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
-          <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--vision-color); font-weight:700; font-size:0.75rem; margin-bottom:1rem;">1-2 SEMANAS</span>
-          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Diagnóstico & Planificación Técnica</h3>
-          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Evaluación integral de la infraestructura existente, análisis de requisitos técnicos y diseño del mapa de ruta para definir la arquitectura ideal antes de comenzar cualquier implementación.</p>
+          <span class="model-badge-1" data-i18n="engagement.model1.badge" style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--vision-color); font-weight:700; font-size:0.75rem; margin-bottom:1rem;">1-2 SEMANAS</span>
+          <h3 class="model-title-1" data-i18n="engagement.model1.title" style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Diagnóstico & Planificación Técnica</h3>
+          <p class="model-desc-1" data-i18n="engagement.model1.desc" style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Evaluación integral de la infraestructura existente, análisis de requisitos técnicos y diseño del mapa de ruta para definir la arquitectura ideal antes de comenzar cualquier implementación.</p>
         </div>
         <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
-          <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--ai-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">2-4 SEMANAS</span>
-          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Integración & Despliegue Acelerado</h3>
-          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Implementación, configuración y conexión de la solución en la infraestructura elegida, asegurando pruebas de calidad, cumplimiento de seguridad y un traspaso operativo sin fricciones.</p>
+          <span class="model-badge-2" data-i18n="engagement.model2.badge" style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--ai-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">2-4 SEMANAS</span>
+          <h3 class="model-title-2" data-i18n="engagement.model2.title" style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Integración & Despliegue Acelerado</h3>
+          <p class="model-desc-2" data-i18n="engagement.model2.desc" style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Implementación, configuración y conexión de la solución en la infraestructura elegida, asegurando pruebas de calidad, cumplimiento de seguridad y un traspaso operativo sin fricciones.</p>
         </div>
         <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
-          <span style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--local-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">CONTINUO</span>
-          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Acompañamiento & Optimización Continua</h3>
-          <p style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Seguimiento técnico post-despliegue, liderazgo estratégico y optimización constante para garantizar el rendimiento, la escalabilidad y la adaptación a nuevas necesidades.</p>
+          <span class="model-badge-3" data-i18n="engagement.model3.badge" style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--local-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">CONTINUO</span>
+          <h3 class="model-title-3" data-i18n="engagement.model3.title" style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem; text-transform:uppercase;">Acompañamiento & Optimización Continua</h3>
+          <p class="model-desc-3" data-i18n="engagement.model3.desc" style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Seguimiento técnico post-despliegue, liderazgo estratégico y optimización constante para garantizar el rendimiento, la escalabilidad y la adaptación a nuevas necesidades.</p>
         </div>
       </div>
     </div>
   </section>
 
-
-
   <section id="contact">
     <div class="container">
       <div class="contact">
-        <h2>¿Querés implementar una de estas soluciones?</h2>
-        <p>Dejame tu consulta para coordinar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier solución.</p>
+        <h2 data-i18n="contact.heading">¿Querés implementar una de estas soluciones?</h2>
+        <p data-i18n="contact.subheading">Dejame tu consulta para coordinar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier solución.</p>
         
         <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
           <div class="form-group">
-            <label for="name">Nombre</label>
-            <input type="text" id="name" name="name" required class="form-input" placeholder="Tu nombre">
+            <label for="name" data-i18n="contact.nameLabel">Nombre</label>
+            <input type="text" id="name" name="name" required class="form-input" placeholder="Tu nombre" data-i18n-ph="contact.namePlaceholder">
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="_replyto" required class="form-input" placeholder="tu@email.com">
+            <label for="email" data-i18n="contact.emailLabel">Email</label>
+            <input type="email" id="email" name="_replyto" required class="form-input" placeholder="tu@email.com" data-i18n-ph="contact.emailPlaceholder">
           </div>
           <div class="form-group">
-            <label for="message">Mensaje / Consulta</label>
-            <textarea id="message" name="message" required class="form-input form-textarea" placeholder="¿En qué solución estás interesado?"></textarea>
+            <label for="message" data-i18n="contact.messageLabel">Mensaje / Consulta</label>
+            <textarea id="message" name="message" required class="form-input form-textarea" placeholder="¿En qué solución estás interesado?" data-i18n-ph="contact.messagePlaceholder"></textarea>
           </div>
-          <button type="submit" class="btn primary" style="width:100%; margin-top:0.5rem;">Enviar Consulta</button>
+          <button type="submit" class="btn primary" style="width:100%; margin-top:0.5rem;" data-i18n="contact.btnSend">Enviar Consulta</button>
         </form>
       </div>
     </div>
   </section>
 </main>
-<footer>© <span id="year"></span> Ezequiel Vecchio · FVision. Diseñado y Desarrollado por Ezequiel Vecchio.</footer>
+<footer>© <span id="year"></span> <span data-i18n="footer.text">Ezequiel Vecchio · FVision. Diseñado y Desarrollado por Ezequiel Vecchio.</span></footer>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Diccionario Internacionalización (ES / EN)
+  const i18n = {
+    es: {
+      nav: {
+        solutions: "Soluciones",
+        models: "Modelos",
+        contact: "Contacto"
+      },
+      hero: {
+        eyebrow: "Soluciones de Software & IA Corporativa",
+        title: "Agentes de IA, Inteligencia de Datos & Visión Computacional",
+        lead: "Diseñamos e integramos soluciones de software de alto impacto empresarial: automatizaciones operativas con IA en servidor propio, sistemas de analítica de datos cifrados y soluciones de Visión Computacional en tiempo real.",
+        btnContact: "Agendar Consulta",
+        btnSolutions: "Explorar Soluciones"
+      },
+      solutions: {
+        heading: "Servicios & Soluciones Integrables",
+        subheading: "Soluciones unificadas de software y tecnología estructuradas para las 4 áreas clave de la empresa: Agentes para Operaciones, Analítica de Datos, Visión Computacional y Plataformas Web & Crecimiento Digital."
+      },
+      filters: {
+        all: "Todas las Soluciones",
+        ops: "⚙️ Agentes para Operaciones",
+        data: "📊 Analítica de Datos",
+        vision: "👁️ Visión Computacional",
+        web: "🌐 Web, E-Commerce & Branding"
+      },
+      cards: {
+        ops: {
+          title: "Operaciones Empresariales & Agentes de IA",
+          status: "Listo para Integración",
+          summary: "Agentes de IA autónomos que coordinan y automatizan operaciones complejas entre equipos y sistemas centrales (ERP/CRM). Operan bajo contratos estrictos de comportamiento y supervisión de control (Human-in-the-Loop).",
+          problemLabel: "PROBLEMA",
+          problem: "Cuellos de botella operativos, tareas manuales repetitivas y riesgo de alucinaciones en sistemas de IA.",
+          solutionLabel: "SOLUCIÓN",
+          solution: "Agentes ejecutores de tareas operativas con validación estricta en 4 etapas (DRDV Framework), observabilidad total y control humano en pasos críticos.",
+          tags: ["🛠️ Desarrollo a Medida", "IA Multi-Agente", "Gobernanza de IA", "Supervisión Humana", "Cero-Confianza (Zero-Trust)", "Integración ERP/CRM"]
+        },
+        data: {
+          title: "Sistema Privado de Datos & IA",
+          status: "Despliegue Privado",
+          summary: "Sistema de análisis de documentos y datos corporativos (GraphRAG / RAG Híbrido) ejecutado exclusivamente en Servidores Privados (VPC) o Servidor Local On-Premise sin riesgo de fuga de información.",
+          problemLabel: "PROBLEMA",
+          problem: "Riesgo de filtración de IP sensible y limitaciones de búsqueda en sistemas tradicionales de datos.",
+          solutionLabel: "SOLUCIÓN",
+          solution: "Infraestructura privativa aislada en VPC u On-Premise con modelos SLM (Ollama/FastAPI), costo $0 por token API, cifrado AES-256 y cumplimiento de normas SOC 2, ISO 27001, GDPR y HIPAA.",
+          tags: ["🚀 Despliegue Privado (VPC / Local)", "GraphRAG Privado", "AES-256", "SOC 2 / ISO 27001 / GDPR / HIPAA", "Cero Fuga de Datos"]
+        },
+        vision: {
+          title: "Visión Computacional & Inspección en Tiempo Real",
+          status: "Solución Propietaria",
+          summary: "Sistemas de visión artificial e inspección inteligente en tiempo real para detección de objetos, control de calidad automatizado, análisis de video y procesamiento visual mediante Edge AI y cámaras conectadas.",
+          problemLabel: "PROBLEMA",
+          problem: "Inspección manual lenta, errores humanos en control de calidad e incapacidad de monitorear flujos visuales 24/7.",
+          solutionLabel: "SOLUCIÓN",
+          solution: "Modelos de Visión Artificial optimizados para inferencia local en tiempo real con alertas automáticas e integración a tableros de control.",
+          tags: ["👁️ Detección en Tiempo Real", "Edge AI & YOLO", "Control de Calidad", "Reconocimiento de Patrones", "OpenCV / PyTorch", "Procesamiento Local"]
+        },
+        web: {
+          title: "Plataformas Web, Comercio Electrónico & Crecimiento Digital",
+          status: "Desarrollo & Estrategia",
+          summary: "Diseño e implementación de sitios web profesionales, tiendas e-commerce a medida, optimización SEO para los primeros lugares en Google y desarrollo de identidad de marca (Branding) de alto impacto.",
+          problemLabel: "PROBLEMA",
+          problem: "Presencia digital deficiente, tiendas e-commerce genéricas, bajo tráfico orgánico en buscadores e identidad de marca inconsistente.",
+          solutionLabel: "SOLUCIÓN",
+          solution: "Sitios web elegantes con herramientas líderes, plataformas e-commerce personalizadas, SEO garantizado para Top 10 en Google (3-4 meses) y branding estratégico para máxima recordación de marca.",
+          tags: ["💻 Sitios Web Profesionales", "🛒 Comercio Electrónico a Medida", "🔍 Optimización SEO (Top 10)", "🎨 Branding Estratégico", "Stack Moderno", "UI/UX Premium"]
+        }
+      },
+      engagement: {
+        heading: "Modelos de Trabajo & Integración",
+        subheading: "Formatos flexibles de colaboración adaptados a las necesidades y ritmo de tu empresa.",
+        model1: {
+          badge: "1-2 SEMANAS",
+          title: "Diagnóstico & Planificación Técnica",
+          desc: "Evaluación integral de la infraestructura existente, análisis de requisitos técnicos y diseño del mapa de ruta para definir la arquitectura ideal antes de comenzar cualquier implementación."
+        },
+        model2: {
+          badge: "2-4 SEMANAS",
+          title: "Integración & Despliegue Acelerado",
+          desc: "Implementación, configuración y conexión de la solución en la infraestructura elegida, asegurando pruebas de calidad, cumplimiento de seguridad y un traspaso operativo sin fricciones."
+        },
+        model3: {
+          badge: "CONTINUO",
+          title: "Acompañamiento & Optimización Continua",
+          desc: "Seguimiento técnico post-despliegue, liderazgo estratégico y optimización constante para garantizar el rendimiento, la escalabilidad y la adaptación a nuevas necesidades."
+        }
+      },
+      contact: {
+        heading: "¿Querés implementar una de estas soluciones?",
+        subheading: "Dejame tu consulta para coordinar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier solución.",
+        nameLabel: "Nombre",
+        namePlaceholder: "Tu nombre",
+        emailLabel: "Email",
+        emailPlaceholder: "tu@email.com",
+        messageLabel: "Mensaje / Consulta",
+        messagePlaceholder: "¿En qué solución estás interesado?",
+        btnSend: "Enviar Consulta"
+      },
+      footer: {
+        text: "Ezequiel Vecchio · FVision. Diseñado y Desarrollado por Ezequiel Vecchio."
+      }
+    },
+    en: {
+      nav: {
+        solutions: "Solutions",
+        models: "Models",
+        contact: "Contact"
+      },
+      hero: {
+        eyebrow: "Enterprise Software & AI Solutions",
+        title: "AI Agents, Data Intelligence & Computer Vision",
+        lead: "We design and integrate high-impact enterprise software solutions: on-premise AI operations automation, encrypted private data analytics systems, and real-time computer vision.",
+        btnContact: "Book Consultation",
+        btnSolutions: "Explore Solutions"
+      },
+      solutions: {
+        heading: "Integrated Services & Solutions",
+        subheading: "Unified software and technology solutions structured for the 4 key areas of the enterprise: Operations Agents, Data Analytics, Computer Vision, and Web Platforms & Growth."
+      },
+      filters: {
+        all: "All Solutions",
+        ops: "⚙️ Operations Agents",
+        data: "📊 Data Analytics",
+        vision: "👁️ Computer Vision",
+        web: "🌐 Web, E-Commerce & Branding"
+      },
+      cards: {
+        ops: {
+          title: "Enterprise Operations & AI Agents",
+          status: "Ready for Integration",
+          summary: "Autonomous AI agents coordinating and automating complex operations between teams and core systems (ERP/CRM). Operating under strict behavioral contracts and human-in-the-loop oversight.",
+          problemLabel: "PROBLEM",
+          problem: "Operational bottlenecks, repetitive manual tasks, and hallucination risks in AI systems.",
+          solutionLabel: "SOLUTION",
+          solution: "Operational executor agents with strict 4-stage validation (DRDV Framework), total observability, and human checkpoint control.",
+          tags: ["🛠️ Custom Development", "AI Multi-Agent", "AI Governance", "Human-in-the-Loop", "Zero-Trust", "ERP/CRM Integration"]
+        },
+        data: {
+          title: "Private AI Data System",
+          status: "Private Deployment",
+          summary: "Corporate document and data analysis system (GraphRAG / Hybrid RAG) deployed exclusively in Private Cloud (VPC) or On-Premise Local Server with zero data leak risk.",
+          problemLabel: "PROBLEM",
+          problem: "Risk of sensitive IP leakage and search limitations in traditional data systems.",
+          solutionLabel: "SOLUTION",
+          solution: "Isolated private infrastructure in VPC or On-Premise with SLMs (Ollama/FastAPI), $0 API token cost, AES-256 encryption, and compliance with SOC 2, ISO 27001, GDPR, and HIPAA.",
+          tags: ["🚀 Private Deployment (VPC / Local)", "Private GraphRAG", "AES-256", "SOC 2 / ISO 27001 / GDPR / HIPAA", "Zero Data Leak"]
+        },
+        vision: {
+          title: "Computer Vision & Real-Time Inspection",
+          status: "Proprietary Solution",
+          summary: "Computer vision and intelligent real-time inspection systems for object detection, automated quality control, video analysis, and visual processing using Edge AI and connected cameras.",
+          problemLabel: "PROBLEM",
+          problem: "Slow manual inspection, human errors in quality control, and inability to monitor visual streams 24/7.",
+          solutionLabel: "SOLUTION",
+          solution: "Computer vision models optimized for local real-time inference with automated alerts and control dashboard integration.",
+          tags: ["👁️ Real-Time Detection", "Edge AI & YOLO", "Quality Control", "Pattern Recognition", "OpenCV / PyTorch", "Private Processing"]
+        },
+        web: {
+          title: "Web Platforms, E-Commerce & Digital Growth",
+          status: "Development & Strategy",
+          summary: "Design and implementation of professional websites, custom e-commerce stores, top-tier Google SEO optimization, and high-impact brand identity development.",
+          problemLabel: "PROBLEM",
+          problem: "Poor digital presence, generic e-commerce stores, low organic search traffic, and inconsistent brand identity.",
+          solutionLabel: "SOLUTION",
+          solution: "High-performance websites with modern tooling, tailored e-commerce platforms, guaranteed Google Top 10 SEO (3-4 months), and strategic branding for maximum brand recall.",
+          tags: ["💻 Professional Websites", "🛒 Custom E-Commerce", "🔍 SEO Optimization (Top 10)", "🎨 Strategic Branding", "Modern Tech Stack", "Premium UI/UX"]
+        }
+      },
+      engagement: {
+        heading: "Engagement & Integration Models",
+        subheading: "Flexible collaboration formats tailored to your company's pace and requirements.",
+        model1: {
+          badge: "1-2 WEEKS",
+          title: "Technical Diagnosis & Roadmap",
+          desc: "Comprehensive evaluation of existing infrastructure, technical requirement analysis, and architecture roadmap design prior to implementation."
+        },
+        model2: {
+          badge: "2-4 WEEKS",
+          title: "Rapid Integration & Deployment",
+          desc: "Implementation, configuration, and integration of the solution in your selected infrastructure, ensuring quality testing, security compliance, and seamless handoff."
+        },
+        model3: {
+          badge: "CONTINUOUS",
+          title: "Continuous Leadership & Optimization",
+          desc: "Post-deployment technical support, strategic leadership, and ongoing optimization to ensure performance, scalability, and adaptation to evolving needs."
+        }
+      },
+      contact: {
+        heading: "Ready to implement one of these solutions?",
+        subheading: "Send an inquiry to schedule a 1-on-1 live technical walkthrough (screensharing) of the architecture and workflow of any solution.",
+        nameLabel: "Name",
+        namePlaceholder: "Your name",
+        emailLabel: "Email",
+        emailPlaceholder: "you@email.com",
+        messageLabel: "Message / Inquiry",
+        messagePlaceholder: "Which solution are you interested in?",
+        btnSend: "Send Inquiry"
+      },
+      footer: {
+        text: "Ezequiel Vecchio · FVision. Designed and Developed by Ezequiel Vecchio."
+      }
+    }
+  };
+
+  function getNestedValue(obj, path) {
+    return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : undefined), obj);
+  }
+
+  function switchLanguage(lang) {
+    if (!i18n[lang]) return;
+    localStorage.setItem('fvision_lang', lang);
+    document.documentElement.lang = lang;
+
+    // Actualizar botones de switch
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.getElementById('btn-lang-' + lang);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    const dict = i18n[lang];
+
+    // Actualizar elementos con data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = getNestedValue(dict, key);
+      if (val !== undefined) el.textContent = val;
+    });
+
+    // Actualizar placeholders con data-i18n-ph
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const key = el.getAttribute('data-i18n-ph');
+      const val = getNestedValue(dict, key);
+      if (val !== undefined) el.setAttribute('placeholder', val);
+    });
+
+    // Actualizar tarjetas de soluciones
+    ['ops', 'data', 'vision', 'web'].forEach(cat => {
+      const cardEl = document.getElementById('card-' + cat);
+      const cardData = dict.cards[cat];
+      if (cardEl && cardData) {
+        const titleEl = cardEl.querySelector('.card-title');
+        if (titleEl) titleEl.textContent = cardData.title;
+
+        const statusEl = cardEl.querySelector('.status-text');
+        if (statusEl) statusEl.textContent = cardData.status;
+
+        const summaryEl = cardEl.querySelector('.summary-text');
+        if (summaryEl) summaryEl.textContent = cardData.summary;
+
+        const probLabel = cardEl.querySelector('.detail-label-problem');
+        if (probLabel) probLabel.textContent = cardData.problemLabel;
+
+        const probText = cardEl.querySelector('.detail-problem');
+        if (probText) probText.textContent = cardData.problem;
+
+        const solLabel = cardEl.querySelector('.detail-label-solution');
+        if (solLabel) solLabel.textContent = cardData.solutionLabel;
+
+        const solText = cardEl.querySelector('.detail-solution');
+        if (solText) solText.textContent = cardData.solution;
+
+        const tagsContainer = cardEl.querySelector('.tags');
+        if (tagsContainer) {
+          tagsContainer.innerHTML = cardData.tags.map(t => `<span class="tag">${t}</span>`).join('');
+        }
+      }
+    });
+  }
 
   function filterCategory(category, button) {
     // Cambiar estado activo del botón
@@ -902,6 +1227,10 @@
       }
     });
   }
+
+  // Inicializar idioma guardado o por defecto 'es'
+  const savedLang = localStorage.getItem('fvision_lang') || 'es';
+  switchLanguage(savedLang);
 </script>
 </body>
 </html>

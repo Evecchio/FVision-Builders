@@ -9,7 +9,6 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
-    "sync-repos": "node scripts/sync-repos.js",
     "test": "vitest run",
     "test:watch": "vitest"
   },

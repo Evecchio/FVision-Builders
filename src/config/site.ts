@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "FVision",
-  title: "FVision Builders | Arquitectura Digital",
+  title: "FVision | Ingeniería de Datos, IA Agéntica & Computer Vision",
   description:
-    "FVision - Consultoría de tecnología, automatización e inteligencia artificial para tu negocio. Transformamos procesos con agentes de IA y automatizaciones inteligentes.",
-  owner: "Ezequiel Vecchio",
+    "FVision - Consultora Boutique de Ingeniería de Datos, Inteligencia Artificial aplicada y Computer Vision. Soluciones de software de alto impacto para la economía real.",
+  owner: "FVision",
   email: "ezequiel@fvision.com",
   whatsapp: "541126676941",
   linkedIn: "https://www.linkedin.com/in/ezigve/",

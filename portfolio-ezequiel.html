@@ -11,8 +11,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FVision - Arquitectura Digital & Soluciones Tecnológicas">
-  <title>FVision</title>
+  <meta name="description" content="FVision - Consultora Boutique de Ingeniería de Datos, Inteligencia Artificial aplicada y Computer Vision. Soluciones de software de alto impacto para la economía real.">
+  <title>FVision | Ingeniería de Datos, IA Agéntica & Visión Computacional</title>
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
   
@@ -743,10 +743,85 @@
       font-weight: 550;
       box-shadow: 3px 3px 0px 0px var(--ink);
     }
+    /* Member & Showcase specific styles */
+    .member-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+      border: var(--border-thick);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-flat);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .member-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-flat-hover);
+    }
+    .member-header {
+      margin-bottom: 1rem;
+      border-bottom: var(--border-thick);
+      padding-bottom: 0.85rem;
+    }
+    .member-name {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .member-role {
+      font-family: "Fira Code", monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 0.25rem;
+      display: block;
+      text-transform: uppercase;
+    }
+    .member-sub {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-top: 0.2rem;
+      display: block;
+    }
+    .member-bio {
+      font-size: 0.94rem;
+      color: var(--ink);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .showcase-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+      border: var(--border-thick);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-flat);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .showcase-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-flat-hover);
+    }
+    .showcase-badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border: var(--border-thick);
+      border-radius: var(--radius-sm);
+      background: var(--vision-color);
+      font-family: "Fira Code", monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+      width: fit-content;
+      box-shadow: 1px 1px 0px 0px var(--ink);
+    }
   </style>
 </head>
 <body>
-<<header>
+<header>
   <nav class="container">
     <a class="brand-container" href="#top">
       <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCABkAGQDASIAAhEBAxEB/8QAHQABAAMBAQEBAQEAAAAAAAAAAAcICQYFBAMBAv/EAEUQAAECBQMCAwIICwYHAAAAAAECAwAEBQYHCBESCSETIjEjURQVGThBYXOUFjNCVVdZcZG10dQYJDJDgdVYdXaVs7TS/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMqoQhAIQiQMMYLyhqCvJmw8UWs/WaotvxnyghDMqyCAp151WyG0Dcdye5IA3JAgI/hGg0t0VdSzsu25MZDxsw4obqbM7PK4n3biV7x+nyKGpD9JeNfvU/8A0sBnrCNCvkUNSH6S8bfep/8ApYfIoakP0l42+9T/APSwGesIutlbpL6qMZ2zNXVTGravViTbU9MSlvTbzk6lA7kpZeZbLnb8lsqWfoEUrUhSFFCwUqB2IPqID/MIQgEIQgEIQgEaW6Xa/UcB9LXLOcceOpkLyq1dRT/jRAHjMNF+UlG+J97aZl9xB+hbm8ZpRqJp6xffOZOkleOOMa0BVauOq3VvKSSZhpku+FPyLq/M6pKBs22o9yPT3wGa8/el41WdeqFSuysTk1MLLjr78+6444o+pUpR3J+sx8n4S3H+f6l96c/nFmJPpia35ubZlnMKLlkurSgvP1ym8GwTtyVxmCdh6nYE/UYsjeFz6dumPaEljCgWXbOWM11JLU1cs9VGEOS1NbI38IEgrbB/IaGyiPaOEbtpIZrfhLcf5/qX3pz+cW4wP08tVOoDHMtlCiXTSLdpNUSr4nbrlXmWX6klO/nbQ225xSShWxXtvtuBx2VHXDqy1of4dKuIx+ynriW6brg0baiaNje9NRc/cWOLwxFVl1el0a3WJhVOnXEqbW2lvwmnPJ7FobKLSknmAriomAr3ozvfPWnLW3bmHbjq1Yp7s7cTdt3HQpqbU5LPJePEOcdygkckutup9RtseCzvwvUas6iWPrQyXRLdlG5WTdnJSpeEhOyUuzckxMPbD63XnD/rHb25m6U1G9Tq0cwU6lOUyRrV70dEjLPbeKiWlwyw0XOO48RSGgogEgEkAkAR4nVM+fPkb7OjfwmUgKnwhCAQhCAQhCARrtoYosxcPTVrlHk83JxE9MXS/wALxU+GRTuMzKEjmXmdvFA8H8YPxv0+hyJjV3STWMMULpZXLVtQlr1W47CYupfxpTaY4pEy8TOSYZ4lDzJ7PFpR9onsD6+hD614VuhSClXWtZ2I27V5sH9/xtETVLpx4JrE9M1WrdSvHc9PTjqn5mZmRJOOvOqO6lqWqqEqJPck9zHzpy30alK2OmHJqQTtyM9NbD91WjltV2hahyVq0zUZo/fnL0xVcLaXFScp4k5N0dwnbiR3cU3y8p5e0aXulz3wE+abumzpnpeQXLiqeoe086ootOmJ9u0aMiWSp91BSEuOhuddLjYJ48CAgrU3yO26FcXrCxTie/NHMvqWkNNScB3fTLhRRxQfgok/jCXLhR3ZDTIJ/wAwLLQV7JweYbKiluOpDUhiO7pK/Mb25e9Ar1PJ8CclKO+FAEbKQoFspWkjsUqBB+kReCraV9Zms/H1r3bqQ1GUG3pysJW/Z9q1qXRKLml8Nw4piXS2EOKR33CHXAhXcDfaApvom+dziH/q6nf+ZMSJ1TPnz5G+zo38JlI8DTfj668U68Me46vemGSrtvX1ISU6xzCglaXk90qHZSSCFAj1BB+mPf6pnz58jfZ0b+EykBU+EIQCEIQCEIQCNJMJ02dyF0fsqWjaEq5UqvR7i+FzUkyOTqWmpqRm3FhA7kBlDivr4K90ZtxNWmDVjlbShd8xc2OZuWfk6khDNWpE+krk6g2gko5AEFLid1cVpII3I7gqBCFYmrT5q9zxpjFQl8T3cmUp9VUlybps3LNzUot0DYOhCx5HNthySQSAAd9htpPpgy5h/Xpb2UaCrSHYFu16lUPkicSxKTa52bm0PpSQtUs0pohbYPLmTud9xtvEUvWZpV6Z9kyacu2hQczZurzTbztFeDS5SmMH14F1pwMo9QHVNl10+gSjfYIW+V21lfn+1/8AsLX84ma3+oVpazFI49yJqusi6F5QxRNKn6W/QW/7lPzHJtaXEpDqADzZaUW3NkAp7KKVFEcx8qPgf9Xfjz7/ACf+2R/flSMD/q78e/f5L/bICO8KXzdmrDqWW9lul2y62uoXXLVt+Va9oJCmSaUIBdcA28rLLYKuwKyAO6gI5Pqa1in1vW9kuapc2iYZYep0mtaDuA8zTpZp1H7UuIWk/WDExXJ1aqnS7ZqFF0+6b7MxbUKmjg9U5VbU04j3LQ23LsIKxv2LgWB7jFCKpUp+tVGbrFVnXp2ennnJmamX3Ct151ZKluKUe6lEkkk+pMB8UIQgEIQgEdRjvG98ZZuqWsjHVtTders4hxxiRldvFcS2grWRuQOyQT/pHLxcDpP/AD2bQ/5fVv8A0XoDhPk+9Zn/AA+3N+5n/wC4j258CZgsvH9Nypc9hVGQtOrzAlZGrL4KYedIXsgFJJB9k567d0kesaTZ1w5q+avTIN42/wBQCh0ajN1SrVORoCLzm2ZiTlkuuONygaSNkOIRs3wHYEbRHOkafe1Q6Bsx6YKm6uduWzwu5rcQs7uLC1mZQ239ZmWnkk+6bHvgIB0LZJ1W2DWL2ktKtiyty1Os0lpFUL0l45kG0LUGphvdxCQsKcXsF8kHfuk7RFmT8YZ5Fr0/UTlOh1aYo9+zzvwW4p6abfNRmfMSTsorHIIWUlQAUlJKNwIuRp3mf7LfTSyTnRS/gtz5bnjbtAcHlWWB4kulST9C0b1B0fZpjz7kwpIXvo50pUuo5EuGSl73vJFFeTP1RT1Opzb78y2XWZdeyUKAHbvt3I7BRgM9Y7kYTymcTnOQsiofgIJ/4sNa8vg/CN9ttt+fHl5ee3Hl5d9+0aN5Y0d6OcYT9Yx7d+nzNlGpNLpqXWspyCJmqyi3vCC+TjUvzbQASQd2kDdJHlGyoiKSxU7WumazM2zedyVJ6oZGRSpCmpn3GqZMrXNhlpz4OoeQq3Ctidgo77b94ChEI0gvvBnTq0oXFbuC8/U6+LvvWpScvMVu4qdNrYk6SXjxCg0l1vyDYq24OqCNidyeEerYfTNxdSdYN44OyJVqvVbORZJu23J5qaDEyhtU22wA8UDZSmz4wOwAUAhWw32AZlQjRmg6d9CupDAmU6lpwot80O7MU0pdTFUrs2VfGqENPONqU0FqbCXRLOjshpSCUnbbyxnNAIQhAIsdoAy/YOC9T9u5JyVV3KZb8hKVBp+ZblXZgoU7KuNo9m0kqO6lAdhFcYQHf58uih31nTIt62xNGZpNw3ZWKrT31NqbLss/OOutLKVAKTulQOxAI37xJegzUPT9NGo2iX3ck47L2xOy79Jr6mmlOKEm6ndK+KQSeDyGXNgCSEED1iusIC6fUP1P4jzDJ49xRp3fcGPbKkXpgIEm7KpVOur48eDoCj4baNwrbuX1x+91aktPld0k6fMQ3A1P3HNWPcKpy7aHLtvyizIqVNcw1MbJQXNnkFPFfr69t4pLCA1rx5rN0q4XrU1f1s6usq3PbIp6m5LGNWpk3PLYcKAEtpnJpJACSOwDoA325EdjXeoavMaq0TTOPqBOmkZCVkdd4SNGYkXTLybXw4zDYQ7xDfFHYAb79vSKOQgNJsi5b6dOrq57czvm6+rssS7ZKRlpe4LYlqW/MsVMsEkIQ80y4Ak7lHLmglvjuEKG8ezY/UgxLc2r++MxX0/PWzZ6rBXaFsockXJiYd4zbb4W6lkK4KcUp5XuACU7kjvmBCAuBoZ1C4pwljfPluZGrz1Onr7tVNMojbck8+JiYDE6jgS2khvu+13VsO/1GKfwhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAf/2Q==" alt="FVision Logo" class="brand-logo-img" />
@@ -755,7 +830,9 @@
     <div class="nav-right">
       <div class="nav">
         <a href="#projects" data-i18n="nav.solutions">Soluciones</a>
-        <a href="#engagement" data-i18n="nav.models">Modelos</a>
+        <a href="#team" data-i18n="nav.team">Equipo</a>
+        <a href="#showcases" data-i18n="nav.showcases">Showcases</a>
+        <a href="#engagement" data-i18n="nav.models">Metodología</a>
         <a href="#contact" data-i18n="nav.contact">Contacto</a>
       </div>
       <div class="lang-switch" role="group" aria-label="Selector de idioma / Language selector">
@@ -769,11 +846,11 @@
 <main id="top">
   <section class="hero container">
     <div>
-      <span class="eyebrow" data-i18n="hero.eyebrow">Soluciones de Software & IA Corporativa</span>
-      <h1 data-i18n="hero.title">Agentes de IA, Inteligencia de Datos & Visión Computacional</h1>
-      <p class="lead" data-i18n="hero.lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: automatizaciones operativas con IA en servidor propio, sistemas de analítica de datos cifrados y soluciones de Visión Computacional en tiempo real.</p>
+      <span class="eyebrow" data-i18n="hero.eyebrow">Consultoría Boutique • Ingeniería de Software & IA</span>
+      <h1 data-i18n="hero.title">Ingeniería de Datos, IA Agéntica & Visión Computacional</h1>
+      <p class="lead" data-i18n="hero.lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos orientados al balance financiero, agentes autónomos supervisados y sistemas de visión artificial en tiempo real.</p>
       <div class="actions">
-        <a class="btn primary" href="#contact" data-i18n="hero.btnContact">Agendar Consulta</a>
+        <a class="btn primary" href="#contact" data-i18n="hero.btnContact">Agendar Consulta Técnica</a>
         <a class="btn" href="#projects" data-i18n="hero.btnSolutions">Explorar Soluciones</a>
       </div>
     </div>
@@ -782,128 +859,232 @@
   <section id="projects">
     <div class="container">
       <div class="heading">
-        <h2 data-i18n="solutions.heading">Servicios & Soluciones Integrables</h2>
-        <p data-i18n="solutions.subheading">Soluciones unificadas de software y tecnología estructuradas para las 4 áreas clave de la empresa: Agentes para Operaciones, Analítica de Datos, Visión Computacional y Plataformas Web & Crecimiento Digital.</p>
+        <h2 data-i18n="solutions.heading">Servicios & Soluciones Oficiales</h2>
+        <p data-i18n="solutions.subheading">Soluciones unificadas de software y tecnología estructuradas para las 4 áreas clave de la empresa: Pipelines de Datos, Machine Learning Predictivo, IA Agéntica y Visión Computacional.</p>
       </div>
 
       <!-- Barra de Filtros por Áreas de Negocio -->
       <div class="filter-tabs" role="tablist">
         <button class="tab-button active" onclick="filterCategory('all', this)" data-i18n="filters.all">Todas las Soluciones</button>
-        <button class="tab-button" onclick="filterCategory('ops', this)" data-i18n="filters.ops">⚙️ Agentes para Operaciones</button>
-        <button class="tab-button" onclick="filterCategory('data', this)" data-i18n="filters.data">📊 Analítica de Datos</button>
+        <button class="tab-button" onclick="filterCategory('data', this)" data-i18n="filters.data">📊 Pipelines de Datos</button>
+        <button class="tab-button" onclick="filterCategory('ml', this)" data-i18n="filters.ml">📈 Machine Learning</button>
+        <button class="tab-button" onclick="filterCategory('ops', this)" data-i18n="filters.ops">⚙️ IA Agéntica</button>
         <button class="tab-button" onclick="filterCategory('vision', this)" data-i18n="filters.vision">👁️ Visión Computacional</button>
-        <button class="tab-button" onclick="filterCategory('web', this)" data-i18n="filters.web">🌐 Web, E-Commerce & Branding</button>
       </div>
 
       <div class="grid" id="solutions-grid">
-        <!-- SOLUCIÓN 1: AGENTES PARA OPERACIONES -->
-        <article class="card" data-category="ops" id="card-ops">
+        <!-- SOLUCIÓN 1: PIPELINES DE DATOS -->
+        <article class="card" data-category="data" id="card-data">
           <div class="card-head">
-            <h3 class="card-title">Operaciones Empresariales & Agentes de IA</h3>
-            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Listo para Integración</span></span>
+            <h3 class="card-title">Pipelines de Datos & Data Quality</h3>
+            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Ingeniería & Calidad</span></span>
           </div>
-          <p class="summary-text">Agentes de IA autónomos que coordinan y automatizan operaciones complejas entre equipos y sistemas centrales (ERP/CRM). Operan bajo contratos estrictos de comportamiento y supervisión de control (Human-in-the-Loop).</p>
+          <p class="summary-text">Extracción, limpieza y consolidación de datos dispersos (ERP, CRM, hojas de cálculo) en almacenes centralizados con monitoreo de integridad y tableros ejecutivos en tiempo real.</p>
           <div class="details">
-            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Cuellos de botella operativos, tareas manuales repetitivas y riesgo de alucinaciones en sistemas de IA.</span></div>
-            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Agentes ejecutores de tareas operativas con validación estricta en 4 etapas (DRDV Framework), observabilidad total y control humano en pasos críticos.</span></div>
+            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Silos de información desactualizada, reportes manuales lentos y toma de decisiones a ciegas.</span></div>
+            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Tuberías automatizadas (ETL/ELT con Python, SQL y PostgreSQL/ClickHouse), validación semántica de datos, alertas automáticas y dashboards analíticos vivos.</span></div>
           </div>
           <div class="tags">
-            <span class="tag">🛠️ Desarrollo a Medida</span>
-            <span class="tag">IA Multi-Agente</span>
-            <span class="tag">Gobernanza de IA</span>
-            <span class="tag">Supervisión Humana</span>
-            <span class="tag">Cero-Confianza (Zero-Trust)</span>
+            <span class="tag">ETL / ELT</span>
+            <span class="tag">Data Quality</span>
+            <span class="tag">PostgreSQL / ClickHouse</span>
+            <span class="tag">Python & SQL</span>
+            <span class="tag">Dashboards Ejecutivos</span>
             <span class="tag">Integración ERP/CRM</span>
           </div>
         </article>
 
-        <!-- SOLUCIÓN 2: ANALÍTICA DE DATOS -->
-        <article class="card" data-category="data" id="card-data">
+        <!-- SOLUCIÓN 2: MACHINE LEARNING PREDICTIVO -->
+        <article class="card" data-category="ml" id="card-ml">
           <div class="card-head">
-            <h3 class="card-title">Sistema Privado de Datos & IA</h3>
-            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Despliegue Privado</span></span>
+            <h3 class="card-title">Machine Learning Predictivo (ML Starter Pack)</h3>
+            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Modelos Validados</span></span>
           </div>
-          <p class="summary-text">Sistema de análisis de documentos y datos corporativos (GraphRAG / RAG Híbrido) ejecutado exclusivamente en Servidores Privados (VPC) o Servidor Local On-Premise sin riesgo de fuga de información.</p>
+          <p class="summary-text">Modelos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos.</p>
           <div class="details">
-            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Riesgo de filtración de IP sensible y limitaciones de búsqueda en sistemas tradicionales de datos.</span></div>
-            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Infraestructura privativa aislada en VPC u On-Premise con modelos SLM (Ollama/FastAPI), costo $0 por token API, cifrado AES-256 y cumplimiento de normas SOC 2, ISO 27001, GDPR y HIPAA.</span></div>
+            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Pérdida imprevista de clientes, capital inmovilizado por compras erróneas de stock y horas comerciales desperdiciadas.</span></div>
+            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Modelos estadísticos y de ensamble (Scikit-Learn, XGBoost, LightGBM) entrenados con datos del cliente, expuestos mediante API REST (FastAPI) y con observabilidad en MLflow.</span></div>
           </div>
           <div class="tags">
-            <span class="tag">🚀 Despliegue Privado (VPC / Local)</span>
-            <span class="tag">GraphRAG Privado</span>
-            <span class="tag">AES-256</span>
-            <span class="tag">SOC 2 / ISO 27001 / GDPR / HIPAA</span>
-            <span class="tag">Cero Fuga de Datos</span>
+            <span class="tag">Pronóstico de Demanda</span>
+            <span class="tag">Customer Churn</span>
+            <span class="tag">Lead Scoring</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Scikit-Learn / XGBoost</span>
+            <span class="tag">MLflow</span>
           </div>
         </article>
 
-        <!-- SOLUCIÓN 3: VISIÓN COMPUTACIONAL -->
+        <!-- SOLUCIÓN 3: IA AGÉNTICA & AUTOMATIZACIÓN -->
+        <article class="card" data-category="ops" id="card-ops">
+          <div class="card-head">
+            <h3 class="card-title">IA Agéntica & Automatización Operativa</h3>
+            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Sistemas Autónomos</span></span>
+          </div>
+          <p class="summary-text">Agentes de IA que coordinan y ejecutan tareas operativas complejas conectados a ERPs/CRMs bajo contratos estrictos de comportamiento y supervisión humana (Human-in-the-Loop).</p>
+          <div class="details">
+            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Procesos manuales repetitivos entre sistemas; riesgo de alucinaciones y fuga de datos en herramientas de IA genéricas.</span></div>
+            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Agentes ejecutores con Tool-Calling (LangGraph / LlamaIndex), orquestación contenerizada en Docker y RAG corporativo privado en VPC u On-Premise con cifrado AES-256.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">Tool-Calling</span>
+            <span class="tag">LangGraph / LlamaIndex</span>
+            <span class="tag">Human-in-the-Loop</span>
+            <span class="tag">RAG Privado (VPC/Local)</span>
+            <span class="tag">Cero Fuga de Datos</span>
+            <span class="tag">Docker</span>
+          </div>
+        </article>
+
+        <!-- SOLUCIÓN 4: VISIÓN COMPUTACIONAL -->
         <article class="card" data-category="vision" id="card-vision">
           <div class="card-head">
-            <h3 class="card-title">Visión Computacional & Inspección en Tiempo Real</h3>
-            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Solución Propietaria</span></span>
+            <h3 class="card-title">Computer Vision & Percepción en Tiempo Real</h3>
+            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Edge AI & Visión</span></span>
           </div>
-          <p class="summary-text">Sistemas de visión artificial e inspección inteligente en tiempo real para detección de objetos, control de calidad automatizado, análisis de video y procesamiento visual mediante Edge AI y cámaras conectadas.</p>
+          <p class="summary-text">Sistemas de visión artificial e inspección inteligente en tiempo real para detección de objetos, control de calidad automatizado, OCR inteligente y video analítica en el borde.</p>
           <div class="details">
-            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Inspección manual lenta, errores humanos en control de calidad e incapacidad de monitorear flujos visuales 24/7.</span></div>
-            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Modelos de Visión Artificial optimizados para inferencia local en tiempo real con alertas automáticas e integración a tableros de control.</span></div>
+            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Inspección visual manual lenta propensa a fatiga y errores; cuellos de botella al cargar comprobantes físicos; cámaras sin datos accionables.</span></div>
+            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Modelos de Visión Artificial (YOLOv8/v11, OpenCV, PyTorch) calibrados para inferencia local en tiempo real, extracción estructurada de comprobantes físicos a ERP y alertas instantáneas.</span></div>
           </div>
           <div class="tags">
-            <span class="tag">👁️ Detección en Tiempo Real</span>
-            <span class="tag">Edge AI & YOLO</span>
+            <span class="tag">YOLOv8 / YOLOv11</span>
             <span class="tag">Control de Calidad</span>
-            <span class="tag">Reconocimiento de Patrones</span>
-            <span class="tag">OpenCV / PyTorch</span>
-            <span class="tag">Procesamiento Local</span>
-          </div>
-        </article>
-
-        <!-- SOLUCIÓN 4: WEB, E-COMMERCE & BRANDING -->
-        <article class="card" data-category="web" id="card-web">
-          <div class="card-head">
-            <h3 class="card-title">Plataformas Web, Comercio Electrónico & Crecimiento Digital</h3>
-            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Desarrollo & Estrategia</span></span>
-          </div>
-          <p class="summary-text">Diseño e implementación de sitios web profesionales, tiendas e-commerce a medida, optimización SEO para los primeros lugares en Google y desarrollo de identidad de marca (Branding) de alto impacto.</p>
-          <div class="details">
-            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Presencia digital deficiente, tiendas e-commerce genéricas, bajo tráfico orgánico en buscadores e identidad de marca inconsistente.</span></div>
-            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Sitios web elegantes con herramientas líderes, plataformas e-commerce personalizadas, SEO garantizado para Top 10 en Google (3-4 meses) y branding estratégico para máxima recordación de marca.</span></div>
-          </div>
-          <div class="tags">
-            <span class="tag">💻 Sitios Web Profesionales</span>
-            <span class="tag">🛒 Comercio Electrónico a Medida</span>
-            <span class="tag">🔍 Optimización SEO (Top 10)</span>
-            <span class="tag">🎨 Branding Estratégico</span>
-            <span class="tag">Stack Moderno</span>
-            <span class="tag">UI/UX Premium</span>
+            <span class="tag">OCR Documental Inteligente</span>
+            <span class="tag">Edge AI & ONNX</span>
+            <span class="tag">PyTorch / OpenCV</span>
+            <span class="tag">Alertas en Tiempo Real</span>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Sección Modelos de Contratación -->
+  <!-- SECCIÓN CÉLULA DE CONSULTORES SENIOR -->
+  <section id="team" style="background:var(--paper); border-top:var(--border-thick); border-bottom:var(--border-thick);">
+    <div class="container">
+      <div class="heading">
+        <h2 data-i18n="team.heading">Célula de Consultores Senior</h2>
+        <p data-i18n="team.subheading">Alta densidad de talento sin sobrecostos burocráticos. Tres consultores senior especializados articulados para resolver desafíos técnicos de punta a punta.</p>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <article class="member-card">
+          <div class="member-header">
+            <h3 class="member-name">Ezequiel Vecchio</h3>
+            <span class="member-role" data-i18n="team.m1.role">Client Partner & Project Manager</span>
+            <span class="member-sub" data-i18n="team.m1.sub">Liderazgo Comercial, Relación & Gestión Ágil</span>
+          </div>
+          <p class="member-bio" data-i18n="team.m1.bio">Liderazgo comercial, prospección B2B, calificación técnica en Discovery Calls (30 min), redacción de Statements of Work (SOWs) de alcance cerrado, gestión de cronograma y cobranzas 50/50, actuando como único punto de contacto oficial (SPOC).</p>
+          <div class="tags">
+            <span class="tag">Liderazgo Comercial</span>
+            <span class="tag">Discovery & Scoping</span>
+            <span class="tag">SOWs & Entregables</span>
+            <span class="tag">Gestión Ágil</span>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-header">
+            <h3 class="member-name">Emanuel Vecchio</h3>
+            <span class="member-role" data-i18n="team.m2.role">Software Engineer & Computer Vision Lead</span>
+            <span class="member-sub" data-i18n="team.m2.sub">Arquitectura Cloud, APIs & Visión Artificial</span>
+          </div>
+          <p class="member-bio" data-i18n="team.m2.bio">Diseño y desarrollo de arquitecturas cloud/backend en Python (FastAPI) y Node.js, microservicios en Docker, orquestación de sistemas de IA Agéntica con Tool-Calling y modelos de Computer Vision (YOLOv8/v11, OpenCV) para inspección y OCR.</p>
+          <div class="tags">
+            <span class="tag">FastAPI & Docker</span>
+            <span class="tag">Computer Vision & YOLO</span>
+            <span class="tag">IA Agéntica</span>
+            <span class="tag">PyTorch / OpenCV</span>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-header">
+            <h3 class="member-name">Eugenio Rezende</h3>
+            <span class="member-role" data-i18n="team.m3.role">Data Scientist & Machine Learning Lead</span>
+            <span class="member-sub" data-i18n="team.m3.sub">Pipelines, Modelado Matemático & RAG</span>
+          </div>
+          <p class="member-bio" data-i18n="team.m3.bio">Auditoría de silos de datos, pipelines automatizados de ingesta y calidad (Data Quality), modelado predictivo supervisado (demanda, churn, scoring comercial), sistemas RAG vectoriales y observabilidad rigurosa con MLflow.</p>
+          <div class="tags">
+            <span class="tag">Pipelines & Data Quality</span>
+            <span class="tag">Machine Learning Supervisado</span>
+            <span class="tag">Embeddings & RAG</span>
+            <span class="tag">MLflow</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN SHOWCASES TECNOLÓGICOS (VENTURE LAB) -->
+  <section id="showcases">
+    <div class="container">
+      <div class="heading">
+        <h2 data-i18n="showcases.heading">Showcases Tecnológicos de Demostración</h2>
+        <p data-i18n="showcases.subheading">Sistemas reales desarrollados internamente por FVision, disponibles para demostración técnica uno a uno (screensharing) de su arquitectura, código y rendimiento operativo.</p>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <article class="showcase-card">
+          <span class="showcase-badge" data-i18n="showcases.s1.badge">FINTECH LOCAL-FIRST</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;">FVision Pay Direct</h3>
+          <p class="summary-text" data-i18n="showcases.s1.desc">Sistema de cobros de mostrador 0% comisiones con libro contable local y notificador centinela Android en tiempo real, operando sin intermediarios bancarios costosos.</p>
+          <div class="tags" style="margin-top:auto;">
+            <span class="tag">Android Nativo</span>
+            <span class="tag">Local-First DB</span>
+            <span class="tag">WebSockets</span>
+            <span class="tag">0% Comisiones</span>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <span class="showcase-badge" style="background:var(--ai-color); color:#fff;" data-i18n="showcases.s2.badge">LOGÍSTICA & MOVILIDAD</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;">RidePilot & RidePilot Lite</h3>
+          <p class="summary-text" data-i18n="showcases.s2.desc">Plataforma de transporte, telemetría y despacho inteligente con optimización algorítmica de rutas para movilidad urbana y flotas logísticas de alta eficiencia.</p>
+          <div class="tags" style="margin-top:auto;">
+            <span class="tag">Kotlin</span>
+            <span class="tag">Optimización de Rutas</span>
+            <span class="tag">Despacho Automatizado</span>
+            <span class="tag">Alta Eficiencia</span>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <span class="showcase-badge" style="background:var(--local-color); color:#fff;" data-i18n="showcases.s3.badge">IA DE BOLSILLO & PRIVACIDAD</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;">Lector Automático de Gastos</h3>
+          <p class="summary-text" data-i18n="showcases.s3.desc">Aplicación con arquitectura Local-First para procesamiento inteligente de comprobantes y control financiero personal sin enviar información sensible a servidores de terceros.</p>
+          <div class="tags" style="margin-top:auto;">
+            <span class="tag">OCR Local</span>
+            <span class="tag">Cifrado de Datos</span>
+            <span class="tag">Zero-Knowledge</span>
+            <span class="tag">Integración Financiera</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Modelos de Trabajo & Integración -->
   <section id="engagement" class="engagement-section" style="background:var(--paper); border-top:var(--border-thick); border-bottom:var(--border-thick); padding:4.5rem 0;">
     <div class="container">
       <div class="heading">
-        <h2 data-i18n="engagement.heading">Modelos de Trabajo & Integración</h2>
-        <p data-i18n="engagement.subheading">Formatos flexibles de colaboración adaptados a las necesidades y ritmo de tu empresa.</p>
+        <h2 data-i18n="engagement.heading">Metodología de Trabajo & Integración</h2>
+        <p data-i18n="engagement.subheading">Un proceso transparente y estructurado por fases, diseñado para garantizar previsibilidad técnica y resultados tangibles sin atarte a plazos forzados.</p>
       </div>
       <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
         <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
-          <span class="model-badge-1" data-i18n="engagement.model1.badge" style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--vision-color); font-weight:700; font-size:0.75rem; margin-bottom:1rem;">1-2 SEMANAS</span>
-          <h3 class="model-title-1" data-i18n="engagement.model1.title" style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;">Diagnóstico & Planificación Técnica</h3>
-          <p class="model-desc-1" data-i18n="engagement.model1.desc" style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Evaluación integral de la infraestructura existente, análisis de requisitos técnicos y diseño del mapa de ruta para definir la arquitectura ideal antes de comenzar cualquier implementación.</p>
+          <span class="model-badge-1" data-i18n="engagement.model1.badge" style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--vision-color); font-weight:700; font-size:0.75rem; margin-bottom:1rem;">FASE 1: DIAGNÓSTICO</span>
+          <h3 class="model-title-1" data-i18n="engagement.model1.title" style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;">Auditoría & Viabilidad Técnica</h3>
+          <p class="model-desc-1" data-i18n="engagement.model1.desc" style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Sesión Discovery de 30 minutos sin cargo para auditar las fuentes de datos o imágenes, evaluar la viabilidad técnica y trazar la arquitectura objetivo antes de iniciar.</p>
         </div>
         <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
-          <span class="model-badge-2" data-i18n="engagement.model2.badge" style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--ai-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">2-4 SEMANAS</span>
-          <h3 class="model-title-2" data-i18n="engagement.model2.title" style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;">Integración & Despliegue Acelerado</h3>
-          <p class="model-desc-2" data-i18n="engagement.model2.desc" style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Implementación, configuración y conexión de la solución en la infraestructura elegida, asegurando pruebas de calidad, cumplimiento de seguridad y un traspaso operativo sin fricciones.</p>
+          <span class="model-badge-2" data-i18n="engagement.model2.badge" style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--ai-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">FASE 2: EJECUCIÓN</span>
+          <h3 class="model-title-2" data-i18n="engagement.model2.title" style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;">Implementación Modular por Hitos</h3>
+          <p class="model-desc-2" data-i18n="engagement.model2.desc" style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Construcción de la solución acordada, integración a los sistemas existentes (ERP/CRM/Cloud), pruebas rigurosas en staging y despliegue productivo con documentación técnica y alcance cerrado.</p>
         </div>
         <div style="border:var(--border-thick); border-radius:var(--radius-sm); padding:1.75rem; background:var(--bg); box-shadow:var(--shadow-flat);">
-          <span class="model-badge-3" data-i18n="engagement.model3.badge" style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--local-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">CONTINUO</span>
-          <h3 class="model-title-3" data-i18n="engagement.model3.title" style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;">Acompañamiento & Optimización Continua</h3>
-          <p class="model-desc-3" data-i18n="engagement.model3.desc" style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Seguimiento técnico post-despliegue, liderazgo estratégico y optimización constante para garantizar el rendimiento, la escalabilidad y la adaptación a nuevas necesidades.</p>
+          <span class="model-badge-3" data-i18n="engagement.model3.badge" style="display:inline-block; padding:0.25rem 0.6rem; border:var(--border-thick); border-radius:var(--radius-sm); background:var(--local-color); color:#fff; font-weight:700; font-size:0.75rem; margin-bottom:1rem;">FASE 3: CONTINUIDAD</span>
+          <h3 class="model-title-3" data-i18n="engagement.model3.title" style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;">Acompañamiento & Retainers de Evolución</h3>
+          <p class="model-desc-3" data-i18n="engagement.model3.desc" style="font-size:0.95rem; color:var(--muted); line-height:1.5;">Pólizas flexibles de horas mensuales para monitoreo preventivo de salud en pipelines, detección de drift en modelos y soporte evolutivo de nuevas capacidades técnicas.</p>
         </div>
       </div>
     </div>
@@ -912,8 +1093,8 @@
   <section id="contact">
     <div class="container">
       <div class="contact">
-        <h2 data-i18n="contact.heading">¿Querés Implementar una de Estas Soluciones?</h2>
-        <p data-i18n="contact.subheading">Dejame tu consulta para coordinar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier solución.</p>
+        <h2 data-i18n="contact.heading">¿Querés Evaluar una Solución para tu Empresa?</h2>
+        <p data-i18n="contact.subheading">Coordinemos una sesión de diagnóstico técnico de 30 minutos (Discovery Call) para analizar tu caso de uso, datos disponibles y arquitectura ideal.</p>
         
         <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
           <div class="form-group">
@@ -926,7 +1107,7 @@
           </div>
           <div class="form-group">
             <label for="message" data-i18n="contact.messageLabel">Mensaje / Consulta</label>
-            <textarea id="message" name="message" required class="form-input form-textarea" placeholder="¿En qué solución estás interesado?" data-i18n-ph="contact.messagePlaceholder"></textarea>
+            <textarea id="message" name="message" required class="form-input form-textarea" placeholder="¿En qué solución o proyecto estás interesado?" data-i18n-ph="contact.messagePlaceholder"></textarea>
           </div>
           <button type="submit" class="btn primary" style="width:100%; margin-top:0.5rem;" data-i18n="contact.btnSend">Enviar Consulta</button>
         </form>
@@ -934,7 +1115,7 @@
     </div>
   </section>
 </main>
-<footer>© <span id="year"></span> <span data-i18n="footer.text">Ezequiel Vecchio · FVision. Diseñado y Desarrollado por Ezequiel Vecchio.</span></footer>
+<footer>© <span id="year"></span> <span data-i18n="footer.text">FVision — Consultora Boutique de Ingeniería de Datos, IA & Computer Vision.</span></footer>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -943,201 +1124,275 @@
     es: {
       nav: {
         solutions: "Soluciones",
-        models: "Modelos",
+        team: "Equipo",
+        showcases: "Showcases",
+        models: "Metodología",
         contact: "Contacto"
       },
       hero: {
-        eyebrow: "Soluciones de Software & IA Corporativa",
-        title: "Agentes de IA, Inteligencia de Datos & Visión Computacional",
-        lead: "Diseñamos e integramos soluciones de software de alto impacto empresarial: automatizaciones operativas con IA en servidor propio, sistemas de analítica de datos cifrados y soluciones de Visión Computacional en tiempo real.",
-        btnContact: "Agendar Consulta",
+        eyebrow: "Consultoría Boutique • Ingeniería de Software & IA",
+        title: "Ingeniería de Datos, IA Agéntica & Visión Computacional",
+        lead: "Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos orientados al balance financiero, agentes autónomos supervisados y sistemas de visión artificial en tiempo real.",
+        btnContact: "Agendar Consulta Técnica",
         btnSolutions: "Explorar Soluciones"
       },
       solutions: {
-        heading: "Servicios & Soluciones Integrables",
-        subheading: "Soluciones unificadas de software y tecnología estructuradas para las 4 áreas clave de la empresa: Agentes para Operaciones, Analítica de Datos, Visión Computacional y Plataformas Web & Crecimiento Digital."
+        heading: "Servicios & Soluciones Oficiales",
+        subheading: "Soluciones unificadas de software y tecnología estructuradas para las 4 áreas clave de la empresa: Pipelines de Datos, Machine Learning Predictivo, IA Agéntica y Visión Computacional."
       },
       filters: {
         all: "Todas las Soluciones",
-        ops: "⚙️ Agentes para Operaciones",
-        data: "📊 Analítica de Datos",
-        vision: "👁️ Visión Computacional",
-        web: "🌐 Web, E-Commerce & Branding"
+        data: "📊 Pipelines de Datos",
+        ml: "📈 Machine Learning",
+        ops: "⚙️ IA Agéntica",
+        vision: "👁️ Visión Computacional"
       },
       cards: {
-        ops: {
-          title: "Operaciones Empresariales & Agentes de IA",
-          status: "Listo para Integración",
-          summary: "Agentes de IA autónomos que coordinan y automatizan operaciones complejas entre equipos y sistemas centrales (ERP/CRM). Operan bajo contratos estrictos de comportamiento y supervisión de control (Human-in-the-Loop).",
-          problemLabel: "PROBLEMA",
-          problem: "Cuellos de botella operativos, tareas manuales repetitivas y riesgo de alucinaciones en sistemas de IA.",
-          solutionLabel: "SOLUCIÓN",
-          solution: "Agentes ejecutores de tareas operativas con validación estricta en 4 etapas (DRDV Framework), observabilidad total y control humano en pasos críticos.",
-          tags: ["🛠️ Desarrollo a Medida", "IA Multi-Agente", "Gobernanza de IA", "Supervisión Humana", "Cero-Confianza (Zero-Trust)", "Integración ERP/CRM"]
-        },
         data: {
-          title: "Sistema Privado de Datos & IA",
-          status: "Despliegue Privado",
-          summary: "Sistema de análisis de documentos y datos corporativos (GraphRAG / RAG Híbrido) ejecutado exclusivamente en Servidores Privados (VPC) o Servidor Local On-Premise sin riesgo de fuga de información.",
+          title: "Pipelines de Datos & Data Quality",
+          status: "Ingeniería & Calidad",
+          summary: "Extracción, limpieza y consolidación de datos dispersos (ERP, CRM, hojas de cálculo) en almacenes centralizados con monitoreo de integridad y tableros ejecutivos en tiempo real.",
           problemLabel: "PROBLEMA",
-          problem: "Riesgo de filtración de IP sensible y limitaciones de búsqueda en sistemas tradicionales de datos.",
+          problem: "Silos de información desactualizada, reportes manuales lentos y toma de decisiones a ciegas.",
           solutionLabel: "SOLUCIÓN",
-          solution: "Infraestructura privativa aislada en VPC u On-Premise con modelos SLM (Ollama/FastAPI), costo $0 por token API, cifrado AES-256 y cumplimiento de normas SOC 2, ISO 27001, GDPR y HIPAA.",
-          tags: ["🚀 Despliegue Privado (VPC / Local)", "GraphRAG Privado", "AES-256", "SOC 2 / ISO 27001 / GDPR / HIPAA", "Cero Fuga de Datos"]
+          solution: "Tuberías automatizadas (ETL/ELT con Python, SQL y PostgreSQL/ClickHouse), validación semántica de datos, alertas automáticas y dashboards analíticos vivos.",
+          tags: ["ETL / ELT", "Data Quality", "PostgreSQL / ClickHouse", "Python & SQL", "Dashboards Ejecutivos", "Integración ERP/CRM"]
+        },
+        ml: {
+          title: "Machine Learning Predictivo (ML Starter Pack)",
+          status: "Modelos Validados",
+          summary: "Modelos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos.",
+          problemLabel: "PROBLEMA",
+          problem: "Pérdida imprevista de clientes, capital inmovilizado por compras erróneas de stock y horas comerciales desperdiciadas.",
+          solutionLabel: "SOLUCIÓN",
+          solution: "Modelos estadísticos y de ensamble (Scikit-Learn, XGBoost, LightGBM) entrenados con datos del cliente, expuestos mediante API REST (FastAPI) y con observabilidad en MLflow.",
+          tags: ["Pronóstico de Demanda", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"]
+        },
+        ops: {
+          title: "IA Agéntica & Automatización Operativa",
+          status: "Sistemas Autónomos",
+          summary: "Agentes de IA que coordinan y ejecutan tareas operativas complejas conectados a ERPs/CRMs bajo contratos estrictos de comportamiento y supervisión humana (Human-in-the-Loop).",
+          problemLabel: "PROBLEMA",
+          problem: "Procesos manuales repetitivos entre sistemas; riesgo de alucinaciones y fuga de datos en herramientas de IA genéricas.",
+          solutionLabel: "SOLUCIÓN",
+          solution: "Agentes ejecutores con Tool-Calling (LangGraph / LlamaIndex), orquestación contenerizada en Docker y RAG corporativo privado en VPC u On-Premise con cifrado AES-256.",
+          tags: ["Tool-Calling", "LangGraph / LlamaIndex", "Human-in-the-Loop", "RAG Privado (VPC/Local)", "Cero Fuga de Datos", "Docker"]
         },
         vision: {
-          title: "Visión Computacional & Inspección en Tiempo Real",
-          status: "Solución Propietaria",
-          summary: "Sistemas de visión artificial e inspección inteligente en tiempo real para detección de objetos, control de calidad automatizado, análisis de video y procesamiento visual mediante Edge AI y cámaras conectadas.",
+          title: "Computer Vision & Percepción en Tiempo Real",
+          status: "Edge AI & Visión",
+          summary: "Sistemas de visión artificial e inspección inteligente en tiempo real para detección de objetos, control de calidad automatizado, OCR inteligente y video analítica en el borde.",
           problemLabel: "PROBLEMA",
-          problem: "Inspección manual lenta, errores humanos en control de calidad e incapacidad de monitorear flujos visuales 24/7.",
+          problem: "Inspección visual manual lenta propensa a fatiga y errores; cuellos de botella al cargar comprobantes físicos; cámaras sin datos accionables.",
           solutionLabel: "SOLUCIÓN",
-          solution: "Modelos de Visión Artificial optimizados para inferencia local en tiempo real con alertas automáticas e integración a tableros de control.",
-          tags: ["👁️ Detección en Tiempo Real", "Edge AI & YOLO", "Control de Calidad", "Reconocimiento de Patrones", "OpenCV / PyTorch", "Procesamiento Local"]
+          solution: "Modelos de Visión Artificial (YOLOv8/v11, OpenCV, PyTorch) calibrados para inferencia local en tiempo real, extracción estructurada de comprobantes físicos a ERP y alertas instantáneas.",
+          tags: ["YOLOv8 / YOLOv11", "Control de Calidad", "OCR Documental Inteligente", "Edge AI & ONNX", "PyTorch / OpenCV", "Alertas en Tiempo Real"]
+        }
+      },
+      team: {
+        heading: "Célula de Consultores Senior",
+        subheading: "Alta densidad de talento sin sobrecostos burocráticos. Tres consultores senior especializados articulados para resolver desafíos técnicos de punta a punta.",
+        m1: {
+          role: "Client Partner & Project Manager",
+          sub: "Liderazgo Comercial, Relación & Gestión Ágil",
+          bio: "Liderazgo comercial, prospección B2B, calificación técnica en Discovery Calls (30 min), redacción de Statements of Work (SOWs) de alcance cerrado, gestión de cronograma y cobranzas 50/50, actuando como único punto de contacto oficial (SPOC)."
         },
-        web: {
-          title: "Plataformas Web, Comercio Electrónico & Crecimiento Digital",
-          status: "Desarrollo & Estrategia",
-          summary: "Diseño e implementación de sitios web profesionales, tiendas e-commerce a medida, optimización SEO para los primeros lugares en Google y desarrollo de identidad de marca (Branding) de alto impacto.",
-          problemLabel: "PROBLEMA",
-          problem: "Presencia digital deficiente, tiendas e-commerce genéricas, bajo tráfico orgánico en buscadores e identidad de marca inconsistente.",
-          solutionLabel: "SOLUCIÓN",
-          solution: "Sitios web elegantes con herramientas líderes, plataformas e-commerce personalizadas, SEO garantizado para Top 10 en Google (3-4 meses) y branding estratégico para máxima recordación de marca.",
-          tags: ["💻 Sitios Web Profesionales", "🛒 Comercio Electrónico a Medida", "🔍 Optimización SEO (Top 10)", "🎨 Branding Estratégico", "Stack Moderno", "UI/UX Premium"]
+        m2: {
+          role: "Software Engineer & Computer Vision Lead",
+          sub: "Arquitectura Cloud, APIs & Visión Artificial",
+          bio: "Diseño y desarrollo de arquitecturas cloud/backend en Python (FastAPI) y Node.js, microservicios en Docker, orquestación de sistemas de IA Agéntica con Tool-Calling y modelos de Computer Vision (YOLOv8/v11, OpenCV) para inspección y OCR."
+        },
+        m3: {
+          role: "Data Scientist & Machine Learning Lead",
+          sub: "Pipelines, Modelado Matemático & RAG",
+          bio: "Auditoría de silos de datos, pipelines automatizados de ingesta y calidad (Data Quality), modelado predictivo supervisado (demanda, churn, scoring comercial), sistemas RAG vectoriales y observabilidad rigurosa con MLflow."
+        }
+      },
+      showcases: {
+        heading: "Showcases Tecnológicos de Demostración",
+        subheading: "Sistemas reales desarrollados internamente por FVision, disponibles para demostración técnica uno a uno (screensharing) de su arquitectura, código y rendimiento operativo.",
+        s1: {
+          badge: "FINTECH LOCAL-FIRST",
+          desc: "Sistema de cobros de mostrador 0% comisiones con libro contable local y notificador centinela Android en tiempo real, operando sin intermediarios bancarios costosos."
+        },
+        s2: {
+          badge: "LOGÍSTICA & MOVILIDAD",
+          desc: "Plataforma de transporte, telemetría y despacho inteligente con optimización algorítmica de rutas para movilidad urbana y flotas logísticas de alta eficiencia."
+        },
+        s3: {
+          badge: "IA DE BOLSILLO & PRIVACIDAD",
+          desc: "Aplicación con arquitectura Local-First para procesamiento inteligente de comprobantes y control financiero personal sin enviar información sensible a servidores de terceros."
         }
       },
       engagement: {
-        heading: "Modelos de Trabajo & Integración",
-        subheading: "Formatos flexibles de colaboración adaptados a las necesidades y ritmo de tu empresa.",
+        heading: "Metodología de Trabajo & Integración",
+        subheading: "Un proceso transparente y estructurado por fases, diseñado para garantizar previsibilidad técnica y resultados tangibles sin atarte a plazos forzados.",
         model1: {
-          badge: "1-2 SEMANAS",
-          title: "Diagnóstico & Planificación Técnica",
-          desc: "Evaluación integral de la infraestructura existente, análisis de requisitos técnicos y diseño del mapa de ruta para definir la arquitectura ideal antes de comenzar cualquier implementación."
+          badge: "FASE 1: DIAGNÓSTICO",
+          title: "Auditoría & Viabilidad Técnica",
+          desc: "Sesión Discovery de 30 minutos sin cargo para auditar las fuentes de datos o imágenes, evaluar la viabilidad técnica y trazar la arquitectura objetivo antes de iniciar."
         },
         model2: {
-          badge: "2-4 SEMANAS",
-          title: "Integración & Despliegue Acelerado",
-          desc: "Implementación, configuración y conexión de la solución en la infraestructura elegida, asegurando pruebas de calidad, cumplimiento de seguridad y un traspaso operativo sin fricciones."
+          badge: "FASE 2: EJECUCIÓN",
+          title: "Implementación Modular por Hitos",
+          desc: "Construcción de la solución acordada, integración a los sistemas existentes (ERP/CRM/Cloud), pruebas rigurosas en staging y despliegue productivo con documentación técnica y alcance cerrado."
         },
         model3: {
-          badge: "CONTINUO",
-          title: "Acompañamiento & Optimización Continua",
-          desc: "Seguimiento técnico post-despliegue, liderazgo estratégico y optimización constante para garantizar el rendimiento, la escalabilidad y la adaptación a nuevas necesidades."
+          badge: "FASE 3: CONTINUIDAD",
+          title: "Acompañamiento & Retainers de Evolución",
+          desc: "Pólizas flexibles de horas mensuales para monitoreo preventivo de salud en pipelines, detección de drift en modelos y soporte evolutivo de nuevas capacidades técnicas."
         }
       },
       contact: {
-        heading: "¿Querés Implementar una de Estas Soluciones?",
-        subheading: "Dejame tu consulta para coordinar una demostración técnica uno a uno (screensharing) de la arquitectura y flujos de cualquier solución.",
+        heading: "¿Querés Evaluar una Solución para tu Empresa?",
+        subheading: "Coordinemos una sesión de diagnóstico técnico de 30 minutos (Discovery Call) para analizar tu caso de uso, datos disponibles y arquitectura ideal.",
         nameLabel: "Nombre",
         namePlaceholder: "Tu nombre",
         emailLabel: "Email",
         emailPlaceholder: "tu@email.com",
         messageLabel: "Mensaje / Consulta",
-        messagePlaceholder: "¿En qué solución estás interesado?",
+        messagePlaceholder: "¿En qué solución o proyecto estás interesado?",
         btnSend: "Enviar Consulta"
       },
       footer: {
-        text: "Ezequiel Vecchio · FVision. Diseñado y Desarrollado por Ezequiel Vecchio."
+        text: "FVision — Consultora Boutique de Ingeniería de Datos, IA & Computer Vision."
       }
     },
     en: {
       nav: {
         solutions: "Solutions",
-        models: "Models",
+        team: "Team",
+        showcases: "Showcases",
+        models: "Methodology",
         contact: "Contact"
       },
       hero: {
-        eyebrow: "Enterprise Software & AI Solutions",
-        title: "AI Agents, Data Intelligence & Computer Vision",
-        lead: "We design and integrate high-impact enterprise software solutions: on-premise AI operations automation, encrypted private data analytics systems, and real-time computer vision.",
-        btnContact: "Book Consultation",
+        eyebrow: "Boutique Consulting • Software & AI Engineering",
+        title: "Data Engineering, Agentic AI & Computer Vision",
+        lead: "We design and integrate high-impact enterprise software solutions: automated data pipelines, business-oriented predictive models, supervised autonomous agents, and real-time computer vision.",
+        btnContact: "Book Technical Discovery",
         btnSolutions: "Explore Solutions"
       },
       solutions: {
-        heading: "Integrated Services & Solutions",
-        subheading: "Unified software and technology solutions structured for the 4 key areas of the enterprise: Operations Agents, Data Analytics, Computer Vision, and Web Platforms & Growth."
+        heading: "Official Services & Solutions",
+        subheading: "Unified software and technology solutions structured for the 4 key business areas: Data Pipelines, Predictive Machine Learning, Agentic AI, and Computer Vision."
       },
       filters: {
         all: "All Solutions",
-        ops: "⚙️ Operations Agents",
-        data: "📊 Data Analytics",
-        vision: "👁️ Computer Vision",
-        web: "🌐 Web, E-Commerce & Branding"
+        data: "📊 Data Pipelines",
+        ml: "📈 Machine Learning",
+        ops: "⚙️ Agentic AI",
+        vision: "👁️ Computer Vision"
       },
       cards: {
-        ops: {
-          title: "Enterprise Operations & AI Agents",
-          status: "Ready for Integration",
-          summary: "Autonomous AI agents coordinating and automating complex operations between teams and core systems (ERP/CRM). Operating under strict behavioral contracts and human-in-the-loop oversight.",
-          problemLabel: "PROBLEM",
-          problem: "Operational bottlenecks, repetitive manual tasks, and hallucination risks in AI systems.",
-          solutionLabel: "SOLUTION",
-          solution: "Operational executor agents with strict 4-stage validation (DRDV Framework), total observability, and human checkpoint control.",
-          tags: ["🛠️ Custom Development", "AI Multi-Agent", "AI Governance", "Human-in-the-Loop", "Zero-Trust", "ERP/CRM Integration"]
-        },
         data: {
-          title: "Private AI Data System",
-          status: "Private Deployment",
-          summary: "Corporate document and data analysis system (GraphRAG / Hybrid RAG) deployed exclusively in Private Cloud (VPC) or On-Premise Local Server with zero data leak risk.",
+          title: "Data Pipelines & Data Quality",
+          status: "Data Engineering",
+          summary: "Extraction, cleaning, and consolidation of scattered data (ERP, CRM, spreadsheets) into central repositories with integrity monitoring and live dashboards.",
           problemLabel: "PROBLEM",
-          problem: "Risk of sensitive IP leakage and search limitations in traditional data systems.",
+          problem: "Outdated information silos, slow manual reports, and blind commercial decisions.",
           solutionLabel: "SOLUTION",
-          solution: "Isolated private infrastructure in VPC or On-Premise with SLMs (Ollama/FastAPI), $0 API token cost, AES-256 encryption, and compliance with SOC 2, ISO 27001, GDPR, and HIPAA.",
-          tags: ["🚀 Private Deployment (VPC / Local)", "Private GraphRAG", "AES-256", "SOC 2 / ISO 27001 / GDPR / HIPAA", "Zero Data Leak"]
+          solution: "Automated pipelines (ETL/ELT with Python, SQL, PostgreSQL/ClickHouse), semantic data validation, automated alerts, and live analytical dashboards.",
+          tags: ["ETL / ELT", "Data Quality", "PostgreSQL / ClickHouse", "Python & SQL", "Executive Dashboards", "ERP/CRM Integration"]
+        },
+        ml: {
+          title: "Predictive Machine Learning (ML Starter Pack)",
+          status: "Validated Models",
+          summary: "Supervised models tailored to balance sheet impact: demand forecasting, customer churn prevention, and algorithmic lead scoring.",
+          problemLabel: "PROBLEM",
+          problem: "Unexpected customer churn, working capital tied up in inventory errors, and wasted sales efforts.",
+          solutionLabel: "SOLUTION",
+          solution: "Statistical and ensemble models (Scikit-Learn, XGBoost, LightGBM) trained on client historical data, deployed via REST API (FastAPI), with MLflow observability.",
+          tags: ["Demand Forecasting", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"]
+        },
+        ops: {
+          title: "Agentic AI & Operations Automation",
+          status: "Autonomous Systems",
+          summary: "AI agents coordinating and executing complex operational workflows connected to ERP/CRM systems under strict behavioral contracts and human oversight (Human-in-the-Loop).",
+          problemLabel: "PROBLEM",
+          problem: "Repetitive manual tasks across disconnected systems; risk of hallucinations and IP leakage in generic public AI.",
+          solutionLabel: "SOLUTION",
+          solution: "Task executor agents with Tool-Calling (LangGraph / LlamaIndex), Docker containerization, and private enterprise RAG in VPC or On-Premise with AES-256 encryption.",
+          tags: ["Tool-Calling", "LangGraph / LlamaIndex", "Human-in-the-Loop", "Private RAG (VPC/Local)", "Zero Data Leak", "Docker"]
         },
         vision: {
           title: "Computer Vision & Real-Time Inspection",
-          status: "Proprietary Solution",
-          summary: "Computer vision and intelligent real-time inspection systems for object detection, automated quality control, video analysis, and visual processing using Edge AI and connected cameras.",
+          status: "Edge AI & Vision",
+          summary: "Computer vision and intelligent inspection systems for real-time defect detection, quality control, intelligent OCR, and edge video analytics.",
           problemLabel: "PROBLEM",
-          problem: "Slow manual inspection, human errors in quality control, and inability to monitor visual streams 24/7.",
+          problem: "Slow manual visual inspection prone to fatigue and human errors; document ingestion bottlenecks; idle camera feeds.",
           solutionLabel: "SOLUTION",
-          solution: "Computer vision models optimized for local real-time inference with automated alerts and control dashboard integration.",
-          tags: ["👁️ Real-Time Detection", "Edge AI & YOLO", "Quality Control", "Pattern Recognition", "OpenCV / PyTorch", "Private Processing"]
+          solution: "Computer vision models (YOLOv8/v11, OpenCV, PyTorch) optimized for real-time local inference, structured document OCR into ERP, and automated alerts.",
+          tags: ["YOLOv8 / YOLOv11", "Quality Control", "Intelligent OCR", "Edge AI & ONNX", "PyTorch / OpenCV", "Real-Time Alerts"]
+        }
+      },
+      team: {
+        heading: "Senior Consulting Squad",
+        subheading: "High talent density without bureaucratic overhead. Three specialized senior consultants orchestrated to solve end-to-end technical challenges.",
+        m1: {
+          role: "Client Partner & Project Manager",
+          sub: "Commercial Leadership, Client Relations & Agile PM",
+          bio: "Commercial leadership, B2B qualification in 30-minute Discovery Calls, fixed-scope Statements of Work (SOWs), strict milestone tracking, and 50/50 invoicing, acting as the Single Point of Contact (SPOC)."
         },
-        web: {
-          title: "Web Platforms, E-Commerce & Digital Growth",
-          status: "Development & Strategy",
-          summary: "Design and implementation of professional websites, custom e-commerce stores, top-tier Google SEO optimization, and high-impact brand identity development.",
-          problemLabel: "PROBLEM",
-          problem: "Poor digital presence, generic e-commerce stores, low organic search traffic, and inconsistent brand identity.",
-          solutionLabel: "SOLUTION",
-          solution: "High-performance websites with modern tooling, tailored e-commerce platforms, guaranteed Google Top 10 SEO (3-4 months), and strategic branding for maximum brand recall.",
-          tags: ["💻 Professional Websites", "🛒 Custom E-Commerce", "🔍 SEO Optimization (Top 10)", "🎨 Strategic Branding", "Modern Tech Stack", "Premium UI/UX"]
+        m2: {
+          role: "Software Engineer & Computer Vision Lead",
+          sub: "Cloud Architecture, APIs & Computer Vision",
+          bio: "Design and implementation of cloud/backend architectures in Python (FastAPI) and Node.js, Docker microservices, Agentic AI orchestration with Tool-Calling, and Computer Vision models (YOLOv8/v11, OpenCV) for inspection and OCR."
+        },
+        m3: {
+          role: "Data Scientist & Machine Learning Lead",
+          sub: "Pipelines, Mathematical Modeling & RAG",
+          bio: "Data silo audits, automated ingestion and quality pipelines (Data Quality), supervised predictive modeling (demand, churn, lead scoring), vector RAG systems, and rigorous tracking with MLflow."
+        }
+      },
+      showcases: {
+        heading: "Showcase Prototypes & Live Demos",
+        subheading: "Real-world systems developed by FVision, available for 1-on-1 live technical walkthroughs (screensharing) covering architecture, code, and live operational performance.",
+        s1: {
+          badge: "LOCAL-FIRST FINTECH",
+          desc: "Countertop payment system with 0% commissions, local ledger database, and real-time Android sentinel notifications without costly financial intermediaries."
+        },
+        s2: {
+          badge: "LOGISTICS & MOBILITY",
+          desc: "Smart transportation, dispatch, and telemetry platform featuring algorithmic route optimization for high-efficiency urban logistics fleets."
+        },
+        s3: {
+          badge: "POCKET AI & STRICT PRIVACY",
+          desc: "Local-First financial tracking and receipt scanning application with intelligent on-device OCR and zero data transmission to third-party servers."
         }
       },
       engagement: {
-        heading: "Engagement & Integration Models",
-        subheading: "Flexible collaboration formats tailored to your company's pace and requirements.",
+        heading: "Work Methodology & Integration",
+        subheading: "A transparent, milestone-driven process designed to ensure technical predictability and measurable results without rigid artificial deadlines.",
         model1: {
-          badge: "1-2 WEEKS",
-          title: "Technical Diagnosis & Roadmap",
-          desc: "Comprehensive evaluation of existing infrastructure, technical requirement analysis, and architecture roadmap design prior to implementation."
+          badge: "PHASE 1: DIAGNOSIS",
+          title: "Technical Audit & Feasibility",
+          desc: "Free 30-minute Discovery Call to audit data or image sources, evaluate feasibility, and map target architecture before writing code."
         },
         model2: {
-          badge: "2-4 WEEKS",
-          title: "Rapid Integration & Deployment",
-          desc: "Implementation, configuration, and integration of the solution in your selected infrastructure, ensuring quality testing, security compliance, and seamless handoff."
+          badge: "PHASE 2: EXECUTION",
+          title: "Modular Milestone Delivery",
+          desc: "Implementation, systems integration (ERP/CRM/Cloud), rigorous staging validation, and production deployment under fixed-scope specifications."
         },
         model3: {
-          badge: "CONTINUOUS",
-          title: "Continuous Leadership & Optimization",
-          desc: "Post-deployment technical support, strategic leadership, and ongoing optimization to ensure performance, scalability, and adaptation to evolving needs."
+          badge: "PHASE 3: CONTINUITY",
+          title: "Retainers & Ongoing Evolution",
+          desc: "Flexible monthly retainers for preventive pipeline monitoring, model drift detection, and evolutionary support for new capabilities."
         }
       },
       contact: {
-        heading: "Ready to Implement One of These Solutions?",
-        subheading: "Send an inquiry to schedule a 1-on-1 live technical walkthrough (screensharing) of the architecture and workflow of any solution.",
+        heading: "Ready to Evaluate a Solution for Your Business?",
+        subheading: "Let's schedule a 30-minute technical Discovery Call to evaluate your use case, available data, and target architecture.",
         nameLabel: "Name",
         namePlaceholder: "Your name",
         emailLabel: "Email",
         emailPlaceholder: "you@email.com",
         messageLabel: "Message / Inquiry",
-        messagePlaceholder: "Which solution are you interested in?",
+        messagePlaceholder: "Which solution or project are you interested in?",
         btnSend: "Send Inquiry"
       },
       footer: {
-        text: "Ezequiel Vecchio · FVision. Designed and Developed by Ezequiel Vecchio."
+        text: "FVision — Boutique Consulting: Data Engineering, AI & Computer Vision."
       }
     }
   };
@@ -1173,7 +1428,7 @@
     });
 
     // Actualizar tarjetas de soluciones
-    ['ops', 'data', 'vision', 'web'].forEach(cat => {
+    ['data', 'ml', 'ops', 'vision'].forEach(cat => {
       const cardEl = document.getElementById('card-' + cat);
       const cardData = dict.cards[cat];
       if (cardEl && cardData) {

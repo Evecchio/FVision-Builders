@@ -11,8 +11,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FVision - Consultora Boutique de Ingeniería de Datos & Soluciones de Inteligencia Artificial. Soluciones de software de alto impacto para la economía real.">
-  <title>FVision | Ingeniería de Datos & Soluciones de Inteligencia Artificial</title>
+  <meta name="description" content="FVision - Consultora Boutique de Ingeniería de Datos, Machine Learning y Soluciones de Inteligencia Artificial. Soluciones de software de alto impacto para la economía real.">
+  <title>FVision | Ingeniería de Datos, Machine Learning & Soluciones de Inteligencia Artificial</title>
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
   
@@ -839,6 +839,8 @@
         <button type="button" class="lang-btn active" id="btn-lang-es" onclick="switchLanguage('es')">ES</button>
         <span class="lang-separator">|</span>
         <button type="button" class="lang-btn" id="btn-lang-en" onclick="switchLanguage('en')">EN</button>
+        <span class="lang-separator">|</span>
+        <button type="button" class="lang-btn" id="btn-lang-pt" onclick="switchLanguage('pt')">PT</button>
       </div>
     </div>
   </nav>
@@ -847,8 +849,8 @@
   <section class="hero container">
     <div>
       <span class="eyebrow" data-i18n="hero.eyebrow">Consultoría Boutique • Software & Soluciones de IA</span>
-      <h1 data-i18n="hero.title">Ingeniería de Datos & Soluciones de Inteligencia Artificial</h1>
-      <p class="lead" data-i18n="hero.lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos orientados al balance financiero, agentes autónomos supervisados y asistentes privados de conocimiento.</p>
+      <h1 data-i18n="hero.title">Ingeniería de Datos, Machine Learning & Soluciones de Inteligencia Artificial</h1>
+      <p class="lead" data-i18n="hero.lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos de Machine Learning orientados al balance financiero, agentes autónomos supervisados y asistentes privados de conocimiento.</p>
       <div class="actions">
         <a class="btn primary" href="#contact" data-i18n="hero.btnContact">Agendar Consulta Técnica</a>
         <a class="btn" href="#projects" data-i18n="hero.btnSolutions">Explorar Soluciones</a>
@@ -860,14 +862,15 @@
     <div class="container">
       <div class="heading">
         <h2 data-i18n="solutions.heading">Servicios & Soluciones Oficiales</h2>
-        <p data-i18n="solutions.subheading">Soluciones unificadas de software y tecnología estructuradas en dos disciplinas estratégicas: Ingeniería de Datos de alta fidelidad y Soluciones de Inteligencia Artificial para el negocio.</p>
+        <p data-i18n="solutions.subheading">Soluciones unificadas de software y tecnología estructuradas en tres disciplinas estratégicas: Ingeniería de Datos de alta fidelidad, Machine Learning Predictivo y Soluciones de Inteligencia Artificial.</p>
       </div>
 
       <!-- Barra de Filtros por Áreas de Negocio -->
       <div class="filter-tabs" role="tablist">
         <button class="tab-button active" onclick="filterCategory('all', this)" data-i18n="filters.all">Todas las Soluciones</button>
         <button class="tab-button" onclick="filterCategory('data', this)" data-i18n="filters.data">📊 Ingeniería de Datos</button>
-        <button class="tab-button" onclick="filterCategory('ai', this)" data-i18n="filters.ai">🤖 Soluciones de Inteligencia Artificial</button>
+        <button class="tab-button" onclick="filterCategory('ml', this)" data-i18n="filters.ml">📈 Machine Learning</button>
+        <button class="tab-button" onclick="filterCategory('ai', this)" data-i18n="filters.ai">🤖 Soluciones de IA</button>
       </div>
 
       <div class="grid" id="solutions-grid">
@@ -892,7 +895,28 @@
           </div>
         </article>
 
-        <!-- SOLUCIÓN 2: SOLUCIONES DE INTELIGENCIA ARTIFICIAL: AGENTES -->
+        <!-- SOLUCIÓN 2: MACHINE LEARNING PREDICTIVO -->
+        <article class="card" data-category="ml" id="card-ml">
+          <div class="card-head">
+            <h3 class="card-title">Machine Learning Predictivo & Analítica de Negocio</h3>
+            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Modelos Validados</span></span>
+          </div>
+          <p class="summary-text">Modelos predictivos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos comerciales.</p>
+          <div class="details">
+            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Pérdida imprevista de clientes, capital inmovilizado por compras erróneas de stock y horas comerciales desperdiciadas.</span></div>
+            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Modelos estadísticos y de ensamble (Scikit-Learn, XGBoost, LightGBM) entrenados con datos del cliente, expuestos mediante API REST (FastAPI) y con observabilidad en MLflow.</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">Pronóstico de Demanda</span>
+            <span class="tag">Customer Churn</span>
+            <span class="tag">Lead Scoring</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Scikit-Learn / XGBoost</span>
+            <span class="tag">MLflow</span>
+          </div>
+        </article>
+
+        <!-- SOLUCIÓN 3: SOLUCIONES DE INTELIGENCIA ARTIFICIAL: AGENTES -->
         <article class="card" data-category="ai" id="card-ops">
           <div class="card-head">
             <h3 class="card-title">Soluciones de Inteligencia Artificial: Automatización & Agentes</h3>
@@ -910,27 +934,6 @@
             <span class="tag">RAG Privado (VPC/Local)</span>
             <span class="tag">Cero Fuga de Datos</span>
             <span class="tag">Docker</span>
-          </div>
-        </article>
-
-        <!-- SOLUCIÓN 3: SOLUCIONES DE INTELIGENCIA ARTIFICIAL: MODELOS PREDICTIVOS -->
-        <article class="card" data-category="ai" id="card-ml">
-          <div class="card-head">
-            <h3 class="card-title">Soluciones de Inteligencia Artificial: Modelos Predictivos</h3>
-            <span class="status-badge"><span class="status-led production"></span><span class="status-text">Modelos Validados</span></span>
-          </div>
-          <p class="summary-text">Modelos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos comerciales.</p>
-          <div class="details">
-            <div class="detail"><strong class="detail-label-problem">PROBLEMA</strong><span class="detail-problem">Pérdida imprevista de clientes, capital inmovilizado por compras erróneas de stock y horas comerciales desperdiciadas.</span></div>
-            <div class="detail"><strong class="detail-label-solution">SOLUCIÓN</strong><span class="detail-solution">Modelos estadísticos y de ensamble (Scikit-Learn, XGBoost, LightGBM) entrenados con datos del cliente, expuestos mediante API REST (FastAPI) y con observabilidad en MLflow.</span></div>
-          </div>
-          <div class="tags">
-            <span class="tag">Pronóstico de Demanda</span>
-            <span class="tag">Customer Churn</span>
-            <span class="tag">Lead Scoring</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Scikit-Learn / XGBoost</span>
-            <span class="tag">MLflow</span>
           </div>
         </article>
       </div>
@@ -1026,9 +1029,9 @@
         </article>
 
         <article class="showcase-card">
-          <span class="showcase-badge" style="background:var(--local-color); color:#fff;" data-i18n="showcases.s3.badge">INGENIERÍA DE DATOS & IA PREDICTIVA</span>
+          <span class="showcase-badge" style="background:var(--local-color); color:#fff;" data-i18n="showcases.s3.badge">MACHINE LEARNING & PIPELINES DE DATOS</span>
           <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;" data-i18n="showcases.s3.title">DataPulse Predictor</h3>
-          <p class="summary-text" data-i18n="showcases.s3.desc">Pipeline de ingesta automatizada que alimenta modelos de inteligencia artificial supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción.</p>
+          <p class="summary-text" data-i18n="showcases.s3.desc">Pipeline de ingesta automatizada que alimenta modelos de Machine Learning supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción.</p>
           <div class="tags" style="margin-top:auto;">
             <span class="tag">XGBoost & Scikit-Learn</span>
             <span class="tag">Pipelines ETL</span>
@@ -1092,11 +1095,11 @@
     </div>
   </section>
 </main>
-<footer>© <span id="year"></span> <span data-i18n="footer.text">FVision — Consultora Boutique de Ingeniería de Datos & Soluciones de Inteligencia Artificial.</span></footer>
+<footer>© <span id="year"></span> <span data-i18n="footer.text">FVision — Consultora Boutique de Ingeniería de Datos, Machine Learning & Soluciones de Inteligencia Artificial.</span></footer>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Diccionario Internacionalización (ES / EN)
+  // Diccionario Internacionalización (ES / EN / PT)
   const i18n = {
     es: {
       nav: {
@@ -1108,19 +1111,20 @@
       },
       hero: {
         eyebrow: "Consultoría Boutique • Software & Soluciones de IA",
-        title: "Ingeniería de Datos & Soluciones de Inteligencia Artificial",
-        lead: "Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos orientados al balance financiero, agentes autónomos supervisados y asistentes privados de conocimiento.",
+        title: "Ingeniería de Datos, Machine Learning & Soluciones de Inteligencia Artificial",
+        lead: "Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos de Machine Learning orientados al balance financiero, agentes autónomos supervisados y asistentes privados de conocimiento.",
         btnContact: "Agendar Consulta Técnica",
         btnSolutions: "Explorar Soluciones"
       },
       solutions: {
         heading: "Servicios & Soluciones Oficiales",
-        subheading: "Soluciones unificadas de software y tecnología estructuradas en dos disciplinas estratégicas: Ingeniería de Datos de alta fidelidad y Soluciones de Inteligencia Artificial para el negocio."
+        subheading: "Soluciones unificadas de software y tecnología estructuradas en tres disciplinas estratégicas: Ingeniería de Datos de alta fidelidad, Machine Learning Predictivo y Soluciones de Inteligencia Artificial."
       },
       filters: {
         all: "Todas las Soluciones",
         data: "📊 Ingeniería de Datos",
-        ai: "🤖 Soluciones de Inteligencia Artificial"
+        ml: "📈 Machine Learning",
+        ai: "🤖 Soluciones de IA"
       },
       cards: {
         data: {
@@ -1133,6 +1137,16 @@
           solution: "Tuberías automatizadas (ETL/ELT con Python, SQL y PostgreSQL/ClickHouse), validación semántica de datos, alertas automáticas y dashboards analíticos vivos.",
           tags: ["ETL / ELT", "Data Quality", "PostgreSQL / ClickHouse", "Python & SQL", "Dashboards Ejecutivos", "Integración ERP/CRM"]
         },
+        ml: {
+          title: "Machine Learning Predictivo & Analítica de Negocio",
+          status: "Modelos Validados",
+          summary: "Modelos predictivos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos comerciales.",
+          problemLabel: "PROBLEMA",
+          problem: "Pérdida imprevista de clientes, capital inmovilizado por compras erróneas de stock y horas comerciales desperdiciadas.",
+          solutionLabel: "SOLUCIÓN",
+          solution: "Modelos estadísticos y de ensamble (Scikit-Learn, XGBoost, LightGBM) entrenados con datos del cliente, expuestos mediante API REST (FastAPI) y con observabilidad en MLflow.",
+          tags: ["Pronóstico de Demanda", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"]
+        },
         ops: {
           title: "Soluciones de Inteligencia Artificial: Automatización & Agentes",
           status: "Sistemas Autónomos",
@@ -1142,16 +1156,6 @@
           solutionLabel: "SOLUCIÓN",
           solution: "Agentes ejecutores con Tool-Calling (LangGraph / LlamaIndex), orquestación contenerizada en Docker y asistentes privados en VPC u On-Premise con cifrado AES-256.",
           tags: ["Tool-Calling", "LangGraph / LlamaIndex", "Human-in-the-Loop", "RAG Privado (VPC/Local)", "Cero Fuga de Datos", "Docker"]
-        },
-        ml: {
-          title: "Soluciones de Inteligencia Artificial: Modelos Predictivos",
-          status: "Modelos Validados",
-          summary: "Modelos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos comerciales.",
-          problemLabel: "PROBLEMA",
-          problem: "Pérdida imprevista de clientes, capital inmovilizado por compras erróneas de stock y horas comerciales desperdiciadas.",
-          solutionLabel: "SOLUCIÓN",
-          solution: "Modelos estadísticos y de ensamble (Scikit-Learn, XGBoost, LightGBM) entrenados con datos del cliente, expuestos mediante API REST (FastAPI) y con observabilidad en MLflow.",
-          tags: ["Pronóstico de Demanda", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"]
         }
       },
       team: {
@@ -1187,9 +1191,9 @@
           desc: "Squad de agentes de inteligencia artificial que coordinan la conciliación operativa entre sistemas: cruzan órdenes de compra, validan comprobantes fiscales con registros bancarios y preparan asientos contables bajo supervisión humana (Human-in-the-Loop)."
         },
         s3: {
-          badge: "INGENIERÍA DE DATOS & IA PREDICTIVA",
+          badge: "MACHINE LEARNING & PIPELINES DE DATOS",
           title: "DataPulse Predictor",
-          desc: "Pipeline de ingesta automatizada que alimenta modelos de inteligencia artificial supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción."
+          desc: "Pipeline de ingesta automatizada que alimenta modelos de Machine Learning supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción."
         }
       },
       engagement: {
@@ -1223,7 +1227,7 @@
         btnSend: "Enviar Consulta"
       },
       footer: {
-        text: "FVision — Consultora Boutique de Ingeniería de Datos & Soluciones de Inteligencia Artificial."
+        text: "FVision — Consultora Boutique de Ingeniería de Datos, Machine Learning & Soluciones de Inteligencia Artificial."
       }
     },
     en: {
@@ -1236,19 +1240,20 @@
       },
       hero: {
         eyebrow: "Boutique Consulting • Software & AI Solutions",
-        title: "Data Engineering & Artificial Intelligence Solutions",
-        lead: "We design and integrate high-impact enterprise software solutions: automated data pipelines, predictive models focused on financial return, supervised autonomous agents, and private knowledge assistants.",
+        title: "Data Engineering, Machine Learning & Artificial Intelligence Solutions",
+        lead: "We design and integrate high-impact enterprise software solutions: automated data pipelines, business-oriented predictive Machine Learning models, supervised autonomous agents, and private knowledge assistants.",
         btnContact: "Book Technical Discovery",
         btnSolutions: "Explore Solutions"
       },
       solutions: {
         heading: "Official Services & Solutions",
-        subheading: "Unified software and technology solutions structured into two strategic disciplines: High-fidelity Data Engineering and Artificial Intelligence Solutions for business."
+        subheading: "Unified software and technology solutions structured into three strategic disciplines: High-fidelity Data Engineering, Predictive Machine Learning, and Artificial Intelligence Solutions."
       },
       filters: {
         all: "All Solutions",
         data: "📊 Data Engineering",
-        ai: "🤖 Artificial Intelligence Solutions"
+        ml: "📈 Machine Learning",
+        ai: "🤖 AI Solutions"
       },
       cards: {
         data: {
@@ -1261,6 +1266,16 @@
           solution: "Automated pipelines (ETL/ELT with Python, SQL, PostgreSQL/ClickHouse), semantic data validation, automated alerts, and live analytical dashboards.",
           tags: ["ETL / ELT", "Data Quality", "PostgreSQL / ClickHouse", "Python & SQL", "Executive Dashboards", "ERP/CRM Integration"]
         },
+        ml: {
+          title: "Predictive Machine Learning & Business Analytics",
+          status: "Validated Models",
+          summary: "Supervised predictive models tailored to balance sheet impact: demand forecasting, customer churn prevention, and algorithmic lead scoring.",
+          problemLabel: "PROBLEM",
+          problem: "Unexpected customer churn, working capital tied up in inventory errors, and wasted sales efforts.",
+          solutionLabel: "SOLUTION",
+          solution: "Statistical and ensemble models (Scikit-Learn, XGBoost, LightGBM) trained on client historical data, deployed via REST API (FastAPI), with MLflow observability.",
+          tags: ["Demand Forecasting", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"]
+        },
         ops: {
           title: "Artificial Intelligence Solutions: Operational Automation & Agents",
           status: "Autonomous Systems",
@@ -1270,16 +1285,6 @@
           solutionLabel: "SOLUTION",
           solution: "Task executor agents with Tool-Calling (LangGraph / LlamaIndex), Docker containerization, and private enterprise assistants in VPC or On-Premise with AES-256 encryption.",
           tags: ["Tool-Calling", "LangGraph / LlamaIndex", "Human-in-the-Loop", "Private RAG (VPC/Local)", "Zero Data Leak", "Docker"]
-        },
-        ml: {
-          title: "Artificial Intelligence Solutions: Predictive Models & Analytics",
-          status: "Validated Models",
-          summary: "Supervised models tailored to balance sheet impact: demand forecasting, customer churn prevention, and algorithmic lead scoring.",
-          problemLabel: "PROBLEM",
-          problem: "Unexpected customer churn, working capital tied up in inventory errors, and wasted sales efforts.",
-          solutionLabel: "SOLUTION",
-          solution: "Statistical and ensemble models (Scikit-Learn, XGBoost, LightGBM) trained on client historical data, deployed via REST API (FastAPI), with MLflow observability.",
-          tags: ["Demand Forecasting", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"]
         }
       },
       team: {
@@ -1315,9 +1320,9 @@
           desc: "Squad of autonomous artificial intelligence agents coordinating operational reconciliations across systems: cross-referencing POs, validating tax invoices with bank statements, and preparing ledger entries under human supervision (Human-in-the-Loop)."
         },
         s3: {
-          badge: "DATA ENGINEERING & PREDICTIVE AI",
+          badge: "MACHINE LEARNING & DATA PIPELINES",
           title: "DataPulse Predictor",
-          desc: "Automated ingestion pipeline powering supervised artificial intelligence models for inventory stockout forecasting and customer churn scoring, with continuous production metrics monitoring."
+          desc: "Automated ingestion pipeline powering supervised Machine Learning models for inventory stockout forecasting and customer churn scoring, with continuous production metrics monitoring."
         }
       },
       engagement: {
@@ -1351,7 +1356,136 @@
         btnSend: "Send Inquiry"
       },
       footer: {
-        text: "FVision — Boutique Consulting: Data Engineering & Artificial Intelligence Solutions."
+        text: "FVision — Boutique Consulting: Data Engineering, Machine Learning & Artificial Intelligence Solutions."
+      }
+    },
+    pt: {
+      nav: {
+        solutions: "Soluções",
+        team: "Equipe",
+        showcases: "Showcases",
+        models: "Metodologia",
+        contact: "Contato"
+      },
+      hero: {
+        eyebrow: "Consultoria Boutique • Software & Soluções de IA",
+        title: "Engenharia de Dados, Machine Learning & Soluções de Inteligência Artificial",
+        lead: "Projetamos e integramos soluções de software de alto impacto empresarial: pipelines de dados automatizados, modelos preditivos de Machine Learning orientados ao resultado financeiro, agentes autônomos supervisionados e assistentes privados de conhecimento.",
+        btnContact: "Agendar Consulta Técnica",
+        btnSolutions: "Explorar Soluções"
+      },
+      solutions: {
+        heading: "Serviços & Soluções Oficiais",
+        subheading: "Soluções unificadas de software e tecnologia estruturadas em três disciplinas estratégicas: Engenharia de Dados de alta fidelidade, Machine Learning Preditivo e Soluções de Inteligência Artificial."
+      },
+      filters: {
+        all: "Todas as Soluções",
+        data: "📊 Engenharia de Dados",
+        ml: "📈 Machine Learning",
+        ai: "🤖 Soluções de IA"
+      },
+      cards: {
+        data: {
+          title: "Pipelines de Dados & Data Quality",
+          status: "Engenharia & Qualidade",
+          summary: "Extração, limpeza e consolidação de dados dispersos (ERP, CRM, planilhas) em repositórios centralizados com monitoramento de integridade e painéis executivos em tempo real.",
+          problemLabel: "PROBLEMA",
+          problem: "Silos de dados desatualizados, relatórios manuais lentos e tomada de decisão no escuro.",
+          solutionLabel: "SOLUÇÃO",
+          solution: "Pipelines automatizados (ETL/ELT com Python, SQL e PostgreSQL/ClickHouse), validação semântica de dados, alertas automáticos e dashboards analíticos em tempo real.",
+          tags: ["ETL / ELT", "Data Quality", "PostgreSQL / ClickHouse", "Python & SQL", "Dashboards Executivos", "Integração ERP/CRM"]
+        },
+        ml: {
+          title: "Machine Learning Preditivo & Análise de Negócios",
+          status: "Modelos Validados",
+          summary: "Modelos preditivos supervisionados orientados ao impacto financeiro: previsão de demanda, prevenção de cancelamento de clientes (churn) e pontuação algorítmica de leads.",
+          problemLabel: "PROBLEMA",
+          problem: "Perda imprevista de clientes, capital de giro retido por erros de estoque e horas comerciais desperdiçadas.",
+          solutionLabel: "SOLUÇÃO",
+          solution: "Modelos estatísticos e de ensemble (Scikit-Learn, XGBoost, LightGBM) treinados com dados do cliente, integrados via API REST (FastAPI) e com observabilidade no MLflow.",
+          tags: ["Previsão de Demanda", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"]
+        },
+        ops: {
+          title: "Soluções de Inteligência Artificial: Automação & Agentes",
+          status: "Sistemas Autônomos",
+          summary: "Agentes de IA que coordenam e executam tarefas operacionais complexas integradas a ERPs/CRMs sob contratos estritos de comportamento e supervisão humana (Human-in-the-Loop).",
+          problemLabel: "PROBLEMA",
+          problem: "Processos manuais repetitivos entre sistemas; risco de alucinações e vazamento de dados em ferramentas de IA públicas.",
+          solutionLabel: "SOLUÇÃO",
+          solution: "Agentes executores com Tool-Calling (LangGraph / LlamaIndex), orquestração em contêineres Docker e assistentes corporativos privados em VPC ou On-Premise com criptografia AES-256.",
+          tags: ["Tool-Calling", "LangGraph / LlamaIndex", "Human-in-the-Loop", "RAG Privado (VPC/Local)", "Sem Vazamento de Dados", "Docker"]
+        }
+      },
+      team: {
+        heading: "Célula de Consultores Seniores",
+        subheading: "Alta densidade de talento sem burocracia excessiva. Três consultores seniores especializados atuando juntos para resolver desafios técnicos de ponta a ponta.",
+        m1: {
+          role: "Client Partner & Project Manager",
+          sub: "Liderança Comercial, Relacionamento & Gestão Ágil",
+          bio: "Liderança comercial, prospecção B2B, qualificação técnica em Discovery Calls de 30 minutos, elaboração de Statements of Work (SOWs) de escopo fechado, acompanhamento de marcos e faturamento 50/50, atuando como Ponto Único de Contato (SPOC)."
+        },
+        m2: {
+          role: "Software Engineer & Solutions Architect",
+          sub: "Arquitetura Cloud, APIs & Soluções de IA",
+          bio: "Projeto e desenvolvimento de arquiteturas cloud/backend em Python (FastAPI) e Node.js, microsserviços em Docker, orquestração de IA com Tool-Calling, APIs de alta performance e integração com infraestrutura corporativa."
+        },
+        m3: {
+          role: "Data Scientist & Machine Learning Lead",
+          sub: "Pipelines, Modelagem Matemática & RAG",
+          bio: "Auditoria de silos de dados, pipelines automatizados de ingestão e qualidade (Data Quality), modelagem preditiva supervisionada (demanda, churn, lead scoring), sistemas RAG vetoriais e rastreamento rigoroso com MLflow."
+        }
+      },
+      showcases: {
+        heading: "Showcases Tecnológicos de Demonstração",
+        subheading: "Sistemas reais desenvolvidos internamente pela FVision, disponíveis para demonstração técnica individual (screensharing) de sua arquitetura, código e desempenho operacional.",
+        s1: {
+          badge: "SOLUÇÕES DE IA & RAG PRIVADO",
+          title: "InsightDoc AI",
+          desc: "Plataforma corporativa de inteligência artificial para análise documental e busca semântica avançada. Processa contratos, manuais e políticas complexas em servidor privado (VPC/Local) com citação de fontes e zero vazamento de dados."
+        },
+        s2: {
+          badge: "SOLUÇÕES DE IA & AUTOMAÇÃO",
+          title: "OpsAgent Core",
+          desc: "Squad de agentes de inteligência artificial que coordenam conciliações operacionais entre sistemas: cruzam pedidos de compra, validam notas fiscais com extratos bancários e preparam lançamentos contábeis sob supervisão humana (Human-in-the-Loop)."
+        },
+        s3: {
+          badge: "MACHINE LEARNING & PIPELINES DE DADOS",
+          title: "DataPulse Predictor",
+          desc: "Pipeline de ingestão automatizada que alimenta modelos de Machine Learning supervisionados para previsão de ruptura de estoque e cancelamento de clientes (Churn Scoring), com monitoramento contínuo em produção."
+        }
+      },
+      engagement: {
+        heading: "Metodologia de Trabalho & Integração",
+        subheading: "Um processo transparente e estruturado por fases, projetado para garantir previsibilidade técnica e resultados mensuráveis sem prazos artificiais rígidos.",
+        model1: {
+          badge: "FASE 1: DIAGNÓSTICO",
+          title: "Auditoria & Viabilidade Técnica",
+          desc: "Sessão Discovery de 30 minutos sem custo para auditar fontes de dados, processos e infraestrutura, avaliar viabilidade técnica e definir a arquitetura ideal antes do início."
+        },
+        model2: {
+          badge: "FASE 2: EXECUÇÃO",
+          title: "Implementação Modular por Marcos",
+          desc: "Construção da solução acordada, integração aos sistemas existentes (ERP/CRM/Cloud), testes rigorosos em staging e implantação em produção com escopo fechado e documentação completa."
+        },
+        model3: {
+          badge: "FASE 3: CONTINUIDADE",
+          title: "Acompanhamento & Retainers de Evolução",
+          desc: "Planos mensais flexíveis para monitoramento preventivo de pipelines, detecção de drift em modelos e suporte evolutivo para novas capacidades técnicas."
+        }
+      },
+      contact: {
+        heading: "Pronto para Avaliar uma Solução para sua Empresa?",
+        subheading: "Vamos agendar uma sessão Discovery técnica de 30 minutos para avaliar seu caso de uso, dados disponíveis e arquitetura recomendada.",
+        nameLabel: "Nome",
+        namePlaceholder: "Seu nome",
+        emailLabel: "E-mail",
+        emailPlaceholder: "seu@email.com",
+        messageLabel: "Mensagem / Consulta",
+        messagePlaceholder: "Em qual solução ou projeto você tem interesse?",
+        btnSend: "Enviar Consulta"
+      },
+      footer: {
+        text: "FVision — Consultoria Boutique: Engenharia de Dados, Machine Learning & Soluções de Inteligência Artificial."
       }
     }
   };

@@ -19,13 +19,14 @@ import { siteConfig } from "./config/site";
 const categories = [
   { id: "all", label: "Todas las Soluciones" },
   { id: "data", label: "📊 Ingeniería de Datos" },
+  { id: "ml", label: "📈 Machine Learning" },
   { id: "ai", label: "🤖 Soluciones de IA" }
 ] as const;
 
 interface Solution {
   title: string;
   summary: string;
-  category: "data" | "ai";
+  category: "data" | "ml" | "ai";
   tags: string[];
   specs: {
     problem: string;
@@ -49,6 +50,18 @@ const projects: Solution[] = [
     }
   },
   {
+    title: "Machine Learning Predictivo & Analítica de Negocio",
+    summary: "Modelos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos comerciales.",
+    category: "ml",
+    tags: ["Pronóstico de Demanda", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"],
+    specs: {
+      problem: "Pérdida imprevista de clientes, capital inmovilizado por compras erróneas de stock y horas comerciales desperdiciadas.",
+      solution: "Modelos estadísticos y de ensamble entrenados con datos del cliente, expuestos mediante endpoints API REST (FastAPI) y con observabilidad en MLflow.",
+      statusLabel: "Modelos Validados",
+      status: "production"
+    }
+  },
+  {
     title: "Soluciones de Inteligencia Artificial: Automatización & Agentes",
     summary: "Agentes de IA que coordinan y ejecutan tareas operativas complejas conectados a ERPs/CRMs bajo contratos estrictos de comportamiento y supervisión humana (Human-in-the-Loop).",
     category: "ai",
@@ -57,18 +70,6 @@ const projects: Solution[] = [
       problem: "Procesos manuales repetitivos entre sistemas; riesgo de alucinaciones y fuga de datos en herramientas de IA genéricas.",
       solution: "Agentes ejecutores con Tool-Calling, orquestación contenerizada en Docker y RAG corporativo privado en VPC u On-Premise con cifrado AES-256.",
       statusLabel: "Sistemas Autónomos",
-      status: "production"
-    }
-  },
-  {
-    title: "Soluciones de Inteligencia Artificial: Modelos Predictivos",
-    summary: "Modelos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos comerciales.",
-    category: "ai",
-    tags: ["Pronóstico de Demanda", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"],
-    specs: {
-      problem: "Pérdida imprevista de clientes, capital inmovilizado por compras erróneas de stock y horas comerciales desperdiciadas.",
-      solution: "Modelos estadísticos y de ensamble entrenados con datos del cliente, expuestos mediante endpoints API REST (FastAPI) y con observabilidad en MLflow.",
-      statusLabel: "Modelos Validados",
       status: "production"
     }
   }
@@ -115,9 +116,9 @@ const showcases = [
   },
   {
     title: "DataPulse Predictor",
-    badge: "INGENIERÍA DE DATOS & IA PREDICTIVA",
+    badge: "MACHINE LEARNING & PIPELINES DE DATOS",
     badgeColor: "var(--local-color)",
-    desc: "Pipeline de ingesta automatizada que alimenta modelos de inteligencia artificial supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción.",
+    desc: "Pipeline de ingesta automatizada que alimenta modelos de Machine Learning supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción.",
     tags: ["XGBoost & Scikit-Learn", "Pipelines ETL", "MLflow Observabilidad", "Scoring Predictivo"]
   }
 ];
@@ -197,9 +198,9 @@ export default function App() {
               <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
               Consultoría Boutique • Software & Soluciones de IA
             </span>
-            <h1>Ingeniería de Datos & Soluciones de Inteligencia Artificial</h1>
+            <h1>Ingeniería de Datos, Machine Learning & Soluciones de Inteligencia Artificial</h1>
             <p className="lead">
-              Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos orientados al balance financiero, agentes autónomos supervisados y asistentes privados de conocimiento.
+              Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos de Machine Learning orientados al balance financiero, agentes autónomos supervisados y asistentes privados de conocimiento.
             </p>
             <div className="actions">
               <a className="button button-primary" href="#contacto">
@@ -218,7 +219,7 @@ export default function App() {
             <div className="section-heading">
               <h2>Servicios & Soluciones Oficiales</h2>
               <p>
-                Soluciones unificadas de software y tecnología estructuradas en dos disciplinas estratégicas: Ingeniería de Datos de alta fidelidad y Soluciones de Inteligencia Artificial para el negocio.
+                Soluciones unificadas de software y tecnología estructuradas en tres disciplinas estratégicas: Ingeniería de Datos de alta fidelidad, Machine Learning Predictivo y Soluciones de Inteligencia Artificial.
               </p>
             </div>
 
@@ -439,7 +440,7 @@ export default function App() {
       </main>
 
       <footer className="container footer">
-        © {new Date().getFullYear()} {siteConfig.name} — Consultora Boutique de Ingeniería de Datos & Soluciones de Inteligencia Artificial.
+        © {new Date().getFullYear()} {siteConfig.name} — Consultora Boutique de Ingeniería de Datos, Machine Learning & Soluciones de Inteligencia Artificial.
       </footer>
     </div>
   );

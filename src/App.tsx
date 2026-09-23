@@ -114,24 +114,25 @@ const teamMembers = [
 
 const showcases = [
   {
-    title: "FVision Pay Direct",
-    badge: "FINTECH LOCAL-FIRST",
-    desc: "Sistema de cobros de mostrador 0% comisiones con libro contable local y notificador centinela Android en tiempo real, operando sin intermediarios bancarios costosos.",
-    tags: ["Android Nativo", "Local-First DB", "WebSockets", "0% Comisiones"]
+    title: "VisionInspect AI",
+    badge: "COMPUTER VISION & EDGE AI",
+    badgeColor: "var(--vision-color)",
+    desc: "Sistema de visión artificial para líneas de manufactura y empaque. Detección en tiempo real de fisuras, microdefectos y validación de etiquetas a 60 FPS con YOLOv11 optimizado en el borde (Edge AI) y panel de control en vivo.",
+    tags: ["YOLOv11 / OpenCV", "Inferencia a 60 FPS", "Control de Defectos", "Edge AI Local"]
   },
   {
-    title: "RidePilot & RidePilot Lite",
-    badge: "LOGÍSTICA & MOVILIDAD",
+    title: "OpsAgent Core",
+    badge: "IA AGÉNTICA & AUTOMATIZACIÓN",
     badgeColor: "var(--ai-color)",
-    desc: "Plataforma de transporte, telemetría y despacho inteligente con optimización algorítmica de rutas para movilidad urbana y flotas logísticas de alta eficiencia.",
-    tags: ["Kotlin", "Optimización de Rutas", "Despacho Automatizado", "Alta Eficiencia"]
+    desc: "Squad de agentes autónomos que coordinan la conciliación operativa entre sistemas: cruzan órdenes de compra, validan comprobantes fiscales con registros bancarios y preparan asientos contables bajo supervisión humana (Human-in-the-Loop).",
+    tags: ["LangGraph Multi-Agente", "Tool-Calling", "Integración ERP/CRM", "Human-in-the-Loop"]
   },
   {
-    title: "Lector Automático de Gastos",
-    badge: "IA DE BOLSILLO & PRIVACIDAD",
+    title: "DataPulse Predictor",
+    badge: "DATA & MACHINE LEARNING",
     badgeColor: "var(--local-color)",
-    desc: "Aplicación con arquitectura Local-First para procesamiento inteligente de comprobantes y control financiero personal sin enviar información sensible a servidores de terceros.",
-    tags: ["OCR Local", "Cifrado de Datos", "Zero-Knowledge", "Integración Financiera"]
+    desc: "Pipeline de ingesta automatizada que alimenta modelos supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), combinado con un motor RAG privado sobre documentos corporativos en servidor propio (VPC/Local) con cifrado AES-256.",
+    tags: ["XGBoost & Scikit-Learn", "Pipelines ETL", "GraphRAG Privado", "Cero Fuga de Datos (VPC)"]
   }
 ];
 

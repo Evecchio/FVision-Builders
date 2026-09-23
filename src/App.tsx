@@ -18,16 +18,14 @@ import { siteConfig } from "./config/site";
 
 const categories = [
   { id: "all", label: "Todas las Soluciones" },
-  { id: "data", label: "📊 Pipelines de Datos" },
-  { id: "ml", label: "📈 Machine Learning" },
-  { id: "ops", label: "⚙️ IA Agéntica" },
-  { id: "vision", label: "👁️ Visión Computacional" }
+  { id: "data", label: "📊 Ingeniería de Datos" },
+  { id: "ai", label: "🤖 Soluciones de IA" }
 ] as const;
 
 interface Solution {
   title: string;
   summary: string;
-  category: "data" | "ml" | "ops" | "vision";
+  category: "data" | "ai";
   tags: string[];
   specs: {
     problem: string;
@@ -51,21 +49,9 @@ const projects: Solution[] = [
     }
   },
   {
-    title: "Machine Learning Predictivo (ML Starter Pack)",
-    summary: "Modelos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos.",
-    category: "ml",
-    tags: ["Pronóstico de Demanda", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"],
-    specs: {
-      problem: "Pérdida imprevista de clientes, capital inmovilizado por exceso de stock y horas comerciales desperdiciadas.",
-      solution: "Modelos estadísticos y de ensamble entrenados con datos del cliente, expuestos mediante endpoints API REST (FastAPI) y con observabilidad en MLflow.",
-      statusLabel: "Modelos Validados",
-      status: "production"
-    }
-  },
-  {
-    title: "IA Agéntica & Automatización Operativa",
+    title: "Soluciones de Inteligencia Artificial: Automatización & Agentes",
     summary: "Agentes de IA que coordinan y ejecutan tareas operativas complejas conectados a ERPs/CRMs bajo contratos estrictos de comportamiento y supervisión humana (Human-in-the-Loop).",
-    category: "ops",
+    category: "ai",
     tags: ["Tool-Calling", "LangGraph / LlamaIndex", "Human-in-the-Loop", "RAG Privado (VPC/Local)", "Cero Fuga de Datos", "Docker"],
     specs: {
       problem: "Procesos manuales repetitivos entre sistemas; riesgo de alucinaciones y fuga de datos en herramientas de IA genéricas.",
@@ -75,14 +61,14 @@ const projects: Solution[] = [
     }
   },
   {
-    title: "Computer Vision & Percepción en Tiempo Real",
-    summary: "Sistemas de visión artificial e inspección inteligente en tiempo real para detección de objetos, control de calidad automatizado, OCR inteligente y video analítica en el borde.",
-    category: "vision",
-    tags: ["YOLOv8 / YOLOv11", "Control de Calidad", "OCR Documental Inteligente", "Edge AI & ONNX", "PyTorch / OpenCV", "Alertas en Tiempo Real"],
+    title: "Soluciones de Inteligencia Artificial: Modelos Predictivos",
+    summary: "Modelos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos comerciales.",
+    category: "ai",
+    tags: ["Pronóstico de Demanda", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"],
     specs: {
-      problem: "Inspección visual manual lenta propensa a fatiga y errores; cuellos de botella al cargar comprobantes físicos; cámaras sin datos accionables.",
-      solution: "Modelos de Visión Artificial optimizados para inferencia local en tiempo real, extracción estructurada de comprobantes físicos a ERP y alertas instantáneas.",
-      statusLabel: "Edge AI & Visión",
+      problem: "Pérdida imprevista de clientes, capital inmovilizado por compras erróneas de stock y horas comerciales desperdiciadas.",
+      solution: "Modelos estadísticos y de ensamble entrenados con datos del cliente, expuestos mediante endpoints API REST (FastAPI) y con observabilidad en MLflow.",
+      statusLabel: "Modelos Validados",
       status: "production"
     }
   }
@@ -98,10 +84,10 @@ const teamMembers = [
   },
   {
     name: "Emanuel Vecchio",
-    role: "Software Engineer & Computer Vision Lead",
-    sub: "Arquitectura Cloud, APIs & Visión Artificial",
-    bio: "Diseño y desarrollo de arquitecturas cloud/backend en Python (FastAPI) y Node.js, microservicios en Docker, orquestación de sistemas de IA Agéntica con Tool-Calling y modelos de Computer Vision (YOLOv8/v11, OpenCV) para inspección y OCR.",
-    tags: ["FastAPI & Docker", "Computer Vision & YOLO", "IA Agéntica", "PyTorch / OpenCV"]
+    role: "Software Engineer & Solutions Architect",
+    sub: "Arquitectura Cloud, APIs & Soluciones de IA",
+    bio: "Diseño y desarrollo de arquitecturas cloud/backend en Python (FastAPI) y Node.js, microservicios en Docker, orquestación de sistemas de IA con Tool-Calling, APIs de alto rendimiento e integración con infraestructura empresarial.",
+    tags: ["FastAPI & Python", "Docker & Microservicios", "Soluciones de IA", "Arquitectura Cloud"]
   },
   {
     name: "Eugenio Rezende",
@@ -114,25 +100,25 @@ const teamMembers = [
 
 const showcases = [
   {
-    title: "VisionInspect AI",
-    badge: "COMPUTER VISION & EDGE AI",
-    badgeColor: "var(--vision-color)",
-    desc: "Sistema de visión artificial para líneas de manufactura y empaque. Detección en tiempo real de fisuras, microdefectos y validación de etiquetas a 60 FPS con YOLOv11 optimizado en el borde (Edge AI) y panel de control en vivo.",
-    tags: ["YOLOv11 / OpenCV", "Inferencia a 60 FPS", "Control de Defectos", "Edge AI Local"]
+    title: "InsightDoc AI",
+    badge: "SOLUCIONES DE IA & RAG PRIVADO",
+    badgeColor: "var(--accent)",
+    desc: "Plataforma corporativa de inteligencia artificial para análisis documental y búsqueda semántica avanzada. Procesa contratos, manuales y normativas complejas en servidor privado (VPC/Local) con citación de fuentes y cero fuga de información confidencial.",
+    tags: ["RAG Corporativo Privado", "Búsqueda Semántica", "Cero Fuga de Datos (VPC)", "FastAPI & Python"]
   },
   {
     title: "OpsAgent Core",
-    badge: "IA AGÉNTICA & AUTOMATIZACIÓN",
+    badge: "SOLUCIONES DE IA & AUTOMATIZACIÓN",
     badgeColor: "var(--ai-color)",
-    desc: "Squad de agentes autónomos que coordinan la conciliación operativa entre sistemas: cruzan órdenes de compra, validan comprobantes fiscales con registros bancarios y preparan asientos contables bajo supervisión humana (Human-in-the-Loop).",
+    desc: "Squad de agentes de inteligencia artificial que coordinan la conciliación operativa entre sistemas: cruzan órdenes de compra, validan comprobantes fiscales con registros bancarios y preparan asientos contables bajo supervisión humana (Human-in-the-Loop).",
     tags: ["LangGraph Multi-Agente", "Tool-Calling", "Integración ERP/CRM", "Human-in-the-Loop"]
   },
   {
     title: "DataPulse Predictor",
-    badge: "DATA & MACHINE LEARNING",
+    badge: "INGENIERÍA DE DATOS & IA PREDICTIVA",
     badgeColor: "var(--local-color)",
-    desc: "Pipeline de ingesta automatizada que alimenta modelos supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), combinado con un motor RAG privado sobre documentos corporativos en servidor propio (VPC/Local) con cifrado AES-256.",
-    tags: ["XGBoost & Scikit-Learn", "Pipelines ETL", "GraphRAG Privado", "Cero Fuga de Datos (VPC)"]
+    desc: "Pipeline de ingesta automatizada que alimenta modelos de inteligencia artificial supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción.",
+    tags: ["XGBoost & Scikit-Learn", "Pipelines ETL", "MLflow Observabilidad", "Scoring Predictivo"]
   }
 ];
 
@@ -193,7 +179,7 @@ export default function App() {
           <div className="brand-logo">FV</div>
           <div className="brand-info">
             <span className="brand-name">FVision</span>
-            <span className="brand-role">Data, AI & Computer Vision</span>
+            <span className="brand-role">Data & AI Solutions</span>
           </div>
         </a>
 
@@ -209,11 +195,11 @@ export default function App() {
           <div className="hero-copy">
             <span className="eyebrow">
               <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
-              Consultoría Boutique • Ingeniería de Software & IA
+              Consultoría Boutique • Software & Soluciones de IA
             </span>
-            <h1>Ingeniería de Datos, IA Agéntica & Visión Computacional</h1>
+            <h1>Ingeniería de Datos & Soluciones de Inteligencia Artificial</h1>
             <p className="lead">
-              Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos orientados al balance financiero, agentes autónomos supervisados y sistemas de visión artificial en tiempo real.
+              Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos orientados al balance financiero, agentes autónomos supervisados y asistentes privados de conocimiento.
             </p>
             <div className="actions">
               <a className="button button-primary" href="#contacto">
@@ -232,7 +218,7 @@ export default function App() {
             <div className="section-heading">
               <h2>Servicios & Soluciones Oficiales</h2>
               <p>
-                Soluciones unificadas de software y tecnología estructuradas para las 4 áreas clave de la empresa: Pipelines de Datos, Machine Learning Predictivo, IA Agéntica y Visión Computacional.
+                Soluciones unificadas de software y tecnología estructuradas en dos disciplinas estratégicas: Ingeniería de Datos de alta fidelidad y Soluciones de Inteligencia Artificial para el negocio.
               </p>
             </div>
 
@@ -364,7 +350,7 @@ export default function App() {
               <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
                 <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--vision-color)', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>FASE 1: DIAGNÓSTICO</span>
                 <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Auditoría & Viabilidad Técnica</h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Sesión Discovery de 30 minutos sin cargo para auditar las fuentes de datos o imágenes, evaluar la viabilidad técnica y trazar la arquitectura objetivo antes de iniciar.</p>
+                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Sesión Discovery de 30 minutos sin cargo para auditar las fuentes de datos, procesos e infraestructura, evaluar la viabilidad técnica y trazar la arquitectura objetivo antes de iniciar.</p>
               </div>
               <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
                 <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--ai-color)', color: '#fff', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>FASE 2: EJECUCIÓN</span>
@@ -453,7 +439,7 @@ export default function App() {
       </main>
 
       <footer className="container footer">
-        © {new Date().getFullYear()} {siteConfig.name} — Consultora Boutique de Ingeniería de Datos, IA & Computer Vision.
+        © {new Date().getFullYear()} {siteConfig.name} — Consultora Boutique de Ingeniería de Datos & Soluciones de Inteligencia Artificial.
       </footer>
     </div>
   );

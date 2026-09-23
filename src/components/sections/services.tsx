@@ -26,15 +26,15 @@ export function Services() {
       result: "Inteligencia de negocios instantánea sobre tu información sin compartir un solo byte con terceros."
     },
     {
-      title: "Inspección Inteligente con Computing Vision",
-      tag: "Computing Vision",
-      context: "Inspección manual de productos o flujos visuales propenso a errores humanos, lentitud y falta de monitoreo continuo.",
+      title: "Modelos Predictivos y Analítica con Inteligencia Artificial",
+      tag: "Soluciones de IA",
+      context: "Decisiones comerciales reactivas, pérdida imprevista de clientes y capital inmovilizado por compras erróneas de stock.",
       work: [
-        "Despliegue de modelos de visión artificial (YOLO/OpenCV) en tiempo real",
-        "Detección automática de objetos, anomalías y patrones en bordes (Edge AI)",
-        "Panel de control centralizado con alertas automáticas y métricas visuales"
+        "Modelos predictivos supervisados de pronóstico de demanda y prevención de churn",
+        "Endpoints API REST de alta disponibilidad para scoring en tiempo real",
+        "Monitoreo continuo de salud y reentrenamiento automático de modelos"
       ],
-      result: "Un sistema de inspección 24/7 sin fallas humanas que automatiza el control de calidad en tiempo real."
+      result: "Anticipación comercial precisa y optimización de capital de trabajo basada en Machine Learning e Inteligencia Artificial."
     }
   ];
 

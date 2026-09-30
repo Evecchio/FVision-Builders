@@ -216,11 +216,11 @@ export default function App() {
           <div className="hero-copy">
             <span className="eyebrow">
               <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
-              Consultoría Boutique • Datos, Machine Learning, IA Agéntica & Gemelos Digitales
+              Consultoría Boutique • Datos • Machine Learning • IA Agéntica • Gemelos Digitales
             </span>
             <h1>
-              <span style={{ display: 'block' }}>Ingeniería de Datos & Machine Learning</span>
-              <span style={{ display: 'block' }}><span style={{ whiteSpace: 'nowrap' }}>IA&nbsp;Agéntica</span> & Gemelos Digitales</span>
+              <span style={{ display: 'block' }}>Ingeniería de Datos • Machine Learning</span>
+              <span style={{ display: 'block' }}><span style={{ whiteSpace: 'nowrap' }}>IA&nbsp;Agéntica</span> • Gemelos Digitales</span>
             </h1>
             <p className="lead">
               Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines ETL de alta fidelidad, modelos predictivos de Machine Learning, agentes autónomos supervisados y réplicas operativas con gemelos digitales.

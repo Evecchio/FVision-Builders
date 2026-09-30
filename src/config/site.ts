@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "FVision",
-  title: "FVision | Ingeniería de Datos, Machine Learning & Soluciones de Inteligencia Artificial",
+  title: "FVision | Datos, Machine Learning, IA Agéntica & Gemelos Digitales",
   description:
-    "FVision - Consultora Boutique de Ingeniería de Datos, Machine Learning & Soluciones de Inteligencia Artificial. Soluciones de software de alto impacto para la economía real.",
+    "FVision - Consultora Boutique de Software: Ingeniería de Datos, Machine Learning, IA Agéntica & Gemelos Digitales. Soluciones de alto impacto para la economía real.",
   owner: "FVision",
   email: "ezequiel@fvision.com",
   whatsapp: "541126676941",

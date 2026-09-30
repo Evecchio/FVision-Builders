@@ -20,13 +20,14 @@ const categories = [
   { id: "all", label: "Todas las Soluciones" },
   { id: "data", label: "📊 Ingeniería de Datos" },
   { id: "ml", label: "📈 Machine Learning" },
-  { id: "ai", label: "🤖 Soluciones de IA" }
+  { id: "ai", label: "🤖 IA Agéntica" },
+  { id: "vision", label: "👁️ Visión & Digital Twins" }
 ] as const;
 
 interface Solution {
   title: string;
   summary: string;
-  category: "data" | "ml" | "ai";
+  category: "data" | "ml" | "ai" | "vision";
   tags: string[];
   specs: {
     problem: string;
@@ -38,38 +39,50 @@ interface Solution {
 
 const projects: Solution[] = [
   {
-    title: "Pipelines de Datos & Data Quality",
+    title: "Ingeniería de Datos: Pipelines ETL & Data Quality",
     summary: "Extracción, limpieza y consolidación de datos dispersos (ERP, CRM, hojas de cálculo) en almacenes centralizados con monitoreo de integridad y tableros ejecutivos en tiempo real.",
     category: "data",
-    tags: ["ETL / ELT", "Data Quality", "PostgreSQL / ClickHouse", "Python & SQL", "Dashboards Ejecutivos", "Integración ERP/CRM"],
+    tags: ["Pipelines ETL / ELT", "Data Quality & Contratos", "PostgreSQL / ClickHouse", "Python & SQL", "Dashboards Ejecutivos", "Integración ERP/CRM"],
     specs: {
-      problem: "Silos de información desactualizada, reportes manuales lentos y toma de decisiones comerciales a ciegas.",
-      solution: "Tuberías automatizadas de extracción y limpieza, validación semántica de datos, alertas automáticas y dashboards analíticos interactivos.",
-      statusLabel: "Ingeniería & Calidad",
+      problem: "Silos de información desactualizada, reportes manuales propensos a error y falta de visibilidad analítica confiable.",
+      solution: "Tuberías automatizadas de extracción y limpieza, contratos de datos validados, alertas de desvío y tableros en tiempo real.",
+      statusLabel: "ETL & DATA QUALITY",
       status: "production"
     }
   },
   {
-    title: "Machine Learning Predictivo & Analítica de Negocio",
+    title: "Machine Learning: Modelos Predictivos & MLOps",
     summary: "Modelos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos comerciales.",
     category: "ml",
-    tags: ["Pronóstico de Demanda", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"],
+    tags: ["Pronóstico de Demanda", "Prevención de Churn", "Lead Scoring Algorítmico", "FastAPI Endpoints", "Scikit-Learn / XGBoost", "MLflow Observabilidad"],
     specs: {
-      problem: "Pérdida imprevista de clientes, capital inmovilizado por compras erróneas de stock y horas comerciales desperdiciadas.",
-      solution: "Modelos estadísticos y de ensamble entrenados con datos del cliente, expuestos mediante endpoints API REST (FastAPI) y con observabilidad en MLflow.",
-      statusLabel: "Modelos Validados",
+      problem: "Pérdida imprevista de clientes, capital inmovilizado por sobrestock y horas comerciales invertidas en leads fríos.",
+      solution: "Modelos estadísticos y de ensamble entrenados con datos del cliente, expuestos mediante API REST y con observabilidad en producción.",
+      statusLabel: "MODELOS SUPERVISADOS & MLOPS",
       status: "production"
     }
   },
   {
-    title: "Soluciones de Inteligencia Artificial: Automatización & Agentes",
+    title: "IA Agéntica: Agentes Autónomos & RAG Privado",
     summary: "Agentes de IA que coordinan y ejecutan tareas operativas complejas conectados a ERPs/CRMs bajo contratos estrictos de comportamiento y supervisión humana (Human-in-the-Loop).",
     category: "ai",
-    tags: ["Tool-Calling", "LangGraph / LlamaIndex", "Human-in-the-Loop", "RAG Privado (VPC/Local)", "Cero Fuga de Datos", "Docker"],
+    tags: ["Tool-Calling & Function Calling", "LangGraph / LlamaIndex", "Human-in-the-Loop", "RAG Privado (VPC/Local)", "Cero Fuga de Datos", "Docker Contenedores"],
     specs: {
-      problem: "Procesos manuales repetitivos entre sistemas; riesgo de alucinaciones y fuga de datos en herramientas de IA genéricas.",
+      problem: "Cuellos de botella en operaciones repetitivas; riesgo de alucinaciones y fuga de datos en herramientas de IA comerciales.",
       solution: "Agentes ejecutores con Tool-Calling, orquestación contenerizada en Docker y RAG corporativo privado en VPC u On-Premise con cifrado AES-256.",
-      statusLabel: "Sistemas Autónomos",
+      statusLabel: "LANGGRAPH & RAG PRIVADO",
+      status: "production"
+    }
+  },
+  {
+    title: "Visión por Computador & Gemelos Digitales (Digital Twins)",
+    summary: "Inspección visual automatizada en tiempo real y réplicas digitales operativas de procesos, plantas o activos para simulación, monitoreo y diagnóstico preventivo.",
+    category: "vision",
+    tags: ["Edge AI & Embedded Vision", "YOLOv8 / OpenCV", "Telemetría IoT & MQTT", "Simulación de Procesos", "Inspección de Calidad", "Docker Edge"],
+    specs: {
+      problem: "Control de calidad manual con alto margen de falla humana, paradas no programadas y falta de trazabilidad visual en tiempo real.",
+      solution: "Modelos de visión por computador desplegados en el borde (Edge AI) integrados con sensores IoT para alimentar el gemelo digital en tiempo real.",
+      statusLabel: "EDGE AI & DIGITAL TWINS",
       status: "production"
     }
   }
@@ -102,16 +115,16 @@ const teamMembers = [
 const showcases = [
   {
     title: "InsightDoc AI",
-    badge: "SOLUCIONES DE IA & RAG PRIVADO",
+    badge: "IA AGÉNTICA & RAG PRIVADO",
     badgeColor: "var(--accent)",
-    desc: "Plataforma corporativa de inteligencia artificial para análisis documental y búsqueda semántica avanzada. Procesa contratos, manuales y normativas complejas en servidor privado (VPC/Local) con citación de fuentes y cero fuga de información confidencial.",
+    desc: "Plataforma corporativa de IA agéntica para análisis documental y búsqueda semántica avanzada. Procesa contratos, manuales y normativas complejas en servidor privado (VPC/Local) con citación de fuentes y cero fuga de información confidencial.",
     tags: ["RAG Corporativo Privado", "Búsqueda Semántica", "Cero Fuga de Datos (VPC)", "FastAPI & Python"]
   },
   {
     title: "OpsAgent Core",
-    badge: "SOLUCIONES DE IA & AUTOMATIZACIÓN",
+    badge: "IA AGÉNTICA & AUTOMATIZACIÓN",
     badgeColor: "var(--ai-color)",
-    desc: "Squad de agentes de inteligencia artificial que coordinan la conciliación operativa entre sistemas: cruzan órdenes de compra, validan comprobantes fiscales con registros bancarios y preparan asientos contables bajo supervisión humana (Human-in-the-Loop).",
+    desc: "Squad de agentes autónomos que coordinan la conciliación operativa entre sistemas: cruzan órdenes de compra, validan comprobantes fiscales con registros bancarios y preparan asientos contables bajo supervisión humana (Human-in-the-Loop).",
     tags: ["LangGraph Multi-Agente", "Tool-Calling", "Integración ERP/CRM", "Human-in-the-Loop"]
   },
   {
@@ -120,6 +133,13 @@ const showcases = [
     badgeColor: "var(--local-color)",
     desc: "Pipeline de ingesta automatizada que alimenta modelos de Machine Learning supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción.",
     tags: ["XGBoost & Scikit-Learn", "Pipelines ETL", "MLflow Observabilidad", "Scoring Predictivo"]
+  },
+  {
+    title: "TwinVision Core",
+    badge: "GEMELOS DIGITALES & VISIÓN INDUSTRIAL",
+    badgeColor: "var(--accent-hover)",
+    desc: "Plataforma de inspección visual continua e integración con gemelos digitales en tiempo real. Procesa streams de video industriales en Edge con YOLOv8, detecta anomalías y sincroniza telemetría MQTT con la réplica virtual para mantenimiento preventivo.",
+    tags: ["YOLOv8 Edge AI", "Telemetría MQTT & IoT", "Digital Twin Engine", "FastAPI & Docker"]
   }
 ];
 
@@ -196,11 +216,11 @@ export default function App() {
           <div className="hero-copy">
             <span className="eyebrow">
               <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
-              Consultoría Boutique • Software & Soluciones de IA
+              Consultoría Boutique • Software, IA & Gemelos Digitales
             </span>
-            <h1>Ingeniería de Datos, Machine Learning & Soluciones de Inteligencia Artificial</h1>
+            <h1>Datos, Machine Learning, IA Agéntica & Gemelos Digitales</h1>
             <p className="lead">
-              Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos de Machine Learning orientados al balance financiero, agentes autónomos supervisados y asistentes privados de conocimiento.
+              Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines ETL certificados, modelos predictivos de Machine Learning, agentes autónomos supervisados y visión por computador integrada a gemelos digitales.
             </p>
             <div className="actions">
               <a className="button button-primary" href="#contacto">
@@ -219,7 +239,7 @@ export default function App() {
             <div className="section-heading">
               <h2>Servicios & Soluciones Oficiales</h2>
               <p>
-                Soluciones unificadas de software y tecnología estructuradas en tres disciplinas estratégicas: Ingeniería de Datos de alta fidelidad, Machine Learning Predictivo y Soluciones de Inteligencia Artificial.
+                Soluciones unificadas de software y tecnología estructuradas en cuatro pilares estratégicos: Ingeniería de Datos de alta fidelidad, Machine Learning Predictivo, IA Agéntica y Visión por Computador con Gemelos Digitales.
               </p>
             </div>
 
@@ -356,7 +376,7 @@ export default function App() {
               <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
                 <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--ai-color)', color: '#fff', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>FASE 2: EJECUCIÓN</span>
                 <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Implementación Modular por Hitos</h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Construcción de la solución acordada, integración a los sistemas existentes (ERP/CRM/Cloud), pruebas rigurosas en staging y despliegue productivo con documentación técnica y alcance cerrado.</p>
+                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Construcción bajo TDD y especificaciones OpenAPI, integración a ERP/CRM/Cloud con contratos de datos validados, Docker y entrega con Runbook operativo y alcance cerrado.</p>
               </div>
               <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
                 <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--local-color)', color: '#fff', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>FASE 3: CONTINUIDAD</span>
@@ -440,7 +460,7 @@ export default function App() {
       </main>
 
       <footer className="container footer">
-        © {new Date().getFullYear()} {siteConfig.name} — Consultora Boutique de Ingeniería de Datos, Machine Learning & Soluciones de Inteligencia Artificial.
+        © {new Date().getFullYear()} {siteConfig.name} — Consultora Boutique de Software: Datos, Machine Learning, IA Agéntica & Gemelos Digitales.
       </footer>
     </div>
   );

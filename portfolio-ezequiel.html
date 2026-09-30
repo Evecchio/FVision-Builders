@@ -223,9 +223,18 @@
     h1 {
       font-family: "Plus Jakarta Sans", sans-serif;
       font-size: clamp(1.8rem, 5.5vw, 3.2rem);
-      line-height: 1.1;
+      line-height: 1.15;
       letter-spacing: -0.04em;
       font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .hero-line {
+      display: block;
+    }
+
+    .nowrap {
+      white-space: nowrap;
     }
 
     .lead {
@@ -850,9 +859,9 @@
 <main id="top">
   <section class="hero container">
     <div>
-      <span class="eyebrow" data-i18n="hero.eyebrow">Consultoría Boutique • Datos, Machine Learning, Agentes & Gemelos Digitales</span>
-      <h1 data-i18n="hero.title">Ingeniería de Datos, Machine Learning, IA Agéntica & Gemelos Digitales</h1>
-      <p class="lead" data-i18n="hero.lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos de Machine Learning orientados al balance financiero, agentes autónomos supervisados y gemelos digitales con visión por computador en tiempo real.</p>
+      <span class="eyebrow" data-i18n="hero.eyebrow">Consultoría Boutique • Datos, Machine Learning, IA Agéntica & Gemelos Digitales</span>
+      <h1 data-i18n="hero.title"><span class="hero-line">Ingeniería de Datos & Machine Learning</span><span class="hero-line"><span class="nowrap">IA&nbsp;Agéntica</span> & Gemelos Digitales</span></h1>
+      <p class="lead" data-i18n="hero.lead">Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines ETL de alta fidelidad, modelos predictivos de Machine Learning, agentes autónomos supervisados y réplicas operativas con gemelos digitales.</p>
       <div class="actions">
         <a class="btn primary" href="#contact" data-i18n="hero.btnContact">Agendar Consulta Técnica</a>
         <a class="btn" href="#projects" data-i18n="hero.btnSolutions">Explorar Soluciones</a>
@@ -922,7 +931,7 @@
         <!-- SOLUCIÓN 3: IA AGÉNTICA & RAG -->
         <article class="card" data-category="ai" id="card-ops">
           <div class="card-head">
-            <h3 class="card-title">IA Agéntica: Agentes Autónomos & RAG Privado</h3>
+            <h3 class="card-title"><span class="nowrap">IA&nbsp;Agéntica</span>: Agentes Autónomos & RAG Privado</h3>
             <span class="status-badge"><span class="status-led production"></span><span class="status-text">LANGGRAPH & RAG PRIVADO</span></span>
           </div>
           <p class="summary-text">Agentes de IA que coordinan y ejecutan tareas operativas complejas conectados a ERPs/CRMs bajo contratos estrictos de comportamiento, con asistentes de conocimiento sobre contratos y normativas en VPC privada.</p>
@@ -1029,9 +1038,21 @@
       </div>
       <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
         <article class="showcase-card">
-          <span class="showcase-badge" data-i18n="showcases.s1.badge">IA AGÉNTICA & RAG PRIVADO</span>
-          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;" data-i18n="showcases.s1.title">InsightDoc AI</h3>
-          <p class="summary-text" data-i18n="showcases.s1.desc">Plataforma corporativa de inteligencia artificial para análisis documental y búsqueda semántica avanzada. Procesa contratos, manuales y normativas complejas en servidor privado (VPC/Local) con citación de fuentes y cero fuga de información confidencial.</p>
+          <span class="showcase-badge" style="background:var(--local-color); color:#fff;" data-i18n="showcases.s1.badge">MACHINE LEARNING & PIPELINES DE DATOS</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;" data-i18n="showcases.s1.title">DataPulse Predictor</h3>
+          <p class="summary-text" data-i18n="showcases.s1.desc">Pipeline de ingesta automatizada que alimenta modelos de Machine Learning supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción.</p>
+          <div class="tags" style="margin-top:auto;">
+            <span class="tag">XGBoost & Scikit-Learn</span>
+            <span class="tag">Pipelines ETL</span>
+            <span class="tag">MLflow Observabilidad</span>
+            <span class="tag">Scoring Predictivo</span>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <span class="showcase-badge" data-i18n="showcases.s2.badge">IA AGÉNTICA & RAG PRIVADO</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;" data-i18n="showcases.s2.title">InsightDoc AI</h3>
+          <p class="summary-text" data-i18n="showcases.s2.desc">Plataforma corporativa de inteligencia artificial para análisis documental y búsqueda semántica avanzada. Procesa contratos, manuales y normativas complejas en servidor privado (VPC/Local) con citación de fuentes y cero fuga de información confidencial.</p>
           <div class="tags" style="margin-top:auto;">
             <span class="tag">RAG Corporativo Privado</span>
             <span class="tag">Búsqueda Semántica</span>
@@ -1041,26 +1062,14 @@
         </article>
 
         <article class="showcase-card">
-          <span class="showcase-badge" style="background:var(--ai-color); color:#fff;" data-i18n="showcases.s2.badge">IA AGÉNTICA & AUTOMATIZACIÓN</span>
-          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;" data-i18n="showcases.s2.title">OpsAgent Core</h3>
-          <p class="summary-text" data-i18n="showcases.s2.desc">Squad de agentes de inteligencia artificial que coordinan la conciliación operativa entre sistemas: cruzan órdenes de compra, validan comprobantes fiscales con registros bancarios y preparan asientos contables bajo supervisión humana (Human-in-the-Loop).</p>
+          <span class="showcase-badge" style="background:var(--ai-color); color:#fff;" data-i18n="showcases.s3.badge">IA AGÉNTICA & AUTOMATIZACIÓN</span>
+          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;" data-i18n="showcases.s3.title">OpsAgent Core</h3>
+          <p class="summary-text" data-i18n="showcases.s3.desc">Squad de agentes de inteligencia artificial que coordinan la conciliación operativa entre sistemas: cruzan órdenes de compra, validan comprobantes fiscales con registros bancarios y preparan asientos contables bajo supervisión humana (Human-in-the-Loop).</p>
           <div class="tags" style="margin-top:auto;">
             <span class="tag">LangGraph Multi-Agente</span>
             <span class="tag">Tool-Calling</span>
             <span class="tag">Integración ERP/CRM</span>
             <span class="tag">Human-in-the-Loop</span>
-          </div>
-        </article>
-
-        <article class="showcase-card">
-          <span class="showcase-badge" style="background:var(--local-color); color:#fff;" data-i18n="showcases.s3.badge">MACHINE LEARNING & PIPELINES DE DATOS</span>
-          <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.5rem;" data-i18n="showcases.s3.title">DataPulse Predictor</h3>
-          <p class="summary-text" data-i18n="showcases.s3.desc">Pipeline de ingesta automatizada que alimenta modelos de Machine Learning supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción.</p>
-          <div class="tags" style="margin-top:auto;">
-            <span class="tag">XGBoost & Scikit-Learn</span>
-            <span class="tag">Pipelines ETL</span>
-            <span class="tag">MLflow Observabilidad</span>
-            <span class="tag">Scoring Predictivo</span>
           </div>
         </article>
 
@@ -1146,15 +1155,15 @@
         contact: "Contacto"
       },
       hero: {
-        eyebrow: "Consultoría Boutique • Datos, Machine Learning, Agentes & Gemelos Digitales",
-        title: "Ingeniería de Datos, Machine Learning, IA Agéntica & Gemelos Digitales",
-        lead: "Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines de datos automatizados, modelos predictivos de Machine Learning orientados al balance financiero, agentes autónomos supervisados y gemelos digitales con visión por computador en tiempo real.",
+        eyebrow: "Consultoría Boutique • Datos, Machine Learning, IA Agéntica & Gemelos Digitales",
+        title: '<span class="hero-line">Ingeniería de Datos & Machine Learning</span><span class="hero-line"><span class="nowrap">IA&nbsp;Agéntica</span> & Gemelos Digitales</span>',
+        lead: "Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines ETL de alta fidelidad, modelos predictivos de Machine Learning, agentes autónomos supervisados y réplicas operativas con gemelos digitales.",
         btnContact: "Agendar Consulta Técnica",
         btnSolutions: "Explorar Soluciones"
       },
       solutions: {
         heading: "Servicios & Soluciones Oficiales",
-        subheading: "Soluciones unificadas de software estructuradas en cuatro disciplinas estratégicas: Ingeniería de Datos de alta fidelidad, Machine Learning Predictivo, IA Agéntica & RAG, y Gemelos Digitales con Visión por Computador."
+        subheading: "Soluciones unificadas de software estructuradas en cuatro disciplinas estratégicas: Ingeniería de Datos de alta fidelidad, Machine Learning Predictivo, IA Agéntica y Gemelos Digitales con Visión por Computador."
       },
       filters: {
         all: "Todas las Soluciones",
@@ -1185,7 +1194,7 @@
           tags: ["Pronóstico de Demanda", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"]
         },
         ops: {
-          title: "IA Agéntica: Agentes Autónomos & RAG Privado",
+          title: '<span class="nowrap">IA&nbsp;Agéntica</span>: Agentes Autónomos & RAG Privado',
           status: "LANGGRAPH & RAG PRIVADO",
           summary: "Agentes de IA que coordinan y ejecutan tareas operativas complejas conectados a ERPs/CRMs bajo contratos estrictos de comportamiento, con asistentes de conocimiento sobre contratos y normativas en VPC privada.",
           problemLabel: "PROBLEMA",
@@ -1228,19 +1237,19 @@
         heading: "Showcases Tecnológicos de Demostración",
         subheading: "Sistemas reales desarrollados internamente por FVision, disponibles para demostración técnica uno a uno (screensharing) de su arquitectura, código y rendimiento operativo.",
         s1: {
+          badge: "MACHINE LEARNING & PIPELINES DE DATOS",
+          title: "DataPulse Predictor",
+          desc: "Pipeline de ingesta automatizada que alimenta modelos de Machine Learning supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción."
+        },
+        s2: {
           badge: "IA AGÉNTICA & RAG PRIVADO",
           title: "InsightDoc AI",
           desc: "Plataforma corporativa de inteligencia artificial para análisis documental y búsqueda semántica avanzada. Procesa contratos, manuales y normativas complejas en servidor privado (VPC/Local) con citación de fuentes y cero fuga de información confidencial."
         },
-        s2: {
+        s3: {
           badge: "IA AGÉNTICA & AUTOMATIZACIÓN",
           title: "OpsAgent Core",
           desc: "Squad de agentes de inteligencia artificial que coordinan la conciliación operativa entre sistemas: cruzan órdenes de compra, validan comprobantes fiscales con registros bancarios y preparan asientos contables bajo supervisión humana (Human-in-the-Loop)."
-        },
-        s3: {
-          badge: "MACHINE LEARNING & PIPELINES DE DATOS",
-          title: "DataPulse Predictor",
-          desc: "Pipeline de ingesta automatizada que alimenta modelos de Machine Learning supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción."
         },
         s4: {
           badge: "GEMELOS DIGITALES & VISIÓN INDUSTRIAL",
@@ -1291,15 +1300,15 @@
         contact: "Contact"
       },
       hero: {
-        eyebrow: "Boutique Consulting • Data, Machine Learning, Agents & Digital Twins",
-        title: "Data Engineering, Machine Learning, Agentic AI & Digital Twins",
-        lead: "We design and integrate high-impact enterprise software solutions: automated data pipelines, business-oriented predictive Machine Learning models, supervised autonomous agents, and real-time computer vision digital twins.",
+        eyebrow: "Boutique Consulting • Data, Machine Learning, Agentic AI & Digital Twins",
+        title: '<span class="hero-line">Data Engineering & Machine Learning</span><span class="hero-line"><span class="nowrap">Agentic&nbsp;AI</span> & Digital Twins</span>',
+        lead: "We design and integrate high-impact enterprise software solutions: high-fidelity ETL pipelines, predictive Machine Learning models, supervised autonomous agents, and operational digital twin replicas.",
         btnContact: "Book Technical Discovery",
         btnSolutions: "Explore Solutions"
       },
       solutions: {
         heading: "Official Services & Solutions",
-        subheading: "Unified software solutions structured into four strategic disciplines: High-fidelity Data Engineering, Predictive Machine Learning, Agentic AI & RAG, and Computer Vision Digital Twins."
+        subheading: "Unified software solutions structured into four strategic disciplines: High-fidelity Data Engineering, Predictive Machine Learning, Agentic AI, and Computer Vision Digital Twins."
       },
       filters: {
         all: "All Solutions",
@@ -1330,7 +1339,7 @@
           tags: ["Demand Forecasting", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"]
         },
         ops: {
-          title: "Agentic AI: Autonomous Agents & Private RAG",
+          title: '<span class="nowrap">Agentic&nbsp;AI</span>: Autonomous Agents & Private RAG',
           status: "LANGGRAPH & PRIVATE RAG",
           summary: "AI agents coordinating and executing complex operational workflows connected to ERP/CRM systems under strict behavioral contracts, with private VPC knowledge assistants.",
           problemLabel: "PROBLEM",
@@ -1373,19 +1382,19 @@
         heading: "Showcase Systems & Live Demos",
         subheading: "Real-world enterprise systems developed by FVision, available for 1-on-1 live technical walkthroughs (screensharing) covering architecture, code, and operational performance.",
         s1: {
+          badge: "MACHINE LEARNING & DATA PIPELINES",
+          title: "DataPulse Predictor",
+          desc: "Automated ingestion pipeline powering supervised Machine Learning models for inventory stockout forecasting and customer churn scoring, with continuous production metrics monitoring."
+        },
+        s2: {
           badge: "AGENTIC AI & PRIVATE RAG",
           title: "InsightDoc AI",
           desc: "Enterprise artificial intelligence platform for document analysis and semantic search. Processes contracts, policies, and complex manuals on private servers (VPC/Local) with source citation and zero confidential data leakage."
         },
-        s2: {
+        s3: {
           badge: "AGENTIC AI & AUTOMATION",
           title: "OpsAgent Core",
           desc: "Squad of autonomous artificial intelligence agents coordinating operational reconciliations across systems: cross-referencing POs, validating tax invoices with bank statements, and preparing ledger entries under human supervision (Human-in-the-Loop)."
-        },
-        s3: {
-          badge: "MACHINE LEARNING & DATA PIPELINES",
-          title: "DataPulse Predictor",
-          desc: "Automated ingestion pipeline powering supervised Machine Learning models for inventory stockout forecasting and customer churn scoring, with continuous production metrics monitoring."
         },
         s4: {
           badge: "DIGITAL TWINS & COMPUTER VISION",
@@ -1436,15 +1445,15 @@
         contact: "Contato"
       },
       hero: {
-        eyebrow: "Consultoria Boutique • Dados, Machine Learning, Agentes & Gêmeos Digitais",
-        title: "Engenharia de Dados, Machine Learning, IA Agêntica & Gêmeos Digitais",
-        lead: "Projetamos e integramos soluções de software de alto impacto empresarial: pipelines de dados automatizados, modelos preditivos de Machine Learning orientados ao resultado financeiro, agentes autônomos supervisionados e gêmeos digitais com visão computacional em tempo real.",
+        eyebrow: "Consultoria Boutique • Dados, Machine Learning, IA Agêntica & Gêmeos Digitais",
+        title: '<span class="hero-line">Engenharia de Dados & Machine Learning</span><span class="hero-line"><span class="nowrap">IA&nbsp;Agêntica</span> & Gêmeos Digitais</span>',
+        lead: "Projetamos e integramos soluções de software de alto impacto empresarial: pipelines ETL de alta fidelidade, modelos preditivos de Machine Learning, agentes autônomos supervisionados e réplicas operacionais com gêmeos digitais.",
         btnContact: "Agendar Consulta Técnica",
         btnSolutions: "Explorar Soluções"
       },
       solutions: {
         heading: "Serviços & Soluções Oficiais",
-        subheading: "Soluções unificadas de software estruturadas em quatro disciplinas estratégicas: Engenharia de Dados de alta fidelidade, Machine Learning Preditivo, IA Agêntica & RAG, e Gêmeos Digitais com Visão Computacional."
+        subheading: "Soluções unificadas de software estruturadas em quatro disciplinas estratégicas: Engenharia de Dados de alta fidelidade, Machine Learning Preditivo, IA Agêntica e Gêmeos Digitais com Visão Computacional."
       },
       filters: {
         all: "Todas as Soluções",
@@ -1475,7 +1484,7 @@
           tags: ["Previsão de Demanda", "Customer Churn", "Lead Scoring", "FastAPI", "Scikit-Learn / XGBoost", "MLflow"]
         },
         ops: {
-          title: "IA Agêntica: Agentes Autônomos & RAG Privado",
+          title: '<span class="nowrap">IA&nbsp;Agêntica</span>: Agentes Autônomos & RAG Privado',
           status: "LANGGRAPH & RAG PRIVADO",
           summary: "Agentes de IA que coordenam e executam tarefas operacionais complexas integradas a ERPs/CRMs sob contratos estritos de comportamento, com assistentes corporativos privados em VPC.",
           problemLabel: "PROBLEMA",
@@ -1518,19 +1527,19 @@
         heading: "Showcases Tecnológicos de Demonstração",
         subheading: "Sistemas reais desenvolvidos internamente pela FVision, disponíveis para demonstração técnica individual (screensharing) de sua arquitetura, código e desempenho operacional.",
         s1: {
+          badge: "MACHINE LEARNING & PIPELINES DE DADOS",
+          title: "DataPulse Predictor",
+          desc: "Pipeline de ingestão automatizada que alimenta modelos de Machine Learning supervisionados para previsão de ruptura de estoque e cancelamento de clientes (Churn Scoring), com monitoramento contínuo em produção."
+        },
+        s2: {
           badge: "IA AGÊNTICA & RAG PRIVADO",
           title: "InsightDoc AI",
           desc: "Plataforma corporativa de inteligência artificial para análise documental e busca semântica avançada. Processa contratos, manuais e políticas complexas em servidor privado (VPC/Local) com citação de fontes e zero vazamento de dados."
         },
-        s2: {
+        s3: {
           badge: "IA AGÊNTICA & AUTOMAÇÃO",
           title: "OpsAgent Core",
           desc: "Squad de agentes de inteligência artificial que coordenam conciliações operacionais entre sistemas: cruzam pedidos de compra, validam notas fiscais com extratos bancários e preparam lançamentos contábeis sob supervisão humana (Human-in-the-Loop)."
-        },
-        s3: {
-          badge: "MACHINE LEARNING & PIPELINES DE DADOS",
-          title: "DataPulse Predictor",
-          desc: "Pipeline de ingestão automatizada que alimenta modelos de Machine Learning supervisionados para previsão de ruptura de estoque e cancelamento de clientes (Churn Scoring), com monitoramento contínuo em produção."
         },
         s4: {
           badge: "GÊMEOS DIGITAIS & VISÃO INDUSTRIAL",
@@ -1594,7 +1603,13 @@
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       const val = getNestedValue(dict, key);
-      if (val !== undefined) el.textContent = val;
+      if (val !== undefined) {
+        if (typeof val === 'string' && (val.includes('<') || val.includes('&nbsp;'))) {
+          el.innerHTML = val;
+        } else {
+          el.textContent = val;
+        }
+      }
     });
 
     // Actualizar placeholders con data-i18n-ph
@@ -1610,7 +1625,10 @@
       const cardData = dict.cards[cat];
       if (cardEl && cardData) {
         const titleEl = cardEl.querySelector('.card-title');
-        if (titleEl) titleEl.textContent = cardData.title;
+        if (titleEl) {
+          if (cardData.title.includes('<')) titleEl.innerHTML = cardData.title;
+          else titleEl.textContent = cardData.title;
+        }
 
         const statusEl = cardEl.querySelector('.status-text');
         if (statusEl) statusEl.textContent = cardData.status;

@@ -114,6 +114,13 @@ const teamMembers = [
 
 const showcases = [
   {
+    title: "DataPulse Predictor",
+    badge: "MACHINE LEARNING & PIPELINES DE DATOS",
+    badgeColor: "var(--local-color)",
+    desc: "Pipeline de ingesta automatizada que alimenta modelos de Machine Learning supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción.",
+    tags: ["XGBoost & Scikit-Learn", "Pipelines ETL", "MLflow Observabilidad", "Scoring Predictivo"]
+  },
+  {
     title: "InsightDoc AI",
     badge: "IA AGÉNTICA & RAG PRIVADO",
     badgeColor: "var(--accent)",
@@ -126,13 +133,6 @@ const showcases = [
     badgeColor: "var(--ai-color)",
     desc: "Squad de agentes autónomos que coordinan la conciliación operativa entre sistemas: cruzan órdenes de compra, validan comprobantes fiscales con registros bancarios y preparan asientos contables bajo supervisión humana (Human-in-the-Loop).",
     tags: ["LangGraph Multi-Agente", "Tool-Calling", "Integración ERP/CRM", "Human-in-the-Loop"]
-  },
-  {
-    title: "DataPulse Predictor",
-    badge: "MACHINE LEARNING & PIPELINES DE DATOS",
-    badgeColor: "var(--local-color)",
-    desc: "Pipeline de ingesta automatizada que alimenta modelos de Machine Learning supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción.",
-    tags: ["XGBoost & Scikit-Learn", "Pipelines ETL", "MLflow Observabilidad", "Scoring Predictivo"]
   },
   {
     title: "TwinVision Core",
@@ -216,11 +216,14 @@ export default function App() {
           <div className="hero-copy">
             <span className="eyebrow">
               <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
-              Consultoría Boutique • Software, IA & Gemelos Digitales
+              Consultoría Boutique • Datos, Machine Learning, IA Agéntica & Gemelos Digitales
             </span>
-            <h1>Datos, Machine Learning, IA Agéntica & Gemelos Digitales</h1>
+            <h1>
+              <span style={{ display: 'block' }}>Ingeniería de Datos & Machine Learning</span>
+              <span style={{ display: 'block' }}><span style={{ whiteSpace: 'nowrap' }}>IA&nbsp;Agéntica</span> & Gemelos Digitales</span>
+            </h1>
             <p className="lead">
-              Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines ETL certificados, modelos predictivos de Machine Learning, agentes autónomos supervisados y visión por computador integrada a gemelos digitales.
+              Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines ETL de alta fidelidad, modelos predictivos de Machine Learning, agentes autónomos supervisados y réplicas operativas con gemelos digitales.
             </p>
             <div className="actions">
               <a className="button button-primary" href="#contacto">

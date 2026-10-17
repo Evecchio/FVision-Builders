@@ -5,26 +5,21 @@ import {
   ArrowUpRight, 
   CheckCircle2,
   Clock,
-  Database,
-  LineChart,
-  Bot,
-  Eye,
-  ShieldCheck,
-  Zap,
-  Smartphone,
-  Layers
+  Mail,
+  MessageSquare,
+  Linkedin
 } from "lucide-react";
 import { siteConfig } from "./config/site";
 
 const categories = [
-  { id: "all", label: "Todas las Soluciones" },
-  { id: "data", label: "📊 Ingeniería de Datos" },
-  { id: "ml", label: "📈 Machine Learning" },
-  { id: "ai", label: "🤖 IA Agéntica" },
-  { id: "vision", label: "👁️ Visión & Digital Twins" }
+  { id: "all", label: "Todas las Prácticas" },
+  { id: "data", label: "📊 Ingeniería de Datos & BI" },
+  { id: "ai", label: "⚙️ Automatización & Agentes IA" },
+  { id: "vision", label: "📄 Procesamiento Documental & Visión" },
+  { id: "ml", label: "📈 Modelos Predictivos & RAG" }
 ] as const;
 
-interface Solution {
+interface PracticeArea {
   title: string;
   summary: string;
   category: "data" | "ml" | "ai" | "vision";
@@ -37,52 +32,52 @@ interface Solution {
   };
 }
 
-const projects: Solution[] = [
+const practiceAreas: PracticeArea[] = [
   {
-    title: "Ingeniería de Datos: Pipelines ETL & Data Quality",
-    summary: "Extracción, limpieza y consolidación de datos dispersos (ERP, CRM, hojas de cálculo) en almacenes centralizados con monitoreo de integridad y tableros ejecutivos en tiempo real.",
+    title: "Ingeniería de Datos & Inteligencia Operativa (BI / ETL)",
+    summary: "Extracción, normalización y consolidación automatizada de información dispersa (ERP, CRM, sistemas contables y planillas) en almacenes analíticos centralizados con monitoreo de integridad y tableros ejecutivos en tiempo real.",
     category: "data",
-    tags: ["Pipelines ETL / ELT", "Data Quality & Contratos", "PostgreSQL / ClickHouse", "Python & SQL", "Dashboards Ejecutivos", "Integración ERP/CRM"],
+    tags: ["Pipelines ETL / ELT", "Calidad & Gobierno de Datos", "Integración ERP / CRM", "PostgreSQL & SQL", "Tableros Ejecutivos BI", "Entrega en 2 a 3 Semanas"],
     specs: {
-      problem: "Silos de información desactualizada, reportes manuales propensos a error y falta de visibilidad analítica confiable.",
-      solution: "Tuberías automatizadas de extracción y limpieza, contratos de datos validados, alertas de desvío y tableros en tiempo real.",
-      statusLabel: "ETL & DATA QUALITY",
+      problem: "Decisiones demoradas por información fragmentada entre el ERP, el CRM y múltiples hojas de cálculo manuales propensas a error.",
+      solution: "Tuberías automatizadas de ingesta y limpieza con contratos de datos validados, alertas de desvío y visualización ejecutiva unificada.",
+      statusLabel: "CICLO DE 2 A 3 SEMANAS",
       status: "production"
     }
   },
   {
-    title: "Machine Learning: Modelos Predictivos & MLOps",
-    summary: "Modelos supervisados orientados al impacto en el balance financiero: pronóstico de demanda, prevención de fuga de clientes (churn) y calificación algorítmica de prospectos comerciales.",
-    category: "ml",
-    tags: ["Pronóstico de Demanda", "Prevención de Churn", "Lead Scoring Algorítmico", "FastAPI Endpoints", "Scikit-Learn / XGBoost", "MLflow Observabilidad"],
-    specs: {
-      problem: "Pérdida imprevista de clientes, capital inmovilizado por sobrestock y horas comerciales invertidas en leads fríos.",
-      solution: "Modelos estadísticos y de ensamble entrenados con datos del cliente, expuestos mediante API REST y con observabilidad en producción.",
-      statusLabel: "MODELOS SUPERVISADOS & MLOPS",
-      status: "production"
-    }
-  },
-  {
-    title: "IA Agéntica: Agentes Autónomos & RAG Privado",
-    summary: "Agentes de IA que coordinan y ejecutan tareas operativas complejas conectados a ERPs/CRMs bajo contratos estrictos de comportamiento y supervisión humana (Human-in-the-Loop).",
+    title: "Automatización de Procesos & Agentes de IA Operativos",
+    summary: "Diseño y despliegue de flujos de trabajo asistidos por agentes de software que conectan tus sistemas actuales por API, procesan solicitudes entrantes, concilian información y operan bajo reglas de negocio estrictas con supervisión humana.",
     category: "ai",
-    tags: ["Tool-Calling & Function Calling", "LangGraph / LlamaIndex", "Human-in-the-Loop", "RAG Privado (VPC/Local)", "Cero Fuga de Datos", "Docker Contenedores"],
+    tags: ["Automatización de Backoffice", "Integración de Sistemas & APIs", "Protocolo MCP & Tool-Calling", "Supervisión Human-in-the-Loop", "Triage de Comunicaciones", "Docker Contenedores"],
     specs: {
-      problem: "Cuellos de botella en operaciones repetitivas; riesgo de alucinaciones y fuga de datos en herramientas de IA comerciales.",
-      solution: "Agentes ejecutores con Tool-Calling, orquestación contenerizada en Docker y RAG corporativo privado en VPC u On-Premise con cifrado AES-256.",
-      statusLabel: "LANGGRAPH & RAG PRIVADO",
+      problem: "Equipos calificados perdiendo horas diarias en carga manual de datos, cruce de planillas, seguimiento de correos operativos y tareas repetitivas entre sistemas.",
+      solution: "Agentes operativos con contratos de comportamiento deterministas e integración directa a bases de datos y ERPs con puntos de validación humana.",
+      statusLabel: "CICLO DE 2 A 4 SEMANAS",
       status: "production"
     }
   },
   {
-    title: "Visión por Computador & Gemelos Digitales (Digital Twins)",
-    summary: "Inspección visual automatizada en tiempo real y réplicas digitales operativas de procesos, plantas o activos para simulación, monitoreo y diagnóstico preventivo.",
+    title: "Procesamiento Documental Inteligente (OCR) & Visión Computacional",
+    summary: "Sistemas automatizados para la lectura, extracción estructurada y validación fiscal de documentos comerciales (facturas, remitos, órdenes de compra), junto con modelos de inspección visual para control de calidad y operaciones en planta.",
     category: "vision",
-    tags: ["Edge AI & Embedded Vision", "YOLOv8 / OpenCV", "Telemetría IoT & MQTT", "Simulación de Procesos", "Inspección de Calidad", "Docker Edge"],
+    tags: ["Extracción Documental (IDP / OCR)", "Validación Fiscal & QR AFIP/ARCA", "Conciliación Contable", "Inspección Visual de Calidad", "YOLOv8 & OpenCV", "Procesamiento Local / Privado"],
     specs: {
-      problem: "Control de calidad manual con alto margen de falla humana, paradas no programadas y falta de trazabilidad visual en tiempo real.",
-      solution: "Modelos de visión por computador desplegados en el borde (Edge AI) integrados con sensores IoT para alimentar el gemelo digital en tiempo real.",
-      statusLabel: "EDGE AI & DIGITAL TWINS",
+      problem: "Cuellos de botella administrativos por carga manual de comprobantes físicos/PDFs, discrepancias de facturación y controles visuales lentos en línea operativa.",
+      solution: "Motores de lectura óptica y validación automática listos para imputar en el sistema de gestión, y pipelines de visión artificial calibrados para operación continua.",
+      statusLabel: "CICLO DE 3 A 4 SEMANAS",
+      status: "production"
+    }
+  },
+  {
+    title: "Modelos Predictivos & Sistemas de Conocimiento Privado (RAG)",
+    summary: "Modelos estadísticos de Machine Learning orientados al balance financiero (pronóstico de demanda, optimización de stock y retención de clientes) y buscadores corporativos sobre documentación interna alojados en infraestructura privada.",
+    category: "ml",
+    tags: ["Pronóstico de Demanda & Stock", "Prevención de Fuga (Churn)", "Scoring Comercial B2B", "RAG Corporativo Privado (VPC)", "Cero Fuga de Información", "Scikit-Learn / XGBoost / MLflow"],
+    specs: {
+      problem: "Compras de inventario reactivas, pérdida imprevista de clientes comerciales e imposibilidad de consultar manuales o contratos sin exponer datos sensibles.",
+      solution: "Modelos predictivos supervisados entrenados sobre tu historial operativo y repositorios de consulta semántica con trazabilidad de fuentes en servidores propios.",
+      statusLabel: "CICLO DE 3 A 4 SEMANAS",
       status: "production"
     }
   }
@@ -92,54 +87,54 @@ const teamMembers = [
   {
     name: "Ezequiel Vecchio",
     role: "Client Partner & Project Manager",
-    sub: "Liderazgo Comercial, Relación & Gestión Ágil",
-    bio: "Liderazgo comercial, prospección B2B, calificación técnica en Discovery Calls (30 min), redacción de Statements of Work (SOWs) de alcance cerrado, gestión de cronograma y cobranzas 50/50, actuando como único punto de contacto oficial (SPOC).",
-    tags: ["Liderazgo Comercial", "Discovery & Scoping", "SOWs & Entregables", "Gestión Ágil"]
+    sub: "Dirección de Proyectos, Procesos & Estrategia de Entrega",
+    bio: "Licenciado en Administración (UTN FRBA). Especialista en dirección de proyectos tecnológicos de punta a punta, relevamiento funcional (BPMN) y arquitectura de soluciones operativas. Con trayectoria previa gestionando cuentas corporativas en Europa y LATAM (Syntax), lidera el diagnóstico de negocio, la definición de alcance (SOW) y el cumplimiento en tiempo y forma.",
+    tags: ["Project Management", "Discovery & Alcance (SOW)", "Procesos BPMN & UAT", "Metodologías Ágiles"]
   },
   {
     name: "Emanuel Vecchio",
-    role: "Software Engineer & Solutions Architect",
-    sub: "Arquitectura Cloud, APIs & Soluciones de IA",
-    bio: "Diseño y desarrollo de arquitecturas cloud/backend en Python (FastAPI) y Node.js, microservicios en Docker, orquestación de sistemas de IA con Tool-Calling, APIs de alto rendimiento e integración con infraestructura empresarial.",
-    tags: ["FastAPI & Python", "Docker & Microservicios", "Soluciones de IA", "Arquitectura Cloud"]
+    role: "Lead Software Engineer & Computer Vision Specialist",
+    sub: "Arquitectura Backend, Sistemas Agénticos & Visión Artificial",
+    bio: "Especialista en diseño y desarrollo de arquitecturas backend de alto rendimiento (Python/FastAPI, Node.js), microservicios contenerizados en Docker, orquestación de agentes con integración de herramientas y sistemas de visión computacional y extracción documental (OCR) en producción.",
+    tags: ["FastAPI & Python", "Docker & Microservicios", "Computer Vision & OCR", "Integración de Sistemas"]
   },
   {
     name: "Eugenio Rezende",
-    role: "Data Scientist & Machine Learning Lead",
-    sub: "Pipelines, Modelado Matemático & RAG",
-    bio: "Auditoría de silos de datos, pipelines automatizados de ingesta y calidad (Data Quality), modelado predictivo supervisado (demanda, churn, scoring comercial), sistemas RAG vectoriales y observabilidad rigurosa con MLflow.",
-    tags: ["Pipelines & Data Quality", "Machine Learning Supervisado", "Embeddings & RAG", "MLflow"]
+    role: "Lead Data Scientist & Machine Learning Engineer",
+    sub: "Ingeniería de Datos, Modelado Predictivo & Sistemas RAG",
+    bio: "Especialista en auditoría de silos de información, diseño de pipelines automatizados de ingesta y calidad de datos (ETL), modelado estadístico y predictivo supervisado (demanda, churn, scoring comercial), buscadores corporativos vectoriales y trazabilidad con MLflow.",
+    tags: ["Pipelines ETL & Data Quality", "Machine Learning Supervisado", "RAG Corporativo Privado", "MLflow & Analítica"]
   }
 ];
 
-const showcases = [
+const implementationCases = [
   {
-    title: "DataPulse Predictor",
-    badge: "MACHINE LEARNING & PIPELINES DE DATOS",
+    title: "Conciliación Documental & Auditoría Fiscal Automatizada",
+    badge: "ADMINISTRACIÓN, FINANZAS & COMPRAS",
     badgeColor: "var(--local-color)",
-    desc: "Pipeline de ingesta automatizada que alimenta modelos de Machine Learning supervisados para predicción de quiebre de stock y desvío de clientes (Churn Scoring), con monitoreo continuo de métricas en producción.",
-    tags: ["XGBoost & Scikit-Learn", "Pipelines ETL", "MLflow Observabilidad", "Scoring Predictivo"]
+    desc: "Captura automática de facturas, remitos y comprobantes desde correo o repositorio; extracción estructurada de ítems, validación fiscal automatizada (QR AFIP/ARCA y padrones) y normalización de proveedores para imputación directa en el ERP, reduciendo tiempos de carga y errores humanos en más de un 80%.",
+    tags: ["Extracción OCR Estructurada", "Validación Fiscal Automática", "Normalización de Proveedores", "Integración Contable / ERP"]
   },
   {
-    title: "InsightDoc AI",
-    badge: "IA AGÉNTICA & RAG PRIVADO",
-    badgeColor: "var(--accent)",
-    desc: "Plataforma corporativa de IA agéntica para análisis documental y búsqueda semántica avanzada. Procesa contratos, manuales y normativas complejas en servidor privado (VPC/Local) con citación de fuentes y cero fuga de información confidencial.",
-    tags: ["RAG Corporativo Privado", "Búsqueda Semántica", "Cero Fuga de Datos (VPC)", "FastAPI & Python"]
-  },
-  {
-    title: "OpsAgent Core",
-    badge: "IA AGÉNTICA & AUTOMATIZACIÓN",
+    title: "Mesa de Entradas Inteligente & Triage Operativo",
+    badge: "OPERACIONES, COMERCIAL & LOGÍSTICA",
     badgeColor: "var(--ai-color)",
-    desc: "Squad de agentes autónomos que coordinan la conciliación operativa entre sistemas: cruzan órdenes de compra, validan comprobantes fiscales con registros bancarios y preparan asientos contables bajo supervisión humana (Human-in-the-Loop).",
-    tags: ["LangGraph Multi-Agente", "Tool-Calling", "Integración ERP/CRM", "Human-in-the-Loop"]
+    desc: "Agentes conectados a las casillas operativas y portales de la empresa que clasifican solicitudes entrantes (órdenes de compra, reclamos, documentación técnica), extraen archivos adjuntos, priorizan urgencias críticas y preparan la acción en el sistema de gestión bajo validación humana (Human-in-the-Loop).",
+    tags: ["Triage de Comunicaciones", "Integración Microsoft Graph / IMAP", "Automatización de Backoffice", "Supervisión Humana"]
   },
   {
-    title: "TwinVision Core",
-    badge: "GEMELOS DIGITALES & VISIÓN INDUSTRIAL",
+    title: "Repositorio de Conocimiento Técnico & Legal en Entorno Privado",
+    badge: "DIRECCIÓN, LEGALES & OPERACIONES TÉCNICAS",
+    badgeColor: "var(--accent)",
+    desc: "Centralización e indexación de contratos, pliegos de licitación, manuales operativos y normativas internas en servidores privados (VPC u On-Premise). Permite realizar consultas complejas en lenguaje natural obteniendo respuestas precisas con cita exacta al documento y página original, con cero fuga de datos.",
+    tags: ["Enterprise RAG Privado", "Búsqueda Híbrida & Semántica", "Citución Exacta de Fuentes", "Privacidad Corporativa Total"]
+  },
+  {
+    title: "Tablero de Rentabilidad Unitaria & Pronóstico de Demanda",
+    badge: "RETAIL, DISTRIBUCIÓN, MANUFACTURA & SERVICIOS",
     badgeColor: "var(--accent-hover)",
-    desc: "Plataforma de inspección visual continua e integración con gemelos digitales en tiempo real. Procesa streams de video industriales en Edge con YOLOv8, detecta anomalías y sincroniza telemetría MQTT con la réplica virtual para mantenimiento preventivo.",
-    tags: ["YOLOv8 Edge AI", "Telemetría MQTT & IoT", "Digital Twin Engine", "FastAPI & Docker"]
+    desc: "Unificación automática de ventas, costos logísticos, tiempos operativos e inventario disperso para calcular márgenes reales por línea de producto o servicio en tiempo real, combinando tableros gerenciales con modelos predictivos de reposición de stock y alerta temprana de clientes inactivos.",
+    tags: ["Consolidación ERP + Planillas", "Rentabilidad Unitaria Real", "Predicción de Stock & Churn", "Tableros Ejecutivos en Vivo"]
   }
 ];
 
@@ -147,38 +142,36 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [formState, setFormState] = useState({
     name: "",
+    company: "",
     email: "",
     message: ""
   });
-  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
+  const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus("submitting");
-    try {
-      const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formState)
-      });
-      if (response.ok) {
-        setFormStatus("success");
-        setFormState({ name: "", email: "", message: "" });
-      } else {
-        setFormStatus("error");
-      }
-    } catch {
-      setFormStatus("error");
-    }
+
+    const subject = encodeURIComponent(
+      `Solicitud de Diagnóstico Técnico — ${formState.company || formState.name}`
+    );
+    const body = encodeURIComponent(
+      `Nombre: ${formState.name}\nEmpresa: ${formState.company || "No especificada"}\nEmail: ${formState.email}\n\nDesafío / Consulta:\n${formState.message}`
+    );
+
+    window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
+    setFormStatus("success");
   };
 
-  const filteredProjects = selectedCategory === "all"
-    ? projects
-    : projects.filter(p => p.category === selectedCategory);
+  const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+    "Hola Ezequiel, visité el sitio de FVision y me gustaría coordinar una sesión de diagnóstico técnico para mi empresa."
+  )}`;
 
-  const getStatusIcon = (status: Solution["specs"]["status"]) => {
+  const filteredPractices = selectedCategory === "all"
+    ? practiceAreas
+    : practiceAreas.filter(p => p.category === selectedCategory);
+
+  const getStatusIcon = (status: PracticeArea["specs"]["status"]) => {
     switch (status) {
       case "production":
         return <CheckCircle2 size={15} className="status-icon production" />;
@@ -200,13 +193,13 @@ export default function App() {
           <div className="brand-logo">FV</div>
           <div className="brand-info">
             <span className="brand-name">FVision</span>
-            <span className="brand-role">Data & AI Solutions</span>
+            <span className="brand-role">Engineering & Applied AI</span>
           </div>
         </a>
 
         <div className="header-badge">
           <span className="status-indicator" />
-          Disponible para Consultoría
+          Consultoría B2B • Ciclos de 2 a 4 Semanas
         </div>
       </header>
 
@@ -215,39 +208,39 @@ export default function App() {
         <section className="container hero">
           <div className="hero-copy">
             <span className="eyebrow">
-              <Sparkles size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 
-              Consultoría Boutique • Datos • Machine Learning • IA Agéntica • Gemelos Digitales
+              <Sparkles size={13} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'text-bottom' }} /> 
+              Time-to-Value en 2 a 4 Semanas • Alcance Cerrado • Cero Burocracia
             </span>
             <h1>
-              <span style={{ display: 'block' }}>Ingeniería de Datos • Machine Learning</span>
-              <span style={{ display: 'block' }}><span style={{ whiteSpace: 'nowrap' }}>IA&nbsp;Agéntica</span> • Gemelos Digitales</span>
+              <span style={{ display: 'block' }}>Ingeniería de Datos, IA Aplicada</span>
+              <span style={{ display: 'block' }}>y Automatización para Operaciones Reales</span>
             </h1>
             <p className="lead">
-              Diseñamos e integramos soluciones de software de alto impacto empresarial: pipelines ETL de alta fidelidad, modelos predictivos de Machine Learning, agentes autónomos supervisados y réplicas operativas con gemelos digitales.
+              Transformamos procesos manuales, documentos dispersos y silos de información en sistemas productivos integrados a la operación de tu empresa. Soluciones de alcance cerrado diseñadas y desplegadas por especialistas senior en ciclos ágiles de 2 a 4 semanas.
             </p>
             <div className="actions">
               <a className="button button-primary" href="#contacto">
-                Agendar Consulta Técnica <ArrowUpRight size={18} />
+                Solicitar Diagnóstico Técnico <ArrowUpRight size={18} />
               </a>
               <a className="button" href="#soluciones">
-                Explorar Soluciones
+                Explorar Áreas de Práctica
               </a>
             </div>
           </div>
         </section>
 
-        {/* Section Soluciones */}
+        {/* Section Áreas de Práctica */}
         <section className="section" id="soluciones">
           <div className="container">
             <div className="section-heading">
-              <h2>Servicios & Soluciones Oficiales</h2>
+              <h2>Áreas de Práctica & Servicios de Ingeniería</h2>
               <p>
-                Soluciones unificadas de software y tecnología estructuradas en cuatro pilares estratégicos: Ingeniería de Datos de alta fidelidad, Machine Learning Predictivo, IA Agéntica y Visión por Computador con Gemelos Digitales.
+                Abordamos cuellos de botella operativos y analíticos mediante cuatro áreas de práctica de ingeniería, con entregables productivos, arquitectura contenerizada y retorno de inversión medible desde el primer mes.
               </p>
             </div>
 
             {/* Tabs de Filtro */}
-            <div className="filter-tabs" role="tablist" aria-label="Filtrar por especialización">
+            <div className="filter-tabs" role="tablist" aria-label="Filtrar por área de práctica">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
@@ -267,7 +260,7 @@ export default function App() {
               className="project-grid"
             >
               <AnimatePresence mode="popLayout">
-                {filteredProjects.map((project) => (
+                {filteredPractices.map((practice) => (
                   <motion.article 
                     layout
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -275,31 +268,31 @@ export default function App() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
                     className="project-card" 
-                    key={project.title}
+                    key={practice.title}
                   >
                     <div className="card-title-row">
-                      <h3>{project.title}</h3>
+                      <h3>{practice.title}</h3>
                       <span className="status-badge">
-                        {getStatusIcon(project.specs.status)}
-                        {project.specs.statusLabel}
+                        {getStatusIcon(practice.specs.status)}
+                        {practice.specs.statusLabel}
                       </span>
                     </div>
                     
-                    <p className="project-summary">{project.summary}</p>
+                    <p className="project-summary">{practice.summary}</p>
                     
                     <div className="project-specs">
                       <div className="spec-item">
-                        <span className="spec-label">PROBLEMA</span>
-                        <span className="spec-value">{project.specs.problem}</span>
+                        <span className="spec-label">DESAFÍO EMPRESARIAL</span>
+                        <span className="spec-value">{practice.specs.problem}</span>
                       </div>
                       <div className="spec-item">
-                        <span className="spec-label">SOLUCIÓN</span>
-                        <span className="spec-value">{project.specs.solution}</span>
+                        <span className="spec-label">SOLUCIÓN DE INGENIERÍA</span>
+                        <span className="spec-value">{practice.specs.solution}</span>
                       </div>
                     </div>
 
                     <div className="tag-list">
-                      {project.tags.map((tag) => (
+                      {practice.tags.map((tag) => (
                         <span className="tag" key={tag}>{tag}</span>
                       ))}
                     </div>
@@ -310,16 +303,42 @@ export default function App() {
           </div>
         </section>
 
-        {/* Section Célula Senior */}
-        <section className="section" id="equipo" style={{ background: 'var(--paper)', borderTop: 'var(--border-thick)', borderBottom: 'var(--border-thick)' }}>
+        {/* Section Casos de Implementación */}
+        <section className="section" id="casos" style={{ background: 'var(--paper)', borderTop: 'var(--border-thick)', borderBottom: 'var(--border-thick)' }}>
           <div className="container">
             <div className="section-heading">
-              <h2>Célula de Consultores Senior</h2>
-              <p>Alta densidad de talento sin sobrecostos burocráticos. Tres consultores senior especializados articulados para resolver desafíos técnicos de punta a punta.</p>
+              <h2>Casos de Aplicación & Soluciones Corporativas</h2>
+              <p>Arquitecturas probadas y módulos de ingeniería desarrollados por FVision, listos para adaptarse e integrarse a los sistemas de tu organización sin interrumpir la operación diaria.</p>
+            </div>
+            <div className="grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
+              {implementationCases.map((item) => (
+                <div key={item.title} style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-md)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)', display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: item.badgeColor || 'var(--vision-color)', color: item.badgeColor ? '#fff' : 'inherit', fontFamily: 'monospace', fontSize: '0.72rem', fontWeight: 700, marginBottom: '0.85rem', width: 'fit-content' }}>
+                    {item.badge}
+                  </span>
+                  <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem' }}>{item.title}</h3>
+                  <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5, marginBottom: '1.25rem' }}>{item.desc}</p>
+                  <div className="tag-list" style={{ marginTop: 'auto' }}>
+                    {item.tags.map((t) => (
+                      <span className="tag" key={t}>{t}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section Célula Senior */}
+        <section className="section" id="equipo">
+          <div className="container">
+            <div className="section-heading">
+              <h2>Liderazgo & Célula de Consultores Senior</h2>
+              <p>Interlocución directa con los responsables del diseño y la ejecución. Sin capas burocráticas ni delegación en perfiles sin experiencia operativa.</p>
             </div>
             <div className="grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               {teamMembers.map((member) => (
-                <div key={member.name} style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-md)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
+                <div key={member.name} style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-md)', padding: '1.75rem', background: 'var(--paper)', boxShadow: 'var(--shadow-flat)' }}>
                   <div style={{ marginBottom: '1rem', borderBottom: 'var(--border-thick)', paddingBottom: '0.85rem' }}>
                     <h3 style={{ fontSize: '1.45rem', fontWeight: 800, lineHeight: 1.2 }}>{member.name}</h3>
                     <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '0.78rem', fontWeight: 700, color: 'var(--accent)', marginTop: '0.25rem', display: 'block', textTransform: 'uppercase' }}>{member.role}</span>
@@ -337,54 +356,28 @@ export default function App() {
           </div>
         </section>
 
-        {/* Section Showcases */}
-        <section className="section" id="showcases">
-          <div className="container">
-            <div className="section-heading">
-              <h2>Showcases Tecnológicos de Demostración</h2>
-              <p>Sistemas reales desarrollados internamente por FVision, disponibles para demostración técnica uno a uno (screensharing) de su arquitectura, código y rendimiento operativo.</p>
-            </div>
-            <div className="grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
-              {showcases.map((s) => (
-                <div key={s.title} style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-md)', padding: '1.75rem', background: 'var(--paper)', boxShadow: 'var(--shadow-flat)', display: 'flex', flexDirection: 'column' }}>
-                  <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: s.badgeColor || 'var(--vision-color)', color: s.badgeColor ? '#fff' : 'inherit', fontFamily: 'monospace', fontSize: '0.72rem', fontWeight: 700, marginBottom: '0.85rem', width: 'fit-content' }}>
-                    {s.badge}
-                  </span>
-                  <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem' }}>{s.title}</h3>
-                  <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5, marginBottom: '1.25rem' }}>{s.desc}</p>
-                  <div className="tag-list" style={{ marginTop: 'auto' }}>
-                    {s.tags.map((t) => (
-                      <span className="tag" key={t}>{t}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Section Metodología de Trabajo */}
         <section className="section" id="metodologia" style={{ background: 'var(--paper)', borderTop: 'var(--border-thick)', borderBottom: 'var(--border-thick)' }}>
           <div className="container">
             <div className="section-heading">
-              <h2>Metodología de Trabajo & Integración</h2>
-              <p>Un proceso transparente y estructurado por fases, diseñado para garantizar previsibilidad técnica y resultados tangibles sin atarte a plazos forzados.</p>
+              <h2>Metodología de Trabajo & Compromiso</h2>
+              <p>Un proceso transparente estructurado por hitos verificables, diseñado para eliminar la incertidumbre técnica y asegurar entregas puntuales.</p>
             </div>
             <div className="grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
-                <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--vision-color)', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>FASE 1: DIAGNÓSTICO</span>
+                <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--vision-color)', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>ETAPA 1: DIAGNÓSTICO</span>
                 <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Auditoría & Viabilidad Técnica</h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Sesión Discovery de 30 minutos sin cargo para auditar las fuentes de datos, procesos e infraestructura, evaluar la viabilidad técnica y trazar la arquitectura objetivo antes de iniciar.</p>
+                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Sesión ejecutiva de 30 minutos sin cargo para relevar el cuello de botella operativo, auditar la estructura de datos existente y definir la arquitectura de solución con mayor impacto en rentabilidad.</p>
               </div>
               <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
-                <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--ai-color)', color: '#fff', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>FASE 2: EJECUCIÓN</span>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Implementación Modular por Hitos</h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Construcción bajo TDD y especificaciones OpenAPI, integración a ERP/CRM/Cloud con contratos de datos validados, Docker y entrega con Runbook operativo y alcance cerrado.</p>
+                <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--ai-color)', color: '#fff', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>ETAPA 2: EJECUCIÓN (2 A 4 SEMANAS)</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Implementación de Alcance Cerrado</h3>
+                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Trabajo sobre un Anexo Técnico (SOW) con plazos y entregables fijos. Desarrollo modular, integración con tus sistemas actuales, despliegue en contenedores Docker reproducibles y pruebas de aceptación (UAT).</p>
               </div>
               <div style={{ border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', padding: '1.75rem', background: 'var(--bg)', boxShadow: 'var(--shadow-flat)' }}>
-                <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--local-color)', color: '#fff', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>FASE 3: CONTINUIDAD</span>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Acompañamiento & Retainers de Evolución</h3>
-                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Pólizas flexibles de horas mensuales para monitoreo preventivo de salud en pipelines, detección de drift en modelos y soporte evolutivo de nuevas capacidades técnicas.</p>
+                <span style={{ display: 'inline-block', padding: '0.25rem 0.6rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-sm)', background: 'var(--local-color)', color: '#fff', fontWeight: 700, fontSize: '0.75rem', marginBottom: '1rem' }}>ETAPA 3: EVOLUCIÓN</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Soporte & Mejora Continua</h3>
+                <p style={{ fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.5 }}>Transferencia completa de documentación operativa y opción de acompañamiento mensual (Retainers) para monitoreo de modelos, mantenimiento de integraciones y desarrollo de nuevas capacidades.</p>
               </div>
             </div>
           </div>
@@ -394,44 +387,83 @@ export default function App() {
         <section className="section" id="contacto">
           <div className="container">
             <div className="contact-panel">
-              <span className="eyebrow contact-eyebrow">Diagnóstico Inicial</span>
-              <h2>¿Querés Evaluar una Solución para tu Empresa?</h2>
+              <span className="eyebrow contact-eyebrow">Diagnóstico Ejecutivo</span>
+              <h2>¿Evaluamos una Solución para tu Operación?</h2>
               <p>
-                Coordinemos una sesión de diagnóstico técnico de 30 minutos (Discovery Call) para analizar tu caso de uso, datos disponibles y arquitectura ideal.
+                Coordinemos una reunión de diagnóstico técnico de 30 minutos para analizar tu caso de uso, evaluar los datos e infraestructura disponibles y trazar una propuesta de alcance cerrado.
               </p>
+
+              <div className="actions" style={{ marginBottom: '2rem', display: 'flex', flexWrap: 'wrap', gap: '0.85rem' }}>
+                <a
+                  className="button button-primary"
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageSquare size={17} style={{ marginRight: '6px' }} />
+                  Coordinar por WhatsApp
+                </a>
+                <a
+                  className="button"
+                  href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Consulta sobre Servicios de Ingeniería — FVision")}`}
+                >
+                  <Mail size={17} style={{ marginRight: '6px' }} />
+                  Escribir por Correo
+                </a>
+                <a
+                  className="button"
+                  href={siteConfig.companyLinkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin size={17} style={{ marginRight: '6px' }} />
+                  LinkedIn Corporativo
+                </a>
+              </div>
 
               <form className="contact-form" onSubmit={handleFormSubmit}>
                 <div className="form-group">
-                  <label htmlFor="name">Nombre</label>
+                  <label htmlFor="name">Nombre y Apellido</label>
                   <input
                     type="text"
                     id="name"
                     required
                     className="form-input"
-                    placeholder="Tu nombre"
+                    placeholder="Tu nombre completo"
                     value={formState.name}
                     onChange={(e) => setFormState(prev => ({ ...prev, name: e.target.value }))}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="company">Empresa y Cargo</label>
+                  <input
+                    type="text"
+                    id="company"
+                    className="form-input"
+                    placeholder="Ej.: Empresa S.A. — Director de Operaciones"
+                    value={formState.company}
+                    onChange={(e) => setFormState(prev => ({ ...prev, company: e.target.value }))}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Correo Corporativo</label>
                   <input
                     type="email"
                     id="email"
                     required
                     className="form-input"
-                    placeholder="tu@email.com"
+                    placeholder="nombre@empresa.com"
                     value={formState.email}
                     onChange={(e) => setFormState(prev => ({ ...prev, email: e.target.value }))}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="message">Mensaje / Consulta</label>
+                  <label htmlFor="message">Desafío Operativo o Proyecto a Evaluar</label>
                   <textarea
                     id="message"
                     required
                     className="form-input form-textarea"
-                    placeholder="¿En qué solución o proyecto estás interesado?"
+                    placeholder="Comentanos brevemente qué proceso, flujo documental o sistema de datos buscás optimizar..."
                     value={formState.message}
                     onChange={(e) => setFormState(prev => ({ ...prev, message: e.target.value }))}
                   />
@@ -443,17 +475,12 @@ export default function App() {
                   style={{ width: '100%', marginTop: '0.5rem' }}
                   disabled={formStatus === "submitting"}
                 >
-                  {formStatus === "submitting" ? "Enviando..." : "Enviar Consulta"}
+                  {formStatus === "submitting" ? "Preparando envío..." : "Solicitar Diagnóstico Inicial"}
                 </button>
 
                 {formStatus === "success" && (
                   <div className="form-status success" style={{ marginTop: '1rem' }}>
-                    ¡Consulta enviada con éxito! Te responderemos a la brevedad.
-                  </div>
-                )}
-                {formStatus === "error" && (
-                  <div className="form-status error" style={{ marginTop: '1rem' }}>
-                    Ocurrió un error al enviar. Intentá de nuevo o contactanos vía LinkedIn.
+                    Se abrió tu cliente de correo con los datos de la solicitud. También podés contactarnos directamente por WhatsApp para una respuesta inmediata.
                   </div>
                 )}
               </form>
@@ -463,7 +490,7 @@ export default function App() {
       </main>
 
       <footer className="container footer">
-        © {new Date().getFullYear()} {siteConfig.name} — Consultora Boutique de Software: Datos, Machine Learning, IA Agéntica & Gemelos Digitales.
+        © {new Date().getFullYear()} {siteConfig.name} — Consultoría de Ingeniería de Software, Datos e Inteligencia Artificial Aplicada.
       </footer>
     </div>
   );

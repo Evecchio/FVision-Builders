@@ -64,7 +64,7 @@ export function About() {
               <div className="absolute bottom-0 left-0 p-8 w-full z-20">
                 <h3 className="text-3xl font-display font-bold text-white mb-2">Ezequiel</h3>
                 <p className="text-primary font-sans text-sm font-semibold uppercase tracking-wider">
-                  Business Owner & Tech Consultant
+                  Project Manager | IT & Digital Product
                 </p>
               </div>
             </div>
@@ -80,14 +80,14 @@ export function About() {
           >
             <div className="p-8 lg:p-10 glass-panel rounded-2xl border border-white/10 bg-slate-900/50">
               <p className="text-2xl md:text-3xl font-display font-bold text-white leading-tight mb-6">
-                Mi objetivo es transformar la manera en que las empresas operan y escalan.
+                Mi objetivo es liderar y transformar productos digitales que escalan operaciones reales.
               </p>
               <div className="text-base md:text-lg font-sans text-slate-400 leading-relaxed space-y-6">
                 <p>
-                  A lo largo de mi trayectoria, he liderado proyectos tecnológicos enfocados en automatizar operaciones, implementar soluciones de Inteligencia Artificial y analizar datos corporativos en tiempo real. Esta experiencia me enseñó qué significa realmente tomar decisiones basadas en información certera para hacer crecer un negocio.
+                  A lo largo de mi trayectoria, he liderado proyectos tecnológicos y productos digitales de punta a punta, coordinando equipos multidisciplinarios para transformar requerimientos de negocio en soluciones operativas de alto impacto.
                 </p>
                 <p>
-                  Esa experiencia "en las trincheras" me llevó a dominar la creación de herramientas y sistemas que hoy pongo a disposición de otras empresas. No te hablo desde la teoría, sino desde lo que <span className="text-white font-semibold">funciona en producción</span>.
+                  Especializado en metodologías ágiles, definición de alcance, especificación funcional y modelado de procesos (BPMN), aseguro entregas predecibles en tiempo, costo y calidad. No te hablo desde la teoría, sino desde lo que <span className="text-white font-semibold">funciona en producción</span>.
                 </p>
               </div>
             </div>

@@ -42,7 +42,7 @@ export function ChatModal({ isOpen, onClose }: ChatModalProps) {
       chatRef.current = ai.chats.create({
         model: "gemini-3-flash-preview",
         config: {
-          systemInstruction: `Eres el Avatar IA de Ezequiel, consultor de automatización e IA de FVision.
+          systemInstruction: `Eres el Avatar IA de Ezequiel, Project Manager y líder de proyectos tecnológicos de FVision.
 
 REGLAS DE COMUNICACIÓN:
 - Sé ultra conciso. Máximo 2-3 oraciones por respuesta.

@@ -4,37 +4,48 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 export function Services() {
   const cases = [
     {
-      title: "Agentes Autónomos para Operaciones Complejas",
-      tag: "Agentes para Operaciones",
-      context: "Tu equipo colapsa ejecutando procesos manuales y coordinaciones repetitivas entre múltiples sistemas.",
+      title: "Ingeniería de Datos & Inteligencia Operativa (BI / ETL)",
+      tag: "Ingeniería de Datos",
+      context: "Decisiones demoradas por información fragmentada entre el ERP, el CRM y múltiples hojas de cálculo manuales propensas a error.",
       work: [
-        "Agentes de IA con contratos de comportamiento estricto y validación por etapas",
-        "Integración directa a bases de datos y ERPs/CRMs existentes",
-        "Supervisión humana en puntos críticos (Human-in-the-Loop)"
+        "Pipelines automatizados de extracción, normalización y calidad de datos (ETL / ELT)",
+        "Consolidación en almacenes analíticos centralizados con monitoreo de integridad",
+        "Tableros ejecutivos en tiempo real para dirección, finanzas y operaciones"
       ],
-      result: "Una operación fluida que trabaja en segundo plano eliminando cuellos de botella y tareas redundantes."
+      result: "Visibilidad operativa unificada y confiable para tomar decisiones basadas en datos reales sin depender de reportes manuales."
     },
     {
-      title: "Analítica Privada de Datos Corporativos",
-      tag: "Analítica de Datos",
-      context: "Información crítica dispersa en documentos e incapacidad de realizar consultas avanzadas sin exponer datos sensibles.",
+      title: "Automatización de Procesos & Agentes de IA Operativos",
+      tag: "Automatización & IA Agéntica",
+      context: "Equipos calificados perdiendo horas diarias en carga manual de datos, cruce de planillas, seguimiento de correos operativos y tareas repetitivas.",
       work: [
-        "Sistema RAG híbrido / GraphRAG en servidor privado (VPC) o local",
-        "Procesamiento e indexación segura de documentos con cifrado AES-256",
-        "Consultas conversacionales de alto valor con modelos aislados"
+        "Flujos de trabajo asistidos por agentes con reglas de comportamiento deterministas",
+        "Integración directa a bases de datos, correo corporativo y ERPs/CRMs existentes",
+        "Supervisión humana en puntos críticos de decisión (Human-in-the-Loop)"
       ],
-      result: "Inteligencia de negocios instantánea sobre tu información sin compartir un solo byte con terceros."
+      result: "Una operación de backoffice fluida que elimina cuellos de botella administrativos y errores de transcripción."
     },
     {
-      title: "Modelos Predictivos y Analítica con Inteligencia Artificial",
-      tag: "Soluciones de IA",
-      context: "Decisiones comerciales reactivas, pérdida imprevista de clientes y capital inmovilizado por compras erróneas de stock.",
+      title: "Procesamiento Documental Inteligente (OCR) & Visión Computacional",
+      tag: "Extracción Documental & Visión",
+      context: "Cuellos de botella administrativos por carga manual de facturas, remitos y órdenes de compra, o controles de calidad visuales lentos en planta.",
       work: [
-        "Modelos predictivos supervisados de pronóstico de demanda y prevención de churn",
-        "Endpoints API REST de alta disponibilidad para scoring en tiempo real",
-        "Monitoreo continuo de salud y reentrenamiento automático de modelos"
+        "Motores de extracción estructurada de comprobantes y validación fiscal automática (QR AFIP/ARCA)",
+        "Normalización de proveedores e imputación directa para conciliación contable",
+        "Inspección visual automatizada en línea operativa y logística (YOLOv8 / OpenCV)"
       ],
-      result: "Anticipación comercial precisa y optimización de capital de trabajo basada en Machine Learning e Inteligencia Artificial."
+      result: "Reducción de más del 80% en tiempos de carga administrativa y trazabilidad visual continua en operaciones físicas."
+    },
+    {
+      title: "Modelos Predictivos & Sistemas de Conocimiento Privado (RAG)",
+      tag: "Machine Learning & RAG Privado",
+      context: "Compras de inventario reactivas, pérdida no anticipada de clientes o imposibilidad de consultar contratos y manuales sin exponer datos sensibles.",
+      work: [
+        "Modelos predictivos supervisados de pronóstico de demanda, stock y prevención de churn",
+        "Buscadores corporativos privados (Enterprise RAG) en infraestructura propia (VPC / On-Premise)",
+        "Citación exacta de documentos originales con cero fuga de información confidencial"
+      ],
+      result: "Anticipación comercial basada en modelos estadísticos y acceso instantáneo al conocimiento técnico y legal de la empresa."
     }
   ];
 
@@ -48,14 +59,14 @@ export function Services() {
             viewport={{ once: true }}
           >
             <span className="text-sm font-sans font-semibold uppercase tracking-wider text-primary mb-4 block">
-              Nuestros Servicios
+              Áreas de Práctica
             </span>
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">
-              Sistemas listos para <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">escalar tu negocio</span>
+              Ingeniería aplicada para <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">escalar tu operación</span>
             </h2>
             <p className="text-lg font-sans text-slate-400 leading-relaxed">
-              Arquitecturas probadas que resuelven los problemas más comunes de las empresas, listas para adaptarse a tu operación.
+              Soluciones de alcance cerrado entregadas en ciclos de 2 a 4 semanas, listas para integrarse a los sistemas de tu empresa.
             </p>
           </motion.div>
         </div>
@@ -87,7 +98,7 @@ export function Services() {
                     {item.title}
                   </h3>
                   <p className="text-base font-sans text-slate-400 leading-relaxed max-w-3xl">
-                    <span className="text-white font-semibold mr-2">El problema:</span> {item.context}
+                    <span className="text-white font-semibold mr-2">El desafío:</span> {item.context}
                   </p>
                 </div>
                 

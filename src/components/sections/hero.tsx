@@ -1,61 +1,7 @@
 import { motion } from "motion/react";
-import { ArrowRight, Bot, Zap, BarChart3 } from "lucide-react";
-import { useState, useEffect } from "react";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { doc, setDoc, serverTimestamp, getDoc } from "firebase/firestore";
-import { auth, db } from "../../firebase";
-import { handleFirestoreError, OperationType } from "@/lib/firebase-errors";
+import { ArrowRight, Database, Cpu, FileCheck2 } from "lucide-react";
 
 export function Hero() {
-  const [isSigningIn, setIsSigningIn] = useState(false);
-  const [user, setUser] = useState(auth.currentUser);
-
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setUser(user);
-    });
-    return () => unsubscribe();
-  }, []);
-
-  const handleGoogleSignIn = async () => {
-    if (isSigningIn) return;
-    setIsSigningIn(true);
-    try {
-      const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-
-      const userRef = doc(db, "users", user.uid);
-      const userSnap = await getDoc(userRef).catch(error => {
-        handleFirestoreError(error, OperationType.GET, `users/${user.uid}`);
-        throw error;
-      });
-
-      if (!userSnap.exists()) {
-        await setDoc(userRef, {
-          uid: user.uid,
-          email: user.email,
-          displayName: user.displayName || "",
-          photoURL: user.photoURL || "",
-          createdAt: serverTimestamp(),
-          lastLoginAt: serverTimestamp()
-        }).catch(error => {
-          handleFirestoreError(error, OperationType.WRITE, `users/${user.uid}`);
-        });
-      } else {
-        await setDoc(userRef, {
-          lastLoginAt: serverTimestamp()
-        }, { merge: true }).catch(error => {
-          handleFirestoreError(error, OperationType.WRITE, `users/${user.uid}`);
-        });
-      }
-    } catch (error) {
-      console.error("Error signing in with Google:", error);
-    } finally {
-      setIsSigningIn(false);
-    }
-  };
-
   return (
     <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 overflow-hidden bg-background bg-grid-pattern">
       {/* Glow Effects */}
@@ -75,7 +21,7 @@ export function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
           </span>
-          <span className="text-sm font-sans font-medium text-slate-300">Disponibilidad para nuevos proyectos</span>
+          <span className="text-sm font-sans font-medium text-slate-300">Time-to-Value en 2 a 4 Semanas • Alcance Cerrado • Cero Burocracia</span>
         </motion.div>
 
         {/* Main Title */}
@@ -86,11 +32,11 @@ export function Hero() {
           className="max-w-4xl mx-auto"
         >
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-white mb-6">
-            Automatizaciones e <br />
+            Ingeniería de Datos, <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Inteligencia Artificial
+              IA Aplicada y Automatización
             </span>
-            <br /> para tu Negocio
+            <br /> para Operaciones Reales
           </h1>
         </motion.div>
 
@@ -102,7 +48,7 @@ export function Hero() {
           className="max-w-2xl mx-auto mb-10"
         >
           <p className="text-lg md:text-xl font-sans text-slate-400 leading-relaxed">
-            Transformamos tu empresa con automatizaciones inteligentes y agentes de IA de última generación. Aumenta la eficiencia, reduce costos y acelera tu crecimiento.
+            Transformamos procesos manuales, documentos dispersos y silos de información en sistemas productivos integrados a tu operación en ciclos de alcance cerrado de 2 a 4 semanas.
           </p>
         </motion.div>
 
@@ -113,26 +59,19 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
         >
-          <button
-            onClick={() => {
-              // We need to trigger the chat modal. Since it's in Navbar, we might need a better way or just use the contact scroll if preferred.
-              // Actually, the user asked to change the button "Agendar una llamada" to "Chat directo".
-              // I'll make it open the chat modal if possible, or just change the text and keep the scroll to contact if that's what they want.
-              // But "Chat directo" implies a chat.
-              // Let's see if I can trigger the modal from here. I'll need to lift state or use a custom event.
-              window.dispatchEvent(new CustomEvent('open-chat'));
-            }}
+          <a
+            href="#contacto"
             className="group relative inline-flex items-center justify-center text-base font-semibold transition-all focus-visible:outline-none bg-primary text-white h-14 px-8 rounded-full w-full sm:w-auto shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] hover:scale-105"
           >
-            <span>Presupuesto Automático</span>
+            <span>Solicitar Diagnóstico Técnico</span>
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
           
           <a
             href="#services"
             className="inline-flex items-center justify-center text-base font-semibold transition-all focus-visible:outline-none border border-slate-700 bg-slate-800/50 hover:bg-slate-800 text-white h-14 px-8 w-full sm:w-auto rounded-full backdrop-blur-md"
           >
-            Ver Servicios
+            Explorar Áreas de Práctica
           </a>
         </motion.div>
 
@@ -145,24 +84,24 @@ export function Hero() {
         >
           <div className="flex flex-col items-center text-center p-6 rounded-2xl glass-panel group hover:border-primary/30 transition-colors">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
-              <Bot className="w-6 h-6" />
+              <Database className="w-6 h-6" />
             </div>
-            <span className="text-3xl font-display font-bold text-white mb-1">Agentes IA</span>
-            <span className="text-sm text-slate-400 font-medium">Atención 24/7</span>
+            <span className="text-3xl font-display font-bold text-white mb-1">Pipelines ETL</span>
+            <span className="text-sm text-slate-400 font-medium">Unificación de Datos & BI</span>
           </div>
           <div className="flex flex-col items-center text-center p-6 rounded-2xl glass-panel group hover:border-secondary/30 transition-colors">
             <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4 text-secondary group-hover:scale-110 transition-transform">
-              <Zap className="w-6 h-6" />
+              <FileCheck2 className="w-6 h-6" />
             </div>
-            <span className="text-3xl font-display font-bold text-white mb-1">n8n / Make</span>
-            <span className="text-sm text-slate-400 font-medium">Automatización</span>
+            <span className="text-3xl font-display font-bold text-white mb-1">OCR & Visión</span>
+            <span className="text-sm text-slate-400 font-medium">Auditoría Documental y Planta</span>
           </div>
           <div className="flex flex-col items-center text-center p-6 rounded-2xl glass-panel group hover:border-accent/30 transition-colors">
             <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:scale-110 transition-transform">
-              <BarChart3 className="w-6 h-6" />
+              <Cpu className="w-6 h-6" />
             </div>
-            <span className="text-3xl font-display font-bold text-white mb-1">+40%</span>
-            <span className="text-sm text-slate-400 font-medium">Eficiencia Operativa</span>
+            <span className="text-3xl font-display font-bold text-white mb-1">2 a 4 Semanas</span>
+            <span className="text-sm text-slate-400 font-medium">Implementación de Alcance Cerrado</span>
           </div>
         </motion.div>
       </div>
